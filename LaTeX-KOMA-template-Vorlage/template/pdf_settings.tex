@@ -1,0 +1,58 @@
+%%%% Time-stamp: <2013-02-02 21:23:23 vk>
+%%%% === Disclaimer: =======================================================
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using GNU/Linux, GNU Emacs & LaTeX 2e
+%%
+
+%doc%
+%doc% \section{\texttt{pdf\_settings.tex} --- Settings related to PDF output}
+%doc% \label{sec:pdf}
+%doc% 
+%doc% The file \verb#template/pdf_settings.tex# basically contains the definitions for
+%doc% the \href{http://tug.org/applications/hyperref/}{\texttt{hyperref} package}
+%doc% including the
+%doc% \href{http://www.ctan.org/tex-archive/macros/latex/required/graphics/}{\texttt{graphicx}
+%doc% package}. Since these settings should be the last things of any \LaTeX{}
+%doc% preamble, they got their own \TeX{} file which is included in \texttt{main.tex}.
+%doc% 
+%doc% \paragraph{What should I do with this file?} The settings in this file are
+%doc% important for \myacro{PDF} output and including graphics. Do not exclude the
+%doc% related \texttt{input} command in \texttt{main.tex}. But you might want to
+%doc% modify some settings after you read the
+%doc% \href{http://tug.org/applications/hyperref/}{documentation of the \texttt{hyperref} package}.
+%doc% 
+
+%% Declarations of hyperref should be the last definitions of the preamble:
+%% FIXXME: black-and-white-version for printing!
+
+%\pdfcompresslevel=9
+
+%\usepackage[%
+%pdftitle={\mytitle}, %
+%pdfauthor={\myauthor}, %
+%pdfsubject={\mysubject}, %
+%pdfcreator={Accomplished with: pdfLaTeX, biber, and hyperref-package. No animals, MS-EULA or BSA-rules were %harmed.},
+%pdfproducer={\myauthor},
+%pdfkeywords={\mykeywords},
+%%a4paper=true, %
+%pdftex=true, %
+%backref, %
+%pagebackref=false, % creates backward references too
+%bookmarks=false, %
+%bookmarksopen=false, % when starting with AcrobatReader, the Bookmarkcolumn is opened
+%pdfpagemode=UseNone,% None, UseOutlines, UseThumbs, FullScreen
+%plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
+%%% colors: https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Colors
+%urlcolor=DispositionColor, %%
+%linkcolor=DispositionColor, %%
+%citecolor=DispositionColor, %%
+%anchorcolor=DispositionColor, %%
+%colorlinks=\mycolorlinks, % turn on/off colored links (on: better for
+%                          % on-screen reading; off: better for printout versions)
+%]{hyperref}
+
+%\DeclareGraphicsExtensions{.pdf}
+
