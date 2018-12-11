@@ -1,0 +1,12 @@
+*.aux
+*.bbl
+*.blg
+LaTeX-KOMA-template-Vorlage/main.bcf
+LaTeX-KOMA-template-Vorlage/main.lof
+LaTeX-KOMA-template-Vorlage/main.log
+LaTeX-KOMA-template-Vorlage/main.lol
+LaTeX-KOMA-template-Vorlage/main.lot
+LaTeX-KOMA-template-Vorlage/main.out
+LaTeX-KOMA-template-Vorlage/main.run.xml
+LaTeX-KOMA-template-Vorlage/main.toc
+*.xmpi
