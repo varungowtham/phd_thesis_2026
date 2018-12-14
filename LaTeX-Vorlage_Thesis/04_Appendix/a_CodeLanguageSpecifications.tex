@@ -1,0 +1,26 @@
+% Extension for listings package
+\lstdefinelanguage{ampl}{
+  morekeywords={%
+    if, then, else, or,  exists, forall,  and, in, within, 
+    not, union, diff, symdiff, inter, cross, setof, by, 
+    set, param, var, arc, minimize, maximize, subject, to, node,
+    dimen, default, card, ordered, by, reversed, circular,
+    param, binary, integer, symbolic, check, Infinity
+    var,  coeff, cover, obj,
+    include, model, data, let, objective, drop, restore, solve,
+    solution, quit, end, option, reset, update, commands,
+    function, pipe, 
+    coef, difference, dimen, dimension, intersect, intersection, s.t., 
+    for, while, repeat, break,
+    purge, problem, redeclare, xref,
+    complements, 
+    table, IN, OUT, INOUT, read, write, 
+    expand,
+    for, commands, repeat, until, while, break, continue,
+  },
+  sensitive=true,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  string=[b]",
+  morestring=[b]',
+}[keywords,comments,strings]

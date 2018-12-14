@@ -1,0 +1,64 @@
+%------------------------------
+% FONT
+%------------------------------
+\newcommand*{\changefont}[3]{%
+\fontfamily{#1}\fontseries{#2}\fontshape{#3}\selectfont}
+\renewcommand{\rmdefault}{ppl}
+
+%------------------------------
+% DIRECTORIES
+%------------------------------
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%------------------------------
+% TABLES, LISTS, and NUMERATIONS
+%------------------------------
+\addto\captionsngerman{%
+\renewcommand{\figurename}{Abb.}%
+}
+\renewcommand{\figurename}{Abb.} 
+\addto\captionsngerman{%
+\renewcommand{\tablename}{Tab.}%
+}
+\renewcommand{\tablename}{Tab.} 
+\addto\captionsenglish{%
+\renewcommand{\figurename}{Fig.}%
+}
+\renewcommand{\figurename}{Fig.} 
+\addto\captionsenglish{%
+\renewcommand{\tablename}{Tab.}%
+}
+\renewcommand{\tablename}{Tab.} 
+\graphicspath{{Figures/}} 								% subfolder containing figures
+\renewcommand{\labelenumi}{\alph{enumi})} 				% numeration of numeric environments
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+
+%------------------------------
+% NEW UNITS
+%------------------------------
+\DeclareSIUnit\torr{Torr}
+\DeclareSIUnit\fahrenheit{\degree F}
+\DeclareSIUnit\atm{atm}
+
+%------------------------------
+% REFERENCES AND CITATIONS
+%------------------------------
+\renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year
+\DeclareFieldFormat[article]{citetitle}{#1\midsentence} % no quotation marks in title
+\DeclareFieldFormat[article]{title}{#1\midsentence}	
+\renewbibmacro{in:}{}									% suppress in: before name of journal
+\DefineBibliographyStrings{german}{%
+urlseen = {letzter Zugriff},
+}
+
+%------------------------------
+% INTERNET
+%------------------------------
+\renewcommand*{\UrlFont}{\normalfont}
+
+%------------------------------
+% CODE
+%------------------------------
+\renewcommand{\lstlistingname}{Code}					% rename listing in appendix

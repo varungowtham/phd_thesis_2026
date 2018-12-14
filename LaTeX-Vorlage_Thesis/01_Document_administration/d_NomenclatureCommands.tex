@@ -1,0 +1,34 @@
+\makenomenclature % create nomenclature
+
+\newcommand\nomunit[1]{\renewcommand{\nomentryend}{\hspace*{\fill}[#1]\nolinebreak\hspace*{2cm}\mbox{}}%
+} % maximum with of list of symbols
+\newcommand{\nomgrouphead}[1]{\large\bfseries #1 \hfill} % Titles for single sections in list of symbols
+\newcommand{\nomgroupX}[2]{\nomgrouphead{#1} \endgroup \\ \\
+#2 \begingroup} % Definition for single entries in the list of symbols
+
+\renewcommand\nomgroup[1]{%
+  \ifx#1L\relax	% if the optional argument is L
+    \nomgroupX{\Large \bfseries Lateinische Symbole}{\bfseries Symbol&\bfseries Beschreibung&&\bfseries SI-Einheit}
+  \fi
+  \ifx#1G\relax % if the optional argument is G
+    \nomgroupX{\Large \bfseries Griechische Symbole}{\bfseries Symbol&\bfseries Beschreibung&&\bfseries SI-Einheit}    
+  \fi
+  \ifx#1X\relax
+    \nomgroupX{\Large \bfseries Superskripts}{\bfseries Symbol&\bfseries Beschreibung&&}       
+  \fi
+  \ifx#1Z\relax
+    \nomgroupX{\Large \bfseries Subskripts}{\bfseries Symbol&\bfseries Beschreibung&&}     
+  \fi
+  \ifx#1K\relax
+	\nomgroupX{\Large \bfseries Konstanten}{\bfseries Symbol&\bfseries Beschreibung&&\bfseries SI-Einheit}     
+  \fi
+  \ifx#1N\relax
+	\nomgroupX{\Large \bfseries Dimensionslose Kennzahlen}{\bfseries Symbol&\bfseries Beschreibung&&\bfseries Definition}       
+  \fi
+  \ifx#1O\relax
+	\nomgroupX{\Large \bfseries Operatoren}{\bfseries Symbol&\bfseries Beschreibung&&\bfseries Definition}      
+  \fi
+  \ifx#1I\relax
+	\nomgroupX{\Large \bfseries Indizes}{\bfseries Symbol&\bfseries Beschreibung&&}      
+  \fi          
+}
