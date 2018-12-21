@@ -1,0 +1,48 @@
+
+\begin{thenomenclature}
+%
+\begin{longtable}[l]%
+{cp{\textwidth*\real{0.55}}c!     {\extracolsep{0pt}}lll}\multicolumn{3}{l}{\nomgroup{G}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$\alpha$}&\begingroup Non-randomness factor in NRTL-Modell\endgroup &\begingroup \endgroup &\begingroup --\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\alpha$}&\begingroup Parameter in Gleichung für Verdampfungsenthalpie\endgroup &\begingroup \endgroup &\begingroup \si{\joule\per\mole}\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\alpha$}&\begingroup Trennfaktor für binäre VLEs\endgroup &\begingroup \endgroup &\begingroup --\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\Delta$}&\begingroup Differenz\endgroup &\begingroup \endgroup &\begingroup verschieden\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\Lambda$}&\begingroup Parameter in Wilson-Modell\endgroup &\begingroup \endgroup &\begingroup --\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{I}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$\mathit{i}$}&\begingroup Index für Komponenten\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{j}$}&\begingroup Index für Komponenten\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{k}$}&\begingroup Index der Strukturgruppe\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{K}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$\mathit{R}$}&\begingroup Universelle Gaskonstante = 8.31446\endgroup &\begingroup \endgroup &\begingroup \si{\joule\per\mole\per\kelvin}\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{L}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$A$}&\begingroup Parameter in Antoine-Gleichung\endgroup &\begingroup \endgroup &\begingroup --\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$A$}&\begingroup Porter-Parameter\endgroup &\begingroup \endgroup &\begingroup --\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$B$}&\begingroup Parameter in Antoine-Gleichung\endgroup &\begingroup \endgroup &\begingroup \si{\kelvin}\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$B$}&\begingroup Zweiter Virialkoeffizient (Leiden-Form)\endgroup &\begingroup \endgroup &\begingroup \si{\cubic\metre\per\mole}\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$B'$}&\begingroup Zweiter Virialkoeffizient (Berlin-Form)\endgroup &\begingroup \endgroup &\begingroup \si{\per\pascal}\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{N}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{Re}&\begingroup Reynoldszahl\endgroup &\begingroup \endgroup &\begingroup $\frac{w d \rho}{\eta}$\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{O}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$\nabla$}&\begingroup Nabla-Operator\endgroup &\begingroup \endgroup &\begingroup $\left[\frac{\partial}{\partial x_1}, \dots, \frac{\partial}{\partial x_1}\right]^T$\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\text{rot}$}&\begingroup Rotationsoperator\endgroup &\begingroup \endgroup &\begingroup $\text{rot } \vec{g} = \nabla \times \vec{g}$\endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{X}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$\mathit{E}$}&\begingroup Exzess\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{III}$}&\begingroup Phase/Zustand 3\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{II}$}&\begingroup Phase/Zustand 2\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{I}$}&\begingroup Phase/Zustand 1\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+\\*[\parskip]\multicolumn{3}{l}{\nomgroup{Z}} \\
+\toprule\nopagebreak\\*[\parskip]
+\nopagebreak{}{$\mathit{0}$}&\begingroup Reinstoff\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{0}$}&\begingroup zu Beginn der Reaktion\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+{$\mathit{c}$}&\begingroup Kritisch\endgroup &\begingroup \endgroup &\begingroup \endgroup &\begingroup \nomeqref {0.0}\nompageref{v} \\
+
+\end{longtable}
+
+\end{thenomenclature}

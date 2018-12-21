@@ -1,0 +1,7 @@
+This is makeindex, version 2.15 [TeX Live 2017/W32TeX] (kpathsea + Thai support).
+Scanning style file ./mynomentbl.ist...............done (15 attributes redefined, 0 ignored).
+Scanning input file main.nlo....done (24 entries accepted, 0 rejected).
+Sorting entries....done (107 comparisons).
+Generating output file main.nls....done (24 lines written, 0 warnings).
+Output written in main.nls.
+Transcript written in main.ilg.
