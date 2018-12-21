@@ -44,16 +44,17 @@
 %------------------------------
 % COVER
 %------------------------------
-\begin{spacing}{1}
-\pagenumbering{gobble}			% turn off page numbering, necessary for correct backreferencing via the biblatex package
-\pagestyle{empty}
-\input{02_Prematter/a_Cover}
-\cleardoublepage
+\begin{spacing}{1}				% one-line spacing here
+	\pagenumbering{gobble}			% turn off page numbering, necessary for correct backreferencing via the biblatex package
+	\pagestyle{empty}
+	\input{02_Prematter/a_Cover}
+	\cleardoublepage
 %------------------------------
 % ADDITIONAL DOCUMENTS
 %------------------------------
-\input{02_Prematter/b_Declaration}
-\cleardoublepage
+	\input{02_Prematter/b_Declaration}
+	\cleardoublepage
+\end{spacing}
 \input{02_Prematter/c_Acknowledgements}
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
@@ -61,41 +62,38 @@
 %------------------------------
 % LISTS OF...
 %------------------------------
-\tableofcontents				% table of contents
-\cleardoublepage
-\pagestyle{scrheadings}			% use header and footer information to create both from here on
-\pagenumbering{roman}			% start small roman numbers
-\setcounter{page}{1}			% set page counter back to one
-\listoffigures 					% make list of figures
-\cleardoublepage
-\listoftables 					% make list of tables
-\cleardoublepage
-\include{02_Prematter/e_Nomenclature}% include all symbols in nomenclature
-\markboth{}{\nomname}  
-\printnomenclature 				% make list of symbols
-\cleardoublepage
-\include{02_Prematter/f_Abbreviations}
-\cleardoublepage
+\begin{spacing}{1}				% one-line spacing here
+	\tableofcontents			% table of contents
+	\cleardoublepage
+	\pagestyle{scrheadings}		% use header and footer information to create both from here on
+	\pagenumbering{roman}		% start small roman numbers
+	\listoffigures 				% make list of figures
+	\cleardoublepage
+	\listoftables 				% make list of tables
+	\cleardoublepage
+	\include{02_Prematter/e_Nomenclature}% include all symbols in nomenclature
+	\markboth{}{\nomname}  		% mark both headers with nomenclature name
+	\printnomenclature 			% make list of symbols
+	\cleardoublepage
+	\include{02_Prematter/f_Abbreviations}
+	\cleardoublepage
 \end{spacing}
 %------------------------------
 % TEXT
 %------------------------------
-\pagenumbering{arabic} 		% arabic numbering 
-\setcounter{page}{1} 		% set counter to 1
+\pagenumbering{arabic} 			% arabic numbering 
 \input{03_Content/0_Text} 		% include chapters
 %------------------------------
 % REFERENCES
 %------------------------------
 \cleardoublepage
-\pagenumbering{Roman} 		% capital roman numbers
-\setcounter{page}{1} 		% set page counter to 1
+\pagenumbering{Roman} 			% capital roman numbers
 \printbibliography
 %------------------------------
 % APPENDIX
 %------------------------------
 \cleardoublepage
-\pagenumbering{Alph} 		% capital latin letters
-\setcounter{page}{1} 		% set page counter to 1
+\pagenumbering{Alph} 			% capital latin letters
 \appendix
 \include{05_Appendix/a_CodeLanguageSpecifications}
 \input{05_Appendix/0_Appendix}
