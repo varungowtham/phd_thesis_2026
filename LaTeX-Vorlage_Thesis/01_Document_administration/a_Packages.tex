@@ -44,8 +44,8 @@
 \usepackage{icomma}			% distance after comma in math environment
 \usepackage{mathptmx}		% contains the Times New Roman font
 \usepackage[
-	sc,						% with small caps
-	osf						% old-style figures
+	osf,					% old-style figures
+	sc						% with small caps	
 ]{mathpazo} 				% contains the Palatino font
 \usepackage{mathtools}		% some additional symbols
 \usepackage[
@@ -56,8 +56,8 @@ version=4					% use version X of the package
 	output-decimal-marker={,}, % decimal marker (german: , and english: .)
 	range-phrase={--},		% for units 4 -- 10 K
 	range-units=single,		% it is 4 -- 10 K and not 4K - 10K
+	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
 	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text
-	retain-explicit-plus	% \SI{1E+4}{} = 1E+04 in the text
 ]{siunitx}					% formating of SI units
 
 %------------------------------
@@ -72,9 +72,11 @@ version=4					% use version X of the package
 \usepackage{enumitem}		% modification of lists
 \usepackage{footnote} 		% footnotes in floats
 \usepackage[
-	framemethod=TikZ
+	framemethod=TikZ		% use TikZ for frames
 ]{mdframed} 				% frames, e.g. for environments
-\usepackage[all]{nowidow}	% Schusterjungen and Hurenkinder
+\usepackage[
+	all						% sets widow and orphan penalties for the whole document
+]{nowidow}					% widows and orphans
 \usepackage{placeins}		% is used to avoid floating objects after the \FloatBarrier command
 \usepackage[
 	onehalfspacing			% 1.5 distance between lines
@@ -100,18 +102,18 @@ version=4					% use version X of the package
 ]{biblatex}
 \usepackage[
 	babel=true,				% check language with babel
-	strict=true,
 	english=american,		% for english: american quotation marks
-	german=guillemets		% for german: german quotation marks
-	]{csquotes}				% quotation marks etc. in references
+	german=guillemets,		% for german: german quotation marks
+	strict=true				% all warning are turned into errors
+]{csquotes}					% quotation marks etc. in references
 
 %------------------------------
 % LISTS OF SYMBOLS AND ABBREVIATIONS
 %------------------------------
-\usepackage[]{acronym}		% package for list of abbreviations
+\usepackage{acronym}		% package for list of abbreviations
 \usepackage[
-	intoc,					% list of symbols appears in list of content
-	german					% german is used as language
+	german,					% german is used as language
+	intoc					% list of symbols appears in list of content
 ]{nomentbl}					% package for list of symbols
 
 %------------------------------
@@ -124,19 +126,16 @@ version=4					% use version X of the package
 % HYPERREF
 %------------------------------
 \usepackage[
-    bookmarks,
-    bookmarksopen=true,
-    colorlinks=false,
-    linkcolor=black, 		 
-    anchorcolor=black,		
-    citecolor=blue, 		% color for citations
-    filecolor=magenta, 		% color for local refs
-    menucolor=black, 		
+    bookmarks,				% writes Acrobat bookmarks
+    bookmarksnumbered=true,	% bookmarks are numbered in PDF
+    bookmarksopen=false,	% bookmarks are closed when PDF is opened
+    citebordercolor=blue,	% border color for citations
+    colorlinks=false,		% no different font color for links
+    hypertexnames=true, 	% use guessable names for links
     linkbordercolor=red, 	% color for links
-    citebordercolor=blue,	% color for citations
-    urlbordercolor=cyan,	% color for URLs
+    linktocpage, 			% use page numbers as links in table of contents    
     %pagebackref,			% links to pages in references, not working with biblatex!
-    pdfpagelabels, 			% correct generation of bookmarks
-    hypertexnames=true, 	% correct generation of bookmarks
-    linktocpage, 			% use page numbers for hyperrefs
+    pdfpagelabels, 			% set PDF page labels
+    pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
+    urlbordercolor=cyan,	% color for URLs
 ]{hyperref}
