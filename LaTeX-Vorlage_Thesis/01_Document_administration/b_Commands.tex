@@ -65,3 +65,21 @@ urlseen = {letzter Zugriff},
 % CODE
 %------------------------------
 \renewcommand{\lstlistingname}{Code}					% rename listing in appendix
+
+%------------------------------
+% HYPERREF
+%------------------------------
+\hypersetup{
+    bookmarks,				% writes Acrobat bookmarks, not necessary when using the pdfx package
+    bookmarksnumbered=true,	% bookmarks are numbered in PDF
+    bookmarksopen=false,	% bookmarks are closed when PDF is opened
+    citebordercolor=blue,	% border color for citations
+    colorlinks=false,		% no different font color for links
+    hypertexnames=true, 	% use guessable names for links
+    linkbordercolor=red, 	% color for links
+    linktocpage, 			% use page numbers as links in table of contents    
+    %pagebackref,			% links to pages in references, not working with biblatex!
+    pdfpagelabels, 			% set PDF page labels, not necessary when using the pdfx package
+    pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
+    urlbordercolor=cyan,	% color for URLs
+}

@@ -42,7 +42,6 @@
 \usepackage{chemfig}		% package for drawing molecules
 \usepackage{empheq}			% frames around equations
 \usepackage{icomma}			% distance after comma in math environment
-\usepackage{mathptmx}		% contains the Times New Roman font
 \usepackage[
 	osf,					% old-style figures
 	sc						% with small caps	
@@ -125,17 +124,5 @@ version=4					% use version X of the package
 %------------------------------
 % HYPERREF
 %------------------------------
-\usepackage[
-    bookmarks,				% writes Acrobat bookmarks
-    bookmarksnumbered=true,	% bookmarks are numbered in PDF
-    bookmarksopen=false,	% bookmarks are closed when PDF is opened
-    citebordercolor=blue,	% border color for citations
-    colorlinks=false,		% no different font color for links
-    hypertexnames=true, 	% use guessable names for links
-    linkbordercolor=red, 	% color for links
-    linktocpage, 			% use page numbers as links in table of contents    
-    %pagebackref,			% links to pages in references, not working with biblatex!
-    pdfpagelabels, 			% set PDF page labels
-    pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
-    urlbordercolor=cyan,	% color for URLs
-]{hyperref}
+%\usepackage{hyperref}		% is loaded by the pdfx package automatically
+\usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity, if this is not necessary: remove the pdfx package and simply use hyperref
