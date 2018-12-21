@@ -41,6 +41,7 @@ In this folder, the following files are located:
 \item c\_Meta.tex
 \begin{itemize}
 \item contains meta information regarding author, etc.
+\item contains a boolean variable to select whether it is a dissertation or a bachelor/master thesis
 \end{itemize}
 \item d\_NomenclatureCommands.tex 
 \begin{itemize}
@@ -59,6 +60,7 @@ In this folder, the following files are located:
 \item a\_Cover.tex
 \begin{itemize}
 \item creates the cover page
+\item loads either a\_Cover\_BA\_MA.tex (cover of a bachelor/master thesis) or a\_Cover\_Diss.tex (cover of a dissertation), depending on the value of type set in c\_Meta.tex
 \end{itemize}
 \item b\_Declaration.tex
 \begin{itemize}
