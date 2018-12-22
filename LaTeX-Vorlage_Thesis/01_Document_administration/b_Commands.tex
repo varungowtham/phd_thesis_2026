@@ -1,9 +1,9 @@
 %------------------------------
 % ENVIRONMENTS
 %------------------------------
-\newenvironment{dedication_env}							% defines the dedication environment
-{\Large\begin{quotation}\begin{center}\begin{em}}
-{\par\end{em}\end{center}\end{quotation}}
+\newenvironment{dedication_env}	% defines the dedication environment
+{\Large\begin{quote}\begin{center}\begin{em}}
+{\par\end{em}\end{center}\end{quote}}
 
 %------------------------------
 % DIRECTORIES
@@ -15,84 +15,95 @@
 % TABLES, LISTS, and NUMERATIONS
 %------------------------------
 
-\graphicspath{{Figures/}} 								% directory in which LaTeX searches for figures
+\graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
 
-\addto\captionsngerman{%								% changes german figure caption to Abb. chapter.number
+\addto\captionsngerman{%		% changes german figure caption to Abb. chapter.number
 \renewcommand{\figurename}{Abb.}%						
 }
 \renewcommand{\figurename}{Abb.} 
 
-\addto\captionsngerman{%								% changes german table caption to Tab. chapter.number
+\addto\captionsngerman{%		% changes german table caption to Tab. chapter.number
 \renewcommand{\tablename}{Tab.}%
 }
 \renewcommand{\tablename}{Tab.} 
 
-\addto\captionsenglish{%								% changes english figure caption to Fig. chapter.number
+\addto\captionsenglish{%		% changes english figure caption to Fig. chapter.number
 \renewcommand{\figurename}{Fig.}%
 }
 \renewcommand{\figurename}{Fig.} 
 
-\addto\captionsenglish{%								% changes english table caption to Tab. chapter.number
+\addto\captionsenglish{%		% changes english table caption to Tab. chapter.number
 \renewcommand{\tablename}{Tab.}%
 }
 \renewcommand{\tablename}{Tab.} 
 
-\renewcommand{\labelenumi}{\alph{enumi})} 				% numeration of numeric environments
+\renewcommand{\labelenumi}{\alph{enumi})} 	% numeration of numeric environments
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
 % a)
 % a.a)
 % a.a.a)
 
-\setlist[1]{labelindent=\parindent} 					% labels are indented by this length
-\setlist[itemize,1]{label={-}}							% item environments use a - for itemizing
+\setlist[1]{labelindent=\parindent}	% labels are indented by this length
+\setlist[itemize,1]{label={-}}		% item environments use a - for itemizing
 
 %------------------------------
 % NEW UNITS
 %------------------------------
-\DeclareSIUnit\torr{Torr}								% defines the unit Torr
-\DeclareSIUnit\fahrenheit{\degree F}					% defines the unit °F
-\DeclareSIUnit\atm{atm}									% defines the unit atm
+\DeclareSIUnit\torr{Torr}			% defines the unit Torr
+\DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
+\DeclareSIUnit\atm{atm}				% defines the unit atm
 
 %------------------------------
 % REFERENCES AND CITATIONS
 %------------------------------
-\renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year
-
-\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{#1\midsentence\isdot}						% no quotation marks in citetitle
-
-\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\midsentence\isdot} 							% no quotation marks in title
-
-\DeclareFieldFormat[article]{title}{#1\midsentence\isdot}	
-
-\renewbibmacro{in:}{%									% suppress in: before name of journal
+\setlength\bibitemsep{0.5\baselineskip}	% distance between two references
+\setlength{\bibhang}{5ex}			% indent below first line of reference
+\DeclareFieldFormat[				% no quotation marks in citetitle
+	article,
+	inbook,
+	incollection,
+	inproceedings,
+	patent,
+	thesis,
+	unpublished
+]{citetitle}{#1\midsentence\isdot}						
+\DeclareFieldFormat[				% no quotation marks in title
+	article,
+	inbook,
+	incollection,
+	inproceedings,
+	patent,
+	thesis,
+	unpublished
+]{title}{#1\midsentence\isdot} 	
+\renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year	
+\DeclareFieldFormat{pages}{#1}		% no S. or pp. before pages
+\DefineBibliographyStrings{english}{phdthesis = {Dissertation}}	% Name dissertations Dissertations entry type phdthesis
+\DefineBibliographyStrings{ngerman}{phdthesis = {Dissertation}}
+\renewbibmacro{in:}{%				% suppress in: before name of journal, book, etc.
   \ifboolexpr{%
      test {\ifentrytype{article}}%
      or
      test {\ifentrytype{book}}%
   }{}{\printtext{\bibstring{in}\intitlepunct}}%
-}									
-							
-%\DeclareFieldFormat[inproceedings]{booktitle}{#1\midsentence\isdot}	
-
-\DefineBibliographyStrings{ngerman}{%					% before URL german
+}							
+\DefineBibliographyStrings{ngerman}{% before URL german
 urlseen = {letzter Zugriff},
 }
-\DefineBibliographyStrings{english}{%					% before URL english
+\DefineBibliographyStrings{english}{% before URL english
 urlseen = {last access},
 }
 
 %% The following is only relevant for dissertations
 
-\DeclareBibliographyCategory{inbib}						% a specific category for all citations in the text, NOT in the publication list
-
-\newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}}											% print all authors in case the \printpublication command is used
-
+\DeclareBibliographyCategory{inbib}	% a specific category for all citations in the text, NOT in the publication list
+\newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}}						% print all authors in case the \printpublication command is used
 \makeatletter										
 \AtEveryCitekey{%
-  \ifcsstring{blx@delimcontext}{fullcite}				% if a citation is made with the fullcite command, do not show it in the references
+  \ifcsstring{blx@delimcontext}{fullcite}	% if a citation is made with the fullcite command, do not show it in the references
     {}
-    {\addtocategory{inbib}{\thefield{entrykey}}}}		% if is is normally cited later, add it to the references
+    {\addtocategory{inbib}{\thefield{entrykey}}}}	% if is is normally cited later, add it to the references
 \makeatother
 
 %------------------------------
@@ -103,22 +114,22 @@ urlseen = {last access},
 %------------------------------
 % CODE
 %------------------------------
-\renewcommand{\lstlistingname}{Code}					% rename listing in appendix
+\renewcommand{\lstlistingname}{Code}	% rename listing in appendix
 
 %------------------------------
 % HYPERREF
 %------------------------------
 \hypersetup{
-    bookmarks,				% writes Acrobat bookmarks, not necessary when using the pdfx package
-    bookmarksnumbered=true,	% bookmarks are numbered in PDF
-    bookmarksopen=false,	% bookmarks are closed when PDF is opened
-    citebordercolor=blue,	% border color for citations
-    colorlinks=false,		% no different font color for links
-    hypertexnames=true, 	% use guessable names for links
-    linkbordercolor=red, 	% color for links
-    linktocpage, 			% use page numbers as links in table of contents    
-    %pagebackref,			% links to pages in references, not working with biblatex!
-    pdfpagelabels, 			% set PDF page labels, not necessary when using the pdfx package
+    bookmarks,					% writes Acrobat bookmarks, not necessary when using the pdfx package
+    bookmarksnumbered=true,		% bookmarks are numbered in PDF
+    bookmarksopen=false,		% bookmarks are closed when PDF is opened
+    citebordercolor=blue,		% border color for citations
+    colorlinks=false,			% no different font color for links
+    hypertexnames=true, 		% use guessable names for links
+    linkbordercolor=red, 		% color for links
+    linktocpage, 				% use page numbers as links in table of contents    
+    %pagebackref,				% links to pages in references, not working with biblatex!
+    pdfpagelabels, 				% set PDF page labels, not necessary when using the pdfx package
     pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
-    urlbordercolor=cyan,	% color for URLs
+    urlbordercolor=cyan,		% border color for URLs
 }
