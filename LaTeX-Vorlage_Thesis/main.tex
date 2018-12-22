@@ -46,12 +46,9 @@
 	\input{02_Prematter/a_Cover}
 	\cleardoublepage
 %------------------------------
-% ADDITIONAL DOCUMENTS
+% PREMATTER
 %------------------------------
-%------------------------------
-% ONLY FOR DISSERTATIONS: DEDICATION, CAN ALSO BE USED IN A B/M THESIS
-	\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/a_Dedication.tex}\cleardoublepage}{}
-%------------------------------
+	\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/a_Dedication.tex}\cleardoublepage}{}				% Only for dissertations: decication (can also be used for a B/M thesis)
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
 \end{spacing}
@@ -59,10 +56,7 @@
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
 \cleardoublepage
-%------------------------------
-% ONLY FOR DISSERTATIONS: PUBLICATIONS, CAN ALSO BE REMOVED IN A B/M THESIS
-\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}
-%------------------------------
+\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}				% ONLY for dissertations: list of publications (can also be removed for a B/M thesis)
 %------------------------------
 % LISTS OF...
 %------------------------------
@@ -75,11 +69,11 @@
 	\cleardoublepage
 	\listoftables 				% make list of tables
 	\cleardoublepage
-	\include{02_Prematter/e_Nomenclature}% include all symbols in nomenclature
+	\include{02_Prematter/e_Nomenclature} % include all symbols in nomenclature
 	\markboth{}{\nomname}  		% mark both headers with nomenclature name
 	\printnomenclature 			% make list of symbols
 	\cleardoublepage
-	\include{02_Prematter/f_Abbreviations}
+	\input{02_Prematter/f_Abbreviations}
 	\cleardoublepage
 \end{spacing}
 %------------------------------

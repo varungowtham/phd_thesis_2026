@@ -6,13 +6,6 @@
 {\par\end{em}\end{center}\end{quotation}}
 
 %------------------------------
-% FONT
-%------------------------------
-\newcommand*{\changefont}[3]{%
-\fontfamily{#1}\fontseries{#2}\fontshape{#3}\selectfont}
-\renewcommand{\rmdefault}{ppl}
-
-%------------------------------
 % DIRECTORIES
 %------------------------------
 \setcounter{secnumdepth}{4}
@@ -21,36 +14,45 @@
 %------------------------------
 % TABLES, LISTS, and NUMERATIONS
 %------------------------------
-\addto\captionsngerman{%
-\renewcommand{\figurename}{Abb.}%
+
+\graphicspath{{Figures/}} 								% directory in which LaTeX searches for figures
+
+\addto\captionsngerman{%								% changes german figure caption to Abb. chapter.number
+\renewcommand{\figurename}{Abb.}%						
 }
 \renewcommand{\figurename}{Abb.} 
-\addto\captionsngerman{%
+
+\addto\captionsngerman{%								% changes german table caption to Tab. chapter.number
 \renewcommand{\tablename}{Tab.}%
 }
 \renewcommand{\tablename}{Tab.} 
-\addto\captionsenglish{%
+
+\addto\captionsenglish{%								% changes english figure caption to Fig. chapter.number
 \renewcommand{\figurename}{Fig.}%
 }
 \renewcommand{\figurename}{Fig.} 
-\addto\captionsenglish{%
+
+\addto\captionsenglish{%								% changes english table caption to Tab. chapter.number
 \renewcommand{\tablename}{Tab.}%
 }
 \renewcommand{\tablename}{Tab.} 
-\graphicspath{{Figures/}} 								% subfolder containing figures
+
 \renewcommand{\labelenumi}{\alph{enumi})} 				% numeration of numeric environments
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+% a)
+% a.a)
+% a.a.a)
 
-\setlist[1]{labelindent=\parindent} 
-\setlist[itemize,1]{label={-}}
+\setlist[1]{labelindent=\parindent} 					% labels are indented by this length
+\setlist[itemize,1]{label={-}}							% item environments use a - for itemizing
 
 %------------------------------
 % NEW UNITS
 %------------------------------
-\DeclareSIUnit\torr{Torr}
-\DeclareSIUnit\fahrenheit{\degree F}
-\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\torr{Torr}								% defines the unit Torr
+\DeclareSIUnit\fahrenheit{\degree F}					% defines the unit °F
+\DeclareSIUnit\atm{atm}									% defines the unit atm
 
 %------------------------------
 % REFERENCES AND CITATIONS
@@ -59,36 +61,25 @@
 \DeclareFieldFormat[article]{citetitle}{#1\midsentence} % no quotation marks in title
 \DeclareFieldFormat[article]{title}{#1\midsentence}	
 \renewbibmacro{in:}{}									% suppress in: before name of journal
-\DefineBibliographyStrings{german}{%
+\DefineBibliographyStrings{ngerman}{%					% before URL german
 urlseen = {letzter Zugriff},
 }
-			
+\DefineBibliographyStrings{english}{%					% before URL english
+urlseen = {last access},
+}
+
+%% The following is only relevant for dissertations
+
 \DeclareBibliographyCategory{inbib}						% a specific category for all citations in the text, NOT in the publication list
 
 \newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}}											% print all authors in case the \printpublication command is used
 
-\makeatletter											
-												
+\makeatletter										
 \AtEveryCitekey{%
   \ifcsstring{blx@delimcontext}{fullcite}				% if a citation is made with the fullcite command, do not show it in the references
     {}
     {\addtocategory{inbib}{\thefield{entrykey}}}}		% if is is normally cited later, add it to the references
 \makeatother
-
-\DefineBibliographyStrings{english}{%					% redefine the english output of master's thesis
-  mathesis = {Master's thesis}
-}
-\DefineBibliographyStrings{ngerman}{%					% redefine the german output of master's thesis
-  mathesis = {Masterarbeit}
-}
-
-\DefineBibliographyStrings{english}{%					% redefine the english output of dissertation
-  phdthesis = {Dissertation}
-}
-
-\DefineBibliographyStrings{ngerman}{%					% redefine the german output of dissertation
-  phdthesis = {Dissertation}
-}
 
 %------------------------------
 % INTERNET
