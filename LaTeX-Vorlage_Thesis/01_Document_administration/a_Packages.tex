@@ -5,7 +5,9 @@
 	english,				% included language
 	ngerman					% DEFAULT language
 ]{babel} 					% language package
-\usepackage{datetime}		% package for dates
+\usepackage[
+	nodayofweek				% do not print day of week with \today command
+]{datetime}					% package for dates
 \usepackage[
 	T1						% font encoding in western european style
 ]{fontenc}					% font encoding
