@@ -17,7 +17,7 @@
     headings=optiontohead,		% optional argument before chapter or section title appears in the header
     listof=chaptergapsmall,		% small vertical space between figures of different chapters in the lists of figures and tables
     listof=totoc,				% lists of figures and tables in table of contents
-    numbers=noenddot,			% no second point for figures, ...
+    numbers=noenddot,			% no second point in the numbering of figures, ...
     openright,					% chapter always starts on right side
     parskip=half, 				% distance between paragraphs
     titlepage, 					% titlepage available   
@@ -26,17 +26,13 @@
 %------------------------------
 % PREAMBLE
 %------------------------------
-% Include packages, additional commands, meta information, nomenclature commands, and header/footer information
-\include{01_Document_administration/a_Packages}
-\include{01_Document_administration/b_Commands}
-\include{01_Document_administration/c_Meta}
-\include{01_Document_administration/d_NomenclatureCommands}
-\include{01_Document_administration/e_Header_Footer}
-\KOMAoptions{DIV=last}			% recalculate the print space for the given DIV
-%------------------------------
-% INTEGRATE .BIB FILE
-%------------------------------
+\include{01_Document_administration/a_Packages} % all packages of this template
+\include{01_Document_administration/b_Commands} % all additional commands and options
+\include{01_Document_administration/c_Meta}		% meta information of this document, such as title, author, etc.
+\include{01_Document_administration/d_NomenclatureCommands} % commands for the list of symbols
+\include{01_Document_administration/e_Header_Footer}		% commands for headers and footers
 \addbibresource{04_Literature/Bibliography.bib}
+\KOMAoptions{DIV=last}			% recalculate the print space for the given DIV
 %------------------------------
 % BEGIN DOCUMENT
 %------------------------------
@@ -45,12 +41,16 @@
 % COVER
 %------------------------------
 \begin{spacing}{1}				% one-line spacing here
-	\pagenumbering{gobble}			% turn off page numbering, necessary for correct backreferencing via the biblatex package
+	\pagenumbering{gobble}		% turn off page numbering, necessary for correct backreferencing via the biblatex package
 	\pagestyle{empty}
 	\input{02_Prematter/a_Cover}
 	\cleardoublepage
 %------------------------------
 % ADDITIONAL DOCUMENTS
+%------------------------------
+%------------------------------
+% ONLY FOR DISSERTATIONS: DEDICATION, CAN ALSO BE USED IN A B/M THESIS
+	\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/a_Dedication.tex}\cleardoublepage}{}
 %------------------------------
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
@@ -59,6 +59,10 @@
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
 \cleardoublepage
+%------------------------------
+% ONLY FOR DISSERTATIONS: PUBLICATIONS, CAN ALSO BE REMOVED IN A B/M THESIS
+\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}
+%------------------------------
 %------------------------------
 % LISTS OF...
 %------------------------------
@@ -88,7 +92,7 @@
 %------------------------------
 \cleardoublepage
 \pagenumbering{Roman} 			% capital roman numbers
-\printbibliography
+\printbibliography[category=inbib,resetnumbers]
 %------------------------------
 % APPENDIX
 %------------------------------

@@ -195,7 +195,6 @@ In the following, a few examples for the authoryear short reference are stated. 
 \item \parencite{Coker2007}, \textcite{Coker2007}
 \item \parencite{Abrams1975}, \textcite{Abrams1975}
 \item \parencite{benzene_nist2017}, \textcite{benzene_nist2017}
-\item \parencite{UNIFAC2017}, \textcite{UNIFAC2017}
 \item \parencite{Cuda2012}, \textcite{Cuda2012}
 \end{itemize}
 These commands are used as
@@ -210,10 +209,12 @@ The language of this document is set with the babel package. The order of the lo
 The language of the list of symbols is chosen via the option german. This also affects the entry in the table of contents. If the thesis is written in English, the option german can be removed.
 
 The list of abbreviations must be changed in the respective file f\_abbrevi\-ations.tex as there is no package option available. The entry in the table of contents is changed in the same file.
+
+If the language is English, it is recommended to change the output decimal marker  for SI units (siunitx package) to a dot. This can be changed in the a\_Packages.tex file.
 \section{Templates}\label{sec:templates}
 \subsection{Units}
 Units are very important. However, there are some rules when typesetting units. First of all, they are never written in italics. They should also have the right space between them. For this purpose, the siunitx package is suggested.\\
-Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$.
+Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. 
 \subsection{Figures}
 \begin{figure}[tbh]
 \centering

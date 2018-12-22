@@ -1,4 +1,11 @@
 %------------------------------
+% ENVIRONMENTS
+%------------------------------
+\newenvironment{dedication_env}							% defines the dedication environment
+{\Large\begin{quotation}\begin{center}\begin{em}}
+{\par\end{em}\end{center}\end{quotation}}
+
+%------------------------------
 % FONT
 %------------------------------
 \newcommand*{\changefont}[3]{%
@@ -54,6 +61,33 @@
 \renewbibmacro{in:}{}									% suppress in: before name of journal
 \DefineBibliographyStrings{german}{%
 urlseen = {letzter Zugriff},
+}
+			
+\DeclareBibliographyCategory{inbib}						% a specific category for all citations in the text, NOT in the publication list
+
+\newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}}											% print all authors in case the \printpublication command is used
+
+\makeatletter											
+												
+\AtEveryCitekey{%
+  \ifcsstring{blx@delimcontext}{fullcite}				% if a citation is made with the fullcite command, do not show it in the references
+    {}
+    {\addtocategory{inbib}{\thefield{entrykey}}}}		% if is is normally cited later, add it to the references
+\makeatother
+
+\DefineBibliographyStrings{english}{%					% redefine the english output of master's thesis
+  mathesis = {Master's thesis}
+}
+\DefineBibliographyStrings{ngerman}{%					% redefine the german output of master's thesis
+  mathesis = {Masterarbeit}
+}
+
+\DefineBibliographyStrings{english}{%					% redefine the english output of dissertation
+  phdthesis = {Dissertation}
+}
+
+\DefineBibliographyStrings{ngerman}{%					% redefine the german output of dissertation
+  phdthesis = {Dissertation}
 }
 
 %------------------------------
