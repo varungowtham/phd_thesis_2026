@@ -58,9 +58,23 @@
 % REFERENCES AND CITATIONS
 %------------------------------
 \renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year
-\DeclareFieldFormat[article]{citetitle}{#1\midsentence} % no quotation marks in title
-\DeclareFieldFormat[article]{title}{#1\midsentence}	
-\renewbibmacro{in:}{}									% suppress in: before name of journal
+
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{#1\midsentence\isdot}						% no quotation marks in citetitle
+
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\midsentence\isdot} 							% no quotation marks in title
+
+\DeclareFieldFormat[article]{title}{#1\midsentence\isdot}	
+
+\renewbibmacro{in:}{%									% suppress in: before name of journal
+  \ifboolexpr{%
+     test {\ifentrytype{article}}%
+     or
+     test {\ifentrytype{book}}%
+  }{}{\printtext{\bibstring{in}\intitlepunct}}%
+}									
+							
+%\DeclareFieldFormat[inproceedings]{booktitle}{#1\midsentence\isdot}	
+
 \DefineBibliographyStrings{ngerman}{%					% before URL german
 urlseen = {letzter Zugriff},
 }

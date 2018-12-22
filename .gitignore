@@ -11,6 +11,7 @@
 *.nls
 *.out
 *.xml
+*.sav
 *.gz
 *.toc
 *.xmpi
