@@ -1,8 +1,11 @@
+\definecolor{commentgreen}{RGB}{34,139,34}
+\definecolor{emphblue}{RGB}{0,0,255}
+\definecolor{keywordlila}{RGB}{160,32,240}
 %------------------------------
 % AMPL SPECS
 %------------------------------
 \lstdefinelanguage{ampl}{
-  morekeywords={%
+  emph={%
     if, then, else, or,  exists, forall,  and, in, within, 
     not, union, diff, symdiff, inter, cross, setof, by, 
     set, param, var, arc, minimize, maximize, subject, to, node,
@@ -20,7 +23,14 @@
     expand,
     for, commands, repeat, until, while, break, continue,
   },
+  keywordstyle=\color{keywordlila},
+  commentstyle=\color{commentgreen},
+  emphstyle=\color{emphblue},
   sensitive=true,
+  breaklines=true,
+  numbers=left,
+  tabsize=4,
+  basicstyle=\footnotesize\ttfamily ,
   comment=[l]{\#},
   morecomment=[s]{/*}{*/},
   string=[b]",
@@ -30,10 +40,20 @@
 % MATLAB SPECS
 %------------------------------
 \lstdefinelanguage{matlab}{
-  morekeywords={%
-    if, else, for, while, break, end,
+  emph={%
+  	if, else, for, while, break, end,
   },
+  morekeywords={%
+    all
+  },
+  keywordstyle=\color{keywordlila},
+  commentstyle=\color{commentgreen},
+  emphstyle=\color{emphblue},
   sensitive=true,
+  breaklines=true,
+  numbers=left,
+  tabsize=4,
+  basicstyle=\footnotesize\ttfamily ,  
   comment=[l]{\%},
   morecomment=[s]{\%\{}{\%\}},
   string=[b]",
