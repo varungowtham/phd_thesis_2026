@@ -39,6 +39,7 @@
 %------------------------------
 \usepackage{amsmath} 		% mathematical environments and commands
 \usepackage{amssymb}		% mathematical symbols
+\usepackage{amsthm}			% theorem environment
 \usepackage[
 	makeroom				% extend equation appropriately
 ]{cancel}  					% for elimating arrows in equations
@@ -76,7 +77,7 @@ version=4					% use version X of the package
 \usepackage{footnote} 		% footnotes in floats
 \usepackage[
 	framemethod=TikZ		% use TikZ for frames
-]{mdframed} 				% frames, e.g. for environments
+]{mdframed} 				% frames, e.g. for environments, MUST BE LOADED AFTER THE AMSTH PACKAGE
 \usepackage[
 	all						% sets widow and orphan penalties for the whole document
 ]{nowidow}					% widows and orphans
@@ -128,7 +129,7 @@ version=4					% use version X of the package
 \usepackage{scrhack}		% package to achieve full compability between KOMA and lstlistings
 
 %------------------------------
-% HYPERREF
+% HYPERREF - USUALLY MUST BE LOADED LAST
 %------------------------------
 %\usepackage{hyperref}		% is loaded by the pdfx package automatically
 \usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity, if this is not necessary: remove the pdfx package and simply use hyperref
