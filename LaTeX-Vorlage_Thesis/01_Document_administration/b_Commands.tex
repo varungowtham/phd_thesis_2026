@@ -5,10 +5,42 @@
 {\Large\begin{quote}\begin{center}\begin{em}}
 {\par\end{em}\end{center}\end{quote}}
 
-\theoremstyle{definition}		% definition via amsth package
-\newmdtheoremenv[
+\newtheoremstyle{mytheoremstyle}	% own theorem style
+{\topsep}   
+{\topsep}   
+{\itshape}  
+{0pt}       
+{\bfseries} 
+{}         
+{5pt plus 1pt minus 1pt} 
+{\thmname{#1} \thmnumber{#2} \thmnote{\ (#3)}:}
+
+\theoremstyle{mytheoremstyle}		% definition via amsthm package
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{remark}{Remark}[chapter]
+
+\newmdtheoremenv[					% theorem environment
   linecolor=black,
-  roundcorner=0pt,
+  roundcorner=2pt,
+  linewidth=2pt
+]{theorem_env}{Theorem}[chapter]
+
+\newmdtheoremenv[					% lemma environment
+  linecolor=blue,
+  roundcorner=2pt,
+  linewidth=1pt
+]{lemma_env}{Lemma}[chapter]
+
+\newmdtheoremenv[					% remark environment
+  linecolor=red,
+  roundcorner=2pt,
+  linewidth=0.5pt
+]{remark_env}{Remark}[chapter]
+
+\newmdtheoremenv[					% definition environment
+  linecolor=black,
+  roundcorner=2pt,
   linewidth=1pt
 ]{definition}{Definition}[chapter]
 
@@ -122,6 +154,8 @@ urlseen = {last access},
 % CODE
 %------------------------------
 \renewcommand{\lstlistingname}{Code}	% rename listing in appendix
+\renewcommand{\listalgorithmcfname}{List of Algorithms} % changes the name of the list of algorithms in the table of contents
+\SetAlgoSkip{bigskip}			% vertical space between text and algorithm
 
 %------------------------------
 % HYPERREF

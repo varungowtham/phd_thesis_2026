@@ -4,6 +4,7 @@
 *.bcf
 *.blg
 *.ilg
+*.loa
 *.lof
 *.log
 *.lot

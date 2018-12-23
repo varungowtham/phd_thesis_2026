@@ -8,7 +8,7 @@
 			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed)
 			\item change the necessary entries in meta.tex (i.e. your name, matriculation number, etc.)
 			\item add your own .bib file for your references or use the present one
-			\item check whether biblatex and makeindex were set up correctly and are operational (see Sections \ref{subsec:literature} and \ref{subsec:makeindex})
+			\item check whether biblatex and makeindex were set up correctly whether they are operational (see Sections \ref{subsec:literature} and \ref{subsec:makeindex})
 			\item set the language of the document (see Section \ref{sec:language})
 			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content
 			\item start writing your thesis - good luck!
@@ -251,7 +251,9 @@
 
 		The language of the list of symbols is chosen via the option german. This also affects the entry in the table of contents. If the thesis is written in English, the option german can be removed.
 
-		The list of abbreviations must be changed in the respective file f\_abbrevi\-ations.tex as there is no package option available. The entry in the table of contents is changed in the same file.
+		The name list of abbreviations must be changed in the respective file f\_abbrevi\-ations.tex as there is no package option available. The entry in the table of contents is changed in the same file.
+		
+		The name list of algorithms must be changed in the file b\_Commands.tex with the \verb+\listalgorithmcfname+ command (it is already there, just search for it) as there is no package option available. It is automatically added to the table of contentes using the package option \verb+dotocloa+.
 
 		If the language is English, it is recommended to change the output decimal marker  for SI units (siunitx package) to a dot. This can be changed in the a\_Packages.tex file where the siunitx package is loaded.
 %------------------------------
@@ -288,17 +290,50 @@ Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$.
 			\begin{equation}
 				a=b.\label{eq:template_equation}
 			\end{equation}							
-		\subsection{Theorems/Definitions/Algorithms}	
-			All of those can be defined using the amsth package in combination with the mdframed package for the frame. Use the protected space \textasciitilde{} between Def. ~and \verb+\ref+. An exemplary Definition is given in Def.~\ref{def:template_definition}. Equation~\ref{eq:template_equation_in_env} can also be referenced.
-			
-			Other environments, e.g.~for algorithms, can easily be added in the b\_Commands.tex file and get their own look.
-			\begin{definition}[Stiff DAE systems]
-  				This is a definition. It defines itself.\label{def:template_definition}
-  				\begin{equation}
-  				c = \infty\label{eq:template_equation_in_env}
-  				\end{equation}
-			\end{definition}	
-			\cleardoublepage					
+		\subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}	
+			All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
+			\paragraph*{Theorems:} Theorems can be defined using the amsthm package in combination with the mdframed package for a possible frame. An exemplary Theorem is given in Theorem~\ref{thm:template_theorem}.
+				\begin{theorem_env}
+					Let $f$ be a function whose derivative exists in every point, then $f$ is 
+a continuous function.\label{thm:template_theorem}
+				\end{theorem_env}			
+			\paragraph*{Lemmas:} Lemmas can be defined using the amsthm package in combination with the mdframed package for a possible frame. An exemplary Lemma is given in Lemma~\ref{lem:template_lemma}.
+				\begin{lemma_env}
+					Given two line segments whose lengths are $a$ and $b$, respectively, there is a real number $r$ such that $b=ra$.\label{lem:template_lemma}
+				\end{lemma_env}
+ 			\paragraph*{Proofs:} Proofs can be defined using the amsthm package. They are typically not numerated as they follow a certain Theorem or Lemma.
+				\begin{proof}
+					To prove it by contradiction, try and assume that the statemenet is false, proceed from there, and at some point, you will arrive at a contradiction.\label{pro:template_proof}
+				\end{proof}	
+			\paragraph*{Remarks:} Remarks can be defined using the amsthm package in combination with the mdframed package for a possible frame. An exemplary Remark is given in Remark~\ref{rem:template_remark}.	
+				\begin{remark_env}
+					This statement is true, I guess.\label{rem:template_remark}
+				\end{remark_env}
+			\paragraph*{Definitions:} Definitions can be defined using the amsthm package in combination with the mdframed package for a possible frame. An exemplary Definition is given in Def.~\ref{def:template_definition}. Equation~\ref{eq:template_equation_in_env} can also be referenced.		
+				\begin{definition}
+  					This is a definition. It defines itself.\label{def:template_definition}
+  					\begin{equation}
+  						c = \infty\label{eq:template_equation_in_env}
+  					\end{equation}
+				\end{definition}								
+			\paragraph*{Algorithms:} Algorithms can be display using the algorithm2e package. An example is shown in Alg.~\ref{alg:template_algorithm}.\\
+				\begin{algorithm}[H]
+					\SetAlgoLined
+					\KwData{this text}
+					\KwResult{how to write algorithm}
+					initialization\;
+					\While{not at end of this document}{
+						read current\;
+						\eIf{understand}{
+							go to next section\;
+							current section becomes this one\;
+						}{
+							go back to the beginning of current section\;
+						}
+					}
+					\caption{How to write algorithms.}\label{alg:template_algorithm}
+				\end{algorithm}								
+				\cleardoublepage					
 %------------------------------
 % SEC: SECTION HEADER EXAMPLE
 %------------------------------			

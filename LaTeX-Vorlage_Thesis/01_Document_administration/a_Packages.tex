@@ -2,9 +2,9 @@
 % DOCUMENT AND ENCODING
 %------------------------------
 \usepackage[
-	ngerman,				% DEFAULT language
-	english,				% included language
-]{babel} 					% language package
+	ngerman,				% new german language	
+	english,				% english language	
+]{babel} 					% language package, second language is DEFAULT
 \usepackage[
 	nodayofweek				% do not print day of week with \today command
 ]{datetime}					% package for dates
@@ -67,6 +67,11 @@ version=4					% use version X of the package
 %------------------------------
 % TEXT
 %------------------------------
+\usepackage[
+	algochapter,			% counter includes the chapter	
+	dotocloa,				% add list of algorithms to table of contents
+	ruled,					% rules are added
+]{algorithm2e}				% for displaying algorithms
 \usepackage{blindtext}		% possibility to easily add blindtext
 \usepackage[
 	font={small,it},		% write caption small and italic
