@@ -5,7 +5,9 @@
 {\Large\begin{quote}\begin{center}\begin{em}}
 {\par\end{em}\end{center}\end{quote}}
 
-\newtheoremstyle{mytheoremstyle}	% own theorem style
+\SetAlgoSkip{bigskip}			% vertical space between text and algorithm
+
+\newtheoremstyle{mytheoremstyle}% own theorem style
 {\topsep}   
 {\topsep}   
 {\itshape}  
@@ -15,30 +17,30 @@
 {5pt plus 1pt minus 1pt} 
 {\thmname{#1} \thmnumber{#2} \thmnote{\ (#3)}:}
 
-\theoremstyle{mytheoremstyle}		% definition via amsthm package
+\theoremstyle{mytheoremstyle}	% definition via amsthm package
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
 \newtheorem{remark}{Remark}[chapter]
 
-\newmdtheoremenv[					% theorem environment
+\newmdtheoremenv[				% theorem environment
   linecolor=black,
   roundcorner=2pt,
   linewidth=2pt
 ]{theorem_env}{Theorem}[chapter]
 
-\newmdtheoremenv[					% lemma environment
+\newmdtheoremenv[				% lemma environment
   linecolor=blue,
   roundcorner=2pt,
   linewidth=1pt
 ]{lemma_env}{Lemma}[chapter]
 
-\newmdtheoremenv[					% remark environment
+\newmdtheoremenv[				% remark environment
   linecolor=red,
   roundcorner=2pt,
   linewidth=0.5pt
 ]{remark_env}{Remark}[chapter]
 
-\newmdtheoremenv[					% definition environment
+\newmdtheoremenv[				% definition environment
   linecolor=black,
   roundcorner=2pt,
   linewidth=1pt
@@ -76,6 +78,8 @@
 }
 \renewcommand{\tablename}{Tab.} 
 
+\renewcommand{\listalgorithmcfname}{List of Algorithms} % changes the name of the list of algorithms in the table of contents
+
 \renewcommand{\labelenumi}{\alph{enumi})} 	% numeration of numeric environments
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
@@ -84,7 +88,7 @@
 % a.a.a)
 
 \setlist[1]{labelindent=\parindent}	% labels are indented by this length
-\setlist[itemize,1]{label={-}}		% item environments use a - for itemizing
+\setlist[itemize,1]{label={--}}		% item environments use a - for itemizing
 
 %------------------------------
 % NEW UNITS
@@ -97,8 +101,8 @@
 % REFERENCES AND CITATIONS
 %------------------------------
 \setlength\bibitemsep{0.5\baselineskip}	% distance between two references
-\setlength{\bibhang}{5ex}			% indent below first line of reference
-\DeclareFieldFormat[				% no quotation marks in citetitle
+\setlength{\bibhang}{5ex}		% indent below first line of reference
+\DeclareFieldFormat[			% no quotation marks in citetitle
 	article,
 	inbook,
 	incollection,
@@ -107,7 +111,7 @@
 	thesis,
 	unpublished
 ]{citetitle}{#1\midsentence\isdot}						
-\DeclareFieldFormat[				% no quotation marks in title
+\DeclareFieldFormat[			% no quotation marks in title
 	article,
 	inbook,
 	incollection,
@@ -117,10 +121,18 @@
 	unpublished
 ]{title}{#1\midsentence\isdot} 	
 \renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year	
-\DeclareFieldFormat{pages}{#1}		% no S. or pp. before pages
-\DefineBibliographyStrings{english}{phdthesis = {Dissertation}}	% Name dissertations Dissertations entry type phdthesis
-\DefineBibliographyStrings{ngerman}{phdthesis = {Dissertation}}
-\renewbibmacro{in:}{%				% suppress in: before name of journal, book, etc.
+\DeclareFieldFormat{pages}{#1}	% no S. or pp. before pages
+\DefineBibliographyStrings{english}{phdthesis = {\itshape Dissertation}}					% Name dissertations Dissertations for entry type phdthesis
+\DefineBibliographyStrings{ngerman}{phdthesis = {\itshape Dissertation}}
+\DefineBibliographyStrings{english}{% for backreferencing in list of references
+  backrefpage = {cit. on p.},	
+  backrefpages = {cit. on pp.},
+}
+\DefineBibliographyStrings{ngerman}{%
+  backrefpage = {zit. auf S.},	
+  backrefpages = {zit. auf den S.},	
+}
+\renewbibmacro{in:}{%			% suppress in: before name of journal, book, etc.
   \ifboolexpr{%
      test {\ifentrytype{article}}%
      or
@@ -148,14 +160,12 @@ urlseen = {last access},
 %------------------------------
 % INTERNET
 %------------------------------
-\renewcommand*{\UrlFont}{\normalfont}
+\renewcommand*{\UrlFont}{\upshape}
 
 %------------------------------
 % CODE
 %------------------------------
 \renewcommand{\lstlistingname}{Code}	% rename listing in appendix
-\renewcommand{\listalgorithmcfname}{List of Algorithms} % changes the name of the list of algorithms in the table of contents
-\SetAlgoSkip{bigskip}			% vertical space between text and algorithm
 
 %------------------------------
 % HYPERREF

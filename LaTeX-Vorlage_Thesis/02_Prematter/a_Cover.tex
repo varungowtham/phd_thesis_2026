@@ -1,2 +1,2 @@
 % if it is a dissertatoin include the dissertation cover, otherwise include the B/M thesis cover
-\ifthenelse{\boolean{type}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_BA_MA}}
+\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_BA_MA}}

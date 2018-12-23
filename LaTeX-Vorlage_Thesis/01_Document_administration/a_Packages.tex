@@ -94,13 +94,15 @@ version=4					% use version X of the package
 \usepackage{xcolor}			% colors are added
 
 %------------------------------
-% References
+% REFERENCES
 %------------------------------
 \usepackage[
 	backref=true,			% backref to page with citation in references
+	backrefstyle=three,		% shorten the number of displayed pages, see biblax documentation
 	bibencoding=utf8,		% .bib file is utf-8 encoded
 	citestyle=authoryear,	% citation stlye in text
 	defernumbers=true,		% correct numbering for numerical references with multiple lists of references
+	date=year,				% only print the year in all references
 	doi=true,				% print doi in references
 	giveninits=true,		% abbreviate first names to initials
 	hyperref=true,			% use hyperref

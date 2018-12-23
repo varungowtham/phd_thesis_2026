@@ -48,7 +48,7 @@
 %------------------------------
 % PREMATTER
 %------------------------------
-	\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/a_Dedication.tex}\cleardoublepage}{}				% Only for dissertations: decication (can also be used for a B/M thesis)
+	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication.tex}\cleardoublepage}{}				% Only for dissertations: decication (can also be used for a B/M thesis)
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
 \end{spacing}
@@ -56,7 +56,7 @@
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
 \cleardoublepage
-\ifthenelse{\boolean{type}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}				% ONLY for dissertations: list of publications (can also be removed for a B/M thesis)
+\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}				% ONLY for dissertations: list of publications (can also be removed for a B/M thesis)
 %------------------------------
 % LISTS OF...
 %------------------------------

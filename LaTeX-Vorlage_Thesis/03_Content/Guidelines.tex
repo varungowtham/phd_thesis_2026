@@ -66,7 +66,7 @@
 				\item a\_Cover.tex
 				\begin{itemize}
 					\item creates the cover page
-					\item loads either a\_Cover\_BA\_MA.tex (cover of a bachelor/master thesis) or a\_Cover\_Diss.tex (cover of a dissertation), depending on the value of type set in c\_Meta.tex
+					\item loads either a\_Cover\_BA\_MA.tex (cover of a bachelor/master thesis) or a\_Cover\_Diss.tex (cover of a dissertation), depending on the value of \verb+isDiss+ set in c\_Meta.tex
 				\end{itemize}
 				\item b\_Declaration.tex
 				\begin{itemize}
@@ -165,7 +165,7 @@
 			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the pdfx package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018}. The output is shown in Fig.~\ref{fig:pdfa}.
 			\begin{figure}
 			\centering
-			\includegraphics[width=0.8\linewidth]{PDFA}
+			\includegraphics[width=\linewidth]{PDFA}
 			\caption[PDF/A validation]{PDF/A validation on \url{https://conversion.ub.tu-berlin.de/}}\label{fig:pdfa}
 			\end{figure}
 %------------------------------
@@ -316,7 +316,7 @@ a continuous function.\label{thm:template_theorem}
   						c = \infty\label{eq:template_equation_in_env}
   					\end{equation}
 				\end{definition}								
-			\paragraph*{Algorithms:} Algorithms can be display using the algorithm2e package. An example is shown in Alg.~\ref{alg:template_algorithm}.\\
+			\paragraph*{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in Alg.~\ref{alg:template_algorithm}.\\
 				\begin{algorithm}[H]
 					\SetAlgoLined
 					\KwData{this text}
