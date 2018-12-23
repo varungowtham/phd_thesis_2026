@@ -249,11 +249,11 @@
 	\section{Language: English or German?}\label{sec:language}
 		The language of this document is set with the babel package. The order of the loaded languages determines the default language. Usually, ngerman is default (and hence the \emph{second}) language. The babel package automatically sets the right names for Tables and Figures and provides the correct hyphenation. In case the thesis is written in English, the order of the languages when loading the babel package must be changed.
 
-		The language of the list of symbols is chosen via the option german. This also affects the entry in the table of contents. If the thesis is written in English, the option german can be removed.
+		The language of the list of symbols is chosen via the option german in the nomentbl package. This also affects the entry in the table of contents. If the thesis is written in English, the option german can be removed.
 
 		The name list of abbreviations must be changed in the respective file f\_abbrevi\-ations.tex as there is no package option available. The entry in the table of contents is changed in the same file.
 		
-		The name list of algorithms must be changed in the file b\_Commands.tex with the \verb+\listalgorithmcfname+ command (it is already there, just search for it) as there is no package option available. It is automatically added to the table of contentes using the package option \verb+dotocloa+.
+		The language of the list of algorithms is chosen via the option german in the algorithmic2e package. This also affects the entry in the table of contents. If the thesis is written in English, the option german can be removed.
 
 		If the language is English, it is recommended to change the output decimal marker  for SI units (siunitx package) to a dot. This can be changed in the a\_Packages.tex file where the siunitx package is loaded.
 %------------------------------

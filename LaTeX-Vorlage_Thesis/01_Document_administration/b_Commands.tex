@@ -78,7 +78,10 @@
 }
 \renewcommand{\tablename}{Tab.} 
 
-\renewcommand{\listalgorithmcfname}{List of Algorithms} % changes the name of the list of algorithms in the table of contents
+\addtotoclist[algorithm2e]{loa}
+\setuptoc{loa}{totoc}
+\newcommand*{\listofloaname}{\listalgorithmcfname}
+\renewcommand{\listofalgorithms}{\listoftoc{loa}}
 
 \renewcommand{\labelenumi}{\alph{enumi})} 	% numeration of numeric environments
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
