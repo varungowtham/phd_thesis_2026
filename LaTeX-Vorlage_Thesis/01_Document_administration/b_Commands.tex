@@ -78,6 +78,9 @@
 }
 \renewcommand{\tablename}{Tab.} 
 
+\addto\captionsenglish{\renewcommand{\nomname}{List of Symbols}}						% english name of list of symbols
+
+\addto\captionsngerman{\SetAlgorithmName{Algorithm}{Algorithm}{Algorithmenverzeichnis}}	% german name of list of algorithms
 \addtotoclist[algorithm2e]{loa}
 \setuptoc{loa}{totoc}
 \newcommand*{\listofloaname}{\listalgorithmcfname}
@@ -103,6 +106,7 @@
 %------------------------------
 % REFERENCES AND CITATIONS
 %------------------------------
+\renewcaptionname{english}{\bibname}{References}
 \setlength\bibitemsep{0.5\baselineskip}	% distance between two references
 \setlength{\bibhang}{5ex}		% indent below first line of reference
 \DeclareFieldFormat[			% no quotation marks in citetitle
