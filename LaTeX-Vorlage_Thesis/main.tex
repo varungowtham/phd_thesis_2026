@@ -68,16 +68,15 @@
 	\listoffigures 				% make list of figures
 	\cleardoublepage
 	\listoftables 				% make list of tables
-	\cleardoublepage	
+	\cleardoublepage
+	\listofalgorithms 			% make list of algorithms
+	\cleardoublepage			
 	\include{02_Prematter/e_Nomenclature} % include all symbols in nomenclature
 	\markboth{}{\nomname}  		% mark both headers with nomenclature name
 	\printnomenclature 			% make list of symbols
 	\cleardoublepage
 	\input{02_Prematter/f_Abbreviations}
-	\cleardoublepage
-	\listofalgorithms 			% make list of algorithms
-	%\addcontentsline{toc}{chapter}{List of Algorithms}	% necessary as the package option dotocloa is not compatible with KOMA
-	\cleardoublepage		
+	\cleardoublepage	
 \end{spacing}
 %------------------------------
 % TEXT

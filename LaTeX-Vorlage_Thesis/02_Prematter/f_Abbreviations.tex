@@ -1,10 +1,10 @@
-% English
-%\chapter*{List of Abbreviations} 
-%\addcontentsline{toc}{chapter}{List of Abbreviations}
-
-% Deutsch
-\chapter*{Abkürzungsverzeichnis}
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\iflanguage{english}{
+	\chapter*{List of Abbreviations}
+	\addcontentsline{toc}{chapter}{List of Abbreviations}
+	}{\iflanguage{ngerman}{
+		\chapter*{Abkürzungsverzeichnis}
+		\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}}{}
+	}
 
 %\renewcommand{\aclabelfont}[1]{\normalfont{\normalsize{#1}}\hfill}	% if this is uncommented, the labels are not printed bold
 
