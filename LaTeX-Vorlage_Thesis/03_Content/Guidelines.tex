@@ -1,4 +1,4 @@
-\chapter{Guidelines}
+\chapter{Guidelines}\label{ch:styleguide}
 %------------------------------
 % SEC: FIRST STEPS
 %------------------------------
@@ -327,7 +327,28 @@ a continuous function.\label{thm:template_theorem}
 						}
 					}
 					\caption{How to write algorithms}\label{alg:template_algorithm}
-				\end{algorithm}								
+				\end{algorithm}	
+			\subsection{Autorefs}		
+				The \verb+hyperref+ package also supplies an \verb+\autoref+ command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to worry what kind of float is referenced. As stated above, at the beginning of a sentence, the long version of an item should be used (the \verb+\Autoref{label}+ command was defined for this purpose):
+				\begin{itemize}
+					\begin{otherlanguage}{ngerman}
+					\item See \autoref{ch:styleguide}. \Autoref{ch:styleguide} shows that \dots 
+					\item See \autoref{sec:templates}. \Autoref{sec:templates} shows that \dots 
+					\item See \autoref{subsec:makeindex}. \Autoref{subsec:makeindex} shows that \dots 										
+					\item See \autoref{fig:template_figure}. \Autoref{fig:template_figure} shows that \dots  
+					\item See \autoref{tab:template_table}. \Autoref{tab:template_table} shows that \dots
+					\item See \autoref{eq:template_equation}.  \Autoref{eq:template_equation} shows that \dots 
+					\end{otherlanguage}
+					\item change language \dots 
+					\begin{otherlanguage}{english}
+					\item See \autoref{ch:styleguide}. \Autoref{ch:styleguide} shows that \dots 
+					\item See \autoref{sec:templates}. \Autoref{sec:templates} shows that \dots 
+					\item See \autoref{subsec:makeindex}. \Autoref{subsec:makeindex} shows that \dots 										
+					\item See \autoref{fig:template_figure}. \Autoref{fig:template_figure} shows that \dots  
+					\item See \autoref{tab:template_table}. \Autoref{tab:template_table} shows that \dots
+					\item See \autoref{eq:template_equation}.  \Autoref{eq:template_equation} shows that \dots 
+					\end{otherlanguage}				
+				\end{itemize}									
 				\cleardoublepage					
 %------------------------------
 % SEC: SECTION HEADER EXAMPLE

@@ -12,7 +12,14 @@
 %-----------------------------
 
 
-
+%-----------------------------
+% BOOLEAN FOR DECISION B/M THESIS OR DISSERTATION
+%-----------------------------
+\newboolean{isDiss}
+% Options:
+% true: Dissertation
+% false: Bachelor/Master thesis
+\setboolean{isDiss}{false}
 %-----------------------------
 % MUST BE CHANGED BY THE USER
 %-----------------------------
@@ -38,12 +45,3 @@
 \newcommand{\firstreviewer}{\mysupervisor}
 \newcommand{\secondreviewer}{Prof.~Dr.-Ing.~Hans-Georg Wichtig}
 \newcommand{\chairman}{Prof.~Dr.-Ing.~habil.~Martina Superwichtig}
-
-%-----------------------------
-% BOOLEAN FOR DECISION B/M THESIS OR DISSERTATION
-%-----------------------------
-\newboolean{isDiss}
-% Options:
-% true: Dissertation
-% false: Bachelor/Master thesis
-\setboolean{isDiss}{false}
