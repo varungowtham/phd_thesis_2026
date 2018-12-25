@@ -21,28 +21,43 @@
 {5pt plus 1pt minus 1pt} 
 {\thmname{#1} \thmnumber{#2} \thmnote{\ (#3)}:}
 
+\newcommand{\theoremname}{}
+\newcommand{\lemmaname}{}
+\newcommand{\remarkname}{}
+\iflanguage{english}{
+	\renewcommand{\theoremname}{Theorem}
+	\renewcommand{\lemmaname}{Lemma}
+	\renewcommand{\remarkname}{Remark}
+	}{\iflanguage{ngerman}{
+		\renewcommand{\theoremname}{Satz}
+		\renewcommand{\lemmaname}{Hilfssatz}
+		\renewcommand{\remarkname}{Bemerkung}
+	}{}
+	}
+
+
 \theoremstyle{mytheoremstyle}	% definition via amsthm package
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{remark}{Remark}[chapter]
+\newtheorem{theorem}{\theoremname}[chapter]
+\newtheorem{lemma}{\lemmaname}[chapter]
+\newtheorem{remark}{\remarkname}[chapter]
 
 \newmdtheoremenv[				% theorem environment
   linecolor=black,
   roundcorner=2pt,
   linewidth=2pt
-]{theorem_env}{Theorem}[chapter]
+]{theoremenv}{\theoremname}[chapter]
 
 \newmdtheoremenv[				% lemma environment
   linecolor=blue,
   roundcorner=2pt,
   linewidth=1pt
-]{lemma_env}{Lemma}[chapter]
+]{lemmaenv}{\lemmaname}[chapter]
 
 \newmdtheoremenv[				% remark environment
   linecolor=red,
   roundcorner=2pt,
   linewidth=0.5pt
-]{remark_env}{Remark}[chapter]
+]{remarkenv}{\remarkname}[chapter]
 
 \newmdtheoremenv[				% definition environment
   linecolor=black,
@@ -67,7 +82,7 @@
 \renewcommand{\figurename}{Abb.}% changes german figure caption to Abb. chapter.number
 \renewcommand{\tablename}{Tab.} % changes german table caption to Tab. chapter.number
 \SetAlgorithmName{Algorithmus}{Algorithmus}{Algorithmenverzeichnis}	% german name of list of algorithms
-\renewcommand{\nomname}{Symbolverzeichnis}	% german name of list of symbols			
+\renewcommand{\nomname}{Symbolverzeichnis}	% german name of list of symbols		
 }
 
 %% english caption redefinitions
@@ -82,19 +97,29 @@
 \renewcommand{\listofalgorithms}{\listoftoc{loa}}
 
 %% autoref german
-\addto\extrasngerman{%
-\def\chapterautorefname{Kap.}%
-\def\sectionautorefname{Abschn.}%
-\def\subsectionautorefname{Abschn.}%
-\def\figureautorefname{Abb.}%
-\def\tableautorefname{Tab.}%
+\addto\extrasngerman{
+\def\chapterautorefname{Kap.}
+\def\sectionautorefname{Abschn.}
+\def\subsectionautorefname{Abschn.}
+\def\figureautorefname{Abb.}
+\def\tableautorefname{Tab.}
+\def\theoremenvautorefname{Satz}
+\def\lemmaenvautorefname{Hilfssatz}
+\def\remarkenvautorefname{Bem.}
+\def\definitionautorefname{Def.}
+\def\algorithmautorefname{Alg.}
 \def\equationautorefname~#1\null{Gl.~(#1)\null}
-\def\chapterautorefnamelong{Kapitel}%
-\def\sectionautorefnamelong{Abschnitt}%
-\def\subsectionautorefnamelong{Abschnitt}%
-\def\figureautorefnamelong{Abbildung}%
-\def\tableautorefnamelong{Tabelle}%
+\def\chapterautorefnamelong{Kapitel}
+\def\sectionautorefnamelong{Abschnitt}
+\def\subsectionautorefnamelong{Abschnitt}
+\def\figureautorefnamelong{Abbildung}
+\def\tableautorefnamelong{Tabelle}
 \def\equationautorefnamelong~#1\null{Gleichung~(#1)\null}
+\def\theoremenvautorefnamelong{Theorem}
+\def\lemmaenvautorefnamelong{Hilfssatz}
+\def\remarkenvautorefnamelong{Bemerkung}
+\def\definitionautorefnamelong{Definition}
+\def\algorithmautorefnamelong{Algorithmus}
 }
 
 %% autoref english
@@ -105,12 +130,22 @@
 \def\figureautorefname{Fig.}%
 \def\tableautorefname{Tab.}%
 \def\equationautorefname~#1\null{Eq.~(#1)\null}
+\def\theoremenvautorefname{Theorem}
+\def\lemmaenvautorefname{Lemma}
+\def\remarkenvautorefname{Remark}
+\def\definitionautorefname{Def.}
+\def\algorithmautorefname{Alg.}
 \def\chapterautorefnamelong{Chapter}%
 \def\sectionautorefnamelong{Section}%
 \def\subsectionautorefnamelong{Subsection}%
 \def\figureautorefnamelong{Figure}%
 \def\tableautorefnamelong{Table}%
 \def\equationautorefnamelong~#1\null{Equation~(#1)\null}
+\def\theoremenvautorefnamelong{Theorem}
+\def\lemmaenvautorefnamelong{Lemma}
+\def\remarkenvautorefnamelong{Remark}
+\def\definitionautorefnamelong{Definition}
+\def\algorithmautorefnamelong{Algorithm}
 }
 
 %% autoref at beginning of sentences (long form)
@@ -122,6 +157,11 @@
   \def\figureautorefname~##1\null{\figureautorefnamelong~##1\null}%
   \def\tableautorefname~##1\null{\tableautorefnamelong~##1\null}%
   \def\equationautorefname~##1\null{\equationautorefnamelong~##1\null}%
+  \def\theoremenvautorefname~##1\null{\theoremenvautorefnamelong~##1\null}%
+  \def\lemmaenvautorefname~##1\null{\lemmaenvautorefnamelong~##1\null}%
+  \def\remarkenvautorefname~##1\null{\remarkenvautorefnamelong~##1\null}%
+  \def\definitionautorefname~##1\null{\definitionautorefnamelong~##1\null}%
+  \def\algorithmautorefname~##1\null{\algorithmautorefnamelong~##1\null}%  
   \autoref{#1}%
   \endgroup%
 }

@@ -235,7 +235,7 @@
 
 		In the following, a few examples for the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file.
 		\begin{itemize}
-			\item \parencite{Coker2007}, \textcite{Coker2007}
+			\item \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 			\item \parencite{Abrams1975}, \textcite{Abrams1975}
 			\item \parencite{benzene_nist2017}, \textcite{benzene_nist2017}
 			\item \parencite{Cuda2012}, \textcite{Cuda2012}
@@ -289,22 +289,22 @@ Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$.
 		\subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}	
 			All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
 			\paragraph*{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in Theorem~\ref{thm:template_theorem}.
-				\begin{theorem_env}
+				\begin{theoremenv}\label{thm:template_theorem}
 					Let $f$ be a function whose derivative exists in every point, then $f$ is 
-a continuous function.\label{thm:template_theorem}
-				\end{theorem_env}			
+a continuous function.
+				\end{theoremenv}			
 			\paragraph*{Lemmas:} Lemmas can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Lemma is given in Lemma~\ref{lem:template_lemma}.
-				\begin{lemma_env}
+				\begin{lemmaenv}
 					Given two line segments whose lengths are $a$ and $b$, respectively, there is a real number $r$ such that $b=ra$.\label{lem:template_lemma}
-				\end{lemma_env}
+				\end{lemmaenv}
  			\paragraph*{Proofs:} Proofs can be defined using the \verb+amsthm+ package. They are typically not numerated as they follow a certain Theorem or Lemma.
 				\begin{proof}
 					To prove it by contradiction, try and assume that the statement is false, proceed from there, and at some point, you will arrive at a contradiction.\label{pro:template_proof}
 				\end{proof}	
 			\paragraph*{Remarks:} Remarks can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Remark is given in Remark~\ref{rem:template_remark}.	
-				\begin{remark_env}
-					This statement is true, I guess.\label{rem:template_remark}
-				\end{remark_env}
+				\begin{remarkenv}\label{rem:template_remark}
+					This statement is true, I guess.
+				\end{remarkenv}
 			\paragraph*{Definitions:} Definitions can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Definition is given in Def.~\ref{def:template_definition}. Equation~\ref{eq:template_equation_in_env} can also be referenced.		
 				\begin{definition}[What the definition defines]
   					This is a definition. It defines itself.\label{def:template_definition}
@@ -339,6 +339,11 @@ a continuous function.\label{thm:template_theorem}
 					\item See \autoref{fig:template_figure}. \Autoref{fig:template_figure} shows that \dots  
 					\item See \autoref{tab:template_table}. \Autoref{tab:template_table} shows that \dots
 					\item See \autoref{eq:template_equation}.  \Autoref{eq:template_equation} shows that \dots 
+					\item See \autoref{thm:template_theorem}.  \Autoref{thm:template_theorem} shows that \dots 					
+					\item See \autoref{lem:template_lemma}.  \Autoref{lem:template_lemma} shows that \dots 
+					\item See \autoref{rem:template_remark}.  \Autoref{rem:template_remark} shows that \dots 
+					\item See \autoref{def:template_definition}.  \Autoref{def:template_definition} shows that \dots 
+					\item See \autoref{alg:template_algorithm}.  \Autoref{alg:template_algorithm} shows that \dots
 					\end{otherlanguage}
 					\item change language \dots 
 					\begin{otherlanguage}{english}
@@ -348,6 +353,11 @@ a continuous function.\label{thm:template_theorem}
 					\item See \autoref{fig:template_figure}. \Autoref{fig:template_figure} shows that \dots  
 					\item See \autoref{tab:template_table}. \Autoref{tab:template_table} shows that \dots
 					\item See \autoref{eq:template_equation}.  \Autoref{eq:template_equation} shows that \dots 
+					\item See \autoref{thm:template_theorem}.  \Autoref{thm:template_theorem} shows that \dots 					
+					\item See \autoref{lem:template_lemma}.  \Autoref{lem:template_lemma} shows that \dots 
+					\item See \autoref{rem:template_remark}.  \Autoref{rem:template_remark} shows that \dots 
+					\item See \autoref{def:template_definition}.  \Autoref{def:template_definition} shows that \dots 
+					\item See \autoref{alg:template_algorithm}.  \Autoref{alg:template_algorithm} shows that \dots					
 					\end{otherlanguage}				
 				\end{itemize}	
 			\subsection{Acronyms and Abbreviations}			
