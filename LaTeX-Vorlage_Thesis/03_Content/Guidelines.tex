@@ -126,10 +126,11 @@
 					\item contains the literature
 					\item uses biblatex for the generation of the bibliography
 					\item to make this work, biblatex (instead of bibtex) must be used
-					\item in texmaker, change the command in the preferences for bib(la)tex to (hot key standard is still F11)
+					\item in texmaker (see \autoref{fig:biblatexmakindex}), change the command in the preferences for bib(la)tex to 
 					\begin{verbatim}
 						"C:/path_to/biber.exe" %
 					\end{verbatim}
+					\item in texlive, biber is located in \verb+bin/win32+
 					\item for other \LaTeX editors, please see its respective documentation to find out how to use biblatex there
 					\item if your write your thesis on a Mac or a Linux distribution, the procedure is propably different. If you find out the right instructions, please forward us a brief summary (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})
 				\end{itemize}
@@ -155,14 +156,20 @@
 		\subsection{Makeindex}\label{subsec:makeindex}
 			\begin{itemize}
 				\item to compile the file correctly, makeindex and biblatex are used
-				\item command line for makeindex (integrated in texmaker, hot key standard: F12): 
+				\item command line for makeindex (see \autoref{fig:biblatexmakindex}): 
 				\begin{verbatim}
 					"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls
 				\end{verbatim}
+				\item in texlive, makeindex is located in \verb+bin/win32+
 				\item the necessary mynomentbl.ist file is located in the template folder
 				\item check your tex editor documentation to find out how to run makeindex in another software
 				\item if your write your thesis on a Mac or a Linux distribution, the procedure is propably different. If you find out the right instructions, please forward us a brief summary (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})
 			\end{itemize}
+			\begin{figure}
+			\centering
+			\includegraphics[width=\linewidth]{BiblatexMakeindex}
+			\caption{Setting up biblatex and makeindex in texmaker}\label{fig:biblatexmakindex}
+			\end{figure}			
 		\subsection{Compatibility with PDF/A}
 			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018}. The output is shown in Fig.~\ref{fig:pdfa}.
 			\begin{figure}
@@ -258,9 +265,9 @@
 	\section{Templates}\label{sec:templates}
 		\subsection{Units}
 			Units are very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.\\
-Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. 
+Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. You can also have ranges, e.g.~\SIrange{4}{10}{\kelvin}.
 		\subsection{Figures}
-			A template for a Figure is given in Fig.~\ref{fig:template_figure}. Use the protected space \textasciitilde{} between Fig. ~and \verb+\ref+. Figure~\ref{fig:template_figure} should not be abbreviated at the beginning of a sentence.
+			A template for a Figure is given in Fig.~\ref{fig:template_figure}. Use the protected space \textasciitilde{} between Fig. ~and \verb+\ref+. Figure~\ref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the \verb+\ref+ command is used here. In \autoref{subsec:autorefs}, the \verb+\autoref+ command is introduced.
 			\begin{figure}[tbh]
 				\centering
 				\includegraphics[scale=1]{dbta_logo}
@@ -285,7 +292,11 @@ Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$.
 			An exemplary Equation is given in Eq.~\ref{eq:template_equation}. Use the protected space \textasciitilde{} between Eq. ~and \verb+\ref+. Equation~\ref{eq:template_equation} should not be abbreviated at the beginning of a sentence.
 			\begin{equation}
 				a=b.\label{eq:template_equation}
-			\end{equation}							
+			\end{equation}
+			For important equations, you might want to use the \verb+empheq+ package:
+			\begin{empheq}[box=\fbox]{equation}
+			E = mc^2 \label{eqn:Gleichung}
+    		\end{empheq}							
 		\subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}	
 			All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
 			\paragraph*{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in Theorem~\ref{thm:template_theorem}.
@@ -329,8 +340,8 @@ a continuous function.
 					}
 					\caption{How to write algorithms}\label{alg:template_algorithm}
 				\end{algorithm}	
-			\subsection{Autorefs}		
-				The \verb+hyperref+ package also supplies an \verb+\autoref+ command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to worry what kind of float is referenced. As stated above, at the beginning of a sentence, the long version of an item should be used (the \verb+\Autoref{label}+ command was defined for this purpose):
+			\subsection{Autorefs}\label{subsec:autorefs}	
+				The \verb+hyperref+ package also supplies an \verb+\autoref+ command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, at the beginning of a sentence, the long version of an item should be used (the \verb+\Autoref{label}+ command was defined for this purpose):
 				\begin{itemize}
 					\begin{otherlanguage}{ngerman}
 					\item See \autoref{ch:styleguide}. \Autoref{ch:styleguide} shows that \dots 
@@ -361,7 +372,20 @@ a continuous function.
 					\end{otherlanguage}				
 				\end{itemize}	
 			\subsection{Acronyms and Abbreviations}			
-				New acronyms must typically be explained at their first appearance in the text. The acronym uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely.
+				New acronyms must typically be explained at their first appearance in the text. The acronym uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link them to the List of Abbreviations.
+			\subsection{Chemistry and Chemical Reactions}
+				Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}.
+				\begin{figure}
+					\setatomsep{20pt}
+					\centering
+					\chemnameinit{\chemfig{R-[:30]=[:-30]}}
+					\schemestart
+					\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\chemfig{CO}/\chemfig{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
+\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
+					\schemestop
+					\chemnameinit{}
+					\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference)}\label{fig:template_chemical_reaction}
+\end{figure}			
 				\cleardoublepage					
 %------------------------------
 % SEC: SECTION HEADER EXAMPLE

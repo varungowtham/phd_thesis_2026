@@ -180,9 +180,9 @@
 %------------------------------
 % NEW UNITS
 %------------------------------
-\DeclareSIUnit\torr{Torr}			% defines the unit Torr
+\DeclareSIUnit\torr{Torr}		% defines the unit Torr
 \DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
-\DeclareSIUnit\atm{atm}				% defines the unit atm
+\DeclareSIUnit\atm{atm}			% defines the unit atm
 
 %------------------------------
 % REFERENCES AND CITATIONS
@@ -210,6 +210,7 @@
 ]{title}{#1\midsentence\isdot} 	
 \renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year	
 \DeclareFieldFormat{pages}{#1}	% no S. or pp. before pages
+\DeclareFieldFormat{type}{\itshape #1}	% print bachelor or master thesis in italics
 \DefineBibliographyStrings{english}{phdthesis = {\itshape Dissertation}}					% Name dissertations Dissertations for entry type phdthesis
 \DefineBibliographyStrings{ngerman}{phdthesis = {\itshape Dissertation}}
 \DefineBibliographyStrings{english}{% for backreferencing in list of references
