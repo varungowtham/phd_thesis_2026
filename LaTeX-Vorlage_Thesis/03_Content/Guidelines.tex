@@ -5,9 +5,9 @@
 	\section{First Steps}
 		\begin{itemize}
 			\item \textbf{carefully read this whole chapter}
-			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. Currently, you notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see Section \ref{sec:language}).			
-			\item change the necessary entries in c\_meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable in this file
-			\item check whether biblatex and makeindex were set up correctly (see Section \ref{subsec:biblatexmakeindex})			
+			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. Currently, you notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
+			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable in this file
+			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
 			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a texlive 2017 distribution.
 			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content	
 			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)		
@@ -164,7 +164,7 @@
 			\end{itemize}
 			\myfigure[tbh][1]{BiblatexMakeindex}[]{Setting up biblatex and makeindex in texmaker}[fig:biblatexmakindex]					
 		\subsection{Compatibility with PDF/A}
-			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}. The output is shown in Fig.~\ref{fig:pdfa}. Note that contrary to the descriptions given in the linked document in footnote~\ref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as this package automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
+			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}. The output is shown in \autoref{fig:pdfa}. Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
 			\myfigure[tbh][1]{PDFA}[PDF/A validation]{PDF/A validation on \url{https://conversion.ub.tu-berlin.de/}}[fig:pdfa]
 %------------------------------
 % SEC: GENERAL INFORMATION
@@ -194,7 +194,7 @@
 			\end{itemize}
 			The only correct use of square brackets is shown here for the voltage: [U] = \si{\volt}, i.e.~the unit of the voltage is volt.
 			\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. Furthermore, symbols should be explained in the text after their first appearance. A list of algorithms or other lists can be added if necessary. 
-			\item Figures, Tables, and Equations must be numerated and must be referenced in the text. This is automatically done using the \verb+caption+ package (see section \ref{sec:templates}) and the \verb+\ref+ command. For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template.
+			\item Figures, Tables, and Equations must be numerated and must be referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template.
 			
 			In addition, Figures and Tables must also be explained and discussed in the text.
 			\item Figures should be chosen to support comprehension. Especially, the most important details and relevant labels must be \emph{readable}.
@@ -256,10 +256,12 @@
 			Units are very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.\\
 Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. You can also have ranges, e.g.~\SIrange{4}{10}{\kelvin}.
 		\subsection{Figures}
-			A template for a Figure is given in Fig.~\ref{fig:template_figure}. Use the protected space \textasciitilde{} between Fig. ~and \verb+\ref+. Figure~\ref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the \verb+\ref+ command is used here. In \autoref{subsec:autorefs}, the \verb+\autoref+ command is introduced. For a figure, a short command was set up with the \verb+xparse+ package.
+			A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+ command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+ command. 
+			
+			In addition, a short command for including figures was set up with the \verb+xparse+ package.
 			\myfigure[tbh][1]{dbta_logo}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 		\subsection{Tables}
-			A template for a Table is given in Tab.~\ref{tab:template_table}. Use the protected space \textasciitilde{} between Tab. ~and \verb+\ref+. Table~\ref{tab:template_table} should not be abbreviated at the beginning of a sentence.
+			A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence.
 			\begin{table}[tbh]
 				\centering
 				\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -274,7 +276,7 @@ Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. You can also
 				\end{tabular}
 			\end{table}
 		\subsection{Equations}
-			An exemplary Equation is given in Eq.~\ref{eq:template_equation}. Use the protected space \textasciitilde{} between Eq. ~and \verb+\ref+. Equation~\ref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+ package.
+			An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+ package.
 			\begin{equation}
 				\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
 			\end{equation}
@@ -287,12 +289,12 @@ Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. You can also
     		\end{empheq}							
 		\subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}	
 			All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
-			\paragraph*{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in Theorem~\ref{thm:template_theorem}.
+			\paragraph*{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
 				\begin{theoremenv}[What is theoremed]\label{thm:template_theorem}
 					Let $f$ be a function whose derivative exists in every point, then $f$ is 
 a continuous function.
 				\end{theoremenv}			
-			\paragraph*{Lemmas:} Lemmas can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Lemma is given in Lemma~\ref{lem:template_lemma}.
+			\paragraph*{Lemmas:} Lemmas can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Lemma is given in \autoref{lem:template_lemma}.
 				\begin{lemmaenv}[What needs to be lemma'd]
 					Given two line segments whose lengths are $a$ and $b$, respectively, there is a real number $r$ such that $b=ra$.\label{lem:template_lemma}
 				\end{lemmaenv}
@@ -300,18 +302,18 @@ a continuous function.
 				\begin{proof}[What needs to be proven]
 					To prove it by contradiction, try and assume that the statement is false, proceed from there, and at some point, you will arrive at a contradiction.\label{pro:template_proof}
 				\end{proof}	
-			\paragraph*{Remarks:} Remarks can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Remark is given in Remark~\ref{rem:template_remark}.	
+			\paragraph*{Remarks:} Remarks can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Remark is given in \autoref{rem:template_remark}.	
 				\begin{remarkenv}[What the remarker remarks]\label{rem:template_remark}
 					This statement is true, I guess.
 				\end{remarkenv}
-			\paragraph*{Definitions:} Definitions can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Definition is given in Def.~\ref{def:template_definition}. Equation~\ref{eq:template_equation_in_env} can also be referenced.		
+			\paragraph*{Definitions:} Definitions can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Definition is given in \autoref{def:template_definition}. \Autoref{eq:template_equation_in_env} can also be referenced.		
 				\begin{definition}[What the definition defines]
   					This is a definition. It defines itself.\label{def:template_definition}
   					\begin{equation}
   						c = \infty\label{eq:template_equation_in_env}
   					\end{equation}
 				\end{definition}								
-			\paragraph*{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in Alg.~\ref{alg:template_algorithm}.\\
+			\paragraph*{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.\\
 				\begin{algorithm}[H]
 					\SetAlgoLined
 					\KwData{this text}
