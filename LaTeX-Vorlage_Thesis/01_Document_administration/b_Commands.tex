@@ -72,6 +72,14 @@
 \setcounter{tocdepth}{4}
 
 %------------------------------
+% XPARSE
+%------------------------------
+\NewDocumentCommand{\pder}{ O{} O{} m }{\frac{\partial^{#2}#1}{\partial#3^{#2}}}				% a short command for partial derivatives
+\NewDocumentCommand{\roundbrack}{ m }{\left(#1 \right)} % a short command for round brackets
+\NewDocumentCommand{\squarebrack}{ m }{\left[#1 \right]}% a short command for squared brackets
+\NewDocumentCommand{\myfigure}{O{} O{1} m O{} m O{}}{\begin{figure}[#1]\centering\includegraphics[width=#2\linewidth]{#3}\caption[#4]{#5}\label{#6}\end{figure}}					% a new command to add a figure
+
+%------------------------------
 % TABLES, LISTS, and NUMERATIONS
 %------------------------------
 
@@ -187,7 +195,8 @@
 %------------------------------
 % REFERENCES AND CITATIONS
 %------------------------------
-\renewcaptionname{english}{\bibname}{References}
+\renewcaptionname{english}{\bibname}{List of References}
+\renewcaptionname{ngerman}{\bibname}{Literaturverzeichnis}
 \setlength\bibitemsep{0.5\baselineskip}	% distance between two references
 \setlength{\bibhang}{5ex}		% indent below first line of reference
 \DeclareFieldFormat[			% no quotation marks in citetitle
