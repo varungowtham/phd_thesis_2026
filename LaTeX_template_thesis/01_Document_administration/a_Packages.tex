@@ -66,11 +66,18 @@
 ]{mhchem}					% chemical formulas
 \usepackage{nicefrac}		% makes fractions in lines nicer
 \usepackage[
+	detect-family=true,
+	detect-inline-family=math,
+	exponent-product=\cdot,
 	output-decimal-marker={,}, % decimal marker (german: , and english: .)
+%	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text	
+%	per-mode=symbol-or-fraction,% symbol setting inline, fraction in display math
 	range-phrase={~to~},		% for units 4 to 10 K
-	range-units=single,		% it is 4 -- 10 K and not 4K - 10K
+	range-units=single,		% it is 4 to 10 K and not 4K to 10K
 	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
-	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text
+	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
+	retain-zero-exponent=true,	% no exponent for numbers like 1e0
+	separate-uncertainty=true,
 ]{siunitx}					% formating of SI units
 
 %------------------------------

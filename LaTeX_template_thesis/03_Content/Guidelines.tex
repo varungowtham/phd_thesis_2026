@@ -231,15 +231,16 @@
 
 		In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file.
 		\begin{itemize}
-			\item \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
-			\item \parencite{Abrams1975}, \textcite{Abrams1975}
-			\item \parencite{benzene_nist2017}, \textcite{benzene_nist2017}
-			\item \parencite{Cuda2012}, \textcite{Cuda2012}
+			\item Books: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
+			\item Articles: \parencite{Abrams1975}, \textcite{Abrams1975}
+			\item Online: \parencite{benzene_nist2017}, \textcite{benzene_nist2017}
+			\item Dissertations: \parencite{Cuda2012}, \textcite{Cuda2012}
+			\item Bachelor/Master thesis: \parencite{Hoffmann2015}, \textcite{Hoffmann2015}
 		\end{itemize}
 		These commands are used as
 		\begin{itemize}
-			\item \enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
-			\item \enquote{Thermodynamics are great \parencite{Abrams1975}.}
+			\item \verb+\textcite{bibtexkey}+: \enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
+			\item \verb+\parencite{bibtexkey}+: \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 			\end{itemize}
 %------------------------------
 % SEC: LANGUAGE
@@ -254,7 +255,16 @@
 	\section{Templates}\label{sec:templates}
 		\subsection{Units}
 			Units are very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.\\
-Units can be written as $R=\SI{8.314}{\joule\per\mole\per\kelvin}$. You can also have ranges, e.g.~\SIrange{4}{10}{\kelvin}.
+			\begin{itemize}
+				\item Numbers (\verb+\num{number}+): \num{3.141592653589793}
+				\item Exponentials (\verb+\num{numbere6}+): \num{1.3e6}
+				\item Units (\verb+\si{unit}+): \si{\joule\per\mole\per\kelvin}
+				\item Numbers+units (\verb+\SI{number}{units}+): \SI{8.314}{\joule\per\mole\per\kelvin}
+				\item Ranges (\verb+\SIrange{number1}{number2}{units}+): \SIrange{4}{10}{\kelvin}.
+				\item Uncertainty (\verb+\num{Number(uncertainty)}+): \num{410.33(55)}
+				\item Uncertainty with units (\verb+\SI{Number(uncertainty)}{\unit}+):\\
+				\SI{410.33(55)}{\joule}
+			\end{itemize}
 		\subsection{Figures}
 			A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+ command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+ command. 
 			
