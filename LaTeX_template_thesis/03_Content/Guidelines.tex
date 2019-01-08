@@ -244,22 +244,33 @@
 % SEC: TEMPLATES
 %------------------------------		
 	\section{Templates}\label{sec:templates}
+		This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
 		\subsection{Units}
 			Units are very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.\\
 			\begin{itemize}
 				\item Numbers (\verb+\num{number}+): \num{3.141592653589793}
 				\item Exponentials (\verb+\num{numbere6}+): \num{1.3e6}
-				\item Units (\verb+\si{unit}+): \si{\joule\per\mole\per\kelvin}
-				\item Numbers+units (\verb+\SI{number}{units}+): \SI{8.314}{\joule\per\mole\per\kelvin}
-				\item Ranges (\verb+\SIrange{number1}{number2}{units}+): \SIrange{4}{10}{\kelvin}.
+				\item Units (\verb+\si{\unit}+): \si{\joule\per\mole\per\kelvin}
+				\item Numbers+units (\verb+\SI{number}{\unit}+): \SI{8.314}{\joule\per\mole\per\kelvin}
+				\item Ranges (\verb+\SIrange{number1}{number2}{\unit}+): \SIrange{4}{10}{\kelvin}.
 				\item Uncertainty (\verb+\num{Number(uncertainty)}+): \num{410.33(55)}
 				\item Uncertainty with units (\verb+\SI{Number(uncertainty)}{\unit}+):\\
 				\SI{410.33(55)}{\joule}
 			\end{itemize}
 		\subsection{Figures}
-			A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+ command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+ command. 
-			
-			In addition, a short command for including figures was set up with the \verb+xparse+ package.
+			A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+ command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+ command. In addition, a short command for including figures was set up with the \verb+xparse+ package:
+			\begin{verbatim}
+			\myfigure[opt1][opt2]{arg1}[opt3]{arg2}[opt4]
+			\end{verbatim}
+			Therein,
+			\begin{itemize}
+			\item opt1 is the preferred location of the float, e.g.~tbh
+			\item opt2 is the fraction of the linewidth the figure should cover. It can be a value between 0 and 1
+			\item arg1 is the file name of the figure
+			\item opt3 is the short caption for the List of Figures
+			\item arg2 is the caption of the figure in the text
+			\item opt4 is the label of the figure
+			\end{itemize}
 			\myfigure[tbh][1]{dbta_logo}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 		\subsection{Tables}
 			A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence.
@@ -304,9 +315,6 @@
 			\begin{equation}
 				\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
 			\end{equation}
-%			\begin{equation}
-%			x = \frac{-b \pm \sqrt{b^2 - 4ac} }{2a} ] [ \pi = \int_{-1}^1 \sqrt{1-x^2} dx
-%			\end{equation}
 			For important equations, you might want to use the \verb+empheq+ package:
 			\begin{empheq}[box=\fbox]{equation}
 			E = mc^2 \label{eqn:Gleichung}
