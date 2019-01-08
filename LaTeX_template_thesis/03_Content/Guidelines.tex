@@ -22,8 +22,9 @@
 		\subsection{Main Features}
 			\begin{itemize}
 				\item valid for theses or dissertations
+				\item can be used with online editors, such as Overleaf, as well (see \autoref{subsec:overleaf})
 				\item can be used in German and English
-				\item simple generation of list of symbols for latin, greek, etc.~with the \verb+nomentbl+ package
+				\item simple generation of list of symbols for Latin, Greek, etc.~with the \verb+nomentbl+ package
 				\item simple generation of list of abbreviations with the \verb+acronym+ package
 				\item includes bibliography via biblatex and biber
 				\item includes DOI/ISBN/URL automatically in references
@@ -162,7 +163,12 @@
 				\item check your tex editor documentation to find out how to run biblatex (biber) and makeindex in another software
 				\item if your write your thesis on a Mac or a Linux distribution, the procedure is propably different. If you find out the  instructions, please forward us a brief summary (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})
 			\end{itemize}
-			\myfigure[tbh][1]{BiblatexMakeindex}[]{Setting up biblatex and makeindex in texmaker}[fig:biblatexmakindex]					
+			\myfigure[tbh][1]{BiblatexMakeindex}[]{Setting up biblatex and makeindex in texmaker}[fig:biblatexmakindex]	
+		\subsection{Support for Overleaf (or other online editors)}\label{subsec:overleaf}
+			\begin{itemize}
+				\item this template was successfully tested with Overleaf, an online editor for \LaTeX{} documents\footnote{\url{https://de.overleaf.com/}, January 2019}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX{} distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
+				\item The only necessary change is the support for the \verb+nomentbl+ package. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Hence, Overleaf should compile this file correctly. In some cases, you may have to clear the cache to remove old temporary files, first\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
+			\end{itemize}
 		\subsection{Compatibility with PDF/A}
 			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}. The output is shown in \autoref{fig:pdfa}. Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
 			\myfigure[tbh][1]{PDFA}[PDF/A validation]{PDF/A validation on \url{https://conversion.ub.tu-berlin.de/}}[fig:pdfa]
