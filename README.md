@@ -4,6 +4,7 @@
 
 ## How to clone
 
+- install git on your computer 
 - open a console window
-- cd to the directory you want the folder to be
+- cd to the directory where you want the folder to be
 - type "git clone https://gitlab.tubit.tu-berlin.de/markus.illner/Thesis_template.git"
