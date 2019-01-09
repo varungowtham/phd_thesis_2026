@@ -8,3 +8,11 @@
 - open a console window
 - cd to the directory where you want the folder to be
 - type "git clone https://gitlab.tubit.tu-berlin.de/markus.illner/Thesis_template.git"
+
+## Branches
+
+- master: current template version
+- v1.1: version 1.1 of the template (fallback)
+- developer: version for trying out new stuff
+- template_2016: old template for bachelor/master theses
+- Diss_template_2016: old template for dissertations
