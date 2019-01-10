@@ -213,18 +213,22 @@
 			\begin{itemize}
 				\item to compile the file correctly, biblatex and makeindex are used
 				\item command line for setting up biblatex in texmaker (see \autoref{fig:biblatexmakindex}): 
-					\begin{verbatim}
-						"C:/path_to/biber.exe" %
-					\end{verbatim}	
+					\begin{enumerate}
+						\item Windows:\\ \verb+"C:/path_to/biber.exe" %+
+						\item Linux:\\ \verb+"/usr/path_to/biber" %+
+						\item MacOS:\\ \verb+"/usr/path_to/biber" %.bcf+
+					\end{enumerate}
 				\item in texlive, biber is located in \verb+bin/win32+.
 				\item command line for setting up makeindex in texmaker (see \autoref{fig:biblatexmakindex}): 
-				\begin{verbatim}
-					"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls
-				\end{verbatim}
+					\begin{enumerate}
+						\item Windows:\\ \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+
+						\item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
+						\item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
+					\end{enumerate}				
 				\item in texlive, makeindex is located in \verb+bin/win32+
+				\item Note that the paths for Mac or a Linux distribution have not been verified yet. If the path differs from what is stated here, please forward us a brief summary (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})				
 				\item the necessary mynomentbl.ist file is located in the template folder
 				\item check your tex editor documentation to find out how to run biblatex (biber) and makeindex in another software
-				\item if your write your thesis on a Mac or a Linux distribution, the procedure is propably different. If you find out the  instructions, please forward us a brief summary (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})
 			\end{itemize}
 		\subsection{Compatibility with PDF/A}
 			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
