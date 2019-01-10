@@ -11,7 +11,7 @@
     11pt, 						% font size
     paper=a4, 					% paper format
     BCOR=15mm,					% binding correction
-    bibliography=totoc, 		% refernces in table of contents
+    bibliography=totoc, 		% references in table of contents
     DIV=9,						% page division factor, see KOMA script documentation
     final, 						% status of document
     headings=optiontohead,		% optional argument before chapter or section title appears in the header
@@ -42,12 +42,12 @@
 \begin{spacing}{1}				% one-line spacing here
 	\pagenumbering{gobble}		% turn off page numbering, necessary for correct backreferencing via the biblatex package
 	\pagestyle{empty}
-	\input{02_Prematter/a_Cover}
+	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_BA_MA}}              % include cover for dissertation or thesis
 	\cleardoublepage
 %------------------------------
 % PREMATTER
 %------------------------------
-	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication.tex}\cleardoublepage}{}				% Only for dissertations: decication (can also be used for a B/M thesis)
+	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication}\cleardoublepage}{}				% Only for dissertations: dedication (can also be used for a B/M thesis)
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
 \end{spacing}
@@ -55,7 +55,7 @@
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
 \cleardoublepage
-\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}		% ONLY for dissertations: list of publications (can also be removed for a B/M thesis)
+\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}				% ONLY for dissertations: list of publications (can also be removed for a B/M thesis)
 %------------------------------
 % LISTS OF...
 %------------------------------

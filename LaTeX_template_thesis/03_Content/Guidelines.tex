@@ -8,9 +8,9 @@
 			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. Currently, you notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
 			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable in this file
 			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
-			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a texlive 2017 distribution.
+			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a texlive 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages of this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}
 			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content	
-			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)		
+			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)	
 			\item start writing your thesis - good luck!
 			\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, e.g.~a List of Algorithms, just remove it from the thesis.
 		\end{itemize}
@@ -123,10 +123,10 @@
 		\subsection{02\_Prematter}
 			The following files are located in this folder:
 			\begin{enumerate}
-				\item a\_Cover.tex
+				\item a\_Cover\_Diss.tex and a\_Cover\_BA\_MA.tex
 				\begin{itemize}
 					\item creates the cover page
-					\item loads either a\_Cover\_BA\_MA.tex (cover of a bachelor/master thesis) or a\_Cover\_Diss.tex (cover of a dissertation), depending on the value of \verb+isDiss+ set in c\_Meta.tex
+					\item main.tex loads either a\_Cover\_BA\_MA.tex (cover of a bachelor/master thesis) or a\_Cover\_Diss.tex (cover of a dissertation), depending on the value of \verb+isDiss+ set in c\_Meta.tex
 				\end{itemize}
 				\item b\_Declaration.tex
 				\begin{itemize}
