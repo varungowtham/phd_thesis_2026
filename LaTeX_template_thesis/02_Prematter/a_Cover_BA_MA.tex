@@ -19,26 +19,25 @@
 %------------------------------
 % TITLE AND AUTHOR INFORMATION
 %------------------------------
-\begin{otherlanguage}{ngerman}
 \vfill
 \huge\textbf{\mytitle}\\[1ex]
 \Large\mysubtitle\\[1ex]
 \vfill
 \normalsize
-vorgelegt von\\
+\iflanguage{english}{submitted by}{\iflanguage{ngerman}{vorgelegt von}{}}\\
 \autor
 \vfill
-Matrikelnummer\\
+\iflanguage{english}{Matriculation number}{\iflanguage{ngerman}{Matrikelnummer}{}}\\
 \mymatriculationnumber
 %------------------------------
 % DEPARTMENT AND UNIVERSITY
 %------------------------------
 \vfill	
 \normalsize
-Unter der wissenschaftlichen Leitung von\\
+\iflanguage{english}{Under the scientific supervision of}{\iflanguage{ngerman}{Unter der wissenschaftlichen Leitung von}{}}\\
 \textbf{\mysupervisor}
 \vfill
-Unter der wissenschaftlichen Betreuung von\\
+\iflanguage{english}{Mentored by}{\iflanguage{ngerman}{Unter der wissenschaftlichen Betreuung von}{}}\\
 \textbf{\myadvisor}
 \vfill
 \myplace, \monthname{} \the\year
@@ -47,6 +46,5 @@ Unter der wissenschaftlichen Betreuung von\\
 \myfaculty\\
 \myinstitute\\
 \mydepartment\\
-\end{otherlanguage}
 \end{center}				
 \end{titlepage}
