@@ -21,15 +21,23 @@
 % false: Bachelor/Master thesis
 \setboolean{isDiss}{false}
 %-----------------------------
+% BOOLEAN FOR DECISION MASTER OR BACHELOR THESIS
+%-----------------------------
+\newboolean{isMT}
+% Options:
+% true: Master thesis
+% false: Bachelor thesis
+\setboolean{isMT}{true}
+%-----------------------------
 % MUST BE CHANGED BY THE USER
 %-----------------------------
 \newcommand{\mytitle}{This Is a Very Good Title That Illustrates What This Great Piece of Work Is All About and That Gives an Impression of What a Long Title Looks Like}
 
 % Subtitle English
-%\newcommand{\mysubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ Bachelor/Master of Science (B.Sc./M.Sc.)}
+\newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
 
 % Subtitle German
-\newcommand{\mysubtitle}{Wissenschaftliche Arbeit zur Erlangung des Grades \\ Bachelor/Master of Science (B.Sc./M.Sc.)}
+\newcommand{\mygersubtitle}{Wissenschaftliche Arbeit zur Erlangung des Grades \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
 
 \newcommand{\autor}{First name second name}
 %-----------------------------
