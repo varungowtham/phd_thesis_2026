@@ -9,7 +9,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. Currently, you notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
 			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
-			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a texlive 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages of this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}
+			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}.
 			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content	
 			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)	
 			\item start writing your thesis - good luck!
@@ -52,7 +52,7 @@ The most important style specifications are:
 	\section{General Information}
 		\begin{enumerate}
 			\item the current \enquote{Prüfungsordnung} overrides the following rules if they contradict the \enquote{Prüfungsordnung}. 
-			\item a Master's thesis is a scientific-technical documentation that must satisfy requirements regarding structure and form. It should be precisely formulated and well-written, i.e.~no orthographic or grammar mistakes, etc.
+			\item a thesis is a scientific-technical documentation that must satisfy requirements regarding structure and form. It should be precisely formulated and well-written, i.e.~no orthographic or grammar mistakes, etc.
 			\item the thesis should be logically structured.
 			\item the thesis should present its scientific-technical content while remaining comprehensible. Hence, the author should repeatedly put him- or herself into the position of the reader and evaluate the thesis in this regard.
 			\item the Figure, i.e.~picture, diagram, photo, is preferred to long explanations.
@@ -74,11 +74,11 @@ The most important style specifications are:
 			\end{itemize}
 			The only correct use of square brackets is shown here for the voltage: [U] = \si{\volt}, i.e.~the unit of the voltage is volt.
 			\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. Furthermore, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary. 
-			\item Figures, Tables, and Equations must be numerated and must be referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template.
+			\item figures, tables, and equations must be numerated and must be referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template.
 			
-			In addition, Figures and Tables must also be explained and discussed in the text.
-			\item Figures should be chosen to support comprehension. Especially, the most important details and relevant labels must be \emph{readable}.
-			\item extensive Tables or Figures that are repeatedly referenced in the text should be put in the appendix.
+			In addition, figures and  tables must also be explained and discussed in the text.
+			\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
+			\item extensive tables or figures that are repeatedly referenced in the text should be put in the appendix.
 			\item information or data not generated by the author must always be referenced. Citations/references are used to
 			\begin{itemize}
 				\item document and justify one's own statements,
@@ -104,7 +104,7 @@ The most important style specifications are:
 		\subsection{Main Features}
 			\begin{itemize}
 				\item valid for theses or dissertations
-				\item can be used with online editors, such as Overleaf, as well (see \autoref{subsec:overleaf})
+				\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
 				\item can be used in German and English
 				\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomentbl+ package
 				\item simple generation of List of Abbreviations with the \verb+acronym+ package
@@ -114,7 +114,7 @@ The most important style specifications are:
 		\subsection{Main Document}
 			\begin{itemize}
 				\item is called main.tex
-				\item this document must be executed in \LaTeX
+				\item this document must be compiled in \LaTeX
 			\end{itemize}
 		\subsection{01\_Document\_administration}
 			The following files are located in this folder:
@@ -139,11 +139,11 @@ The most important style specifications are:
 				\begin{itemize}
 					\item defines structure of the List of Symbols
 					\item optional argument defines the class of a symbol (Latin, Greek, \dots)
-					\item makeindex is used for the generation of the List of Symbols. A short instruction how to run makeindex correctly in texmaker is given in \autoref{subsec:biblatexmakeindex}.
+					\item makeindex is used for the generation of the List of Symbols. A short instruction how to run makeindex correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
 				\end{itemize}
 				\item e\_Header\_Footer.tex
 				\begin{itemize}
-					\item defines headers and footer
+					\item defines headers and footers
 				\end{itemize}
 			\end{enumerate} 
 		\subsection{02\_Prematter}
@@ -191,7 +191,7 @@ The most important style specifications are:
 				\end{itemize}
 			\end{enumerate} 
 		\subsection{02a\_Dissertation\_files}
-			This folder contains files that are only needed for dissertations. They are only included if \verb+isDiss+ is set to \verb+true+. Bachelor/Master theses do not have to consider them. However, if you want to dedicate your thesis to someone, you can of course include the dedication. The following files are located in this folder:
+			This folder contains files that are only needed for dissertations. They are included if \verb+isDiss+ is set to \verb+true+. Bachelor/Master theses do not have to consider them. However, if you want to dedicate your thesis to someone, you can of course include the dedication. The following files are located in this folder:
 			\begin{enumerate}
 				\item a\_Dedication.tex
 				\begin{itemize}
@@ -207,7 +207,7 @@ The most important style specifications are:
 			\begin{enumerate}
 				\item 0\_Text.tex
 				\begin{itemize}
-					\item loads all single chapters
+					\item loads all chapters
 				\end{itemize}
 				\item X\_iii.tex 
 				\begin{itemize}
@@ -228,7 +228,7 @@ The most important style specifications are:
 			\begin{enumerate}
 				\item 0\_Appendix.tex
 				\begin{itemize}
-					\item inclues all single appendix chapters 
+					\item loads all appendix chapters 
 				\end{itemize}
 				\item X\_Appendix.tex 
 				\begin{itemize}
@@ -237,7 +237,7 @@ The most important style specifications are:
 				\item a\_CodeLanguageSpecifications
 				\begin{itemize}
 					\item can be used to define a set of keywords and comment commands for a certain programming language
-					\item if you want to apprehend your code in your thesis, you can either copy the code to a lstlistings environment (see example in Appendix/1\_Appendix.tex) or even include your files
+					\item if you want to apprehend your code in your thesis, you can either copy the code to a lstlistings environment (see example in 05\_Appendix/1\_Appendix.tex) or  directly include your files
 					\item more information can be found in the lstlistings documentation 
 				\end{itemize}
 			\end{enumerate}
@@ -245,29 +245,29 @@ The most important style specifications are:
 % SEC: LANGUAGE
 %------------------------------				
 	\section{Language: English or German?}\label{sec:language}
-		The language of this document is set with the \verb+babel+ package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+ package automatically sets the right names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+ package must be changed.\\
+		The language of this document is set with the \verb+babel+ package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+ package automatically sets the localized names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+ package must be changed.\\
 		If the language is English, it is recommended to change the output decimal marker  for SI units (\verb+siunitx+ package) to a period. This can be changed in the a\_Packages.tex file where the \verb+siunitx+ package is loaded.				
 	\section{Dependencies} 
 		\subsection{Biblatex and Makeindex}\label{subsec:biblatexmakeindex}
 			\begin{itemize}
 				\item to compile the file correctly, biblatex and makeindex are used
-				\item command line for setting up biblatex in texmaker (see \autoref{fig:biblatexmakindex}): 
+				\item command line for setting up biblatex in Texmaker (see \autoref{fig:biblatexmakindex}): 
 					\begin{enumerate}
 						\item Windows:\\ \verb+"C:/path_to/biber.exe" %+ \\
-						in texlive, biber is located in \verb+bin/win32+
+						in \TeX Live, biber is located in \verb+bin/win32+
 						\item Linux:\\ \verb+"/usr/path_to/biber" %+
 						\item MacOS:\\ \verb+"/usr/path_to/biber" %.bcf+
 					\end{enumerate}
-				\item command line for setting up makeindex in texmaker (see \autoref{fig:biblatexmakindex}): 
+				\item command line for setting up makeindex in Texmaker (see \autoref{fig:biblatexmakindex}): 
 					\begin{enumerate}
 						\item Windows:\\ \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+ \\
-						in texlive, makeindex is located in \verb+bin/win32+
+						in \TeX Live, makeindex is located in \verb+bin/win32+
 						\item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 						\item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 					\end{enumerate}	
 				\item the necessary mynomentbl.ist file is located in the template folder								
-				\item Note that the paths for Mac or a Linux distribution have not been verified yet. If the path differs from what is stated here, please forward us the corrected instructions (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})				
-				\item check your tex editor documentation to find out how to run biblatex (biber) and makeindex in another software
+				\item Note that the paths for Mac or Linux distributions have not been verified yet. If these path differ from what is stated here, please forward us the corrected instructions (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})				
+				\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in another software
 			\end{itemize}
 		\subsection{Compatibility with PDF/A}
 			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
@@ -275,7 +275,7 @@ The most important style specifications are:
 				\begin{minipage}[t]{0.48\textwidth}
 					\centering
 					\includegraphics[width=\linewidth]{BiblatexMakeindex}
-					\caption[Setting up biblatex and makeindex in texmaker]{Setting up biblatex and makeindex in texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
+					\caption[Setting up biblatex and makeindex in Texmaker]{Setting up biblatex and makeindex in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
 				\end{minipage}
 				\hfill
 				\begin{minipage}[t]{0.48\textwidth}
@@ -287,7 +287,7 @@ The most important style specifications are:
 		\subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 			\begin{itemize}
 				\item this template was successfully tested with Overleaf, an online editor for \LaTeX{} documents\footnote{\url{https://de.overleaf.com/}, January 2019}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX{} distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
-				\item The only necessary change is the support for the \verb+nomentbl+ package. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
+				\item The only dependency Overleaf does not directly support is the \verb+nomentbl+ package. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
 			\end{itemize}					
 %------------------------------
 % SEC: TEMPLATES
@@ -302,8 +302,8 @@ The most important style specifications are:
 				\item Units (\verb+\si{\unit}+): \si{\joule\per\mole\per\kelvin}
 				\item Numbers+units (\verb+\SI{number}{\unit}+): \SI{8.314}{\joule\per\mole\per\kelvin}
 				\item Ranges (\verb+\SIrange{number1}{number2}{\unit}+): \SIrange{4}{10}{\kelvin}.
-				\item Uncertainty (\verb+\num{Number(uncertainty)}+): \num{410.33(55)}
-				\item Uncertainty with units (\verb+\SI{Number(uncertainty)}{\unit}+):\\
+				\item Uncertainty (\verb+\num{number(uncertainty)}+): \num{410.33(55)}
+				\item Uncertainty with units (\verb+\SI{number(uncertainty)}{\unit}+):\\
 				\SI{410.33(55)}{\joule}
 			\end{itemize}
 		\subsection{Figures}
@@ -337,7 +337,7 @@ The most important style specifications are:
 				\end{tabular}
 			\end{table}
 		\subsection{References}\label{subsec:references}
-			In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file.
+			In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file. In addition, biblatex supports editing of the citation style via \TeX and \LaTeX commands. Hence, the tedious editing of bibliography styles (.bst files), which were used with bibtex, is not necessary anymore.
 			\begin{itemize}
 				\item Books: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 				\item Articles: \parencite{Abrams1975}, \textcite{Abrams1975}
@@ -440,7 +440,7 @@ a continuous function.
 					\end{itemize}
 				\end{enumerate}	
 			\subsection{Acronyms and Abbreviations}			
-				New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link them to the List of Abbreviations.
+				New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations.
 			\subsection{Chemistry and Chemical Reactions}
 				Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}.
 				\begin{figure}[tbh]
