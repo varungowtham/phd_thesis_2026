@@ -42,7 +42,7 @@
 \begin{spacing}{1}				% one-line spacing here
 	\pagenumbering{gobble}		% turn off page numbering, necessary for correct backreferencing via the biblatex package
 	\pagestyle{empty}
-	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_BA_MA}}              % include cover for dissertation or thesis
+	\ifthenelse{\boolean{isSG}}{\input{02_Prematter/a_Cover_Styleguide}}{\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_Thesis}}}              % include cover
 	\cleardoublepage
 %------------------------------
 % PREMATTER
