@@ -9,7 +9,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. Currently, you notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
 			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
-			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}.
+			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}. See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
 			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content	
 			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)	
 			\item start writing your thesis - good luck!
@@ -40,7 +40,7 @@ The most important style specifications are:
 		\item \LaTeX: the given settings for BCOR and DIV may not be changed 
 	\end{itemize} 
 	\item maximum number of pages (only content, excluding lists of \dots and appendix): 80 pages (bachelor thesis), 100 pages (master thesis)
-	\item the layout of the front page is fixed and must not be changed, neither in LaTeX{} nor in Word.  
+	\item the layout of the front page is fixed and must not be changed, neither in \LaTeX{} nor in Word.  
 	\item of courses, loading additional packages in \LaTeX{} for functionality is fine
 \end{itemize}
 \paragraph*{Attention:} If these specifications are (partially) ignored, it will have an impact on the evaluation.
@@ -283,7 +283,28 @@ The most important style specifications are:
 					\includegraphics[width=\linewidth]{PDFA}
 					\caption{PDF/A validation}\label{fig:pdfa}
 				\end{minipage}	
-			\end{figure}		
+			\end{figure}	
+		\subsection{Updating Packages in \TeX Live and MiK\TeX}\label{subsec:update_packages}
+			As stated above, compilation problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility on Windows operating systems to automatically check for updates of packages when they are included in a \LaTeX{} document. Ubuntu seems to offer such a possibility.
+			
+			In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
+			\paragraph*{\TeX Live:} In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \verb+texlive/year/bin/win32+. In this folder, you find a file called tlmgr-gui.exe. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
+			\paragraph*{MiK\TeX:} In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
+			
+			Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, contact Christian Hoffmann (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de}).
+			\begin{figure}
+				\begin{minipage}[t]{0.48\textwidth}
+					\centering
+					\includegraphics[width=\linewidth]{texlive_tlmgr}
+					\caption[Updating packages in Windows for \TeX Live]{Updating packages in Windows for \TeX Live}\label{fig:texlive_tlmgr}
+				\end{minipage}
+				\hfill
+				\begin{minipage}[t]{0.48\textwidth}
+					\centering
+					\includegraphics[width=\linewidth]{miktex_console}
+					\caption[Updating packages in Windows for MiK\TeX]{Updating packages in Windows for MiK\TeX}\label{fig:miktex_console}
+				\end{minipage}	
+			\end{figure}			
 		\subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 			\begin{itemize}
 				\item this template was successfully tested with Overleaf, an online editor for \LaTeX{} documents\footnote{\url{https://de.overleaf.com/}, January 2019}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX{} distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
