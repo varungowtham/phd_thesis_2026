@@ -24,17 +24,17 @@ The most important style specifications are:
 \begin{itemize}[leftmargin=4mm]
 	\item page format: A4, double page, justification, 11 pt for standard font size 
 	\item line spacing
-		\begin{itemize}
+		\begin{itemize}[label={$\circ$}]
 			\item Word: 1.5
 			\item \LaTeX: linespacing is set with the \verb+setspace+ package any may not be changed
 		\end{itemize}	
 	\item fonts 
-		\begin{itemize}
+		\begin{itemize}[label={$\circ$}]
 			\item Word: Palatino Linotype (text) and MS Reference Sans Serif (headings)
 			\item \LaTeX: the font types are specified within this template and may not be changed 
 		\end{itemize}		
 	\item margins
-	\begin{itemize}
+	\begin{itemize}[label={$\circ$}]
 		\item Word: \SI{35}{\milli\metre} (top), \SI{60}{\milli\metre} (bottom), \SI{27}{\milli\metre} (inside), \SI{40}{\milli\metre} (outside)\\
 		binding  correction:  \SI{15}{\milli\metre}  (only  possible  when  double  page  is  selected); exception: front page
 		\item \LaTeX: the given settings for BCOR and DIV may not be changed 
@@ -74,7 +74,7 @@ The most important style specifications are:
 			\end{itemize}
 			The only correct use of square brackets is shown here for the voltage: [U] = \si{\volt}, i.e.~the unit of the voltage is volt.
 			\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. Furthermore, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary. 
-			\item figures, tables, and equations must be numerated and must be referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template.
+			\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template.
 			
 			In addition, figures and  tables must also be explained and discussed in the text.
 			\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
@@ -114,7 +114,7 @@ The most important style specifications are:
 		\subsection{Main Document}
 			\begin{itemize}
 				\item is called main.tex
-				\item this document must be compiled in \LaTeX
+				\item this document must be compiled in \LaTeX{}
 			\end{itemize}
 		\subsection{01\_Document\_administration}
 			The following files are located in this folder:
@@ -246,8 +246,11 @@ The most important style specifications are:
 %------------------------------				
 	\section{Language: English or German?}\label{sec:language}
 		The language of this document is set with the \verb+babel+ package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+ package automatically sets the localized names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+ package must be changed.\\
-		If the language is English, it is recommended to change the output decimal marker  for SI units (\verb+siunitx+ package) to a period. This can be changed in the a\_Packages.tex file where the \verb+siunitx+ package is loaded.				
-	\section{Dependencies} 
+		If the language is English, it is recommended to change the output decimal marker  for SI units (\verb+siunitx+ package) to a period. This can be changed in the a\_Packages.tex file where the \verb+siunitx+ package is loaded.	
+%------------------------------
+% SEC: LATEX EDITOR SETTINGS AND MAINTENANCE
+%------------------------------						
+	\section{\LaTeX{} Editor Settings and Maintenance}
 		\subsection{Biblatex and Makeindex}\label{subsec:biblatexmakeindex}
 			\begin{itemize}
 				\item to compile the file correctly, biblatex and makeindex are used
@@ -267,26 +270,18 @@ The most important style specifications are:
 					\end{enumerate}	
 				\item the necessary mynomentbl.ist file is located in the template folder								
 				\item Note that the paths for Mac or Linux distributions have not been verified yet. If these path differ from what is stated here, please forward us the corrected instructions (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})				
-				\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in another software
+				\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in this software. However, the paths/commands should be the same.
 			\end{itemize}
-		\subsection{Compatibility with PDF/A}
-			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
-			\begin{figure}
-				\begin{minipage}[t]{0.48\textwidth}
-					\centering
-					\includegraphics[width=\linewidth]{BiblatexMakeindex}
-					\caption[Setting up biblatex and makeindex in Texmaker]{Setting up biblatex and makeindex in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
-				\end{minipage}
-				\hfill
-				\begin{minipage}[t]{0.48\textwidth}
-					\centering
-					\includegraphics[width=\linewidth]{PDFA}
-					\caption{PDF/A validation}\label{fig:pdfa}
-				\end{minipage}	
-			\end{figure}	
+		\subsection{Compiling the Document}		
+			The following commands/scripts must be run to compile the document completely:
+			\begin{enumerate}[label={\arabic*.}]
+				\item pdflatex: This generates a first PDF. At this point, the List of References and the List of Symbols are missing.
+				\item biblatex: Run biber (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
+				\item makeindex: Run makeindex (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
+				\item pdflatex (two times): The first run should already generate the List of References and the List of Symbols. The second run should update all citations etc.~in the PDF.
+			\end{enumerate}
 		\subsection{Updating Packages in \TeX Live and MiK\TeX}\label{subsec:update_packages}
-			As stated above, compilation problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility on Windows operating systems to automatically check for updates of packages when they are included in a \LaTeX{} document. Ubuntu seems to offer such a possibility.
-			
+			As stated above, compiling problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility to automatically check for updates of packages when they are included in a \LaTeX{} document.\\			
 			In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
 			\paragraph*{\TeX Live:} In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \verb+texlive/year/bin/win32+. In this folder, you find a file called tlmgr-gui.exe. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
 			\paragraph*{MiK\TeX:} In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
@@ -304,11 +299,32 @@ The most important style specifications are:
 					\includegraphics[width=\linewidth]{miktex_console}
 					\caption[Updating packages in Windows for MiK\TeX]{Updating packages in Windows for MiK\TeX}\label{fig:miktex_console}
 				\end{minipage}	
-			\end{figure}			
-		\subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
+			\end{figure}
+%------------------------------
+% SEC: COMPATIBILITY WITH PDF/A
+%------------------------------								
+	\section{Compatibility with PDF/A}
+			Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
+			\begin{figure}
+				\begin{minipage}[t]{0.48\textwidth}
+					\centering
+					\includegraphics[width=\linewidth]{BiblatexMakeindex}
+					\caption[Setting up biblatex and makeindex in Texmaker]{Setting up biblatex and makeindex in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
+				\end{minipage}
+				\hfill
+				\begin{minipage}[t]{0.48\textwidth}
+					\centering
+					\includegraphics[width=\linewidth]{PDFA}
+					\caption{PDF/A validation}\label{fig:pdfa}
+				\end{minipage}	
+			\end{figure}	
+%------------------------------
+% SEC: OVERLEAF
+%------------------------------						
+	\section{Support for Overleaf or other online editors}\label{subsec:overleaf}
 			\begin{itemize}
 				\item this template was successfully tested with Overleaf, an online editor for \LaTeX{} documents\footnote{\url{https://de.overleaf.com/}, January 2019}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX{} distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
-				\item The only dependency Overleaf does not directly support is the \verb+nomentbl+ package. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
+				\item The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
 			\end{itemize}					
 %------------------------------
 % SEC: TEMPLATES
@@ -358,7 +374,7 @@ The most important style specifications are:
 				\end{tabular}
 			\end{table}
 		\subsection{References}\label{subsec:references}
-			In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file. In addition, biblatex supports editing of the citation style via \TeX and \LaTeX commands. Hence, the tedious editing of bibliography styles (.bst files), which were used with bibtex, is not necessary anymore.
+			In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX{} commands. Hence, the tedious editing of bibliography styles (.bst files), which were used with bibtex, is not necessary anymore.
 			\begin{itemize}
 				\item Books: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 				\item Articles: \parencite{Abrams1975}, \textcite{Abrams1975}
@@ -406,8 +422,7 @@ a continuous function.
   						c = \infty\label{eq:template_equation_in_env}
   					\end{equation}
 				\end{definition}							
-			\paragraph*{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.
-			
+			\paragraph*{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.\\
 				\begin{algorithm}[H]
 					\SetAlgoLined
 					\KwData{this text}
