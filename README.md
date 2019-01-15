@@ -1,6 +1,6 @@
-## The ReadMe is included as a chapter in the "Styleguide_Abschlussarbeit_dbta" and "Styleguide_Dissertation_dbta", respectively.
+## The ReadMe is included as a chapter in the "dbta_Styleguide".
 
-## Please read it carefully!
+Please read it carefully!
 
 ## How to clone
 
