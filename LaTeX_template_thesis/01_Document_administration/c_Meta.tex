@@ -1,22 +1,6 @@
 %-----------------------------
-% REMAINS FIXED
+% MUST BE CHANGED BY THE USER
 %-----------------------------
-\newcommand{\myuniversity}{Technische Universität Berlin}
-\newcommand{\myfaculty}{Fakultät III -- Prozesswissenschaften}
-\newcommand{\myinstitute}{Institut für Prozess- und Verfahrenstechnik}
-\newcommand{\mydepartment}{Fachgebiet Dynamik und Betrieb technischer Anlagen}
-\newcommand{\myplace}{Berlin}
-\newcommand{\mysupervisor}{Prof.~Dr.-Ing.~habil.~Jens-Uwe Repke}
-\newboolean{isSG}
-% Options:
-% true: document in styleguide mode
-% false: dissertation or thesis mode
-\setboolean{isSG}{false}		
-%-----------------------------
-% REMAINS FIXED
-%-----------------------------
-
-
 %-----------------------------
 % BOOLEAN FOR DECISION B/M THESIS OR DISSERTATION
 %-----------------------------
@@ -34,16 +18,9 @@
 % false: Bachelor thesis
 \setboolean{isMT}{true}
 %-----------------------------
-% MUST BE CHANGED BY THE USER
+% TITLE AND AUTHOR
 %-----------------------------
 \newcommand{\mytitle}{This Is a Very Good Title That Illustrates What This Great Piece of Work Is All About and That Gives an Impression of What a Long Title Looks Like}
-
-% Subtitle English
-\newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
-
-% Subtitle German
-\newcommand{\mygersubtitle}{Wissenschaftliche Arbeit zur Erlangung des Grades \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
-
 \newcommand{\autor}{First name second name}
 %-----------------------------
 % FOR BACHELOR/MASTER THESIS
@@ -54,7 +31,35 @@
 % FOR DISSERTATION
 %-----------------------------
 \newcommand{\origin}{Berlin}
-\newcommand{\dayofdefense}{20.~Dezember 2018}
+\newcommand{\chairman}{Prof.~Dr.-Ing.~habil.~Martina Superwichtig}
 \newcommand{\firstreviewer}{\mysupervisor}
 \newcommand{\secondreviewer}{Prof.~Dr.-Ing.~Hans-Georg Wichtig}
-\newcommand{\chairman}{Prof.~Dr.-Ing.~habil.~Martina Superwichtig}
+\newcommand{\dayofdefense}{20.~Dezember 2018}
+%-----------------------------
+% MUST BE CHANGED BY THE USER
+%-----------------------------
+
+
+
+
+%-----------------------------
+% NOT TO BE CHANGED BY THE USER
+%-----------------------------
+\newcommand{\myuniversity}{Technische Universität Berlin}
+\newcommand{\myfaculty}{Fakultät III -- Prozesswissenschaften}
+\newcommand{\myinstitute}{Institut für Prozess- und Verfahrenstechnik}
+\newcommand{\mydepartment}{Fachgebiet Dynamik und Betrieb technischer Anlagen}
+\newcommand{\myplace}{Berlin}
+\newcommand{\mysupervisor}{Prof.~Dr.-Ing.~habil.~Jens-Uwe Repke}
+\newboolean{isSG}
+% Options:
+% true: document in styleguide mode
+% false: dissertation or thesis mode
+\setboolean{isSG}{false}
+% Subtitle English
+\newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
+% Subtitle German
+\newcommand{\mygersubtitle}{Wissenschaftliche Arbeit zur Erlangung des Grades \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
+%-----------------------------
+% NOT TO BE CHANGED BY THE USER
+%-----------------------------
