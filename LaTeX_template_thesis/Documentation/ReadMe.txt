@@ -1,2 +1,0 @@
-- as most of the included packages are continuously improved, we do not store all documentations to all packages
-- however: documentations to all packages can be easily found online
