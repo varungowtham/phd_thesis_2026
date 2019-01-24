@@ -6,7 +6,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\section{First Steps}
 		\begin{enumerate}[label={\arabic*.}]
 			\item \textbf{carefully read this whole chapter}
-			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. Currently, you notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
+			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
 			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
 			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}. See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
@@ -268,8 +268,7 @@ The most important style specifications are:
 						\item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 						\item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 					\end{enumerate}	
-				\item the necessary mynomentbl.ist file is located in the template folder								
-				\item Note that the paths for Mac or Linux distributions have not been verified yet. If these path differ from what is stated here, please forward us the corrected instructions (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de})				
+				\item the necessary mynomentbl.ist file is located in the template folder
 				\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in this software. However, the paths/commands should be the same.
 			\end{itemize}
 			\begin{figure}[tbh]
@@ -292,7 +291,7 @@ The most important style specifications are:
 			\paragraph*{MiK\TeX:} In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
 			
 			Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, contact Christian Hoffmann (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de}).
-			\begin{figure}
+			\begin{figure}[tbh]
 				\begin{minipage}[t]{0.48\textwidth}
 					\centering
 					\includegraphics[width=\linewidth]{texlive_tlmgr}
