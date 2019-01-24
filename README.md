@@ -7,7 +7,7 @@ Please read it carefully!
 - install git on your computer 
 - open a console window
 - cd to the directory where you want the folder to be
-- type "git clone https://gitlab.tubit.tu-berlin.de/markus.illner/Thesis_template.git"
+- type "git clone https://gitlab.tubit.tu-berlin.de/dbta/Thesis_template.git"
 
 ## Branches
 
