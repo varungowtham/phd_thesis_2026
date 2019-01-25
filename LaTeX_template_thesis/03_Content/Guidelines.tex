@@ -1,25 +1,13 @@
+%%------------------------------
+%% CHAP: GUIDELINES
+%%------------------------------	
 \chapter{Guidelines}\label{ch:styleguide}
 This chapter introduces the guidelines for writing a thesis at the Process Dynamics and Operations Group. It is recommended to use \LaTeX{} as the code of this style guide can directly be used for the thesis. However, a Word version of this template is also available. In the template, the correct fonts, font sizes, citation style, etc. are already set.
 %------------------------------
-% SEC: FIRST STEPS
-%------------------------------
-	\section{First Steps}
-		\begin{enumerate}[label={\arabic*.}]
-			\item \textbf{carefully read this whole chapter}
-			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
-			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
-			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
-			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}. See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
-			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content	
-			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)	
-			\item start writing your thesis - good luck!
-			\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, e.g.~a List of Algorithms, just remove it from the thesis.
-		\end{enumerate}
-%------------------------------
 % SEC: MOST IMPORTANT STYLE FACTS
 %------------------------------
+\section{Most Important Style Specifications for \LaTeX{} and Word}
 \begin{mdframed}
-\section{Most Important Style Specifications}
 The most important style specifications are:
 \begin{itemize}[leftmargin=4mm]
 	\item page format: A4, double page, justification, 11 pt for standard font size 
@@ -45,7 +33,21 @@ The most important style specifications are:
 \end{itemize}
 \paragraph*{Attention:} If these specifications are (partially) ignored, it will have an impact on the evaluation.
 \end{mdframed} 
-%------------------------------		
+%------------------------------
+% SEC: FIRST STEPS
+%------------------------------
+	\section{First Steps}
+		\begin{enumerate}[label={\arabic*.}]
+			\item \textbf{carefully read this whole chapter}
+			\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).			
+			\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
+			\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})			
+			\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}. See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
+			\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content	
+			\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)	
+			\item start writing your thesis - good luck!
+			\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, e.g.~a List of Algorithms, just remove it from the thesis.
+		\end{enumerate}	
 %------------------------------
 % SEC: GENERAL INFORMATION
 %------------------------------			
