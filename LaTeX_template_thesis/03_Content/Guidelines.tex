@@ -321,9 +321,14 @@ The most important style specifications are:
 %------------------------------						
 	\section{Support for Overleaf or other online editors}\label{subsec:overleaf}
 			\begin{itemize}
-				\item this template was successfully tested with Overleaf, an online editor for \LaTeX{} documents\footnote{\url{https://de.overleaf.com/}, January 2019}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX{} distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
+				\item this template was successfully tested with Overleaf, an online editor for \LaTeX{} documents\footnote{\url{https://de.overleaf.com/}, January 2019}, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX{} distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
 				\item The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
-			\end{itemize}					
+			\end{itemize}
+		\begin{figure}[tbh]
+			\centering
+			\includegraphics[width=\linewidth]{Overleaf}
+			\caption{Template on Overleaf}\label{fig:overleaf}
+		\end{figure}								
 %------------------------------
 % SEC: TEMPLATES
 %------------------------------		
