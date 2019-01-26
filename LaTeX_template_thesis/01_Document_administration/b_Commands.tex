@@ -1,7 +1,6 @@
 %------------------------------
 % ENVIRONMENTS
 %------------------------------
-
 %% Dedication
 \newenvironment{dedication_env}	% defines the dedication environment
 {\Large\begin{quote}\begin{center}\begin{em}}
@@ -35,7 +34,6 @@
 	}{}
 	}
 
-
 \theoremstyle{mytheoremstyle}	% definition via amsthm package
 \newtheorem{theorem}{\theoremname}
 \newtheorem{lemma}{\lemmaname}
@@ -64,13 +62,11 @@
   roundcorner=2pt,
   linewidth=1pt
 ]{definition}{Definition}[chapter]
-
 %------------------------------
 % DIRECTORIES
 %------------------------------
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
-
 %------------------------------
 % XPARSE
 %------------------------------
@@ -78,11 +74,9 @@
 \NewDocumentCommand{\roundbrack}{ m }{\left(#1 \right)} % a short command for round brackets
 \NewDocumentCommand{\squarebrack}{ m }{\left[#1 \right]}% a short command for squared brackets
 \NewDocumentCommand{\myfigure}{O{} O{1} m O{} m O{}}{\begin{figure}[#1]\centering\includegraphics[width=#2\linewidth]{#3}\caption[#4]{#5}\label{#6}\end{figure}}					% a new command to add a figure
-
 %------------------------------
 % TABLES, LISTS, and NUMERATIONS
 %------------------------------
-
 \graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
 
 %% german caption redefinitions
@@ -186,7 +180,6 @@
 
 \setlist[1]{labelindent=\parindent}	% labels are indented by this length
 \setlist[itemize,1]{label={--}}		% item environments use a -- for itemizing
-
 %------------------------------
 % NEW UNITS
 %------------------------------
@@ -194,7 +187,6 @@
 \DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
 \DeclareSIUnit\atm{atm}			% defines the unit atm
 \DeclareSIUnit\anno{a}			% defines the unit a for year
-
 %------------------------------
 % REFERENCES AND CITATIONS
 %------------------------------
@@ -244,11 +236,9 @@ urlseen = {letzter Zugriff},
 \DefineBibliographyStrings{english}{% before URL english
 urlseen = {last access},
 }
-
 %------------------------------
 % ONLY FOR DISSERTATIONS
 %------------------------------
-
 \DeclareBibliographyCategory{inbib}	% a specific category for all citations in the text, NOT in the publication list
 \newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}}						% print all authors in case the \printpublication command is used
 \makeatletter										
@@ -257,31 +247,28 @@ urlseen = {last access},
     {}
     {\addtocategory{inbib}{\thefield{entrykey}}}}	% if is is normally cited later, add it to the references
 \makeatother
-
 %------------------------------
 % INTERNET
 %------------------------------
 \renewcommand*{\UrlFont}{\upshape}
-
 %------------------------------
 % CODE
 %------------------------------
 \renewcommand{\lstlistingname}{Code}	% rename listing in appendix
-
 %------------------------------
 % HYPERREF
 %------------------------------
-\hypersetup{
-    bookmarks,					% writes Acrobat bookmarks, not necessary when using the pdfx package
-    bookmarksnumbered=true,		% bookmarks are numbered in PDF
-    bookmarksopen=false,		% bookmarks are closed when PDF is opened
-    citebordercolor=blue,		% border color for citations
-    colorlinks=false,			% no different font color for links
-    hypertexnames=true, 		% use guessable names for links
-    linkbordercolor=red, 		% color for links
-    linktocpage, 				% use page numbers as links in table of contents    
-    %pagebackref,				% links to pages in references, not working with biblatex!
-    pdfpagelabels, 				% set PDF page labels, not necessary when using the pdfx package
-    pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
-    urlbordercolor=cyan,		% border color for URLs
-}
+\hypersetup{%
+   	bookmarks,					% writes Acrobat bookmarks, not necessary when using the pdfx package
+   	bookmarksnumbered=true,		% bookmarks are numbered in PDF
+   	bookmarksopen=false,		% bookmarks are closed when PDF is opened
+   	citebordercolor=blue,		% border color for citations
+   	colorlinks=false,			% no different font color for links
+   	hypertexnames=true, 		% use guessable names for links
+   	linkbordercolor=red, 		% color for links
+   	linktocpage, 				% use page numbers as links in table of contents    
+   	%pagebackref,				% links to pages in references, not working with biblatex!
+   	pdfpagelabels, 				% set PDF page labels, not necessary when using the pdfx package
+   	pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
+   	urlbordercolor=cyan,		% border color for URLs
+}%

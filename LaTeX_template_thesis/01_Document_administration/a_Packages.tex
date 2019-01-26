@@ -28,7 +28,6 @@
     ilines 					% separation line ragged left ausrichten
 ]{scrlayer-scrpage}
 \usepackage{xparse}			% define new document level commands
-
 %------------------------------
 % Tables
 %------------------------------
@@ -36,13 +35,11 @@
 \usepackage{longtable} 		% tables over several pages
 \usepackage{multirow}		% columns in several rows
 \usepackage{tabularx} 		% better tabulars
-
 %------------------------------
 % GRAPHICS
 %------------------------------
 \usepackage{graphicx}		% for including pictures
 \usepackage{overpic}		% overlay to add text to figures
-
 %------------------------------
 % FONT, MATH, AND SYMBOLS
 %------------------------------
@@ -79,7 +76,6 @@
 	retain-zero-exponent=true,	% no exponent for numbers like 1e0
 	separate-uncertainty=true,
 ]{siunitx}					% formating of SI units
-
 %------------------------------
 % TEXT
 %------------------------------
@@ -107,7 +103,6 @@
 ]{setspace} 				% package for line spacing
 \usepackage{subcaption}		% subfigures
 \usepackage{xcolor}			% colors are added
-
 %------------------------------
 % REFERENCES
 %------------------------------
@@ -132,7 +127,6 @@
 	autostyle=true,			% automatic selection of the language specific quotation marks
 	strict=true				% all warning are turned into errors
 ]{csquotes}					% quotation marks etc. in references
-
 %------------------------------
 % LISTS OF SYMBOLS AND ABBREVIATIONS
 %------------------------------
@@ -140,15 +134,13 @@
 \usepackage[
 	intoc					% list of symbols appears in list of content
 ]{nomentbl}					% package for list of symbols
-
 %------------------------------
 % CODE
 %------------------------------
 \usepackage{listings}		% for code publication, e.g. in the appendix
 \usepackage{scrhack}		% package to achieve full compability between KOMA and lstlistings
-
 %------------------------------
 % HYPERREF - USUALLY MUST BE LOADED LAST
 %------------------------------
-%\usepackage{hyperref}		% is loaded by the pdfx package automatically
-\usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity, if this is not necessary: remove the pdfx package and simply use hyperref
+%\usepackage{hyperref}		% hyperref for links in the text (automatically loaded by the pdfx package)
+\usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity (only needed for dissertations)
