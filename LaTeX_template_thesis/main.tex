@@ -8,17 +8,17 @@
 % LOAD DOCUMENTCLASS
 %------------------------------
 \documentclass[
-    11pt, 						% font size
+    fontsize=11pt,				% font size
     paper=a4, 					% paper format
     BCOR=15mm,					% binding correction
     bibliography=totoc, 		% references in table of contents
     DIV=9,						% page division factor, see KOMA script documentation
-    final, 						% status of document
+    draft=false,				% status of document
     headings=optiontohead,		% optional argument before chapter or section title appears in the header
     listof=chaptergapsmall,		% small vertical space between figures of different chapters in the lists of figures and tables
     listof=totoc,				% lists of figures and tables in table of contents
     numbers=noenddot,			% no second point in the numbering of figures, ...
-    openright,					% chapter always starts on right side
+    open=right,					% chapter always starts on right side
     parskip=half, 				% distance between paragraphs
     titlepage, 					% titlepage available   
     twoside, 					% twoside document    

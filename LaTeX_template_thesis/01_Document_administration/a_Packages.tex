@@ -23,6 +23,7 @@
 	stretch=10,				% 
 	shrink=10				% factor for font shrinking
 ]{microtype}				% This package might improve the look of the PDF by minimally stretching or extending fonts, etc. You can uncomment it to see the results
+\usepackage{scrhack}		% package to achieve full compability between KOMA and other packages; MUST BE LOADED BEFORE SETSPACE
 \usepackage[
     automark, 				% mark chapter and section names
     ilines 					% separation line ragged left ausrichten
@@ -138,7 +139,6 @@
 % CODE
 %------------------------------
 \usepackage{listings}		% for code publication, e.g. in the appendix
-\usepackage{scrhack}		% package to achieve full compability between KOMA and lstlistings
 %------------------------------
 % HYPERREF - USUALLY MUST BE LOADED LAST
 %------------------------------
