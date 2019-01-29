@@ -55,9 +55,11 @@
 \usepackage{empheq}			% frames around equations
 \usepackage{icomma}			% distance after comma in math environment
 \usepackage[
-	osf,					% old-style figures
-	sc						% with small caps	
-]{mathpazo} 				% contains the Palatino font
+	sc,						% with small caps
+]{mathpazo}    				% contains the Palatino font
+\usepackage[
+	scaled,					% Helvetiva is scaled to 95%
+]{helvet}					% contains the Palatino font
 \usepackage{mathtools}		% some additional symbols
 \usepackage[
 	version=4				% use version X of the package
@@ -70,7 +72,7 @@
 	output-decimal-marker={,}, % decimal marker (german: , and english: .)
 %	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text	
 %	per-mode=symbol-or-fraction,% symbol setting inline, fraction in display math
-	range-phrase={~to~},		% for units 4 to 10 K
+	range-phrase={~to~},		% for unit range "4 to 10 K"
 	range-units=single,		% it is 4 to 10 K and not 4K to 10K
 	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
 	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
@@ -142,5 +144,6 @@
 %------------------------------
 % HYPERREF - USUALLY MUST BE LOADED LAST
 %------------------------------
+\PassOptionsToPackage{hyphens, slash}{url}
 %\usepackage{hyperref}		% hyperref for links in the text (automatically loaded by the pdfx package)
 \usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity (only needed for dissertations)

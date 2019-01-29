@@ -17,4 +17,5 @@
 *.gz
 *.toc
 *.xmpi
+*.latexindentbackup
 LaTeX_template_thesis/main.pdf
