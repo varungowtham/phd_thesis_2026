@@ -308,27 +308,27 @@ Similar applications are available on all other operating systems. Restart your 
 	\end{minipage}
 \end{figure}
 \subsection{Automatic Indenting in Editor}
-Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment. Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the second option is described here for a Windows operating system. It is expected that the instructions are similar on a Unix system. An issue are different versions of \verb+latexindtent+ and \verb+arara+. Therefore, instructions are given for earlier versions of \verb+arara+ and the current version (4.0).
+Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment. Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the second option is described here for a Windows operating system. It is expected that the instructions are similar on a Unix system, because \verb+arara+ is platform independent and its settings are stated in a .yaml file, which is also platform independent. Nevertheless, an issue are different versions of \verb+latexindtent+ and \verb+arara+. Therefore, instructions are given for earlier versions of \verb+arara+ and the current version (4.0). These specific instructions are given in the next two paragraphs. If you have a \LaTeX\ distribution from before 2017, we recommend updating \LaTeX\ by getting the newest Mac\TeX, \TeX Live, or MiK\TeX\ version.
 
 \textbf{Arara 3.0a (\TeX Live 2017):} For \TeX Live (and also Mik\TeX) in this older version, the following steps must be taken to automatically indent the source code:
 \begin{enumerate}[label={\arabic*{}.}]
 	\item Add a user command for \verb+arara+ to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, January 2019}. \textbf{Due to system path issues}, is has been proven advantageous to put the complete path to \verb+arara+ in the this command:
 	      \begin{verbatim}
-"path_to_texlive\2017\bin\win32\arara.exe" %.tex
+"path_to_texlive\year\bin\win32\arara.exe" %.tex
 \end{verbatim}
 	\item Add the following command to the beginning of the main.tex file (right before anything else):
 	      \begin{lstlisting}[breaklines]
-% arara: indent: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: Arara_and_Latexindent/Arara_30a/localSettings.yaml }
+% arara: indent: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
 \end{lstlisting}
 	      This command executes the automatic file indenting for all files (and files in subfolders) that are states within the square brackets.
-	\item Add the indent.yaml file that is located in this template folder in Arara\_and\_Latexindent/Arara\_30a to your \verb+arara+ rules. These rules are typically located in "path\_to\_texlive/2017/texmf-dist/scripts/arara/rules". The .yaml file was taken from a github commit of the \verb+latexindent+ developer\footnote{\url{https://gist.githubusercontent.com/cereda/3ccdfb6257e5272ad9c1080a89c9ae9b/raw/9207c645f13d016686f90291073870a21f558a20/indent.yaml}, January 2019}. He repeatedly pointed out that they do not want to do much backwards compatibility. If you run into issues and this feature is \emph{really important} to you, think about updating your \LaTeX\ distribution (see next paragraph).
+	\item Add the indent.yaml file that is located in this template folder in Arara\_and\_Latexindent/Arara\_30a to your \verb+arara+ rules. These rules are typically located in "path\_to\_texlive/year/texmf-dist/scripts/arara/rules". The .yaml file was taken from a github commit of the \verb+latexindent+ developer\footnote{\url{https://gist.githubusercontent.com/cereda/3ccdfb6257e5272ad9c1080a89c9ae9b/raw/9207c645f13d016686f90291073870a21f558a20/indent.yaml}, January 2019}. He repeatedly pointed out that they do not want to do much backwards compatibility. If you run into issues and this feature is \emph{really important} to you, think about updating your \LaTeX\ distribution (see next paragraph).
 	\item Execute \verb+arara+ (if you added it as the first user command, the shortcut Alt+Shift+F1 may be used.
 	\item Update your files by clicking on File $\rightarrow$ Reload all documents from file.
 	\item Your source code should now be nicely indented.
 	\item In case errors appear, \verb+arara+ always creates a backup with the file extension latexindentbackup.
 \end{enumerate}
 
-\textbf{Arara 3.0a (\TeX Live 2018):} In 2018, version 4.0 of \verb+arara+ was published. With this version, the indent rule is already part of the \LaTeX\ distribution and does not have to be added manually.
+\textbf{Arara 4.0 (\TeX Live 2018):} In 2018, version 4.0 of \verb+arara+ was published. With this version, the indent rule is already part of the \LaTeX\ distribution and does not have to be added manually. The procedure is exactly the same as above. You can simply skip step 3 of the instructions.
 %------------------------------
 % SEC: COMPATIBILITY WITH PDF/A
 %------------------------------								
@@ -509,7 +509,7 @@ Sometimes it is necessary to state chemical reactions or molecules. For this pur
 	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
 	\schemestop
 	\chemnameinit{}
-	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference)}\label{fig:template_chemical_reaction}
+	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
 \end{figure}
 \cleardoublepage
 %------------------------------
