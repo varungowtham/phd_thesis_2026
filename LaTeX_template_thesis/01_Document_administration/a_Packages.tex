@@ -24,11 +24,13 @@
 	shrink=10				% factor for font shrinking
 ]{microtype}				% This package might improve the look of the PDF by minimally stretching or extending fonts, etc. You can uncomment it to see the results
 \usepackage[
+	nomencl=false,			% do not use scrhack for nomencl
+]{scrhack}					% package to achieve full compability between KOMA and other packages; MUST BE LOADED BEFORE SETSPACE
+\usepackage[
     automark, 				% mark chapter and section names
     ilines 					% separation line ragged left ausrichten
 ]{scrlayer-scrpage}
 \usepackage{xparse}			% define new document level commands
-
 %------------------------------
 % Tables
 %------------------------------
@@ -36,13 +38,11 @@
 \usepackage{longtable} 		% tables over several pages
 \usepackage{multirow}		% columns in several rows
 \usepackage{tabularx} 		% better tabulars
-
 %------------------------------
 % GRAPHICS
 %------------------------------
 \usepackage{graphicx}		% for including pictures
 \usepackage{overpic}		% overlay to add text to figures
-
 %------------------------------
 % FONT, MATH, AND SYMBOLS
 %------------------------------
@@ -55,14 +55,16 @@
 \usepackage{chemfig}		% package for drawing molecules
 \usepackage{courier}		% courier font for lstlistings
 \usepackage{empheq}			% frames around equations
+\usepackage[
+	scaled=0.95,			% Helvetiva is scaled to 95%
+]{helvet}					% contains the Helvetica font
 \usepackage{icomma}			% distance after comma in math environment
 \usepackage[
-	osf,					% old-style figures
-	sc						% with small caps	
-]{mathpazo} 				% contains the Palatino font
+	sc,						% with small caps
+]{mathpazo}    				% contains the Palatino font
 \usepackage{mathtools}		% some additional symbols
 \usepackage[
-	version=4				% use version X of the package
+	version=4				% use version 4 of the package
 ]{mhchem}					% chemical formulas
 \usepackage{nicefrac}		% makes fractions in lines nicer
 \usepackage[
@@ -72,14 +74,13 @@
 	output-decimal-marker={,}, % decimal marker (german: , and english: .)
 %	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text	
 %	per-mode=symbol-or-fraction,% symbol setting inline, fraction in display math
-	range-phrase={~to~},		% for units 4 to 10 K
+	range-phrase={~to~},		% for unit range "4 to 10 K"
 	range-units=single,		% it is 4 to 10 K and not 4K to 10K
 	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
 	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
 	retain-zero-exponent=true,	% no exponent for numbers like 1e0
 	separate-uncertainty=true,
 ]{siunitx}					% formating of SI units
-
 %------------------------------
 % TEXT
 %------------------------------
@@ -107,7 +108,6 @@
 ]{setspace} 				% package for line spacing
 \usepackage{subcaption}		% subfigures
 \usepackage{xcolor}			% colors are added
-
 %------------------------------
 % REFERENCES
 %------------------------------
@@ -132,7 +132,6 @@
 	autostyle=true,			% automatic selection of the language specific quotation marks
 	strict=true				% all warning are turned into errors
 ]{csquotes}					% quotation marks etc. in references
-
 %------------------------------
 % LISTS OF SYMBOLS AND ABBREVIATIONS
 %------------------------------
@@ -140,15 +139,14 @@
 \usepackage[
 	intoc					% list of symbols appears in list of content
 ]{nomentbl}					% package for list of symbols
-
 %------------------------------
 % CODE
 %------------------------------
 \usepackage{listings}		% for code publication, e.g. in the appendix
-\usepackage{scrhack}		% package to achieve full compability between KOMA and lstlistings
-
+\usepackage{spverbatim}
 %------------------------------
 % HYPERREF - USUALLY MUST BE LOADED LAST
 %------------------------------
-%\usepackage{hyperref}		% is loaded by the pdfx package automatically
-\usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity, if this is not necessary: remove the pdfx package and simply use hyperref
+\PassOptionsToPackage{hyphens, slash}{url}
+%\usepackage{hyperref}		% hyperref for links in the text (automatically loaded by the pdfx package)
+\usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity (only needed for dissertations)

@@ -8,17 +8,17 @@
 % LOAD DOCUMENTCLASS
 %------------------------------
 \documentclass[
-    11pt, 						% font size
-    paper=a4, 					% paper format
     BCOR=15mm,					% binding correction
     bibliography=totoc, 		% references in table of contents
     DIV=9,						% page division factor, see KOMA script documentation
-    final, 						% status of document
+    draft=false,				% status of document
+    fontsize=11pt,				% font size
     headings=optiontohead,		% optional argument before chapter or section title appears in the header
     listof=chaptergapsmall,		% small vertical space between figures of different chapters in the lists of figures and tables
     listof=totoc,				% lists of figures and tables in table of contents
     numbers=noenddot,			% no second point in the numbering of figures, ...
-    openright,					% chapter always starts on right side
+    open=right,					% chapter always starts on right side
+    paper=a4, 					% paper format
     parskip=half, 				% distance between paragraphs
     titlepage, 					% titlepage available   
     twoside, 					% twoside document    
@@ -31,6 +31,7 @@
 \include{01_Document_administration/c_Meta}		% meta information of this document, such as title, author, etc.
 \include{01_Document_administration/d_NomenclatureCommands} % commands for the list of symbols
 \include{01_Document_administration/e_Header_Footer}		% commands for headers and footers
+\include{01_Document_administration/f_CodeLanguageSpecifications}% commands for code specifications
 \addbibresource{04_Literature/Bibliography.bib}
 %------------------------------
 % BEGIN DOCUMENT
@@ -44,9 +45,9 @@
 	\pagestyle{empty}
 	\ifthenelse{\boolean{isSG}}{\input{02_Prematter/a_Cover_Styleguide}}{\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_Thesis}}}              % include cover
 	\cleardoublepage
-%------------------------------
-% PREMATTER
-%------------------------------
+	%------------------------------
+	% PREMATTER
+	%------------------------------
 	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication}\cleardoublepage}{}				% Only for dissertations: dedication (can also be used for a B/M thesis)
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
@@ -69,13 +70,15 @@
 	\listoftables 				% make list of tables
 	\cleardoublepage
 	\listofalgorithms 			% make list of algorithms
-	\cleardoublepage			
+	\cleardoublepage
+	\lstlistoflistings			% make list of codes
+	\cleardoublepage
 	\include{02_Prematter/e_Nomenclature} % include all symbols in nomenclature
 	\markboth{}{\nomname}  		% mark both headers with nomenclature name
 	\printnomenclature 			% make list of symbols
 	\cleardoublepage
 	\input{02_Prematter/f_Abbreviations}
-	\cleardoublepage	
+	\cleardoublepage
 \end{spacing}
 %------------------------------
 % TEXT
@@ -94,9 +97,8 @@
 \cleardoublepage
 \pagenumbering{Alph} 			% capital latin letters
 \appendix
-\include{05_Appendix/a_CodeLanguageSpecifications}
 \input{05_Appendix/0_Appendix}
 %------------------------------
 % END DOCUMENT
 %------------------------------
-\end{document}  
+\end{document}

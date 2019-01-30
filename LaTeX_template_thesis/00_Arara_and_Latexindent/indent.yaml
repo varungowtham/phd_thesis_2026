@@ -1,0 +1,29 @@
+!config
+identifier: indent
+name: Indent
+command: <arara> latexindent @{silent} @{trace} @{settings} @{cruft} @{overwrite} @{output} @{file} @{modifylinebreaks} @{logfile}
+arguments:
+- identifier: silent
+  flag: "@{isTrue(parameters.silent, '-s')}"
+- identifier: overwrite
+  flag: "@{isTrue(parameters.overwrite, '-w')}"
+- identifier: trace
+  flag: "@{isTrue(parameters.trace, '-t')}"
+- identifier: modifylinebreaks
+  flag: "@{isTrue(parameters.trace, '-m')}"
+- identifier: settings
+  flag: <arara> @{
+      check = parameters.containsKey('where');
+      location = check ? parameters.where:'';
+      if ([ 'local', 'onlydefault' ].contains(parameters.settings)) {
+        return isTrue(parameters.settings == 'local', isTrue(check, '-l='.concat(location), '-l'), '-d');
+      }
+    }
+- identifier: cruft
+  flag: "-c=@{parameters.cruft}"
+- identifier: logfile
+  flag: "-g @{parameters.logfile}"
+- identifier: output
+  flag: "@{[ '-o', parameters.output ]}"
+- identifier: where
+  flag: ""
