@@ -429,6 +429,21 @@ For important equations, you might want to use the \verb+empheq+ package:
 \begin{empheq}[box=\fbox]{equation}
 	E = mc^2 \label{eqn:Gleichung}
 \end{empheq}
+\subsection{Acronyms and Abbreviations}
+New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations.
+\subsection{Chemistry and Chemical Reactions}
+Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}.
+\begin{figure}[tbh]
+	\setatomsep{20pt}
+	\centering
+	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
+	\schemestart
+	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\chemfig{CO}/\chemfig{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
+	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
+	\schemestop
+	\chemnameinit{}
+	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
+\end{figure}
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
 \paragraph*{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
@@ -508,30 +523,3 @@ The \verb+hyperref+ package also supplies an \verb+\autoref+ command that is lin
 		      \end{otherlanguage}
 	      \end{itemize}
 \end{enumerate}
-\subsection{Acronyms and Abbreviations}
-New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations.
-\subsection{Chemistry and Chemical Reactions}
-Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}.
-\begin{figure}[tbh]
-	\setatomsep{20pt}
-	\centering
-	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
-	\schemestart
-	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\chemfig{CO}/\chemfig{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
-	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
-	\schemestop
-	\chemnameinit{}
-	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
-\end{figure}
-\cleardoublepage
-%------------------------------
-% SEC: SECTION HEADER EXAMPLE
-%------------------------------			
-\section[head={Short version of chapter heading}, tocentry={The Sectioning Command for Chapters Supports not only the Heading Text Itself but also a Short Version Whose Use can be Controlled}]{The Sectioning\\
-  Command for Chapters\\
-  Supports not only\\
-  the Heading Text Itself\\
-  but also\\
-  a Short Version Whose\\
-  Use can be Controlled}
-If your chapters or sections have long titles (which they should not have), you can use an optional argument for chapter or section commands to shorten it in the header. You can even manipulate the chapter or section title. Normally, the use of this option is not necessary.
