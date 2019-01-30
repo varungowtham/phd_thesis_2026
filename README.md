@@ -12,8 +12,6 @@
 ## Branches
 
 - master: current template version
-- v1.1: version 1.1 of the template (fallback)
-- v1.2: versiom 1.2 of the template (fallback)
 - developer: version for trying out new stuff
 - template_2016: old template for bachelor/master theses
 - Diss_template_2016: old template for dissertations
