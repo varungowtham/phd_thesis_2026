@@ -163,7 +163,7 @@ The following files are located in this folder:
 	\item f\_CodeLanguageSpecifications
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
-		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see example in 05\_Appendix/1\_Appendix.tex) or  directly include your files
+		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
 		      \item more information can be found in the lstlistings documentation
 	      \end{itemize}	      
 \end{enumerate}
@@ -278,7 +278,8 @@ If the language is English, it is recommended to change the output decimal marke
 	      \end{enumerate}
 	\item command line for setting up makeindex in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
-		      \item Windows:\\ \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+ \\
+		      \item Windows:\\
+		      \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+	      
 		            in \TeX Live, makeindex is located in \verb+bin/win32+
 		      \item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 		      \item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
@@ -336,10 +337,10 @@ The only dependency Overleaf does not directly support is \verb+nomentbl+. As th
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
 Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.
 
-Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the first option is described here. The second option is described in \autoref{ch:automatic_indenting_arara}.\\
+Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). The second option is described in \autoref{ch:automatic_indenting_arara}.\\
 To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command should be
 \begin{lstlisting}[breaklines, language=latex, caption={Setting up latexindent in Texmaker}]
-C:/path_to_texlive/year/bin/win32/latexindent.exe -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template\LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
+C:/path_to_texlive/year/bin/win32/latexindent.exe -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template/LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
 This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
 The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your user new command in Texmaker with the opened file in question. Afterwards. update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
@@ -358,7 +359,8 @@ The local settings are important as they specify that only one backup is created
 \end{figure}
 %------------------------------
 % SEC: TEMPLATES
-%------------------------------		
+%------------------------------	
+\clearpage	
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
 This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
 \subsection{Units}
@@ -408,6 +410,7 @@ In the following, a few examples of the authoryear short reference are stated. F
 \begin{itemize}
 	\item books: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 	\item articles: \parencite{Abrams1975}, \textcite{Abrams1975}
+	\item conference paper: \parencite{Penteado2018}, \textcite{Penteado2018}
 	\item online: \parencite{benzene_nist2017}, \textcite{benzene_nist2017}
 	\item dissertations: \parencite{Cuda2012}, \textcite{Cuda2012}
 	\item bachelor/master thesis: \parencite{Hoffmann2015}, \textcite{Hoffmann2015}
