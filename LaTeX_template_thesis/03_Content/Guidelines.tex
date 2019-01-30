@@ -122,12 +122,12 @@ The following files are located in this folder:
 	\item indent.yaml
 	      \begin{itemize}
 		      \item contains the rule for arara 3.0A
-		      \item more information can be found in \autoref{subsec:automatic_indenting}
+		      \item more information can be found in \autoref{ch:automatic_indenting_arara}
 	      \end{itemize}
 	\item localSettings.yaml
 	      \begin{itemize}
 		      \item contains the local settings for automatic indenting
-		      \item more information can be found in \autoref{subsec:automatic_indenting}
+		      \item more information can be found in \autoref{subsec:automatic_indenting_latexindent} and \autoref{ch:automatic_indenting_arara}
 	      \end{itemize}
 \end{enumerate}
 \subsection{01\_Document\_administration}
@@ -160,6 +160,12 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item defines headers and footers
 	      \end{itemize}
+	\item f\_CodeLanguageSpecifications
+	      \begin{itemize}
+		      \item can be used to define a set of keywords and comment commands for a certain programming language
+		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see example in 05\_Appendix/1\_Appendix.tex) or  directly include your files
+		      \item more information can be found in the lstlistings documentation
+	      \end{itemize}	      
 \end{enumerate}
 \subsection{02\_Prematter}
 The following files are located in this folder:
@@ -249,12 +255,6 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item contains the Xth appendix
 	      \end{itemize}
-	\item a\_CodeLanguageSpecifications
-	      \begin{itemize}
-		      \item can be used to define a set of keywords and comment commands for a certain programming language
-		      \item if you want to apprehend your code in your thesis, you can either copy the code to a lstlistings environment (see example in 05\_Appendix/1\_Appendix.tex) or  directly include your files
-		      \item more information can be found in the lstlistings documentation
-	      \end{itemize}
 \end{enumerate}
 %------------------------------
 % SEC: LANGUAGE
@@ -322,43 +322,40 @@ Similar applications are available on all other operating systems. Restart your 
 	\end{minipage}
 \end{figure}
 \section{Extra Features}
-The following sections introduce a few extra features. None of them are necessary for a thesis, but they might be of use for some people.	
+The following sections introduce a few extra features. None of them are necessary for a thesis, but they might be of use for some people.
 \subsection{Compatibility with PDF/A}
-Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.			
+Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
-\begin{itemize}
-	\item this template was successfully tested with Overleaf, an online editor for \LaTeX\ documents\footnote{\url{https://de.overleaf.com/}, January 2019}, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}
-	\item The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
-\end{itemize}
+This template was successfully tested with Overleaf, an online editor for \LaTeX\ documents\footnote{\url{https://de.overleaf.com/}, January 2019}, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}\\
+The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Overleaf}
 	\caption{Template on Overleaf}\label{fig:overleaf}
 \end{figure}
-\subsection{Automatic Indenting in Editor}\label{subsec:automatic_indenting}
-Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
-Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the second option is described here for a Windows operating system. It is expected that the instructions are similar on a Unix system, because \verb+arara+ is platform independent. Nevertheless, an issue are different versions of \verb+latexindtent+ and \verb+arara+. Therefore, instructions are given for version 3.0a of \verb+arara+ (\TeX Live 2017) and the current version 4.0 (\TeX Live 2018). These specific instructions are given in the next two paragraphs. If you have a \LaTeX\ distribution from before 2017, we recommend updating \LaTeX\ by getting the newest Mac\TeX, \TeX Live, or MiK\TeX\ version.
+\subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
+Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.
 
-\textbf{Arara 3.0a (\TeX Live 2017):} For \TeX Live (and also Mik\TeX) in this older version, the following steps must be taken to automatically indent the source code:
-\begin{enumerate}[label={\arabic*{}.}]
-	\item Add a user command for \verb+arara+ to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, January 2019}.
-	\item Add the following command to the beginning of the main.tex file (right before anything else):
-	      \begin{lstlisting}[breaklines]
-% arara: indent: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
+Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the first option is described here. The second option is described in \autoref{ch:automatic_indenting_arara}.\\
+To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command should be
+\begin{lstlisting}[breaklines, language=latex, caption={Setting up latexindent in Texmaker}]
+C:/path_to_texlive/year/bin/win32/latexindent.exe -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template\LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
-	      This command executes the automatic file indenting for all files (and files in subfolders) that are states within the square brackets. An example is given in \autoref{fig:arara_30_latexindent}.
-	\item Add the indent.yaml file that is located in this template folder in 00\_Arara\_and\_Latexindent to your \verb+arara+ rules. These rules are typically located in "path\_to\_texlive/year/texmf-dist/scripts/arara/rules". The .yaml file was taken from a github commit of a \verb+latexindent+ developer\footnote{\url{https://gist.github.com/cereda/3ccdfb6257e5272ad9c1080a89c9ae9b}, January 2019}. He repeatedly pointed out that they do not want to do much backwards compatibility. If you run into issues and this feature is \emph{really important} to you, think about updating your \LaTeX\ distribution (see next paragraph).
-	\item Execute \verb+arara+ (if you added it as the first user command, the shortcut Alt+Shift+F1 may be used).
-	\item Update your files by clicking on File $\rightarrow$ Reload all documents from file.
-	\item Your source code should now be nicely indented.
-	\item In case errors appear, \verb+arara+ always creates a backup with the file extension latexindentbackup.
-\end{enumerate}
-\textbf{Arara 4.0 (\TeX Live 2018):} In 2018, version 4.0 of \verb+arara+ was published. With this version, the indent rule is already part of the \LaTeX\ distribution and does not have to be added manually. The procedure is exactly the same as above. You can simply skip step 3 of the instructions. \textbf{Problem: Arara 4.0 seems to have an issue with subdirectories. Using it is currently not recommended.}
+This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
+The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your user new command in Texmaker with the opened file in question. Afterwards. update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
 \begin{figure}[tbh]
 	\centering
-	\includegraphics[width=\linewidth]{arara_30_latexindent}
-	\caption{Directives for arara execution for automatic indenting in the main.tex file}\label{fig:arara_30_latexindent}
-\end{figure}	
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{latexindent_before}
+		\caption{Before}\label{fig:latexindent_before}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{latexindent_after}
+		\caption{After}\label{fig:latexindent_after}
+	\end{subfigure}
+	\caption{Before (left) and after (right) automatic indenting with latexindent}\label{fig:automatic_indenting_latexindent}
+\end{figure}
 %------------------------------
 % SEC: TEMPLATES
 %------------------------------		

@@ -1,8 +1,3 @@
-% arara : indent : { overwrite : yes , files : [ main.tex , 03_Content/Guidelines.tex ] , settings : local, where : 00 _Arara_and_Latexindent/localSettings.yaml }
-
-% Above are the arara commands for automatic indenting (see dbta_Styleguide).
-% If you do not want to use automatic indenting, you can remove these commands.
-
 %------------------------------
 % This document was written by
 % Christian Hoffmann, M.Sc.
@@ -36,6 +31,7 @@
 \include{01_Document_administration/c_Meta}		% meta information of this document, such as title, author, etc.
 \include{01_Document_administration/d_NomenclatureCommands} % commands for the list of symbols
 \include{01_Document_administration/e_Header_Footer}		% commands for headers and footers
+\include{01_Document_administration/f_CodeLanguageSpecifications}% commands for code specifications
 \addbibresource{04_Literature/Bibliography.bib}
 %------------------------------
 % BEGIN DOCUMENT
@@ -101,7 +97,6 @@
 \cleardoublepage
 \pagenumbering{Alph} 			% capital latin letters
 \appendix
-\include{05_Appendix/a_CodeLanguageSpecifications}
 \input{05_Appendix/0_Appendix}
 %------------------------------
 % END DOCUMENT
