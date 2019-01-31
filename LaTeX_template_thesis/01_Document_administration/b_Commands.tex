@@ -75,6 +75,15 @@
 \NewDocumentCommand{\squarebrack}{ m }{\left[#1 \right]}% a short command for squared brackets
 \NewDocumentCommand{\myfigure}{O{} O{1} m O{} m O{}}{\begin{figure}[#1]\centering\includegraphics[width=#2\linewidth]{#3}\caption[#4]{#5}\label{#6}\end{figure}}					% a new command to add a figure
 %------------------------------
+% CODE
+%------------------------------
+\renewcommand{\lstlistingname}{Code}	% rename listing in appendix
+\newcounter{codefloat}
+\lstnewenvironment{codefloat}[2]{
+    \renewcommand\lstlistingname{Code}
+    \setcounter{lstlisting}{\value{codefloat}}
+} {\addtocounter{codefloat}{1}}
+%------------------------------
 % TABLES, LISTS, and NUMERATIONS
 %------------------------------
 \graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
@@ -251,10 +260,6 @@ urlseen = {last access},
 % INTERNET
 %------------------------------
 \renewcommand*{\UrlFont}{\upshape}
-%------------------------------
-% CODE
-%------------------------------
-\renewcommand{\lstlistingname}{Code}	% rename listing in appendix
 %------------------------------
 % HYPERREF
 %------------------------------

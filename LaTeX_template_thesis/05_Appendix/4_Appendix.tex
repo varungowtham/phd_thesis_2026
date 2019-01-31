@@ -5,11 +5,7 @@ Nevertheless, an issue are different versions of \verb+latexindtent+ and \verb+a
 \textbf{Arara 3.0a (\TeX Live 2017):} For \TeX Live (and also Mik\TeX) in this older version, the following steps must be taken to automatically indent the source code:
 \begin{enumerate}[label={\arabic*{}.}]
 	\item Add a user command for \verb+arara+ to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, January 2019}.
-	\item Add the following command to the beginning of the main.tex file (right before anything else):
-	      \begin{lstlisting}[breaklines, language=latex, caption={Setting up arara for latexindent in Texmaker}]
-%*\%*) arara: indent: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
-\end{lstlisting}
-	      This command executes the automatic file indenting for all files (and files in subfolders) that are states within the square brackets. An example is given in \autoref{fig:arara_30_latexindent}.
+	\item Add the following command to the beginning of the main.tex file (right before anything else) as shown in \autoref{code:arara_latexindent}. This command executes the automatic file indenting for all files (and files in subfolders) that are stated within the square brackets. An example is given in \autoref{fig:arara_30_latexindent}.
 	\item Add the indent.yaml file that is located in this template folder in 00\_Arara\_and\_Latexindent to your \verb+arara+ rules. These rules are typically located in "path\_to\_texlive/year/texmf-dist/scripts/arara/rules". The .yaml file was taken from a github commit of a \verb+latexindent+ developer\footnote{\url{https://gist.github.com/cereda/3ccdfb6257e5272ad9c1080a89c9ae9b}, January 2019}. He repeatedly pointed out that they do not want to do much backwards compatibility. If you run into issues and this feature is \emph{really important} to you, think about updating your \LaTeX\ distribution (see next paragraph).
 	\item Execute \verb+arara+ (if you added it as the first user command, the shortcut Alt+Shift+F1 may be used).
 	\item Update your files by clicking on File $\rightarrow$ Reload all documents from file.
@@ -17,6 +13,9 @@ Nevertheless, an issue are different versions of \verb+latexindtent+ and \verb+a
 	\item In case errors appear, \verb+arara+ always creates a backup with the file extension latexindentbackup.
 \end{enumerate}
 \textbf{Arara 4.0 (\TeX Live 2018):} In 2018, version 4.0 of \verb+arara+ was published. With this version, the indent rule is already part of the \LaTeX\ distribution and does not have to be added manually. The procedure is exactly the same as above. You can simply skip step 3 of the instructions. \textbf{Problem: Arara 4.0 seems to have an issue with subdirectories. Using it is currently not recommended.}
+\begin{lstlisting}[breaklines, caption={Setting up arara for latexindent in Texmaker}, float=tbh, label={code:arara_latexindent}, language=latex]
+%*\%*) arara: indent: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
+\end{lstlisting}
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{arara_30_latexindent}
