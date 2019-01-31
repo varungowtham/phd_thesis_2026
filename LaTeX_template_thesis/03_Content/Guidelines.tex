@@ -23,8 +23,8 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 		      \end{itemize}
 		\item margins:
 		      \begin{itemize}[label={$\circ$}]
-			      \item Word: \SI{35}{\milli\metre} (top), \SI{60}{\milli\metre} (bottom), \SI{27}{\milli\metre} (inside), \SI{40}{\milli\metre} (outside);\\
-			            binding  correction:  \SI{15}{\milli\metre}  (only  possible  when  double  page  is  selected); exception: front page;
+			      \item Word: \SI{38}{\milli\metre} (top), \SI{45}{\milli\metre} (bottom), \SI{15}{\milli\metre} (inside), \SI{35}{\milli\metre} (outside);\\
+			            binding  correction:  \SI{20}{\milli\metre}  (only  possible  when  double  page  is  selected); exception: front page;
 			      \item \LaTeX: the given settings for BCOR and DIV may not be changed;
 		      \end{itemize}
 		\item maximum number of pages (only content, excluding lists of \dots and appendix): 80 pages (bachelor thesis), 100 pages (master thesis);
@@ -390,7 +390,16 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 		\bottomrule
 	\end{tabular}
 \end{table}
-\subsection{Units}
+\subsection{Equations}
+An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+ package.
+\begin{equation}
+	\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
+\end{equation}
+For important equations, you might want to use the \verb+empheq+ package:
+\begin{empheq}[box=\fbox]{equation}
+	E = mc^2 \label{eqn:Gleichung}
+\end{empheq}
+\subsection{Numbers and Units}
 Units are very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.
 \begin{itemize}
 	\item numbers (\verb+\num{number}+): \num{3.141592653589793}
@@ -417,15 +426,6 @@ These commands are used as
 	\item \verb+\textcite{bibtexkey}+: \enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
 	\item \verb+\parencite{bibtexkey}+: \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\subsection{Equations}
-An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+ package.
-\begin{equation}
-	\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
-\end{equation}
-For important equations, you might want to use the \verb+empheq+ package:
-\begin{empheq}[box=\fbox]{equation}
-	E = mc^2 \label{eqn:Gleichung}
-\end{empheq}
 \subsection{Acronyms and Abbreviations}
 New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations.
 \subsection{Chemistry and Chemical Reactions}
@@ -442,32 +442,32 @@ Sometimes it is necessary to state chemical reactions or molecules. For this pur
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
-All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
-\paragraph*{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
+All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.\\
+\textbf{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
 \begin{theoremenv}[What is theoremed]\label{thm:template_theorem}
 	Let $f$ be a function whose derivative exists in every point, then $f$ is
 	a continuous function.
 \end{theoremenv}
-\paragraph*{Lemmas:} Lemmas can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Lemma is given in \autoref{lem:template_lemma}.
+\textbf{Lemmas:} Lemmas can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Lemma is given in \autoref{lem:template_lemma}.
 \begin{lemmaenv}[What needs to be lemma'd]
 	Given two line segments whose lengths are $a$ and $b$, respectively, there is a real number $r$ such that $b=ra$.\label{lem:template_lemma}
 \end{lemmaenv}
-\paragraph*{Proofs:} Proofs can be defined using the \verb+amsthm+ package. They are typically not numerated as they follow a certain Theorem or Lemma.
+\textbf{Proofs:} Proofs can be defined using the \verb+amsthm+ package. They are typically not numerated as they follow a certain Theorem or Lemma.
 \begin{proof}[What needs to be proven]
 	To prove it by contradiction, try and assume that the statement is false, proceed from there, and at some point, you will arrive at a contradiction.\label{pro:template_proof}
 \end{proof}
-\paragraph*{Remarks:} Remarks can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Remark is given in \autoref{rem:template_remark}.
+\textbf{Remarks:} Remarks can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Remark is given in \autoref{rem:template_remark}.
 \begin{remarkenv}[What the remarker remarks]\label{rem:template_remark}
 	This statement is true, I guess.
 \end{remarkenv}
-\paragraph*{Definitions:} Definitions can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Definition is given in \autoref{def:template_definition}. \Autoref{eq:template_equation_in_env} can also be referenced.
+\textbf{Definitions:} Definitions can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Definition is given in \autoref{def:template_definition}. \Autoref{eq:template_equation_in_env} can also be referenced.
 \begin{definition}[What the definition defines]
 	This is a definition. It defines itself.\label{def:template_definition}
 	\begin{equation}
 		c = \infty\label{eq:template_equation_in_env}
 	\end{equation}
 \end{definition}
-\paragraph*{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.\\
+\textbf{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.\\
 \begin{algorithm}[H]
 	\SetAlgoLined
 	\KwData{this text}
