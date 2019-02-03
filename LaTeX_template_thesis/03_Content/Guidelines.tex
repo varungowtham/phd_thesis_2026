@@ -165,7 +165,7 @@ The following files are located in this folder:
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
 		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
 		      \item more information can be found in the lstlistings documentation
-	      \end{itemize}	      
+	      \end{itemize}
 \end{enumerate}
 \subsection{02\_Prematter}
 The following files are located in this folder:
@@ -278,7 +278,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 	\item command line for setting up makeindex in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\
-		      \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+	      
+		            \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+
 		            in \TeX Live, makeindex is located in \verb+bin/win32+
 		      \item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 		      \item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
@@ -336,8 +336,10 @@ The only dependency Overleaf does not directly support is \verb+nomentbl+. As th
 \end{figure}
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
 Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
-Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). The second option is described in \autoref{ch:automatic_indenting_arara}. To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
-The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your user new command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
+Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation\footnote{\url{https://github.com/cereda/arara}, February 2019}. The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}. 
+
+To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
+The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
 \begin{lstlisting}[breaklines, caption={Setting up latexindent in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
 "C:/path_to_texlive/year/bin/win32/latexindent.exe" -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template/LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
@@ -468,7 +470,7 @@ All of these items are introduced in the following. Note that frames and their c
 	\end{equation}
 \end{definition}
 \textbf{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.\\
-\begin{algorithm}[H]
+\begin{algorithm}[tbh]
 	\SetAlgoLined
 	\KwData{this text}
 	\KwResult{how to write algorithm}

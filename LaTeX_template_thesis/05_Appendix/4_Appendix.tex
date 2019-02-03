@@ -12,7 +12,7 @@ Nevertheless, an issue are different versions of \verb+latexindtent+ and \verb+a
 	\item Your source code should now be nicely indented.
 	\item In case errors appear, \verb+arara+ always creates a backup with the file extension latexindentbackup.
 \end{enumerate}
-\textbf{Arara 4.0 (\TeX Live 2018):} In 2018, version 4.0 of \verb+arara+ was published. With this version, the indent rule is already part of the \LaTeX\ distribution and does not have to be added manually. The procedure is exactly the same as above. You can simply skip step 3 of the instructions. \textbf{Problem: Arara 4.0 seems to have an issue with subdirectories. Using it is currently not recommended.}
+\textbf{Arara 4.0 (\TeX Live 2018):} In 2018, version 4.0 of \verb+arara+ was published. With this version, the indent rule is already part of the \LaTeX\ distribution and does not have to be added manually. The procedure is exactly the same as above. You can simply skip step 3 of the instructions. However, arara 4.0 has a small issues with subdirectories. To solve this issue, simply follow the instructions described in the github repository of arara\footnote{\url{https://github.com/cereda/arara/issues/119}, February 2019} and use the new directive for arara by replacing indent with indentsubdir in \autoref{fig:arara_30_latexindent}.
 \begin{lstlisting}[breaklines, caption={Setting up arara for latexindent in Texmaker}, float=tbh, label={code:arara_latexindent}, language=latex]
 %*\%*) arara: indent: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
 \end{lstlisting}
