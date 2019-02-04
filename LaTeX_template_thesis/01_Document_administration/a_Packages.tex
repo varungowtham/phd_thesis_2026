@@ -2,8 +2,8 @@
 % DOCUMENT AND ENCODING
 %------------------------------
 \usepackage[
-	english,				% english language	
-	ngerman,				% new german language	
+	english,				% english language
+	ngerman,				% new german language
 ]{babel} 					% language package, second language is DEFAULT
 \usepackage[
 	nodayofweek				% do not print day of week with \today command
@@ -30,6 +30,7 @@
     automark, 				% mark chapter and section names
     ilines 					% separation line ragged left ausrichten
 ]{scrlayer-scrpage}
+\usepackage{textcomp}		% sup­ports the Text Com­pan­ion fonts, which pro­vide many text sym­bols, in the TS1 en­cod­ing
 \usepackage{xparse}			% define new document level commands
 %------------------------------
 % Tables
@@ -60,6 +61,7 @@
 ]{helvet}					% contains the Helvetica font
 \usepackage{icomma}			% distance after comma in math environment
 \usepackage[
+	osf,					% old style figures for numbers in text
 	sc,						% with small caps
 ]{mathpazo}    				% contains the Palatino font
 \usepackage{mathtools}		% some additional symbols
@@ -67,11 +69,14 @@
 	version=4				% use version 4 of the package
 ]{mhchem}					% chemical formulas
 \usepackage{nicefrac}		% makes fractions in lines nicer
+% set localization of SIunix package depending on the default language of the document
+\newcommand{\SILangSpec}{}
+\iflanguage{english}{\renewcommand{\SILangSpec}{US}}{\iflanguage{ngerman}{\renewcommand{\SILangSpec}{DE}}{}}
 \usepackage[
-	detect-family=true,
-	detect-inline-family=math,
-	exponent-product=\cdot,
-	output-decimal-marker={,}, % decimal marker (german: , and english: .)
+	detect-family=true,		% adapt unit typesetting to surrounding font family
+	detect-mode=true,		% adapt output to surrounding text style
+	locale=\SILangSpec,		% set localization in package
+	mode=text,				% text mode 
 %	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text	
 %	per-mode=symbol-or-fraction,% symbol setting inline, fraction in display math
 	range-phrase={~to~},		% for unit range "4 to 10 K"
@@ -79,7 +84,7 @@
 	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
 	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
 	retain-zero-exponent=true,	% no exponent for numbers like 1e0
-	separate-uncertainty=true,
+	separate-uncertainty=true,	% uncertainties are separated from numbers
 ]{siunitx}					% formating of SI units
 %------------------------------
 % TEXT

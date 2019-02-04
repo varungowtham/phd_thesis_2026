@@ -165,7 +165,7 @@ The following files are located in this folder:
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
 		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
 		      \item more information can be found in the lstlistings documentation
-	      \end{itemize}	      
+	      \end{itemize}
 \end{enumerate}
 \subsection{02\_Prematter}
 The following files are located in this folder:
@@ -260,8 +260,7 @@ The following files are located in this folder:
 % SEC: LANGUAGE
 %------------------------------				
 \section{Language: English or German?}\label{sec:language}
-The language of this document is set with the \verb+babel+ package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+ package automatically sets the localized names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+ package must be changed.\\
-If the language is English, it is recommended to change the output decimal marker  for SI units (\verb+siunitx+ package) to a period. This can be changed in the a\_Packages.tex file where the \verb+siunitx+ package is loaded.
+The language of this document is set with the \verb+babel+ package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+ package automatically sets the localized names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+ package must be changed. If the language is English, the output decimal marker for SI units (\verb+siunitx+ package) is also automatically changed to a period.
 %------------------------------
 % SEC: LATEX EDITOR SETTINGS AND MAINTENANCE
 %------------------------------						
@@ -279,7 +278,7 @@ If the language is English, it is recommended to change the output decimal marke
 	\item command line for setting up makeindex in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\
-		      \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+	      
+		            \verb+"C:/path_to/makeindex.exe" %.nlo -s mynomentbl.ist -o %.nls+
 		            in \TeX Live, makeindex is located in \verb+bin/win32+
 		      \item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 		      \item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
@@ -337,9 +336,11 @@ The only dependency Overleaf does not directly support is \verb+nomentbl+. As th
 \end{figure}
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
 Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
-Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+ can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. Only the first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). The second option is described in \autoref{ch:automatic_indenting_arara}. To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
-The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your user new command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
-\begin{lstlisting}[breaklines, caption={Setting up latexindent in Texmaker. If the \LaTeX\ distribution is in your system path, simply writing latexindent (without extension) instead of the whole path should suffice}, float=tbh, label={code:latexindent}, language=latex]
+Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation\footnote{\url{https://github.com/cereda/arara}, February 2019}. The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}. 
+
+To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
+The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
+\begin{lstlisting}[breaklines, caption={Setting up latexindent in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
 "C:/path_to_texlive/year/bin/win32/latexindent.exe" -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template/LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
 \begin{figure}[tbh]
@@ -400,10 +401,11 @@ For important equations, you might want to use the \verb+empheq+ package:
 	E = mc^2 \label{eqn:Gleichung}
 \end{empheq}
 \subsection{Numbers and Units}
-Units are very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.
+Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the mathpazo package.\\
+Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.
 \begin{itemize}
-	\item numbers (\verb+\num{number}+): \num{3.141592653589793}
-	\item exponentials (\verb+\num{numbere6}+): \num{1.3e6}
+	\item numbers (\verb+\num{number}+): \num{3.14159} (text) and $\num{3.14159}$ (math mode)
+	\item exponentials (\verb+\num{numbere6}+): \num{1.3e6} (text) and $\num{1.3e6}$ (math mode)
 	\item units (\verb+\si{\unit}+): \si{\joule\per\mole\per\kelvin}
 	\item numbers+units (\verb+\SI{number}{\unit}+): \SI{8.314}{\joule\per\mole\per\kelvin}
 	\item ranges (\verb+\SIrange{number1}{number2}{\unit}+): \SIrange{4}{10}{\kelvin}.
@@ -468,7 +470,7 @@ All of these items are introduced in the following. Note that frames and their c
 	\end{equation}
 \end{definition}
 \textbf{Algorithms:} Algorithms can be displayed using the algorithm2e package. An example is shown in \autoref{alg:template_algorithm}.\\
-\begin{algorithm}[H]
+\begin{algorithm}[tbh]
 	\SetAlgoLined
 	\KwData{this text}
 	\KwResult{how to write algorithm}

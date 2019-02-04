@@ -70,19 +70,16 @@
 %------------------------------
 % XPARSE
 %------------------------------
+% O is an optional argument and {} is the default, m ist the must-have argument
 \NewDocumentCommand{\pder}{ O{} O{} m }{\frac{\partial^{#2}#1}{\partial#3^{#2}}}				% a short command for partial derivatives
 \NewDocumentCommand{\roundbrack}{ m }{\left(#1 \right)} % a short command for round brackets
 \NewDocumentCommand{\squarebrack}{ m }{\left[#1 \right]}% a short command for squared brackets
 \NewDocumentCommand{\myfigure}{O{} O{1} m O{} m O{}}{\begin{figure}[#1]\centering\includegraphics[width=#2\linewidth]{#3}\caption[#4]{#5}\label{#6}\end{figure}}					% a new command to add a figure
+\NewDocumentCommand{\ind}{m O{}}{\text{#1}\mathnormal{,#2}}			% a short command for indices, the first argument is printed as text, the second in math mode
 %------------------------------
 % CODE
 %------------------------------
 \renewcommand{\lstlistingname}{Code}	% rename listing in appendix
-\newcounter{codefloat}
-\lstnewenvironment{codefloat}[2]{
-    \renewcommand\lstlistingname{Code}
-    \setcounter{lstlisting}{\value{codefloat}}
-} {\addtocounter{codefloat}{1}}
 %------------------------------
 % TABLES, LISTS, and NUMERATIONS
 %------------------------------
