@@ -35,7 +35,8 @@
 %------------------------------
 % Tables
 %------------------------------
-\usepackage{booktabs}		% special table properties
+\usepackage{array}			% allows to set styles for specific columns
+\usepackage{booktabs}		% special table properties (\toprule, \midrule, \bottomrule)
 \usepackage{longtable} 		% tables over several pages
 \usepackage{multirow}		% columns in several rows
 \usepackage{tabularx} 		% better tabulars
@@ -69,17 +70,26 @@
 	version=4				% use version 4 of the package
 ]{mhchem}					% chemical formulas
 \usepackage{nicefrac}		% makes fractions in lines nicer
-% set localization of SIunix package depending on the default language of the document
-\newcommand{\SILangSpec}{}
-\iflanguage{english}{\renewcommand{\SILangSpec}{US}}{\iflanguage{ngerman}{\renewcommand{\SILangSpec}{DE}}{}}
+%------------------------------
+% UNITS
+%------------------------------
+\newcommand{\SILangSpec}{}  % set localization of SIunix package depending on the default language of the document
+\newcommand{\SIRangePhrase}{}
+\iflanguage{english}{%
+	\renewcommand{\SILangSpec}{US}%
+	\renewcommand{\SIRangePhrase}{~to~}%
+}{%
+	\iflanguage{ngerman}{%
+		\renewcommand{\SILangSpec}{DE}%
+		\renewcommand{\SIRangePhrase}{~bis~}%
+	}{}%
+}
 \usepackage[
 	detect-family=true,		% adapt unit typesetting to surrounding font family
 	detect-mode=true,		% adapt output to surrounding text style
 	locale=\SILangSpec,		% set localization in package
 	mode=text,				% text mode 
-%	output-exponent-marker=\text{E}, % marker for \SI{1e-4}{} = 1E-04 in the text	
-%	per-mode=symbol-or-fraction,% symbol setting inline, fraction in display math
-	range-phrase={~to~},		% for unit range "4 to 10 K"
+	range-phrase={\SIRangePhrase},	% for unit range "4 to 10 K"
 	range-units=single,		% it is 4 to 10 K and not 4K to 10K
 	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
 	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
