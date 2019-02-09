@@ -39,6 +39,8 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{First Steps}
 \begin{enumerate}[label={\arabic*.}]
 	\item \textbf{carefully read this whole chapter}
+	\item install \LaTeX. In Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX\ Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX\ Live.
+	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).
 	\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether biblatex and makeindex were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
@@ -284,6 +286,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 		      \item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 		      \item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 	      \end{enumerate}
+	\item note that \verb+path_to+ of course depends on your system
 	\item the necessary mynomentbl.ist file is located in the template folder
 	\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in this software. However, the paths/commands should be the same.
 	\item if the \LaTeX\ distribution is in your system path, simply writing biber or makeindex (without extension) instead of the whole path should suffice
@@ -399,7 +402,7 @@ An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:te
 \end{equation}
 For important equations, you might want to use the \verb+empheq+ package:
 \begin{empheq}[box=\fbox]{equation}
-	E = mc^2 \label{eqn:Gleichung}
+	E = m\text{c}^2 \label{eqn:Gleichung}
 \end{empheq}
 \subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the mathpazo package.\\
@@ -413,6 +416,7 @@ Units are also very important. However, there are some rules when typesetting un
 	\item uncertainty (\verb+\num{number(uncertainty)}+): \num{410.33(55)}
 	\item uncertainty with units (\verb+\SI{number(uncertainty)}{\unit}+):\\
 	      \SI{410.33(55)}{\joule}
+	\item own units can also be defined as has been done for \si{\kJmol} and \si{\kJmolK}
 \end{itemize}
 \subsection{References}\label{subsec:references}
 In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (.bst files), which were used with bibtex, is not necessary anymore.
