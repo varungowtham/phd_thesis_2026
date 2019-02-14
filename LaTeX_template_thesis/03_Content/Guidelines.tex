@@ -39,10 +39,13 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{First Steps}
 \begin{enumerate}[label={\arabic*.}]
 	\item \textbf{carefully read this whole chapter}
+	\item install \LaTeX. In Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX\ Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX\ Live.
+	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
+	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February}. It is a Java-based, platform-independent program that generates appropriate .bib files for \LaTeX. A small introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).
 	\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
-	\item check whether biblatex and makeindex were set up correctly (see \autoref{subsec:biblatexmakeindex})
-	\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}. See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
+	\item check whether biblatex and makeindex were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
+	\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 and a \TeX Live 2018 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}}. See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
 	\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content
 	\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis - good luck!
@@ -74,7 +77,8 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 		      \item \emph{WRONG:} Pressure $P$ [Pa];
 		      \item \emph{RIGHT:} Pressure $P$ in Pa.
 	      \end{itemize}
-	      The only correct use of square brackets is shown here for the voltage: [U] = \si{\volt}, i.e.~the unit of the voltage is volt.
+	      The only correct use of square brackets is shown here for the voltage:\newline 
+	      [U] = \si{\volt}, i.e.~the unit of the voltage is Volt.
 	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. Furthermore, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
 	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
 	\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
@@ -283,6 +287,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 		      \item Linux:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 		      \item MacOS:\\ \verb+"/usr/path_to/makeindex" %.nlo -s mynomentbl.ist -o %.nls+
 	      \end{enumerate}
+	\item note that \verb+path_to+ of course depends on your system
 	\item the necessary mynomentbl.ist file is located in the template folder
 	\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in this software. However, the paths/commands should be the same.
 	\item if the \LaTeX\ distribution is in your system path, simply writing biber or makeindex (without extension) instead of the whole path should suffice
@@ -323,7 +328,7 @@ Similar applications are available on all other operating systems. Restart your 
 	\end{minipage}
 \end{figure}
 \section{Extra Features}
-The following sections introduce a few extra features. None of them are necessary for a thesis, but they might be of use for some people.
+The following sections introduce a few extra features. None of them are necessary for a thesis (except for PDF/A for a dissertation), but they might be of use for some people.
 \subsection{Compatibility with PDF/A}
 Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
@@ -354,7 +359,7 @@ The local settings are important as they specify that only one backup is created
 		\includegraphics[width=\linewidth]{latexindent_after}
 		\caption{After}\label{fig:latexindent_after}
 	\end{subfigure}
-	\caption{Before (left) and after (right) automatic indenting with latexindent}\label{fig:automatic_indenting_latexindent}
+	\caption[Before and after automatic indenting with latexindent]{Before (left) and after (right) automatic indenting with latexindent}\label{fig:automatic_indenting_latexindent}
 \end{figure}
 %------------------------------
 % SEC: TEMPLATES
@@ -381,13 +386,13 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
-	\begin{tabular}{c c c}
+	\begin{tabular}{c c c s >{\itshape} c}
 		\toprule
-		Entry 1 & Entry 2 & Entry 3 \\
-		Unit 1  & Unit 2  & Unit 3  \\
+		Entry 1 & Entry 2 & Entry 3 & \textnormal{Unit column} & Italics \\
+		Unit 1  & Unit 2  & Unit 3  & \textnormal{Some text}   & Some text \\
 		\midrule
-		1       & 2       & 3       \\
-		4       & 5       & 6       \\
+		1       & 2       & 3       & \joule 	  & bla \\
+		4       & 5       & 6       & \pascal\per\square\metre & bla bla \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -398,7 +403,7 @@ An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:te
 \end{equation}
 For important equations, you might want to use the \verb+empheq+ package:
 \begin{empheq}[box=\fbox]{equation}
-	E = mc^2 \label{eqn:Gleichung}
+	E = m\text{c}^2 \label{eqn:Gleichung}
 \end{empheq}
 \subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the mathpazo package.\\
@@ -412,8 +417,11 @@ Units are also very important. However, there are some rules when typesetting un
 	\item uncertainty (\verb+\num{number(uncertainty)}+): \num{410.33(55)}
 	\item uncertainty with units (\verb+\SI{number(uncertainty)}{\unit}+):\\
 	      \SI{410.33(55)}{\joule}
+	\item own units can also be defined as has been done for \si{\kJmol} and \si{\kJmolK}
 \end{itemize}
 \subsection{References}\label{subsec:references}
+\LaTeX\ -- or more precisely \verb+biber+ -- includes literature if it is stored as .bib file. It is however not recommended to manually write in .bib files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.
+
 In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex is used because it is compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (.bst files), which were used with bibtex, is not necessary anymore.
 \begin{itemize}
 	\item book: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
@@ -428,6 +436,7 @@ These commands are used as
 	\item \verb+\textcite{bibtexkey}+: \enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
 	\item \verb+\parencite{bibtexkey}+: \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
+\myfigure[tbh][1]{jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Acronyms and Abbreviations}
 New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations.
 \subsection{Chemistry and Chemical Reactions}
