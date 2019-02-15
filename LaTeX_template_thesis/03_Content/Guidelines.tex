@@ -104,7 +104,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 % SEC: TEMPLATE STRUCTURE
 %------------------------------		
 \section{Template Structure}
-This section describes the structure of this template. Questions remaining unanswered can be forwarded to Christian Hoffmann (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de}).
+This section describes the structure of this template. Questions, problems, or additional feature requests can be posted on the gitlab webpage of this template\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}.
 \subsection{Features}
 \begin{itemize}
 	\item valid for theses or dissertations
@@ -171,6 +171,19 @@ The following files are located in this folder:
 		      \item more information can be found in the lstlistings documentation
 	      \end{itemize}
 \end{enumerate}
+\begin{figure}[tbh]
+	\centering
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth, trim=24mm 60mm 43mm 15mm, clip]{Cover_Dissertation}
+		\caption{Cover in diss.~mode (isDiss=true)}\label{fig:cover_diss}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth, trim=24mm 60mm 43mm 15mm, clip]{Cover_Thesis}
+		\caption{Cover in thesis mode (isDiss=false)}\label{fig:cover_thesis}
+	\end{subfigure}
+	\caption{Covers of this template}\label{fig:covers}
+\end{figure}
 \subsection{02\_Prematter}
 The following files are located in this folder:
 \begin{enumerate}
@@ -202,19 +215,6 @@ The following files are located in this folder:
 		      \item examples are provided
 	      \end{itemize}
 \end{enumerate}
-\begin{figure}[tbh]
-	\centering
-	\begin{subfigure}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth, trim=24mm 60mm 43mm 15mm, clip]{Cover_Dissertation}
-		\caption{Cover in diss.~mode (isDiss=true)}\label{fig:cover_diss}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth, trim=24mm 60mm 43mm 15mm, clip]{Cover_Thesis}
-		\caption{Cover in thesis mode (isDiss=false)}\label{fig:cover_thesis}
-	\end{subfigure}
-	\caption{Covers of this template}\label{fig:covers}
-\end{figure}
 \subsection{02a\_Dissertation\_files}
 This folder contains files that are only needed for dissertations. They are included if \verb+isDiss+ is set to \verb+true+. Bachelor/Master theses do not have to consider them. However, if you want to dedicate your thesis to someone, you can of course include the dedication. The following files are located in this folder:
 \begin{enumerate}
@@ -289,7 +289,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 	      \end{enumerate}
 	\item note that \verb+path_to+ of course depends on your system
 	\item the necessary mynomentbl.ist file is located in the template folder
-	\item if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in this software. However, the paths/commands should be the same.
+	\item \textbf{if you use another editor than Texmaker,  check your editor's documentation to find out how to run biblatex (biber) and makeindex in this software. However, the paths/commands should be similar to those above.}
 	\item if the \LaTeX\ distribution is in your system path, simply writing biber or makeindex (without extension) instead of the whole path should suffice
 \end{itemize}
 \begin{figure}[tbh]
@@ -313,7 +313,7 @@ In case you have issues when compiling this document, start with updating all yo
 
 \textbf{MiK\TeX:} In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
 
-Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, contact Christian Hoffmann (\href{mailto:c.hoffmann@tu-berlin.de}{c.hoffmann@tu-berlin.de}).
+Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, please add an issue on the gitlab webpage of this template\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}.
 \begin{figure}[tbh]
 	\begin{minipage}[t]{0.48\textwidth}
 		\centering
