@@ -77,6 +77,13 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 %------------------------------
+% ALPHANUMERICAL PAGE NUMBERS
+%------------------------------
+\makeatletter
+\newcommand{\@AlphAlph}{}		% check that \@AlphAlph is undefined.
+\let\@AlphAlph=\AlphAlph
+\makeatother
+%------------------------------
 % XPARSE
 %------------------------------
 % O is an optional argument and {} is the default, m ist the must-have argument
