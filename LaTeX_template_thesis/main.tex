@@ -94,18 +94,22 @@
 \pagenumbering{arabic} 			% arabic numbering 
 \input{03_Content/0_Text} 		% include chapters
 %------------------------------
+% APPENDIX
+%------------------------------
+\cleardoublepage
+\appendix
+\pagenumbering{AlphAlph}		% capital latin letters that become AA after Z
+\input{04_Appendix/0_Appendix}
+%------------------------------
 % REFERENCES
 %------------------------------
 \cleardoublepage
 \pagenumbering{Roman} 			% capital roman numbers
 \printbibliography[category=inbib,resetnumbers]
 %------------------------------
-% APPENDIX
+% INDEX
 %------------------------------
-\cleardoublepage
-\pagenumbering{Alph} 			% capital latin letters
-\appendix
-\input{05_Appendix/0_Appendix}
+\printindex
 %------------------------------
 % END DOCUMENT
 %------------------------------

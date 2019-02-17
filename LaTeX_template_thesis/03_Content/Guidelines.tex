@@ -240,15 +240,7 @@ The following files are located in this folder:
 		      \item can be split further if deemed necessary
 	      \end{itemize}
 \end{enumerate}
-\subsection{04\_Literature}\label{subsec:literature}
-The following files are located in this folder:
-\begin{enumerate}
-	\item Bibliography.bib
-	      \begin{itemize}
-		      \item contains the literature
-	      \end{itemize}
-\end{enumerate}
-\subsection{05\_Appendix}
+\subsection{04\_Appendix}
 The following files are located in this folder:
 \begin{enumerate}
 	\item 0\_Appendix.tex
@@ -259,6 +251,18 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item contains the Xth appendix
 	      \end{itemize}
+\end{enumerate}	      
+\subsection{05\_Literature\_and\_Index}\label{subsec:literature}
+The following files are located in this folder:
+\begin{enumerate}
+	\item Bibliography.bib
+	      \begin{itemize}
+		      \item contains the literature
+	      \end{itemize}
+	\item myindexstyle.ist
+		  \begin{itemize}
+		  	  \item contains the style for the index (see \autoref{subsec:index})
+		  \end{itemize}
 \end{enumerate}
 %------------------------------
 % SEC: LANGUAGE
@@ -268,7 +272,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 %------------------------------
 % SEC: LATEX EDITOR SETTINGS AND MAINTENANCE
 %------------------------------						
-\section{\LaTeX{} Editor Settings and Maintenance}
+\section{\LaTeX\ Editor Settings and Maintenance}
 \subsection{Biblatex and Makeindex}\label{subsec:biblatexmakeindex}
 \begin{itemize}
 	\item to compile the file correctly, biblatex and makeindex are used
@@ -331,6 +335,10 @@ Similar applications are available on all other operating systems. Restart your 
 The following sections introduce a few extra features. None of them are necessary for a thesis (except for PDF/A for a dissertation), but they might be of use for some people.
 \subsection{Compatibility with PDF/A}
 Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-1b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice.
+\subsection{Index}\label{subsec:index}
+If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+ package is used. This automatically executes makeindex during compilation. If you do not want an index, remove the \verb+\makeindex+ command from the b\_Commands.tex file and the \verb+\printindex+ command from the main.tex file.
+
+The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.\index{Alien}\index{Book}\index{Chameleon}\index{Dummy}\index{Elephant}\index{Fire}\index{Guardian}\index{Hierarchy}\index{Illusion}\index{Ketchup}
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 This template was successfully tested with Overleaf, an online editor for \LaTeX\ documents\footnote{\url{https://de.overleaf.com/}, January 2019}, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}\\
 The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}.
