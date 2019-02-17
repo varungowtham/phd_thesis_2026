@@ -302,3 +302,19 @@ urlseen = {last access},
    	pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
    	urlbordercolor=cyan,		% border color for URLs
 }%
+%------------------------------
+% MAKEINDEX
+%------------------------------
+\makenomenclature				% generate an .nlo file for the List of Symbols
+\iflanguage{ngerman}{
+	\newcommand{\indextitle}{Indexregister}
+}{\iflanguage{english}
+	\newcommand{\indextitle}{Index Register}
+{}}
+\makeindex[
+	columns=2,					% number of columns
+	intoc=true,					% add to List of Contents
+	options= -s 05_Literature_and_Index/myindexstyle.ist,	% index style file
+	title={\indextitle\label{ch:index}},	% title of the Index
+	]							% generate an .idx file for the Index
+\setindexpreamble{\label{ch:index}}

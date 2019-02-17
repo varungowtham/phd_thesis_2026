@@ -3,7 +3,9 @@
 *.bbl
 *.bcf
 *.blg
+*.idx
 *.ilg
+*.ind
 *.loa
 *.lof
 *.log
