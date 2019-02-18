@@ -308,9 +308,11 @@ urlseen = {last access},
 \makenomenclature				% generate an .nlo file for the List of Symbols
 \iflanguage{ngerman}{
 	\newcommand{\indextitle}{Indexregister}
-}{\iflanguage{english}
+}{
+\iflanguage{english}{
 	\newcommand{\indextitle}{Index Register}
-{}}
+}{}
+}
 \makeindex[
 	columns=2,					% number of columns
 	intoc=true,					% add to List of Contents
