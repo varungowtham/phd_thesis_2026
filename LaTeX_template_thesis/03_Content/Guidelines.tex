@@ -37,9 +37,9 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 % SEC: FIRST STEPS
 %------------------------------
 \section{First Steps}
-\begin{enumerate}[label={\arabic*.}]
+\begin{enumerate}
 	\item \textbf{carefully read this whole chapter}
-	\item install \LaTeX. In Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX\ Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX\ Live.
+	\item install \LaTeX. In Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate .bib files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).
@@ -108,17 +108,22 @@ This section describes the structure of this template. Questions, problems, or a
 \subsection{Features}
 \begin{itemize}
 	\item valid for theses or dissertations
-	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
-	\item can be used in German and English
+	\item can be used in German and English based on the settings of the \verb+babel+ package
+	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})	
+	\item simple generation of List of Algorithms with the \verb+algorithm2e+ package and KOMA script
+	\item simple generation of List of Codes with the \verb+lstlistings+ package and KOMA script
 	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomentbl+ package
-	\item simple generation of List of Abbreviations with the \verb+acronym+ package
-	\item includes bibliography via biblatex and biber
-	\item includes DOI/ISBN/URL automatically in references
+	\item simple generation of List of Abbreviations with the \verb+acronym+ package	
+	\item simple generation of List of References with the \verb+biblatex+ package and biber
+	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the .bib file
+	\item simple generation of an Index Register with the \verb+imakeidx+ package
+	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code 
+	\item various templates for typical elements of a thesis included	
 \end{itemize}
 \subsection{Main Document}
 \begin{itemize}
 	\item is called main.tex
-	\item this document must be compiled in \LaTeX{}
+	\item this document must be compiled in \LaTeX\ or should be chosen as master document
 \end{itemize}
 \subsection{00\_Arara\_and\_Latexindent}
 The following files are located in this folder:
@@ -303,7 +308,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 \end{figure}
 \subsection{Compiling the Document}
 The following commands/scripts must be run to compile the document completely:
-\begin{enumerate}[label={\arabic*.}]
+\begin{enumerate}
 	\item pdflatex: This generates a first PDF. At this point, the List of References and the List of Symbols are missing.
 	\item biblatex: Run biber (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
 	\item makeindex: Run makeindex (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
@@ -441,8 +446,10 @@ In the following, a few examples of the authoryear short reference are stated. F
 \end{itemize}
 These commands are used as
 \begin{itemize}
-	\item \verb+\textcite{bibtexkey}+: \enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
-	\item \verb+\parencite{bibtexkey}+: \enquote{Thermodynamics are great \parencite{Abrams1975}.}
+	\item \verb+\textcite{bibtexkey}+:\\
+	\enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
+	\item \verb+\parencite{bibtexkey}+:\\
+	\enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
 \myfigure[tbh][1]{jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Acronyms and Abbreviations}
@@ -461,7 +468,8 @@ Sometimes it is necessary to state chemical reactions or molecules. For this pur
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
-All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.\\
+All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the b\_Commands.tex file.
+
 \textbf{Theorems:} Theorems can be defined using the \verb+amsthm+ package in combination with the \verb+mdframed+ package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
 \begin{theoremenv}[What is theoremed]\label{thm:template_theorem}
 	Let $f$ be a function whose derivative exists in every point, then $f$ is

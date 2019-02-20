@@ -81,7 +81,7 @@
 %------------------------------
 \makeatletter
 \newcommand{\@AlphAlph}{}		% check that \@AlphAlph is undefined.
-\let\@AlphAlph=\AlphAlph
+\let\@AlphAlph=\AlphAlph		% this allows for a counter, which goes from page Z to page AA
 \makeatother
 %------------------------------
 % XPARSE
@@ -200,19 +200,25 @@
   \endgroup%
 }
 %------------------------------
-% NUMBERS FOR ENUMERATE ENVIRONMENT
+% ENUMERATE ENVIRONMENT
 %------------------------------
-\renewcommand{\labelenumi}{\alph{enumi})} 	
-\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
-\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
-% a)
-% a.a)
-% a.a.a)
+\renewcommand{\labelenumi}{\arabic{enumi})} 				% 1)
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}	% 1.1)
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}	% 1.1.1)
+\setlist[enumerate,1]{%
+	before*=\onehalfspacing,	% onehalfspacing in environments
+	itemsep=0.15\baselineskip,	% vertical space between items
+	labelindent=\parindent,		% labels are indented by this length
+}%
 %------------------------------
-% LABELS FOR ITEMIZE
+% ITEMIZE ENVIRONMENT
 %------------------------------
-\setlist[1]{labelindent=\parindent}	% labels are indented by this length
-\setlist[itemize,1]{label={--}}		% item environments use a -- for itemizing
+\setlist[itemize,1]{%
+	label={--},					% standard label is --
+	before*=\onehalfspacing,	% onehalfspacing in environments
+	itemsep=0.15\baselineskip,	% vertical space between items
+	labelindent=\parindent,		% labels are indented by this length
+}%
 %------------------------------
 % NEW UNITS
 %------------------------------
