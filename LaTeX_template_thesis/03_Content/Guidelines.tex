@@ -79,7 +79,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	      \end{itemize}
 	      The only correct use of square brackets is shown here for the voltage:\newline 
 	      [U] = \si{\volt}, i.e.~the unit of the voltage is Volt.
-	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. Furthermore, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
+	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
 	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
 	\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
 	\item extensive tables or figures that are repeatedly referenced in the text should be put in the appendix.
@@ -416,7 +416,7 @@ An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:te
 \end{equation}
 For important equations, you might want to use the \verb+empheq+ package:
 \begin{empheq}[box=\fbox]{equation}
-	E = m\mathrm{c}^2 \label{eqn:Gleichung}
+	E = mc^2 \label{eqn:Gleichung}
 \end{empheq}
 \subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the mathpazo package.\\
