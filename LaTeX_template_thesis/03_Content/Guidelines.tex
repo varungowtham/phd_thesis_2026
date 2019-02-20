@@ -111,7 +111,7 @@ This section describes the structure of this template. Questions, problems, or a
 	\item can be used in German and English based on the settings of the \verb+babel+ package
 	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})	
 	\item simple generation of List of Algorithms with the \verb+algorithm2e+ package and KOMA script
-	\item simple generation of List of Codes with the \verb+lstlistings+ package and KOMA script
+	\item simple generation of List of Codes with the \verb+listings+ package and KOMA script
 	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomentbl+ package
 	\item simple generation of List of Abbreviations with the \verb+acronym+ package	
 	\item simple generation of List of References with the \verb+biblatex+ package and biber
@@ -173,7 +173,7 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
 		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
-		      \item more information can be found in the lstlistings documentation
+		      \item more information can be found in the listings documentation
 	      \end{itemize}
 \end{enumerate}
 \begin{figure}[tbh]
@@ -317,11 +317,10 @@ The following commands/scripts must be run to compile the document completely:
 \subsection{Updating Packages in \TeX Live and MiK\TeX}\label{subsec:update_packages}
 As stated above, compiling problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility to automatically check for updates of packages when they are included in a \LaTeX{} document.\\
 In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
-
-\textbf{\TeX Live:} In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \verb+texlive/year/bin/win32+. In this folder, you find a file called tlmgr-gui.exe. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
-
-\textbf{MiK\TeX:} In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
-
+\begin{description}
+\item[\TeX Live:] In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \verb+texlive/year/bin/win32+. In this folder, you find a file called tlmgr-gui.exe. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
+\item[MiK\TeX:] In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
+\end{description}
 Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, please add an issue on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \begin{figure}[tbh]
 	\begin{minipage}[t]{0.48\textwidth}
@@ -414,10 +413,10 @@ An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:te
 \begin{equation}
 	\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
 \end{equation}
-For important equations, you might want to use the \verb+empheq+ package:
-\begin{empheq}[box=\fbox]{equation}
-	E = mc^2 \label{eqn:Gleichung}
-\end{empheq}
+For important equations, you might want to use a box:
+\begin{equation}
+	\boxed{E = mc^2} \label{eqn:Gleichung}
+\end{equation}
 \subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the mathpazo package.\\
 Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.
