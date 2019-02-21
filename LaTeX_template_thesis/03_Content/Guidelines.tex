@@ -450,11 +450,11 @@ These commands are used as
 	\item \verb+\parencite{bibtexkey}+:\\
 	\enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\myfigure[tbh][0.9]{jabref}[Jabref]{Jabref}[fig:jabref]
+\myfigure[tbh][0.8]{jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Acronyms and Abbreviations}
 New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{Chemistry and Chemical Reactions}
-Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+ command, e.g.~\ce{H2O}. Note that chemicals and their formulas \emph{should not} be added to the List of Symbols or the List of Abbreviations.
+Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+ command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]
 	\setatomsep{20pt}
 	\centering
