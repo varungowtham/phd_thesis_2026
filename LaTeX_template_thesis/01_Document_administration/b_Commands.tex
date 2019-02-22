@@ -300,7 +300,6 @@ urlseen = {last access},
 % HYPERREF
 %------------------------------
 \hypersetup{%
-   	bookmarks,					% writes Acrobat bookmarks, not necessary when using the pdfx package
    	bookmarksnumbered=true,		% bookmarks are numbered in PDF
    	bookmarksopen=false,		% bookmarks are closed when PDF is opened
    	citebordercolor=blue,		% border color for citations
@@ -308,7 +307,6 @@ urlseen = {last access},
    	hypertexnames=true, 		% use guessable names for links
    	linkbordercolor=red, 		% color for links
    	linktocpage, 				% use page numbers as links in table of contents    
-   	pdfpagelabels, 				% set PDF page labels, not necessary when using the pdfx package
    	pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
    	urlbordercolor=cyan,		% border color for URLs
 }%
@@ -330,3 +328,9 @@ urlseen = {last access},
 	title={\indextitle\label{ch:index}},	% title of the Index
 	]							% generate an .idx file for the Index
 \setindexpreamble{\label{ch:index}}
+%------------------------------
+% OWN COMMANDS
+%------------------------------
+% You can use this area for additional own commands
+% in this way, it is simpler to pull a new version of the template - you can simply copy this area to the new version
+% make sure that these commands do not require or override commands from above

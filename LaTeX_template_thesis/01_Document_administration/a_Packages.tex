@@ -159,11 +159,21 @@
 % CODE
 %------------------------------
 \usepackage{listings}		% for code publication, e.g. in the appendix
+
+%------------------------------
+% OWN PACKAGES
+%------------------------------
+% You can use this area for loading additional packages
+% in this way, it is simpler to pull a new version of the template - you can simply copy this area to the new version
+% make sure that these packages do not require a certain loading order or have dependencies on packages loaded above
+
+
+
 %------------------------------
 % HYPERREF - USUALLY MUST BE LOADED LAST
 %------------------------------
-%\usepackage{hyperref}		% hyperref for links in the text (automatically loaded by the pdfx package)
-\usepackage[a-1b]{pdfx}		% package for PDF/A-1b conformity (only needed for dissertations)
+% hyperref is automatically included in the pdfx package and hence does not need to be loaded
+\usepackage[a-2b]{pdfx}		% package for PDF/A-2b conformity 
 %------------------------------
 % DO NOT LOAD PACKAGES AFTER HYPERREF/PDFX UNLESS THEIR PACKAGE DOCUMENTATION SAYS SO
 %------------------------------
