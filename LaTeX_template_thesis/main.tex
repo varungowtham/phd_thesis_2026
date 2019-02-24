@@ -22,7 +22,6 @@
     open=right,					% chapter always starts on right side
     paper=a4, 					% paper format
     parskip=half, 				% distance between paragraphs
-    titlepage, 					% titlepage available   
     twoside, 					% twoside document  
 ]{scrreprt}
 %------------------------------
@@ -32,9 +31,9 @@
 \include{01_Document_administration/b_Commands} 				% all additional commands and options
 \include{01_Document_administration/c_Meta}						% meta information of this document, such as title, author, etc.
 \include{01_Document_administration/d_NomenclatureCommands} 	% commands for the list of symbols
-\include{01_Document_administration/e_Header_Footer}			% commands for headers and footers
-\include{01_Document_administration/f_CodeLanguageSpecifications}% commands for code specifications
-\include{01_Document_administration/g_AbbreviationDefinitions}	% include abbreviations
+\include{01_Document_administration/e_AbbreviationDefinitions}	% include abbreviations
+\include{01_Document_administration/f_Header_Footer}			% commands for headers and footers
+\include{01_Document_administration/g_CodeLanguageSpecifications}% commands for code specifications
 \addbibresource{05_Literature_and_Index/Bibliography.bib}
 \KOMAoptions{DIV=last}          % recalculate type area
 %------------------------------
@@ -89,8 +88,8 @@
 	\cleardoublepage
 	\input{02_Prematter/f_Abbreviations}
 	\cleardoublepage
-	\listoftodos				% make the list of todos
-	\todototoc					% add the list of todos to the list of contents	
+	\listoftodos				% make list of todos
+	\todototoc					% add list of todos to list of contents	
 	\cleardoublepage
 \end{spacing}
 %------------------------------
