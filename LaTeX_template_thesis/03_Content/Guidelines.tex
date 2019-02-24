@@ -2,7 +2,7 @@
 %% CHAP: GUIDELINES
 %%------------------------------	
 \chapter{Guidelines}\label{ch:styleguide}
-This chapter introduces the guidelines for writing a thesis at the Process Dynamics and Operations Group. It is recommended to use \LaTeX{} as the code of this style guide can directly be used for the thesis. However, a Word version of this template is also available. In the template, the correct fonts, font sizes, citation style, etc. are already set.
+This chapter introduces the guidelines for writing a thesis at the Process Dynamics and Operations Group. It is recommended to use \LaTeX{} as the code of this style guide can directly be used for the thesis. However, a Word version of this template is also available. In the template, the correct fonts, font sizes, citation style, and so forth are already set.
 %------------------------------
 % SEC: MOST IMPORTANT STYLE FACTS
 %------------------------------
@@ -27,7 +27,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 			            binding  correction:  \SI{20}{\milli\metre}  (only  possible  when  double  page  is  selected); exception: front page;
 			      \item \LaTeX: the given settings for BCOR and DIV may not be changed;
 		      \end{itemize}
-		\item maximum number of pages (only content, excluding lists of \dots and appendix): 80 pages (bachelor thesis), 100 pages (master thesis);
+		\item maximum number of pages (only content, excluding lists of \dots\ and appendix): 80 pages (bachelor thesis), 100 pages (master thesis);
 		\item the layout of the front page is fixed and must not be changed, neither in \LaTeX{} nor in Word;
 		\item of course, loading additional packages in \LaTeX{} for functionality is fine.
 	\end{itemize}
@@ -39,17 +39,17 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{First Steps}
 \begin{enumerate}
 	\item \textbf{carefully read this whole chapter}
-	\item install \LaTeX. In Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine.
+	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate .bib files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the a\_Packages.tex file with the \verb+babel+ package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+ package is currently loaded with ngerman as default language (see \autoref{sec:language}).
 	\item change the necessary entries in c\_Meta.tex (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether biber and makeindex were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
-	\item check whether you can compile this document without errors (this should always be the case as long as all necessary packages are installed). This template was successfully compiled with a \TeX Live 2017 and a \TeX Live 2018 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}} See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
+	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2017 and a \TeX Live 2018 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}} See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
 	\item remove the guidelines chapter from this document by deleting it and removing it from the 0\_Text.tex file in the folder 03\_Content
 	\item add your own .bib file for your references or use the present one	(it is recommended to simply use the given one)
-	\item start writing your thesis - good luck!
-	\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, e.g.~a List of Algorithms, just remove it from the thesis.
+	\item start writing your thesis -- good luck!
+	\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, for example a List of Algorithms, just remove it from the thesis.
 \end{enumerate}
 %------------------------------
 % SEC: GENERAL INFORMATION
@@ -79,7 +79,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	      \end{itemize}
 	      The only correct use of square brackets is shown here for the voltage:\newline 
 	      [U] = \si{\volt}, i.e.~the unit of the voltage is Volt.
-	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acronym+ package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
+	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomentbl+ and the \verb+acro+ package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
 	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+ package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
 	\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
 	\item extensive tables or figures that are repeatedly referenced in the text should be put in the appendix.
@@ -113,11 +113,11 @@ This section describes the structure of this template. Questions, problems, or a
 	\item simple generation of List of Algorithms with the \verb+algorithm2e+ package and KOMA script
 	\item simple generation of List of Codes with the \verb+listings+ package and KOMA script
 	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomentbl+ package
-	\item simple generation of List of Abbreviations with the \verb+acronym+ package	
+	\item simple generation of List of Abbreviations with the \verb+acro+ package	
 	\item simple generation of List of References with the \verb+biblatex+ package and biber
 	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the .bib file
 	\item simple generation of an Index Register with the \verb+imakeidx+ package
-	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code 
+	\item extra features, such as ToDos, PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code 
 	\item various templates for typical elements of a thesis included	
 \end{itemize}
 \subsection{Main Document}
@@ -155,7 +155,7 @@ The following files are located in this folder:
 	      \end{itemize}
 	\item c\_Meta.tex
 	      \begin{itemize}
-		      \item contains meta information regarding author, etc.
+		      \item contains meta information regarding author, title, keywords, etc.
 		      \item contains a boolean variable to select whether it is a dissertation or a bachelor/master thesis
 		      \item contains a boolean variable to select whether it is a master or a bachelor thesis
 	      \end{itemize}
@@ -173,8 +173,14 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
 		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
-		      \item more information can be found in the listings documentation
+		      \item more information can be found in the \verb+listings+ documentation
 	      \end{itemize}
+	\item g\_Abbreviations.tex
+	      \begin{itemize}
+		      \item is used to define the abbreviations in the text
+		      \item abbreviations can be subdivided into classes
+		      \item more information can be found in the \verb+acro+ documentation
+	      \end{itemize}	      
 \end{enumerate}
 \begin{figure}[tbh]
 	\centering
@@ -308,7 +314,7 @@ The language of this document is set with the \verb+babel+ package. The order of
 	\includegraphics[width=\linewidth]{BiblatexMakeindex}
 	\caption[Setting up biber and makeindex in Texmaker]{Setting up biber and makeindex in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
 \end{figure}
-\subsection{Compiling the Document}
+\subsection{Compiling the Document}\label{subsec:compiling}
 The following commands/scripts must be run to compile the document completely:
 \begin{enumerate}
 	\item pdflatex: This generates a first PDF. At this point, the List of References and the List of Symbols are missing.
@@ -339,23 +345,25 @@ Similar applications are available on all other operating systems. Restart your 
 \end{figure}
 \section{Extra Features}
 The following sections introduce a few extra features. None of them are necessary for a thesis (except for PDF/A for a dissertation), but they might be of use for some people.
+\subsection{ToDos}
+In your thesis, you always have parts where you will have to do something more later on. You can mark these sections with the \verb+\todo[option]{text}+ command\todo[color=red]{change that asap!}. \todo[color=green]{change that later at some point}Something that should be done later might be green. You can also include a \enquote{missing figure} if you currently do not have it. When you do not have any more ToDos, remove the List of ToDos from the main.tex.
+\missingfigure[figwidth=\linewidth]{I want to add the results of my current experiment here}
 \subsection{Compatibility with PDF/A}
 Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+ package is used with the option a-2b. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+ package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+ package to find how to include other color profiles. Normally, the default should however suffice. The \verb+pdfx+ package also loads the \verb+hyperref+ package.
-\subsection{Index}\label{subsec:index}
-If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+ package is used. This automatically executes makeindex during compilation. If you do not want an index, remove the \verb+\makeindex+ command from the b\_Commands.tex file and the \verb+\printindex+ command from the main.tex file.
-
-The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.\index{Alien}\index{Book}\index{Chameleon}\index{Dummy}\index{Elephant}\index{Fire}\index{Guardian}\index{Hierarchy}\index{Illusion}\index{Ketchup}
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
-This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, e.g.~from a company in the industry. In this case, your data should remain on your computer!}\\
-The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files.\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019}
+This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}\\
+The only dependency Overleaf does not directly support is \verb+nomentbl+. As this package needs makeindex, you have to tell the Overleaf compiler how to proceed. This information is contained in the latexmkrc file in this template folder. Simply upload the latexmkrc file to the Overleaf project next to main.tex and Overleaf should compile this file correctly. In some cases, you may first have to clear the cache to remove old temporary files.\footnote{\url{https://www.overleaf.com/learn/how-to/Clearing_the_cache}, January 2019} In addition, make sure that you set main.tex as main document.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Overleaf}
 	\caption{Template on Overleaf}\label{fig:overleaf}
 \end{figure}
+\subsection{Index}\label{subsec:index}
+If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+ package is used. This automatically executes makeindex during compilation. If you do not want an index, remove the \verb+\makeindex+ command from the b\_Commands.tex file and the \verb+\printindex+ command from the main.tex file.\\
+The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.\index{Alien}\index{Book}\index{Chameleon}\index{Dummy}\index{Elephant}\index{Fire}\index{Guardian}\index{Hierarchy}\index{Illusion}\index{Ketchup}
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
 Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
-Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}. 
+Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+: directly running \verb+latexindent+ or calling it via \verb+arara+\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}.
 
 To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+ is executed with writing rights (-w) on the current .tex file with local settings (-l) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
 The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
@@ -380,20 +388,11 @@ The local settings are important as they specify that only one backup is created
 %------------------------------	
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
 This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
-\subsection{Equations}
-An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+ package.
-\begin{equation}
-	\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
-\end{equation}
-For important equations, you might want to use a box:
-\begin{equation}
-	\boxed{E = mc^2} \label{eqn:Gleichung}
-\end{equation}
 \subsection{Figures}
 A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+ command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+ command. In addition, a short command for including figures was set up with the \verb+xparse+ package:
 \begin{verbatim}
-			\myfigure[opt1][opt2]{arg1}[opt3]{arg2}[opt4]
-			\end{verbatim}
+	\myfigure[opt1][opt2]{arg1}[opt3]{arg2}[opt4]
+\end{verbatim}
 Therein,
 \begin{itemize}
 	\item opt1 is the preferred location of the float, e.g.~tbh
@@ -405,7 +404,7 @@ Therein,
 \end{itemize}
 \myfigure[tbh][1]{dbta_logo}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 \subsection{Tables}
-A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence.
+A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+ package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). This template also loads the \verb+threeparttablex+ package, which extends the feature to the longtable environment as introduced in \autoref{app:longtable}.
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -419,8 +418,25 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 		\bottomrule
 	\end{tabular}
 \end{table}
+\begin{table}[tbh]
+\centering
+\caption{Exemplary table with an annotation}\label{tab:threeparttable}
+\begin{threeparttable}
+\begin{tabular}{c c c}
+\toprule
+Variable & Mean & Std.~Dev. \\
+\midrule
+$a$ & $\num{4}$ & $\pm\num{0.1}$\tnote{*} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[*] This standard deviation is only true if I measured correctly
+\end{tablenotes}
+\end{threeparttable}
+\label{table2}
+\end{table}
 \subsection{Numbers and Units}
-Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the mathpazo package.\\
+Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+ package.\\
 Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+ package is suggested.
 \begin{itemize}
 	\item numbers (\verb+\num{number}+): \num{3.14159} (text) and $\num{3.14159}$ (math mode)
@@ -433,9 +449,19 @@ Units are also very important. However, there are some rules when typesetting un
 	      \SI{410.33(55)}{\joule}
 	\item own units can also be defined as has been done for \si{\kJmol} and \si{\kJmolK}
 \end{itemize}
+\subsection{Equations}
+An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+ package.
+\begin{equation}
+	\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
+\end{equation}
+For important equations, you might want to use a box:
+\begin{equation}
+	\boxed{E = mc^2} \label{eqn:Gleichung}
+\end{equation}
+\subsection{Acronyms and Abbreviations}
+Abbreviations are defined in g\_Abbreviations.tex using the \verb+acro+ package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations. The \verb+acro+ package holds more commands for the plural of the long and short form of the abbreviations; check the documentation for more information.
 \subsection{References}\label{subsec:references}
-\LaTeX\ -- or more precisely \verb+biber+ -- includes literature if it is stored as .bib file. It is however not recommended to manually write in .bib files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.
-
+\LaTeX\ -- or more precisely \verb+biber+ -- includes literature if it is stored as .bib file. It is however not recommended to manually write in .bib files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
 In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+ package. Biblatex and biber are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see .bib file. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (.bst files), which were used with bibtex, is not necessary anymore.
 \begin{itemize}
 	\item book: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
@@ -452,9 +478,7 @@ These commands are used as
 	\item \verb+\parencite{bibtexkey}+:\\
 	\enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\myfigure[tbh][1]{jabref}[Jabref]{Jabref}[fig:jabref]
-\subsection{Acronyms and Abbreviations}
-New acronyms must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{SUNDIALS} is explained here, but not afterwards because \ac{SUNDIALS} was already defined. The same is true for a \ac{DAE}. Later on, we just write \ac{DAE} systems. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
+\myfigure[tbh][0.8]{jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Chemistry and Chemical Reactions}
 Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+ and the \verb+mhchem+ package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+ command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]
@@ -519,7 +543,7 @@ The \verb+hyperref+ package also supplies an \verb+\autoref+ command that is lin
 	      \begin{itemize}
 		      \begin{otherlanguage}{ngerman}
 			      \item \dots, siehe \autoref{ch:styleguide}. \Autoref{ch:styleguide} zeigt, dass \dots
-			      \item\dots, siehe \autoref{sec:templates}. \Autoref{sec:templates} zeigt, dass \dots
+			      \item \dots, siehe \autoref{sec:templates}. \Autoref{sec:templates} zeigt, dass \dots
 			      \item \dots, siehe \autoref{subsec:biblatexmakeindex}. \Autoref{subsec:biblatexmakeindex} zeigt, dass \dots
 			      \item \dots, siehe \autoref{fig:template_figure}. \Autoref{fig:template_figure} zeigt, dass \dots
 			      \item \dots, siehe \autoref{tab:template_table}. \Autoref{tab:template_table} zeigt, dass \dots

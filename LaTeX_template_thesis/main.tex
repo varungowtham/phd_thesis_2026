@@ -34,6 +34,7 @@
 \include{01_Document_administration/d_NomenclatureCommands} % commands for the list of symbols
 \include{01_Document_administration/e_Header_Footer}		% commands for headers and footers
 \include{01_Document_administration/f_CodeLanguageSpecifications}% commands for code specifications
+\include{01_Document_administration/g_Abbreviations}% include abbreviations
 \addbibresource{05_Literature_and_Index/Bibliography.bib}
 \KOMAoptions{DIV=last}          % recalculate type area
 %------------------------------
@@ -88,23 +89,26 @@
 	\cleardoublepage
 	\input{02_Prematter/f_Abbreviations}
 	\cleardoublepage
+	\listoftodos				% make the list of todos
+	\todototoc					% add the list of todos to the list of contents	
+	\cleardoublepage
 \end{spacing}
 %------------------------------
 % TEXT
 %------------------------------
 \pagenumbering{arabic} 			% arabic numbering 
 \input{03_Content/0_Text} 		% include chapters
+\cleardoublepage
 %------------------------------
 % APPENDIX
 %------------------------------
-\cleardoublepage
 \appendix
 \pagenumbering{AlphAlph}		% capital latin letters that become AA after Z
 \input{04_Appendix/0_Appendix}
+\cleardoublepage
 %------------------------------
 % REFERENCES
 %------------------------------
-\cleardoublepage
 \pagenumbering{Roman} 			% capital roman numbers
 \printbibliography[category=inbib,resetnumbers]
 %------------------------------

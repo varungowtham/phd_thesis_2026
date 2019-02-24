@@ -297,6 +297,18 @@ urlseen = {last access},
 %------------------------------
 \renewcommand*{\UrlFont}{\upshape}
 %------------------------------
+% TODOS
+%------------------------------
+\makeatletter
+\iflanguage{ngerman}{
+	\renewcommand{\@todonotes@todolistname}{ToDo-Verzeichnis}
+}{
+\iflanguage{english}{
+	\renewcommand{\@todonotes@todolistname}{List of ToDos}
+}{}
+}
+\makeatother
+%------------------------------
 % HYPERREF
 %------------------------------
 \hypersetup{%
@@ -310,6 +322,22 @@ urlseen = {last access},
    	pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
    	urlbordercolor=cyan,		% border color for URLs
 }%
+%------------------------------
+% LIST OF ABBREVIATIONS
+%------------------------------
+\iflanguage{english}{
+	\newcommand{\abbrevname}{List of Abbreviations}
+	}{\iflanguage{ngerman}{
+		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
+	}
+\newlist{abbreviations}{description}{1}
+\setlist[abbreviations]{
+	itemindent=0pt,
+	labelwidth=5em,
+	leftmargin=2.5cm,
+}
+\DeclareAcroListStyle{mystyle}{list}{list=abbreviations }
+\acsetup{list-style=mystyle}	
 %------------------------------
 % MAKEINDEX
 %------------------------------
