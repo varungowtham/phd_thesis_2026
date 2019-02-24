@@ -31,6 +31,11 @@
     ilines 					% separation line ragged left ausrichten
 ]{scrlayer-scrpage}
 \usepackage{textcomp}		% sup­ports the Text Com­pan­ion fonts, which pro­vide many text sym­bols, in the TS1 en­cod­ing
+\usepackage[
+	colorinlistoftodos,		% adds a small color square
+	\languagename,			% sets the localization of the package based on babel
+	textsize=footnotesize,	% font size of todos
+]{todonotes}
 \usepackage{xparse}			% define new document level commands
 %------------------------------
 % TABLES
@@ -39,7 +44,13 @@
 \usepackage{booktabs}		% special table properties (\toprule, \midrule, \bottomrule)
 \usepackage{longtable} 		% tables over several pages
 \usepackage{multirow}		% columns in several rows
+\usepackage{tabu}			% supplies an improved X column
 \usepackage{tabularx} 		% better tabulars
+\usepackage[
+	flushleft,				% no hanging indentation on notes
+]{threeparttable}			% tables with footnotes
+\usepackage[
+]{threeparttable}			% extends the threeparttable package to longtables
 %------------------------------
 % GRAPHICS
 %------------------------------
@@ -150,7 +161,12 @@
 %------------------------------
 % LISTS OF SYMBOLS AND ABBREVIATIONS AND INDEX
 %------------------------------
-\usepackage{acronym}		% package for list of abbreviations
+\usepackage[
+	hyperref=true,			% link abbreviations
+	index=true,				% add abbreviations to the index register
+	only-used=false,		% print only those used in the text
+	sort=true,				% sort the abbreviations
+]{acro}						% package for list of abbreviations
 \usepackage{imakeidx}		% package for keyword index
 \usepackage[
 	intoc					% list of symbols appears in list of content
