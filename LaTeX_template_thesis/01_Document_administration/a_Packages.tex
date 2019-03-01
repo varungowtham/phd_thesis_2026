@@ -25,7 +25,7 @@
 ]{microtype}				% This package might improve the look of the PDF by minimally stretching or extending fonts, etc. You can uncomment it to see the results
 \usepackage{morewrites}		% allows TeX to write to more than 16 files
 \usepackage[
-	nomencl=false,			% do not use scrhack for nomencl
+	nomencl=true,			% do not use scrhack for nomencl
 ]{scrhack}					% package to achieve full compability between KOMA and other packages; MUST BE LOADED BEFORE SETSPACE
 \usepackage[
     automark, 				% mark chapter and section names
@@ -170,8 +170,9 @@
 ]{acro}						% package for list of abbreviations
 \usepackage{imakeidx}		% package for keyword index
 \usepackage[
-	intoc					% list of symbols appears in list of content
-]{nomentbl}					% package for list of symbols
+	intoc,					% list of symbols appears in list of content
+	nomentbl,				% use nomentbl version of \nomenclature command
+]{nomencl}					% package for list of symbols
 %------------------------------
 % CODE
 %------------------------------
