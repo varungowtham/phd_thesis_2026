@@ -77,7 +77,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 		      \item \emph{WRONG:} Pressure $P$ [Pa];
 		      \item \emph{RIGHT:} Pressure $P$ in Pa.
 	      \end{itemize}
-	      The only correct use of square brackets is shown here for the voltage:\newline 
+	      The only correct use of square brackets is shown here for the voltage:\newline
 	      [U] = \si{\volt}, i.e.~the unit of the voltage is Volt.
 	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomencl+\index{Packages!nomencl} and the \verb+acro+\index{Packages!acro} package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
 	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+\index{Packages!caption} package (see \autoref{sec:templates}) and the \verb+\autoref+ command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
@@ -109,16 +109,16 @@ This section describes the structure of this template. Questions, problems, or a
 \begin{itemize}
 	\item valid for theses or dissertations
 	\item can be used in German and English based on the settings of the \verb+babel+\index{Packages!babel} package
-	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})	
+	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
 	\item simple generation of List of Algorithms with the \verb+algorithm2e+\index{Packages!algorithm2e} package and KOMA script
 	\item simple generation of List of Codes with the \verb+listings+\index{Packages!listings} package and KOMA script
 	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomencl+\index{Packages!nomencl} package
-	\item simple generation of List of Abbreviations with the \verb+acro+\index{Packages!acro} package	
+	\item simple generation of List of Abbreviations with the \verb+acro+\index{Packages!acro} package
 	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex} package and biber\index{Scripts!biber}
 	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the \path{.bib} file
 	\item simple generation of an Index Register with the \verb+imakeidx+\index{Packages!imakeidx} package
-	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code 
-	\item various templates for typical elements of a thesis included	
+	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code
+	\item various templates for typical elements of a thesis included
 \end{itemize}
 \subsection{Main Document}
 \begin{itemize}
@@ -171,7 +171,7 @@ The following files are located in this folder:
 		      \item examples are provided
 		      \item abbreviations can be subdivided into classes
 		      \item more information can be found in the \verb+acro+ documentation
-	      \end{itemize}	      
+	      \end{itemize}
 	\item \path{f_Header_Footer.tex}
 	      \begin{itemize}
 		      \item defines headers and footers
@@ -262,7 +262,7 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item contains the Xth appendix
 	      \end{itemize}
-\end{enumerate}	      
+\end{enumerate}
 \subsection{05\_Literature\_and\_Index}\label{subsec:literature}
 The following files are located in this folder:
 \begin{enumerate}
@@ -271,9 +271,9 @@ The following files are located in this folder:
 		      \item contains the literature
 	      \end{itemize}
 	\item \path{myindexstyle.ist}
-		  \begin{itemize}
-		  	  \item contains the style for the index (see \autoref{subsec:index})
-		  \end{itemize}
+	      \begin{itemize}
+		      \item contains the style for the index (see \autoref{subsec:index})
+	      \end{itemize}
 \end{enumerate}
 %------------------------------
 % SEC: LANGUAGE
@@ -299,10 +299,10 @@ The language of this document is set with the \verb+babel+\index{Packages!babel}
 		      \item Windows:\\
 		            {\footnotesize \verb+"C:/path_to/makeindex.exe" %.nlo -s nomencl.ist -o %.nls+}\\
 		            in \TeX Live, makeindex\index{Scripts!makeindex} is located in \verb+bin/win32+
-		      \item Linux:\\ 
-		      {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
-		      \item MacOS:\\ 
-		      {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
+		      \item Linux:\\
+		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
+		      \item MacOS:\\
+		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 	      \end{enumerate}
 	\item note that \verb+path_to+ of course depends on your system
 	\item \textbf{if you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.}
@@ -325,8 +325,8 @@ The following commands/scripts must be run to compile the document completely:
 As stated above, compiling problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility to automatically check for updates of packages when they are included in a \LaTeX{} document.\\
 In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
 \begin{description}
-\item[\TeX Live:] In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlmgr-gui.exe}. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
-\item[MiK\TeX:] In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
+	\item[\TeX Live:] In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlmgr-gui.exe}. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
+	\item[MiK\TeX:] In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
 \end{description}
 Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, please add an issue on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \begin{figure}[tbh]
@@ -373,7 +373,11 @@ The local settings are important as they specify that only one backup is created
 If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex} file and the \verb+\printindex+ command from the \path{main.tex} file.\\
 The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.\index{Alien}\index{Book}\index{Chameleon}\index{Dummy}\index{Elephant}\index{Fire}\index{Guardian}\index{Hierarchy}\index{Illusion}\index{Ketchup}
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
-This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
+This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally.
+
+\textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
+
+\textbf{Currently (March 2019), there is an error message when using this template on Overleaf with the }\verb+nomencl+\textbf{ and the }\verb+scrhack+\textbf{ package. If you want to use this template on Overleaf, do not load the }\verb+scrhack+\textbf{ package. In addition, you need to upload a current version of the }\verb+nomencl+\textbf{ package to the Overleaf project folder.}
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Example_Overleaf}
@@ -382,15 +386,15 @@ This template was successfully tested with Overleaf\footnote{\url{https://de.ove
 \subsection{Software for Vector Graphics}
 Figures are an important part of every thesis. Normally, these figures are generated by the author, who is hence responsible for their quality. Vector graphics are generally preferred to raster graphics (JPG, PNG, \dots) as their quality does not depend on the resolution. There are a few programs for generating figures within \LaTeX, which are listed in the following. Plotting within \LaTeX\ has a few advantages, for example: the figure always has the same font type as the text, and global settings can be applied to all figures within one document. Typically, one can either compile all figures whenever PDF\LaTeX\ is executed, or only compile the changed figures, or generate the PDFs in a separate file and include the PDF in the document.
 \begin{figure}
-\centering
-\includegraphics[scale=1]{Example_asymptote_figure}
-\caption{Image generated with Asymptote}\label{fig:Example_asymptote_figure}
+	\centering
+	\includegraphics[scale=1]{Example_asymptote_figure}
+	\caption{Image generated with Asymptote}\label{fig:Example_asymptote_figure}
 \end{figure}
 \begin{description}
-\item[Asymptote] is a powerful vector graphics program\footnote{\url{http://asymptote.sourceforge.net/}, February 2019}. It can be made visible to all \LaTeX\ distributions with a package\footnote{\url{https://ctan.org/pkg/asymptote}, February 2019}. Asymptote can directly generate a PDF output. An example of an image generated with Asymptote is shown in \autoref{fig:Example_asymptote_figure}. In this case, the image was generated externally and is now included as a PDF. The code of this image is located in the \path{Examples} folder of this template.
-\item[TikZ] is another vector graphics tool\footnote{\url{https://sourceforge.net/projects/pgf/}, February 2019}. It is also available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pgf}, February 2019} Asymptote and TikZ are similar as all images are produced based on commands (similar to \LaTeX\ code). Choose between these two programs based on your own preferences.
-\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, February 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, February 2019} Hence, it cannot directly be used with PDF\LaTeX. Generating PDFs is possible with the packages \verb+pdftricks+\footnote{\url{https://www.ctan.org/pkg/pdftricks}, February 2019} or \verb+pst-pdf+\footnote{\url{https://www.ctan.org/pkg/pst-pdf}, February 2019}
-\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use. However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
+	\item[Asymptote] is a powerful vector graphics program\footnote{\url{http://asymptote.sourceforge.net/}, February 2019}. It can be made visible to all \LaTeX\ distributions with a package\footnote{\url{https://ctan.org/pkg/asymptote}, February 2019}. Asymptote can directly generate a PDF output. An example of an image generated with Asymptote is shown in \autoref{fig:Example_asymptote_figure}. In this case, the image was generated externally and is now included as a PDF. The code of this image is located in the \path{Examples} folder of this template.
+	\item[TikZ] is another vector graphics tool\footnote{\url{https://sourceforge.net/projects/pgf/}, February 2019}. It is also available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pgf}, February 2019} Asymptote and TikZ are similar as all images are produced based on commands (similar to \LaTeX\ code). Choose between these two programs based on your own preferences.
+	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, February 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, February 2019} Hence, it cannot directly be used with PDF\LaTeX. Generating PDFs is possible with the packages \verb+pdftricks+\footnote{\url{https://www.ctan.org/pkg/pdftricks}, February 2019} or \verb+pst-pdf+\footnote{\url{https://www.ctan.org/pkg/pst-pdf}, February 2019}
+	\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use. However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
 \end{description}
 %------------------------------
 % SEC: TEMPLATES
@@ -419,30 +423,30 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
 	\begin{tabular}{c c c s >{\itshape} c}
 		\toprule
-		Entry 1 & Entry 2 & Entry 3 & \textnormal{Unit column} & Italics \\
+		Entry 1 & Entry 2 & Entry 3 & \textnormal{Unit column} & Italics   \\
 		Unit 1  & Unit 2  & Unit 3  & \textnormal{Some text}   & Some text \\
 		\midrule
-		1       & 2       & 3       & \joule 	  & bla \\
-		4       & 5       & 6       & \pascal\per\square\metre & bla bla \\
+		1       & 2       & 3       & \joule                   & bla       \\
+		4       & 5       & 6       & \pascal\per\square\metre & bla bla   \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 \begin{table}[tbh]
-\centering
-\caption{Exemplary table with an annotation}\label{tab:threeparttable}
-\begin{threeparttable}
-\begin{tabular}{c c c}
-\toprule
-Variable & Mean & Std.~Dev. \\
-\midrule
-$a$ & $\num{4}$ & $\pm\num{0.1}$\tnote{*} \\
-\bottomrule
-\end{tabular}
-\begin{tablenotes}\footnotesize
-\item[*] This standard deviation is only true if I measured correctly
-\end{tablenotes}
-\end{threeparttable}
-\label{table2}
+	\centering
+	\caption{Exemplary table with an annotation}\label{tab:threeparttable}
+	\begin{threeparttable}
+		\begin{tabular}{c c c}
+			\toprule
+			Variable & Mean      & Std.~Dev.               \\
+			\midrule
+			$a$      & $\num{4}$ & $\pm\num{0.1}$\tnote{*} \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}\footnotesize
+			\item[*] This standard deviation is only true if I measured correctly
+		\end{tablenotes}
+	\end{threeparttable}
+	\label{table2}
 \end{table}
 \subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo} package.\\
@@ -469,7 +473,7 @@ For important equations, you might want to use a box:
 \end{equation}
 \subsection{Acronyms and Abbreviations}
 Abbreviations are defined in \path{e_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the index.\\
-Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations. 
+Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{References}\label{subsec:references}
 \LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
 In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see \path{.bib} file. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
@@ -484,9 +488,9 @@ In the following, a few examples of the authoryear short reference are stated. F
 These commands are used as
 \begin{itemize}
 	\item \verb+\textcite{bibtexkey}+:\\
-	\enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
+	      \enquote{\textcite{Abrams1975} stated that thermodynamics are great.}
 	\item \verb+\parencite{bibtexkey}+:\\
-	\enquote{Thermodynamics are great \parencite{Abrams1975}.}
+	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
 \myfigure[tbh][0.8]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Chemistry and Chemical Reactions}
