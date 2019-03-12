@@ -1,14 +1,15 @@
-\newcommand{\nomgrouphead}[1]{\sffamily\Large\bfseries #1 \hfill} % writes group names, i.e. greek symbols, in bold 
-
-\newcommand{\nomgroupX}[5]{								% writes group head for each group (see below). If you have issues with groups ending at unfortunate places, you can play aroung with the 6ex value
-	\nomgrouphead{#1} \endgroup  \\ \nopagebreak \\ \bfseries #2 & \bfseries #3 & \bfseries #4 & \bfseries #5 \\ \bottomrule \\[-6ex] \nopagebreak \begingroup
+\setnomtableformat{cp{0.6\textwidth}l@{}r@{}l@{}}	% table format of all categories
+\newcommand{\nomgroupX}[5]{	% writes group head for each group (see below).
+	\\[1.5ex]				% distance from previous group to new group head
+	\item&\multicolumn{5}{@{}l}{\Large\bfseries #1} \\[0.1ex]%
+	\item& \bfseries #2 & \bfseries #3 & \bfseries #4 & \bfseries #5 \\%
+	\bottomrule
 }
-
 %------------------------------
 % ENGLISH
 %------------------------------
 \iflanguage{english}{
-	\renewcommand\nomgroup[1]{%				& defines all different groups, can be extended if necessary
+	\renewcommand\nomgroup[1]{%				% defines all different groups, can be extended if necessary
   		\ifx#1L\relax	% if the optional argument is L
     	\nomgroupX{Latin Symbols}{Symbol}{Description}{}{Unit}
   		\fi
@@ -38,7 +39,7 @@
 % DEUTSCH
 %------------------------------	
 }{\iflanguage{ngerman}{
-	\renewcommand\nomgroup[1]{%								& defines all different groups, can be extended if necessary
+	\renewcommand\nomgroup[1]{%								% defines all different groups, can be extended if necessary
   		\ifx#1L\relax	% if the optional argument is L
     	\nomgroupX{Lateinische Symbole}{Symbol}{Beschreibung}{}{Einheit}
   		\fi

@@ -25,7 +25,7 @@
 ]{microtype}				% This package might improve the look of the PDF by minimally stretching or extending fonts, etc. You can uncomment it to see the results
 \usepackage{morewrites}		% allows TeX to write to more than 16 files
 \usepackage[
-	nomencl=false,			% do not use scrhack for nomencl
+	nomencl=true,			% do not use scrhack for nomencl
 ]{scrhack}					% package to achieve full compability between KOMA and other packages; MUST BE LOADED BEFORE SETSPACE
 \usepackage[
     automark, 				% mark chapter and section names
@@ -55,8 +55,10 @@
 %------------------------------
 % GRAPHICS
 %------------------------------
+\usepackage{asymptote}		% package for using asymptote in latex
 \usepackage{graphicx}		% for including pictures
 \usepackage{overpic}		% overlay to add text to figures
+\usepackage{xcolor}			% colors are added
 %------------------------------
 % FONT, MATH, AND SYMBOLS
 %------------------------------
@@ -124,7 +126,7 @@
 \usepackage{enumitem}		% modification of lists
 \usepackage{footnote} 		% footnotes in floats
 \usepackage[
-	framemethod=TikZ		% use TikZ for frames
+	framemethod=TikZ,		% use TikZ for frames
 ]{mdframed} 				% frames, e.g. for environments, MUST BE LOADED AFTER THE AMSTH PACKAGE
 \usepackage[
 	all						% sets widow and orphan penalties for the whole document
@@ -134,7 +136,6 @@
 	onehalfspacing			% 1.5 distance between lines
 ]{setspace} 				% package for line spacing
 \usepackage{subcaption}		% subfigures
-\usepackage{xcolor}			% colors are added
 %------------------------------
 % REFERENCES
 %------------------------------
@@ -170,8 +171,9 @@
 ]{acro}						% package for list of abbreviations
 \usepackage{imakeidx}		% package for keyword index
 \usepackage[
-	intoc					% list of symbols appears in list of content
-]{nomentbl}					% package for list of symbols
+	intoc,					% list of symbols appears in list of content
+	nomentbl,				% use nomentbl version of \nomenclature command
+]{nomencl}					% package for list of symbols
 %------------------------------
 % CODE
 %------------------------------

@@ -3,6 +3,8 @@
 *.bbl
 *.bcf
 *.blg
+*.fls
+*.gz
 *.idx
 *.ilg
 *.ind
@@ -11,14 +13,15 @@
 *.log
 *.lol
 *.lot
+*.mw
 *.nlo
 *.nls
 *.out
-*.tdo
-*.xml
+*.pre
 *.sav
-*.gz
+*.tdo
 *.toc
+*.xml
 *.xmpi
 *.latexindentbackup
 LaTeX_template_thesis/main.pdf
