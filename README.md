@@ -13,6 +13,3 @@ Please read it carefully!
 
 - master: current template version
 - developer: version for trying out new stuff
-- v1.2: contains the template before changing from the acronym to the acro package
-- template_2016: old template for bachelor/master theses
-- Diss_template_2016: old template for dissertations
