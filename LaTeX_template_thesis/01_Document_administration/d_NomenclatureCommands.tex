@@ -1,12 +1,10 @@
-\setnomtableformat{cp{0.6\textwidth}l@{}r@{}l@{}}
-
-\newcommand{\nomgroupX}[5]{% writes group head for each group (see below). If you have issues with groups ending at unfortunate places, you can play aroung with the 6ex value
+\setnomtableformat{cp{0.6\textwidth}l@{}r@{}l@{}}	% table format of all categories
+\newcommand{\nomgroupX}[5]{	% writes group head for each group (see below).
 	\\[1.5ex]				% distance from previous group to new group head
 	\item&\multicolumn{5}{@{}l}{\Large\bfseries #1} \\[0.1ex]%
 	\item& \bfseries #2 & \bfseries #3 & \bfseries #4 & \bfseries #5 \\%
 	\bottomrule
 }
-
 %------------------------------
 % ENGLISH
 %------------------------------
