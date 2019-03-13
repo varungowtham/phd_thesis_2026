@@ -42,11 +42,11 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
-	\item set the language of the document in the \path{a_Packages.tex} file with the \verb+babel+\index{Packages!babel} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
-	\item change the necessary entries in \path{c_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
+	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
+	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
 	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2017 and a \TeX Live 2018 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}} See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
-	\item remove the guidelines chapter from this document by deleting it and removing it from the \path{0_Text.tex} file in the folder 03\_Content
+	\item remove the guidelines chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis -- good luck!
 	\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, for example a List of Algorithms, just remove it from the thesis.
@@ -122,7 +122,7 @@ This section describes the structure of this template. Questions, problems, or a
 \end{itemize}
 \subsection{Main Document}
 \begin{itemize}
-	\item is called \path{main.tex}
+	\item is called \path{main.tex}\index{Files!main.tex}
 	\item this document must be compiled in \LaTeX\ or should be chosen as master document
 \end{itemize}
 \subsection{00\_Arara\_and\_Latexindent}
@@ -142,41 +142,41 @@ The following files are located in this folder:
 \subsection{01\_Document\_administration}
 The following files are located in this folder:
 \begin{enumerate}
-	\item \path{a_Packages.tex}
+	\item \path{a_Packages.tex}\index{Files!a\_Packages.tex}
 	      \begin{itemize}
 		      \item contains all packages, which are loaded
 		      \item packags are sorted based on their application
 		      \item all packages of this template and their references are stated in \autoref{tab:package_list}
 	      \end{itemize}
-	\item \path{b_Commands.tex}
+	\item \path{b_Commands.tex}\index{Files!b\_Commands.tex}
 	      \begin{itemize}
 		      \item contains further commands regarding formatting and look of the document
 		      \item also sorted
 	      \end{itemize}
-	\item \path{c_Meta.tex}
+	\item \path{c_Meta.tex}\index{Files!c\_Meta.tex}
 	      \begin{itemize}
 		      \item contains meta information regarding author, title, keywords, etc.
 		      \item contains a boolean variable to select whether it is a dissertation or a bachelor/master thesis
 		      \item contains a boolean variable to select whether it is a master or a bachelor thesis
 	      \end{itemize}
-	\item \path{d_NomenclatureCommands.tex}
+	\item \path{d_NomenclatureCommands.tex}\index{Files!d\_Nomenclature.tex}
 	      \begin{itemize}
 		      \item defines structure of the List of Symbols
 		      \item optional argument defines the class of a symbol (Latin, Greek, \dots)
 		      \item makeindex\index{Scripts!makeindex} is used for the generation of the List of Symbols. A short instruction how to run makeindex\index{Scripts!makeindex} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
 	      \end{itemize}
-	\item \path{e_AbbreviationDefinitions.tex}
+	\item \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex}
 	      \begin{itemize}
 		      \item defines the abbreviations in the text
 		      \item examples are provided
 		      \item abbreviations can be subdivided into classes
 		      \item more information can be found in the \verb+acro+ documentation
 	      \end{itemize}
-	\item \path{f_Header_Footer.tex}
+	\item \path{f_Header_Footer.tex}\index{Files!f\_Header\_Footer.tex}
 	      \begin{itemize}
 		      \item defines headers and footers
 	      \end{itemize}
-	\item \path{g_CodeLanguageSpecifications.tex}
+	\item \path{g_CodeLanguageSpecifications.tex}\index{Files!g\_CodeLanguageSpecifications.tex}
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
 		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
@@ -199,29 +199,29 @@ The following files are located in this folder:
 \subsection{02\_Prematter}
 The following files are located in this folder:
 \begin{enumerate}
-	\item \path{a_Cover_Diss.tex} and \path{a_Cover_Thesis.tex}
+	\item \path{a_Cover_Diss.tex}\index{Files!a\_Cover\_Diss.tex} and \path{a_Cover_Thesis.tex}\index{Files!a\_Cover\_Thesis.tex}
 	      \begin{itemize}
 		      \item creates the cover page
-		      \item \path{main.tex} loads either \path{a_Cover_Thesis.tex} (cover of a bachelor/master thesis) or \path{a_Cover_Diss.tex} (cover of a dissertation), depending on the value of \verb+isDiss+ set in \path{c_Meta.tex}. Both covers are shown in \autoref{fig:covers}.
+		      \item \path{main.tex}\index{Files!main.tex} loads either \path{a_Cover_Thesis.tex} (cover of a bachelor/master thesis) or \path{a_Cover_Diss.tex} (cover of a dissertation), depending on the value of \verb+isDiss+ set in \path{c_Meta.tex}. Both covers are shown in \autoref{fig:covers}.
 	      \end{itemize}
-	\item \path{b_Declaration.tex}
+	\item \path{b_Declaration.tex}\index{Files!b\_Declaration.tex}
 	      \begin{itemize}
 		      \item declaration that the thesis was written honestly
 	      \end{itemize}
-	\item \path{c_Acknowledgements.tex}
+	\item \path{c_Acknowledgements.tex}\index{Files!c\_Acknowledgements.tex}
 	      \begin{itemize}
 		      \item thank important people
 	      \end{itemize}
-	\item \path{d_Summary.tex}
+	\item \path{d_Summary.tex}\index{Files!d\_Summary.tex}
 	      \begin{itemize}
 		      \item summarize your thesis in German and English
 	      \end{itemize}
-	\item \path{e_Nomenclature.tex}
+	\item \path{e_Nomenclature.tex}\index{Files!e\_Nomenclature.tex}
 	      \begin{itemize}
 		      \item enter all symbols and explain them
 		      \item examples are provided
 	      \end{itemize}
-	\item \path{f_Abbreviations.tex}
+	\item \path{f_Abbreviations.tex}\index{Files!f\_Abbreviations.tex}
 	      \begin{itemize}
 		      \item prints the defined abbreviations and explains them
 	      \end{itemize}
@@ -229,11 +229,11 @@ The following files are located in this folder:
 \subsection{02a\_Dissertation\_files}
 This folder contains files that are only needed for dissertations. They are included if \verb+isDiss+ is set to \verb+true+. Bachelor/Master theses do not have to consider them. However, if you want to dedicate your thesis to someone, you can of course include the dedication. The following files are located in this folder:
 \begin{enumerate}
-	\item \path{a_Dedication.tex}
+	\item \path{a_Dedication.tex}\index{Files!a\_Dedication.tex}
 	      \begin{itemize}
 		      \item dedicate your dissertation to someone
 	      \end{itemize}
-	\item \path{b_Publications.tex}
+	\item \path{b_Publications.tex}\index{Files!b\_Publications.tex}
 	      \begin{itemize}
 		      \item states all publications that were written in preparation of the dissertation
 	      \end{itemize}
@@ -241,7 +241,7 @@ This folder contains files that are only needed for dissertations. They are incl
 \subsection{03\_Content}
 The following files are located in this folder:
 \begin{enumerate}
-	\item \path{0_Text.tex}
+	\item \path{0_Text.tex}\index{Files!0\_Text.tex}
 	      \begin{itemize}
 		      \item loads all chapters
 	      \end{itemize}
@@ -254,7 +254,7 @@ The following files are located in this folder:
 \subsection{04\_Appendix}
 The following files are located in this folder:
 \begin{enumerate}
-	\item \path{0_Appendix.tex}
+	\item \path{0_Appendix.tex}\index{Files!0\_Appendix.tex}
 	      \begin{itemize}
 		      \item loads all appendix chapters
 	      \end{itemize}
@@ -319,7 +319,7 @@ The following commands/scripts must be run to compile the document completely:
 	\item pdflatex: This generates a first PDF. At this point, the List of References and the List of Symbols are missing.
 	\item biber\index{Scripts!biber}: Run biber (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
 	\item makeindex\index{Scripts!makeindex}: Run makeindex (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
-	\item pdflatex (three times): The first run should already generate the List of References and the List of Symbols. The second run should update all citations etc.~in the PDF. Sometimes, a third run is necessary if some references within the text have changed again. In this case, a third run is necessary. Check the output of Texmaker.
+	\item pdflatex (three times): The first run should already generate the List of References and the List of Symbols. The second run should update all citations etc.\ in the PDF. Sometimes, a third run is necessary if some references within the text have changed again. In this case, a third run is necessary. Check the output of Texmaker.
 \end{enumerate}
 \subsection{Updating Packages in \TeX Live and MiK\TeX}\label{subsec:update_packages}
 As stated above, compiling problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility to automatically check for updates of packages when they are included in a \LaTeX{} document.\\
@@ -370,8 +370,8 @@ The local settings are important as they specify that only one backup is created
 	\caption[Before and after automatic indenting with latexindent]{Before (left) and after (right) automatic indenting with latexindent}\label{fig:automatic_indenting_latexindent}
 \end{figure}
 \subsection{Index}\label{subsec:index}
-If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex} file and the \verb+\printindex+ command from the \path{main.tex} file.\\
-The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.\index{Alien}\index{Book}\index{Chameleon}\index{Dummy}\index{Elephant}\index{Fire}\index{Guardian}\index{Hierarchy}\index{Illusion}\index{Ketchup}
+If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+ command from the \path{main.tex}\index{Files!main.tex} file.\\
+The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally.
 
@@ -415,9 +415,31 @@ Therein,
 	\item \verb+arg2+ is the caption of the figure in the text
 	\item \verb+opt4+ is the label of the figure
 \end{itemize}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\includegraphics[width=2cm]{Logo_tub}
+\caption{A wrapped figure}\label{fig:wrapped_figure}
+\end{wrapfigure}
+Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}. Make sure that the text, which surrounds the wrapped figure is a separate paragraph, i.e., empty lines above and below (see \LaTeX\ code).
+
 \myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 \subsection{Tables}
-A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the feature to the longtable environment as introduced in \autoref{app:longtable}.
+A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment.
+
+\begin{wraptable}{r}{0.4\textwidth}
+	\centering
+	\caption{A wrapped table}\label{tab:wrapped_table}
+	\begin{tabular}{@{}c c c@{}}
+		\toprule
+		Variable & Mean      & Std.~Dev.               \\
+		\midrule
+		$a$      & $\num{4}$ & $\pm\num{0.1}$ \\
+		\bottomrule
+	\end{tabular}
+\end{wraptable}
+The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough. In addition, make sure that the text surrounding the wrapped table is a separate paragraph, i.e., empty lines above and below (see \LaTeX\ code).
+
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -472,7 +494,7 @@ For important equations, you might want to use a box:
 	\boxed{E = mc^2} \label{eqn:Gleichung}
 \end{equation}
 \subsection{Acronyms and Abbreviations}
-Abbreviations are defined in \path{e_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the index.\\
+Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the index.\\
 Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{References}\label{subsec:references}
 \LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
@@ -492,7 +514,7 @@ These commands are used as
 	\item \verb+\parencite{bibtexkey}+:\\
 	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\myfigure[tbh][0.8]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
+\myfigure[tbh][1]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Chemistry and Chemical Reactions}
 Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+mhchem+\index{Packages!mhchem} package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+ command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]
@@ -507,7 +529,7 @@ Sometimes it is necessary to state chemical reactions or molecules. For this pur
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
-All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex} file.
+All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
 
 \textbf{Theorems:} Theorems can be defined using the \verb+amsthm+\index{Packages!amsthm} package in combination with the \verb+mdframed+\index{Packages!mdframed} package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
 \begin{theoremenv}[What is theoremed]\label{thm:template_theorem}
@@ -587,5 +609,5 @@ The \verb+hyperref+\index{Packages!hyperref} package also supplies an \verb+\aut
 	      \end{itemize}
 \end{enumerate}
 \subsection{ToDos}
-In your thesis, you always have parts where you will have to do something more later on. You can mark these sections with the \verb+\todo[option]{text}+ command\todo[color=red]{change that asap!}. \todo[color=green]{change that later at some point}Something that should be done later might be green. You can also include a \enquote{missing figure} if you currently do not have it. When you do not have any more ToDos, remove the List of ToDos from the \path{main.tex}.
+In your thesis, you always have parts where you will have to do something more later on. You can mark these sections with the \verb+\todo[option]{text}+ command\todo[color=red]{change that asap!}. \todo[color=green]{change that later at some point}Something that should be done later might be green. You can also include a \enquote{missing figure} if you currently do not have it. When you do not have any more ToDos, remove the List of ToDos from the \path{main.tex}\index{Files!main.tex}.
 \missingfigure[figwidth=\linewidth]{I want to add the results of my current experiment here}
