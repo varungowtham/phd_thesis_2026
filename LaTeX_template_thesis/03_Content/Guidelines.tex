@@ -39,13 +39,13 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{First Steps}
 \begin{enumerate}
 	\item \textbf{carefully read this whole chapter}
-	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine.
+	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine. This template expects a \TeX Live distribution $\geq$ 2018. It is not tested with older versions anymore.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
 	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
-	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2017 and a \TeX Live 2018 distribution. \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}} See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
+	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}} See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
 	\item remove the guidelines chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis -- good luck!
@@ -377,7 +377,9 @@ This template was successfully tested with Overleaf\footnote{\url{https://de.ove
 
 \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
 
-\textbf{Currently (March 2019), there is an error message when using this template on Overleaf with the }\verb+nomencl+\textbf{ and the }\verb+scrhack+\textbf{ package. If you want to use this template on Overleaf, do not load the }\verb+scrhack+\textbf{ package. In addition, you need to upload a current version of the }\verb+nomencl+\textbf{ package to the Overleaf project folder.}
+Currently (March 2019), there is an error message when using this template on Overleaf with the \verb+nomencl+\index{Packages!nomencl} and the \verb+scrhack+\index{Packages!scrhack} package, potentially because Overleaf uses \TeX Live 2017 at the moment. If you want to use this template on Overleaf, load the \verb+scrhack+ package with the option \verb+nomencl=false+. In addition, you need to upload a current version of the \verb+nomencl+ package (\path{.sty} file) to the Overleaf project folder. There is also an error due to the old version of the \verb+chemfig+\index{Packages!chemfig} package. On Overleaf, exchange the \verb+\setchemfig{...}+ command with \verb+\setatomsep{20pt}+.
+
+These minor issues will disappear as soon as Overleaf updates to \TeX Live 2018 later this year.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Example_Overleaf}
@@ -518,7 +520,7 @@ These commands are used as
 \subsection{Chemistry and Chemical Reactions}
 Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+mhchem+\index{Packages!mhchem} package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+ command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]
-	\setatomsep{20pt}
+	\setchemfig{atom sep=20pt}
 	\centering
 	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
 	\schemestart
@@ -526,7 +528,7 @@ Sometimes it is necessary to state chemical reactions or molecules. For this pur
 	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
 	\schemestop
 	\chemnameinit{}
-	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages (based on some reference). Note that the setatomsep command to shorten the bondings was replaced by the author of the chemfig package and should not be used anymore. It is used here to ensure backwards compatibility with older versions of this package}\label{fig:template_chemical_reaction}
+	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
