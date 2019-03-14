@@ -1,4 +1,5 @@
 headings_flag 1
+page_precedence "rnAR"
 heading_prefix "{\\large\\sffamily\\bfseries "
 heading_suffix "}\\nopagebreak\n"
 delim_0 " \\dotfill "

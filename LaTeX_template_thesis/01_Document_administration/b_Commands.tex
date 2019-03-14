@@ -118,6 +118,7 @@
 \SetAlgorithmName{Algorithmus}{Algorithmus}{Algorithmenverzeichnis}	% german name of list of algorithms
 \renewcommand{\nomname}{Symbolverzeichnis}	% german name of list of symbols		
 \renewcommand{\lstlistlistingname}{Codeverzeichnis} % german name of list of codes
+\def\indexname{Indexverzeichnis}
 }
 %------------------------------
 % ENGLISH CAPTION REDEFINITIONS
@@ -127,6 +128,7 @@
 \renewcommand{\tablename}{Tab.}	% changes english table caption to Tab. chapter.number
 \renewcommand{\nomname}{List of Symbols} % english name of list of symbols
 \renewcommand{\lstlistlistingname}{List of Codes} % english name of list of codes
+\def\indexname{Index}
 }
 %------------------------------
 % ADD TOCLIST ALGORITHM
@@ -348,10 +350,10 @@ urlseen = {last access},
 %------------------------------
 \makenomenclature				% generate an .nlo file for the List of Symbols
 \iflanguage{ngerman}{
-	\newcommand{\indextitle}{Indexregister}
+	\newcommand{\indextitle}{Indexverzeichnis}
 }{
 \iflanguage{english}{
-	\newcommand{\indextitle}{Index Register}
+	\newcommand{\indextitle}{Index}
 }{}
 }
 \makeindex[
