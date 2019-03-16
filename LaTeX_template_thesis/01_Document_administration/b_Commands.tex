@@ -338,14 +338,17 @@ urlseen = {last access},
 	}{\iflanguage{ngerman}{
 		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
 	}
-\newlist{abbreviations}{description}{1}
-\setlist[abbreviations]{
-	itemindent=0pt,
-	labelwidth=5em,
-	leftmargin=2.5cm,
+\DeclareAcroListStyle{longtabu}{table}{
+	table=longtabu,
+	table-spec=>{\sffamily\bfseries}p{2.0cm}X@{},
+	before={%
+        \setlength{\tabulinesep}{0.8\parskip}%
+        \setlength{\topsep}{0pt}%
+        \setlength{\LTpre}{0pt}%
+        \setlength{\LTpost}{0pt}%
+    }
 }
-\DeclareAcroListStyle{mystyle}{list}{list=abbreviations }
-\acsetup{list-style=mystyle}	
+\acsetup{list-style=longtabu}
 %------------------------------
 % MAKEINDEX
 %------------------------------
