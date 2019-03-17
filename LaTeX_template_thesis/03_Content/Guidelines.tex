@@ -7,8 +7,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 % SEC: MOST IMPORTANT STYLE FACTS
 %------------------------------
 \section{Most Important Style Specifications for \LaTeX\ and Word}
-\begin{mdframed}[linecolor=tub_red, linewidth=2pt, roundcorner=10pt]
-	The most important style specifications are:
+\begin{mdframed}[backgroundcolor=dbta_blue!100, linecolor=tub_red, linewidth=4pt, roundcorner=10pt, fontcolor=white]
 	\begin{itemize}[leftmargin=4mm]
 		\item page format: A4, double page, justification, 11 pt for standard font size;
 		\item line spacing:
@@ -31,7 +30,9 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 		\item the layout of the front page is fixed and must not be changed, neither in \LaTeX\ nor in Word;
 		\item of course, loading additional packages in \LaTeX\ for functionality is fine.
 	\end{itemize}
-	\paragraph*{Attention:} If these specifications are (partially) ignored, it will have an impact on the evaluation.
+	\begin{mdframed}[backgroundcolor=white, linecolor=dbta_blue, linewidth=4pt, roundcorner=10pt, fontcolor=black]
+		\textbf{Attention:} If these specifications are (partially) ignored, it will have an impact on the evaluation.
+	\end{mdframed}
 \end{mdframed}
 %------------------------------
 % SEC: FIRST STEPS
@@ -373,13 +374,9 @@ The local settings are important as they specify that only one backup is created
 If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+ command from the \path{main.tex}\index{Files!main.tex} file.\\
 The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+ command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
-This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally.
+This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
 
-\textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
-
-Currently (March 2019), there is an error message when using this template on Overleaf with the \verb+nomencl+\index{Packages!nomencl} and the \verb+scrhack+\index{Packages!scrhack} package, potentially because Overleaf uses \TeX Live 2017 at the moment. If you want to use this template on Overleaf, load the \verb+scrhack+ package with the option \verb+nomencl=false+. In addition, you need to upload a current version of the \verb+nomencl+ package (\path{.sty} file) to the Overleaf project folder. There is also an error due to the old version of the \verb+chemfig+\index{Packages!chemfig} package. On Overleaf, exchange the \verb+\setchemfig{...}+ command with \verb+\setatomsep{20pt}+.
-
-These minor issues will disappear as soon as Overleaf updates to \TeX Live 2018 later this year.
+Currently (March 2019), there is an error message when using this template on Overleaf with the \verb+nomencl+\index{Packages!nomencl} and the \verb+scrhack+\index{Packages!scrhack} package, potentially because Overleaf uses \TeX Live 2017 at the moment. If you want to use this template on Overleaf, load the \verb+scrhack+ package with the option \verb+nomencl=false+. In addition, you need to upload a current version of the \verb+nomencl+ package (\path{.sty} file) to the Overleaf project folder. There is also an error due to the old version of the \verb+chemfig+\index{Packages!chemfig} package. On Overleaf, exchange the \verb+\setchemfig{...}+ command with \verb+\setatomsep{20pt}+. These minor issues will disappear as soon as Overleaf updates to \TeX Live 2018 later this year.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Example_Overleaf}
@@ -395,7 +392,7 @@ Figures are an important part of every thesis. Normally, these figures are gener
 \begin{description}
 	\item[Asymptote] is a powerful vector graphics program\footnote{\url{http://asymptote.sourceforge.net/}, March 2019}. It can be made visible to all \LaTeX\ distributions with a package\footnote{\url{https://ctan.org/pkg/asymptote}, March 2019}. Asymptote can directly generate a PDF output. An example of an image generated with Asymptote is shown in \autoref{fig:Example_asymptote_figure}. In this case, the image was generated externally and is now included as a PDF. The code of this image is located in the \path{Examples} folder of this template.
 	\item[TikZ] is another vector graphics tool\footnote{\url{https://sourceforge.net/projects/pgf/}, March 2019}. It is also available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pgf}, March 2019} Asymptote and TikZ are similar as all images are produced based on commands (similar to \LaTeX\ code). Choose between these two programs based on your own preferences.
-	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, March 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, March 2019} Hence, it cannot directly be used with PDF\LaTeX. Generating PDFs is possible with the packages \verb+pdftricks+\footnote{\url{https://www.ctan.org/pkg/pdftricks}, March 2019} or \verb+pst-pdf+\footnote{\url{https://www.ctan.org/pkg/pst-pdf}, March 2019}
+	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, March 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, March 2019} Due to its PostScript origin, it cannot directly be used with PDF\LaTeX. If you want to compile with PDF\LaTeX, the best solution is using the package \verb+auto-pst-pdf+\footnote{\url{https://ctan.org/pkg/auto-pst-pdf?lang=de}, March 2018}.
 	\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use.\footnote{\url{https://inkscape.org/de/}, March 2019} However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
 \end{description}
 %------------------------------
@@ -418,17 +415,15 @@ Therein,
 	\item \verb+opt4+ is the label of the figure
 \end{itemize}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=2cm]{Logo_tub}
+\includegraphics[width=0.35\textwidth]{Logo_tub}
 \caption{A wrapped figure}\label{fig:wrapped_figure}
 \end{wrapfigure}
 Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}. It might be necessary that the text, which surrounds the wrapped figure is a separate paragraph, i.e., empty lines above and below (see \LaTeX\ code).
 
 \myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 \subsection{Tables}
-A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment.
-
 \begin{wraptable}{r}{0.4\textwidth}
 	\centering
 	\caption{A wrapped table}\label{tab:wrapped_table}
@@ -440,7 +435,7 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 		\bottomrule
 	\end{tabular}
 \end{wraptable}
-The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough. In addition, it might be necessary that the text surrounding the wrapped table is a separate paragraph, i.e., empty lines above and below (see \LaTeX\ code).
+A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment. The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
 
 \begin{table}[tbh]
 	\centering
@@ -496,11 +491,10 @@ For important equations, you might want to use a box:
 	\boxed{E = mc^2} \label{eqn:Gleichung}
 \end{equation}
 \subsection{Acronyms and Abbreviations}
-Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the index.\\
-Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
+Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+ command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the index. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{References}\label{subsec:references}
 \LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
-In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. Example: \parencite{Muller2018}, see \path{.bib} file. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
+In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
 \begin{itemize}
 	\item book: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 	\item article: \parencite{Abrams1975}, \textcite{Abrams1975}
@@ -516,7 +510,7 @@ These commands are used as
 	\item \verb+\parencite{bibtexkey}+:\\
 	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\myfigure[tbh][1]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
+\myfigure[tbh][0.8]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
 \subsection{Chemistry and Chemical Reactions}
 Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+mhchem+\index{Packages!mhchem} package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+ command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]

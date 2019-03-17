@@ -75,6 +75,7 @@
 % MATH AND OPERATORS
 %------------------------------
 \DeclareMathOperator{\rot}{rot}	% declares the rot math operator
+\newcommand*\diff{\mathop{}\!\textrm{d}}	% differential d, e.g. in integrals
 %------------------------------
 % COLORS
 %------------------------------
@@ -96,7 +97,7 @@
 % XPARSE
 %------------------------------
 % O is an optional argument and {} is the default, m ist the must-have argument
-\NewDocumentCommand{\pder}{ O{} O{} m }{\frac{\partial^{#2}#1}{\partial#3^{#2}}}				% a short command for partial derivatives
+\NewDocumentCommand{\pder}{ O{} O{} m }{\dfrac{\partial^{#2}#1}{\partial#3^{#2}}}				% a short command for partial derivatives
 \NewDocumentCommand{\roundbrack}{ m }{\left(#1 \right)} % a short command for round brackets
 \NewDocumentCommand{\squarebrack}{ m }{\left[#1 \right]}% a short command for squared brackets
 \NewDocumentCommand{\myfigure}{O{} O{1} m O{} m O{}}{\begin{figure}[#1]\centering\includegraphics[width=#2\linewidth]{#3}\caption[#4]{#5}\label{#6}\end{figure}}					% a new command to add a figure
@@ -337,14 +338,17 @@ urlseen = {last access},
 	}{\iflanguage{ngerman}{
 		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
 	}
-\newlist{abbreviations}{description}{1}
-\setlist[abbreviations]{
-	itemindent=0pt,
-	labelwidth=5em,
-	leftmargin=2.5cm,
+\DeclareAcroListStyle{longtabu}{table}{
+	table=longtabu,
+	table-spec=>{\sffamily\bfseries}p{2.0cm}X@{},
+	before={%
+        \setlength{\tabulinesep}{0.8\parskip}%
+        \setlength{\topsep}{0pt}%
+        \setlength{\LTpre}{0pt}%
+        \setlength{\LTpost}{0pt}%
+    }
 }
-\DeclareAcroListStyle{mystyle}{list}{list=abbreviations }
-\acsetup{list-style=mystyle}	
+\acsetup{list-style=longtabu}
 %------------------------------
 % MAKEINDEX
 %------------------------------
