@@ -1,0 +1,28 @@
+V1.6:   - acro changed from list to table
+        - Thesis and dissertation examples removed
+        - Index and format changed
+        - seriffree font for list of symbols
+        - support for older TeXLive versions depracated
+V1.5:   - auto-complete commands added
+        - wrapfig package added
+        - page_precedence in indexstyle changed
+V1.4:   - switch to the nomencl package for the nomenclature
+        - information on vector graphics tools added
+V1.3:   - appendixprefix set to true
+        - todonotes package added
+        - morewrites package added
+V1.2:   - more than 26 pages in the appendix are now possible
+        - Gitlab webpage linked for issue reporting
+        - Jabref introduction added
+        - problem with keywords resolved
+        - typesetting of nomenclature improved and simplified
+        - documentation for latexindent
+        - style specifications for LaTeX/Word redone
+        - table of all packages added
+        - paths biber and makeindex for Windows/Mac/Linux verified
+        - c_Meta.tex redone
+        - instructions for updating packages and compiling the document
+        - cover changes
+        - only one styleguide
+        - improved support for the bi-langual feature
+V1.1: Overleaf support
