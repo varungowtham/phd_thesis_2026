@@ -3,7 +3,7 @@ In the following, the instructions on using \verb+arara+\index{Scripts!arara} fo
 
 	\textbf{4.0 (\TeX Live 2018):}
 	      \begin{enumerate}[label={\arabic*{}.}]
-		      \item Add a user command for \verb+arara+\index{Scripts!arara} to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, January 2019}.
+		      \item Add a user command for \verb+arara+\index{Scripts!arara} to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, \\ January 2019}.
 		      \item Add the command in \autoref{code:arara_latexindent} to the beginning of the \path{main.tex} file (right before anything else). Note that the \% before arara is \emph{intentional} and necessary. This command executes the automatic file indenting for all files (and files in subfolders) that are stated within the square brackets as soon as \verb+arara+ is started. An example is given in \autoref{fig:arara_40_latexindent}.
 		      \item Execute \verb+arara+ (if you added it as the first user command, the shortcut Alt+Shift+F1 may be used).
 		      \item Update your files by clicking on File $\rightarrow$ Reload all documents from file.

@@ -17,12 +17,14 @@
 	utf8					% UTF-8 
 ]{inputenc}					% input encoding (the .tex files)
 \usepackage[
-	final,
-	tracking=true,			% systematically change the tracking of the fonts
-	kerning=true,			% 
+	activate,				% activate expansion and protrusion
+	kerning=true,			% activates extended kerning for the font
 	factor=1100,			% factor by which the characters will be protruded
-	stretch=10,				% 
-	shrink=10				% factor for font shrinking
+	final,					% final document mode
+	spacing=true,			% activates variable space between words
+	stretch=10,				% stretch faktor
+	shrink=10,				% factor for font shrinking
+	tracking=true,			% systematically change the tracking of the fonts	
 ]{microtype}				% This package might improve the look of the PDF by minimally stretching or extending fonts, etc. You can uncomment it to see the results
 \usepackage{morewrites}		% allows TeX to write to more than 16 files
 \usepackage[
