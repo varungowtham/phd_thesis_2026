@@ -1,4 +1,6 @@
-V1.6:   - acro changed from list to table
+V1.6:   - the Index now contains commands, which are mentioned in the style guide
+        - heater_footer.tex is removed, the commands were added to b_Commands.tex
+        - acro changed from list to table, column width can be set based on the longest abbreviation
         - Thesis and dissertation examples removed
         - Index and format changed
         - seriffree font for list of symbols
