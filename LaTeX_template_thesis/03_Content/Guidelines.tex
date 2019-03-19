@@ -410,12 +410,12 @@ Therein,
 	\item \verb+opt4+ is the label of the figure
 \end{itemize}
 
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}[6]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.35\textwidth]{Logo_tub}
 \caption{A wrapped figure}\label{fig:wrapped_figure}
 \end{wrapfigure}
-Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}. It might be necessary that the text, which surrounds the wrapped figure is a separate paragraph, i.e., empty lines above and below (see \LaTeX\ code).
+Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
 \subsection{Tables}
 \begin{wraptable}{r}{0.4\textwidth}
 	\centering
@@ -429,7 +429,6 @@ Although it is not seen on a regular basis in theses or dissertations, a Figure 
 	\end{tabular}
 \end{wraptable}
 A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment. The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
-
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -443,7 +442,6 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 		\bottomrule
 	\end{tabular}
 \end{table}
-\subsection{Numbers and Units}
 \begin{table}[tbh]
 	\centering
 	\caption{Exemplary table with an annotation}\label{tab:threeparttable}
@@ -461,6 +459,7 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 	\end{threeparttable}
 	\label{table2}
 \end{table}
+\subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo} package.\\
 Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx} package is suggested.
 \begin{itemize}
