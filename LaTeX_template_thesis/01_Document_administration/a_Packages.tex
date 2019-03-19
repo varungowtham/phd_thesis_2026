@@ -136,7 +136,10 @@
 \usepackage[
 	all						% sets widow and orphan penalties for the whole document
 ]{nowidow}					% widows and orphans
-\usepackage{placeins}		% is used to avoid floating objects after the \FloatBarrier command
+\usepackage[
+	above,					% floats may also appear in the section above
+	below,					% floats may also appear in the section below
+]{placeins}					% is used to avoid floating objects after the \FloatBarrier command
 \usepackage[
 	onehalfspacing			% 1.5 distance between lines
 ]{setspace} 				% package for line spacing

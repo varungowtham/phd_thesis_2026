@@ -47,7 +47,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
 	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
-	\item remove the guidelines chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
+	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis -- good luck!
 	\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, for example a List of Algorithms, just remove it from the thesis.
@@ -107,7 +107,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{Template Structure}
 This section describes the structure of this template. Questions, problems, or additional feature requests can be posted on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \subsection{Features}
-\begin{itemize}
+\begin{enumerate}
 	\item valid for theses or dissertations
 	\item can be used in German and English based on the settings of the \verb+babel+\index{Packages!babel} package
 	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
@@ -118,9 +118,10 @@ This section describes the structure of this template. Questions, problems, or a
 	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex} package and biber\index{Scripts!biber}
 	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the \path{.bib} file
 	\item simple generation of an Index with the \verb+imakeidx+\index{Packages!imakeidx} package
+	\item ToDos and missing figures with the \verb+todonotes+\index{Packages!todonotes} package
 	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code
 	\item various templates for typical elements of a thesis included
-\end{itemize}
+\end{enumerate}
 \subsection{Main Document}
 \begin{itemize}
 	\item is called \path{main.tex}\index{Files!main.tex}
@@ -282,7 +283,6 @@ The language of this document is set with the \verb+babel+\index{Packages!babel}
 \section{\LaTeX\ Editor Settings and Maintenance}
 \subsection{Biber and Makeindex}\label{subsec:biblatexmakeindex}
 \begin{itemize}
-	\item to compile the file correctly, biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} are used
 	\item command line for setting up biber\index{Scripts!biber} in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\ \verb+"C:/path_to/biber.exe" %+ \\
@@ -300,10 +300,8 @@ The language of this document is set with the \verb+babel+\index{Packages!babel}
 		      \item MacOS:\\
 		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 	      \end{enumerate}
-	\item note that \verb+path_to+ of course depends on your system
-	\item \textbf{if you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.}
-	\item if the \LaTeX\ distribution is in your system path, simply writing biber\index{Scripts!biber} or makeindex\index{Scripts!makeindex} (without extension) instead of the whole path should suffice
-\end{itemize}
+\end{itemize}	      
+Note that \verb+path_to+ of course depends on your system. If the \LaTeX\ distribution is in your system path, simply writing biber\index{Scripts!biber} or makeindex\index{Scripts!makeindex} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Settings_BiblatexMakeindex}
@@ -367,7 +365,7 @@ The local settings are important as they specify that only one backup is created
 \end{figure}
 \subsection{Index}\label{subsec:index}
 If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.\\
-The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+\index{Commands!index@\verb+\index{}+} command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
+The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
 \begin{mdframed}[linecolor=tub_red, roundcorner=10pt]
@@ -445,6 +443,7 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 		\bottomrule
 	\end{tabular}
 \end{table}
+\subsection{Numbers and Units}
 \begin{table}[tbh]
 	\centering
 	\caption{Exemplary table with an annotation}\label{tab:threeparttable}
@@ -462,7 +461,6 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 	\end{threeparttable}
 	\label{table2}
 \end{table}
-\subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo} package.\\
 Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx} package is suggested.
 \begin{itemize}
@@ -564,7 +562,7 @@ All of these items are introduced in the following. Note that frames and their c
 	\caption{How to write algorithms}\label{alg:template_algorithm}
 \end{algorithm}
 \subsection{Autorefs}\label{subsec:autorefs}
-The \verb+hyperref+\index{Packages!hyperref} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, at the beginning of a sentence, the long version of an item should be used (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
+The \verb+hyperref+\index{Packages!hyperref} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, the long version of an item should be used at the beginning of a sentence (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
 \begin{enumerate}
 	\item German \dots
 	      \begin{itemize}
