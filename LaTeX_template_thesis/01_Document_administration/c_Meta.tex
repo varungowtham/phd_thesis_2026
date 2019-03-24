@@ -60,8 +60,8 @@
 % Options:
 % true: document in styleguide mode
 % false: dissertation or thesis mode
-\setboolean{isSG}{false}
-\ifthenelse{\boolean{isSG}}{\setboolean{isDiss}{true}}{}
+\setboolean{isSG}{true}
+\ifthenelse{\boolean{isSG}}{\setboolean{isDiss}{false}}{}
 % Subtitle English
 \newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}
 % Subtitle German

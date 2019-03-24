@@ -503,19 +503,19 @@ These commands are used as
 	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
 \myfigure[tbh][1]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
-\subsection{Chemistry and Chemical Reactions}
-Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+mhchem+\index{Packages!mhchem} package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+\index{Commands!ce@\verb+\ce{}+} command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]
 	\setchemfig{atom sep=20pt}
 	\centering
 	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
 	\schemestart
-	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\chemfig{CO}/\chemfig{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
+	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\ch{CO}/\ch{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
 	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
 	\schemestop
 	\chemnameinit{}
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
+\subsection{Chemistry and Chemical Reactions}
+Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+chemformula+\index{Packages!chemformula} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek} package is loaded in order to typeset \iupac{\chemgamma-Aluminium} and not $\gamma$-Aluminium.
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
 
