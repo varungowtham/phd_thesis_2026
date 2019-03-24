@@ -1,3 +1,6 @@
+V1.7:   - the commit message in the master should now contain the right version number. Before this version, changelog and commit message may not indicate the same version
+        - the mhchem package was replaced by the chemmacros/chemformula package
+        - the table template was corrected by using lining numbers instead of text figures
 V1.6:   - the Index now contains commands, which are mentioned in the style guide
         - heater_footer.tex is removed, the commands were added to b_Commands.tex
         - acro changed from list to table, column width can be set based on the longest abbreviation
