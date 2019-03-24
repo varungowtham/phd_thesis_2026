@@ -1,4 +1,13 @@
 %------------------------------
+% DIRECTORIES
+%------------------------------
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%------------------------------
+% FIGURES, TABLES, LISTS, and NUMERATIONS
+%------------------------------
+\graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
+%------------------------------
 % DEDICATION
 %------------------------------
 \newenvironment{dedication_env}	% defines the dedication environment
@@ -23,6 +32,39 @@
 \cofoot{}						% center-odd-foot
 \rofoot[\pagemark]{\pagemark}	% right-odd-foot
 \renewcommand*{\chapterpagestyle}{plain}
+%------------------------------
+% LIST OF ABBREVIATIONS
+%------------------------------
+\newlength{\myabbrevlength}
+\setlength{\myabbrevlength}{2cm}
+\iflanguage{english}{
+	\newcommand{\abbrevname}{List of Abbreviations}
+	}{\iflanguage{ngerman}{
+		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
+	}
+\DeclareAcroListStyle{longtabu}{table}{
+	table=longtabu,
+	table-spec=>{\sffamily\bfseries}p{\myabbrevlength}X@{},
+	before={%
+        \setlength{\tabulinesep}{0.8\parskip}%
+        \setlength{\topsep}{0pt}%
+        \setlength{\LTpre}{0pt}%
+        \setlength{\LTpost}{0pt}%
+    }
+}
+\acsetup{list-style=longtabu}
+%------------------------------
+% TODOS
+%------------------------------
+\makeatletter
+\iflanguage{ngerman}{
+	\renewcommand{\@todonotes@todolistname}{ToDo-Verzeichnis}
+}{
+\iflanguage{english}{
+	\renewcommand{\@todonotes@todolistname}{List of ToDos}
+}{}
+}
+\makeatother
 %------------------------------
 % THEOREM STYLE
 %------------------------------
@@ -96,22 +138,27 @@
 \DeclareMathOperator{\rot}{rot}	% declares the rot math operator
 \newcommand*\diff{\mathop{}\!\textrm{d}}	% differential d, e.g. in integrals
 %------------------------------
+% NEW UNITS
+%------------------------------
+\DeclareSIUnit\torr{Torr}		% defines the unit Torr
+\DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
+\DeclareSIUnit\atm{atm}			% defines the unit atm
+\DeclareSIUnit\anno{a}			% defines the unit a for year
+\DeclareSIUnit\kJmol{\kilo\joule\per\mole} % defines the unit kJ/mol
+\DeclareSIUnit\kJmolK{\kilo\joule\per\mole\per\kelvin} % defines the unit kJ/(molK)
+%------------------------------
+% CHEMISTRY
+%------------------------------
+\chemsetup{%
+	formula=chemformula,		% use the chemformula package for typesetting formulas
+	greek=upgreek,				% upright typesetting according to upgreek package
+	modules=all,				% load all modules of the chemmacros package	
+}
+%------------------------------
 % COLORS
 %------------------------------
 \definecolor{dbta_blue}{RGB}{51,102,153}
 \definecolor{tub_red}{RGB}{197,14,31}
-%------------------------------
-% DIRECTORIES
-%------------------------------
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-%------------------------------
-% ALPHANUMERICAL PAGE NUMBERS
-%------------------------------
-\makeatletter
-\newcommand{\@AlphAlph}{}		% check that \@AlphAlph is undefined.
-\let\@AlphAlph=\AlphAlph		% this allows for a counter, which goes from page Z to page AA
-\makeatother
 %------------------------------
 % XPARSE
 %------------------------------
@@ -124,11 +171,27 @@
 %------------------------------
 % CODE
 %------------------------------
-\renewcommand{\lstlistingname}{Code}	% rename listing in appendix
+\renewcommand{\lstlistingname}{Code}	% rename listings
 %------------------------------
-% FIGURES, TABLES, LISTS, and NUMERATIONS
+% ENUMERATE ENVIRONMENT
 %------------------------------
-\graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
+\renewcommand{\labelenumi}{\arabic{enumi})} 				% 1)
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}	% 1.1)
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}	% 1.1.1)
+\setlist[enumerate,1]{%
+	before*=\onehalfspacing,	% onehalfspacing in environments
+	itemsep=0.15\baselineskip,	% vertical space between items
+	labelindent=\parindent,		% labels are indented by this length
+}%
+%------------------------------
+% ITEMIZE ENVIRONMENT
+%------------------------------
+\setlist[itemize,1]{%
+	label={--},					% standard label is --
+	before*=\onehalfspacing,	% onehalfspacing in environments
+	itemsep=0.15\baselineskip,	% vertical space between items
+	labelindent=\parindent,		% labels are indented by this length
+}%
 %------------------------------
 % GERMAN CAPTION REDEFINITIONS
 %------------------------------
@@ -231,35 +294,6 @@
   \endgroup%
 }
 %------------------------------
-% ENUMERATE ENVIRONMENT
-%------------------------------
-\renewcommand{\labelenumi}{\arabic{enumi})} 				% 1)
-\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}	% 1.1)
-\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}	% 1.1.1)
-\setlist[enumerate,1]{%
-	before*=\onehalfspacing,	% onehalfspacing in environments
-	itemsep=0.15\baselineskip,	% vertical space between items
-	labelindent=\parindent,		% labels are indented by this length
-}%
-%------------------------------
-% ITEMIZE ENVIRONMENT
-%------------------------------
-\setlist[itemize,1]{%
-	label={--},					% standard label is --
-	before*=\onehalfspacing,	% onehalfspacing in environments
-	itemsep=0.15\baselineskip,	% vertical space between items
-	labelindent=\parindent,		% labels are indented by this length
-}%
-%------------------------------
-% NEW UNITS
-%------------------------------
-\DeclareSIUnit\torr{Torr}		% defines the unit Torr
-\DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
-\DeclareSIUnit\atm{atm}			% defines the unit atm
-\DeclareSIUnit\anno{a}			% defines the unit a for year
-\DeclareSIUnit\kJmol{\kilo\joule\per\mole} % defines the unit kJ/mol
-\DeclareSIUnit\kJmolK{\kilo\joule\per\mole\per\kelvin} % defines the unit kJ/(molK)
-%------------------------------
 % REFERENCES AND CITATIONS
 %------------------------------
 \renewcaptionname{english}{\bibname}{List of References}
@@ -324,16 +358,11 @@ urlseen = {last access},
 %------------------------------
 \renewcommand*{\UrlFont}{\upshape}
 %------------------------------
-% TODOS
+% ALPHANUMERICAL PAGE NUMBERS
 %------------------------------
 \makeatletter
-\iflanguage{ngerman}{
-	\renewcommand{\@todonotes@todolistname}{ToDo-Verzeichnis}
-}{
-\iflanguage{english}{
-	\renewcommand{\@todonotes@todolistname}{List of ToDos}
-}{}
-}
+\newcommand{\@AlphAlph}{}		% check that \@AlphAlph is undefined.
+\let\@AlphAlph=\AlphAlph		% this allows for a counter, which goes from page Z to page AA
 \makeatother
 %------------------------------
 % HYPERREF
@@ -349,27 +378,6 @@ urlseen = {last access},
    	pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
    	urlbordercolor=cyan,		% border color for URLs
 }%
-%------------------------------
-% LIST OF ABBREVIATIONS
-%------------------------------
-\newlength{\myabbrevlength}
-\setlength{\myabbrevlength}{2cm}
-\iflanguage{english}{
-	\newcommand{\abbrevname}{List of Abbreviations}
-	}{\iflanguage{ngerman}{
-		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
-	}
-\DeclareAcroListStyle{longtabu}{table}{
-	table=longtabu,
-	table-spec=>{\sffamily\bfseries}p{\myabbrevlength}X@{},
-	before={%
-        \setlength{\tabulinesep}{0.8\parskip}%
-        \setlength{\topsep}{0pt}%
-        \setlength{\LTpre}{0pt}%
-        \setlength{\LTpost}{0pt}%
-    }
-}
-\acsetup{list-style=longtabu}
 %------------------------------
 % MAKEINDEX
 %------------------------------

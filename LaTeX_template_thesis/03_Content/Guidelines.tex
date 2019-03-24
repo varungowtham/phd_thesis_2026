@@ -46,8 +46,8 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
 	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
-	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, January 2019}} See some more instructions for \TeX Live and MiK\TeX{} in \autoref{subsec:update_packages}
-	\item remove the guidelines chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
+	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
+	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis -- good luck!
 	\item note that not all of the shown items in the following sections \emph{must} be part of your thesis. If a certain aspect does not apply to you, for example a List of Algorithms, just remove it from the thesis.
@@ -107,7 +107,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{Template Structure}
 This section describes the structure of this template. Questions, problems, or additional feature requests can be posted on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \subsection{Features}
-\begin{itemize}
+\begin{enumerate}
 	\item valid for theses or dissertations
 	\item can be used in German and English based on the settings of the \verb+babel+\index{Packages!babel} package
 	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
@@ -118,9 +118,10 @@ This section describes the structure of this template. Questions, problems, or a
 	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex} package and biber\index{Scripts!biber}
 	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the \path{.bib} file
 	\item simple generation of an Index with the \verb+imakeidx+\index{Packages!imakeidx} package
+	\item ToDos and missing figures with the \verb+todonotes+\index{Packages!todonotes} package
 	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code
 	\item various templates for typical elements of a thesis included
-\end{itemize}
+\end{enumerate}
 \subsection{Main Document}
 \begin{itemize}
 	\item is called \path{main.tex}\index{Files!main.tex}
@@ -282,7 +283,6 @@ The language of this document is set with the \verb+babel+\index{Packages!babel}
 \section{\LaTeX\ Editor Settings and Maintenance}
 \subsection{Biber and Makeindex}\label{subsec:biblatexmakeindex}
 \begin{itemize}
-	\item to compile the file correctly, biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} are used
 	\item command line for setting up biber\index{Scripts!biber} in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\ \verb+"C:/path_to/biber.exe" %+ \\
@@ -300,10 +300,8 @@ The language of this document is set with the \verb+babel+\index{Packages!babel}
 		      \item MacOS:\\
 		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 	      \end{enumerate}
-	\item note that \verb+path_to+ of course depends on your system
-	\item \textbf{if you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.}
-	\item if the \LaTeX\ distribution is in your system path, simply writing biber\index{Scripts!biber} or makeindex\index{Scripts!makeindex} (without extension) instead of the whole path should suffice
-\end{itemize}
+\end{itemize}	      
+Note that \verb+path_to+ of course depends on your system. If the \LaTeX\ distribution is in your system path, simply writing biber\index{Scripts!biber} or makeindex\index{Scripts!makeindex} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Settings_BiblatexMakeindex}
@@ -322,7 +320,7 @@ As stated above, compiling problems appeared with this template when old version
 In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
 \begin{description}
 	\item[\TeX Live:] In \TeX Live, the packages are managed via the tlmgr. The GUI of the tlmgr is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlmgr-gui.exe}. Execute this file and the application shown in \autoref{fig:texlive_tlmgr} starts. Use this application to update your packages.
-	\item[MiK\TeX:] In MiK\TeX, the packages are managed in the MiK\TeX{} console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
+	\item[MiK\TeX:] In MiK\TeX, the packages are managed in the MiK\TeX\ console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
 \end{description}
 Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, please add an issue on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \begin{figure}[tbh]
@@ -367,7 +365,7 @@ The local settings are important as they specify that only one backup is created
 \end{figure}
 \subsection{Index}\label{subsec:index}
 If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.\\
-The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index+\index{Commands!index@\verb+\index{}+} command: This is a certain \textit{keyword}\index{Keyword}. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
+The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
 \begin{mdframed}[linecolor=tub_red, roundcorner=10pt]
@@ -412,12 +410,12 @@ Therein,
 	\item \verb+opt4+ is the label of the figure
 \end{itemize}
 
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}[6]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.35\textwidth]{Logo_tub}
 \caption{A wrapped figure}\label{fig:wrapped_figure}
 \end{wrapfigure}
-Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}. It might be necessary that the text, which surrounds the wrapped figure is a separate paragraph, i.e., empty lines above and below (see \LaTeX\ code).
+Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
 \subsection{Tables}
 \begin{wraptable}{r}{0.4\textwidth}
 	\centering
@@ -431,7 +429,6 @@ Although it is not seen on a regular basis in theses or dissertations, a Figure 
 	\end{tabular}
 \end{wraptable}
 A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment. The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
-
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -440,8 +437,8 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 		Entry 1 & Entry 2 & Entry 3 & \textnormal{Unit column} & Italics   \\
 		Unit 1  & Unit 2  & Unit 3  & \textnormal{Some text}   & Some text \\
 		\midrule
-		1       & 2       & 3       & \joule                   & bla       \\
-		4       & 5       & 6       & \pascal\per\square\metre & bla bla   \\
+		$\num{1}$       & $\num{2}$       & $\num{3}$       & \joule                   & bla       \\
+		$\num{4}$       & $\num{5}$       & $\num{6}$       & \pascal\per\square\metre & bla bla   \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -489,7 +486,7 @@ For important equations, you might want to use a box:
 Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{References}\label{subsec:references}
 \LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
-In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, biblatex supports editing of the citation style via \TeX{} and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
+In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, biblatex supports editing of the citation style via \TeX\ and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
 \begin{itemize}
 	\item book: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 	\item article: \parencite{Abrams1975}, \textcite{Abrams1975}
@@ -506,19 +503,19 @@ These commands are used as
 	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
 \myfigure[tbh][1]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
-\subsection{Chemistry and Chemical Reactions}
-Sometimes it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+mhchem+\index{Packages!mhchem} package are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ce{}+\index{Commands!ce@\verb+\ce{}+} command, e.g.~\ce{H2O}. Note that chemicals, e.g.~\ce{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations. However, abbreviations for chemicals, e.g.~\ce{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations.
 \begin{figure}[tbh]
 	\setchemfig{atom sep=20pt}
 	\centering
 	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
 	\schemestart
-	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\chemfig{CO}/\chemfig{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
+	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\ch{CO}/\ch{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
 	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
 	\schemestop
 	\chemnameinit{}
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
+\subsection{Chemistry and Chemical Reactions}
+Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+chemformula+\index{Packages!chemformula} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek} package is loaded in order to typeset \iupac{\chemgamma-Aluminium} and not $\gamma$-Aluminium.
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
 
@@ -564,7 +561,7 @@ All of these items are introduced in the following. Note that frames and their c
 	\caption{How to write algorithms}\label{alg:template_algorithm}
 \end{algorithm}
 \subsection{Autorefs}\label{subsec:autorefs}
-The \verb+hyperref+\index{Packages!hyperref} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, at the beginning of a sentence, the long version of an item should be used (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
+The \verb+hyperref+\index{Packages!hyperref} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, the long version of an item should be used at the beginning of a sentence (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
 \begin{enumerate}
 	\item German \dots
 	      \begin{itemize}
