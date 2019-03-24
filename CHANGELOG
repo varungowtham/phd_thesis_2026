@@ -1,22 +1,28 @@
-V1.7:   - the commit message in the master should now contain the right version number. Before this version, changelog and commit message may not indicate the same version
+V1.7:   24th March 2019
+        - the commit message in the master should now contain the right version number. Before this version, changelog and commit message may not indicate the same version
         - the mhchem package was replaced by the chemmacros/chemformula package
         - the table template was corrected by using lining numbers instead of text figures
-V1.6:   - the Index now contains commands, which are mentioned in the style guide
+V1.6:   18th March 2019
+        - the Index now contains commands, which are mentioned in the style guide
         - heater_footer.tex is removed, the commands were added to b_Commands.tex
         - acro changed from list to table, column width can be set based on the longest abbreviation
         - Thesis and dissertation examples removed
         - Index and format changed
         - seriffree font for list of symbols
-        - support for older TeXLive versions depracated
-V1.5:   - auto-complete commands added
+V1.5:   14th March 2019
+        - auto-complete commands added
         - wrapfig package added
         - page_precedence in indexstyle changed
-V1.4:   - switch to the nomencl package for the nomenclature
+        - support for older TeXLive versions depracated
+V1.4:   12th March 2019
+        - switch to the nomencl package for the nomenclature
         - information on vector graphics tools added
-V1.3:   - appendixprefix set to true
+V1.3:   25th February 2019
+        - appendixprefix set to true
         - todonotes package added
         - morewrites package added
-V1.2:   - more than 26 pages in the appendix are now possible
+V1.2:   20th January 2019
+        - more than 26 pages in the appendix are now possible
         - Gitlab webpage linked for issue reporting
         - Jabref introduction added
         - problem with keywords resolved
@@ -30,4 +36,5 @@ V1.2:   - more than 26 pages in the appendix are now possible
         - cover changes
         - only one styleguide
         - improved support for the bi-langual feature
-V1.1: Overleaf support
+V1.1:   8th January 2019
+        - Overleaf support
