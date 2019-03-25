@@ -10,8 +10,8 @@ In the following, the instructions on using \verb+arara+\index{Scripts!arara} fo
 		      \item Your source code should now be nicely indented.
 		      \item In case errors appear, \verb+arara+\index{Scripts!arara} always creates a backup with the file extension \path{.latexindentbackup}.
 	      \end{enumerate}
-\textbf{Note that arara\index{Scripts!arara} 4.0 does not work with subdirectories by default. To resolve this issue, simply follow the instructions described in the github repository of arara.}\footnote{\url{https://github.com/cereda/arara/issues/119}, February 2019}
-	      \begin{lstlisting}[breaklines, caption={Setting up arara for latexindent in Texmaker}, float=tbh, label={code:arara_latexindent}, language=latex]
+\textbf{Note that} \verb+arara+\index{Scripts!arara} \textbf{4.0 does not work with subdirectories by default. To resolve this issue, simply follow the instructions described in the github repository of} \verb+arara+.\footnote{\url{https://github.com/cereda/arara/issues/119}, February 2019}
+	      \begin{lstlisting}[breaklines, caption={Setting up \texttt{arara} for \texttt{latexindent} in Texmaker}, float=tbh, label={code:arara_latexindent}, language=latex]
 %*\%*) arara: indentsubdir: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
 		\end{lstlisting}
 \begin{figure}[tbh]

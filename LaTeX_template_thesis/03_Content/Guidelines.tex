@@ -45,7 +45,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
 	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
-	\item check whether biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
+	\item check whether \verb+biber+\index{Scripts!biber} and \verb+makeindex+\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
 	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
 	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
@@ -115,7 +115,7 @@ This section describes the structure of this template. Questions, problems, or a
 	\item simple generation of List of Codes with the \verb+listings+\index{Packages!listings} package and KOMA script
 	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomencl+\index{Packages!nomencl} package
 	\item simple generation of List of Abbreviations with the \verb+acro+\index{Packages!acro} package
-	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex} package and biber\index{Scripts!biber}
+	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex} package and \verb+biber+\index{Scripts!biber}
 	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the \path{.bib} file
 	\item simple generation of an Index with the \verb+imakeidx+\index{Packages!imakeidx} package
 	\item ToDos and missing figures with the \verb+todonotes+\index{Packages!todonotes} package
@@ -165,7 +165,7 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item defines structure of the List of Symbols
 		      \item optional argument defines the class of a symbol (Latin, Greek, \dots)
-		      \item makeindex\index{Scripts!makeindex} is used for the generation of the List of Symbols. A short instruction how to run makeindex\index{Scripts!makeindex} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
+		      \item \verb+makeindex+\index{Scripts!makeindex} is used for the generation of the List of Symbols. A short instruction how to run \verb+makeindex+\index{Scripts!makeindex} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
 	      \end{itemize}
 	\item \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex}
 	      \begin{itemize}
@@ -177,7 +177,7 @@ The following files are located in this folder:
 	\item \path{f_CodeLanguageSpecifications.tex}\index{Files!f\_CodeLanguageSpecifications.tex}
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
-		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
+		      \item if you want to apprehend your code in your thesis, you can either copy the code to an \verb+lstlistings+ environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
 	      \end{itemize}
 \end{enumerate}
 \begin{figure}[tbh]
@@ -281,38 +281,38 @@ The language of this document is set with the \verb+babel+\index{Packages!babel}
 % SEC: LATEX EDITOR SETTINGS AND MAINTENANCE
 %------------------------------						
 \section{\LaTeX\ Editor Settings and Maintenance}
-\subsection{Biber and Makeindex}\label{subsec:biblatexmakeindex}
+\subsection{\texttt{Biber} and \texttt{Makeindex}}\label{subsec:biblatexmakeindex}
 \begin{itemize}
-	\item command line for setting up biber\index{Scripts!biber} in Texmaker (see \autoref{fig:biblatexmakindex}):
+	\item command line for setting up \verb+biber+\index{Scripts!biber} in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\ \verb+"C:/path_to/biber.exe" %+ \\
-		            in \TeX Live, biber\index{Scripts!biber} is located in \verb+bin/win32+
+		            in \TeX Live, \verb+biber+\index{Scripts!biber} is located in \verb+bin/win32+
 		      \item Linux:\\ \verb+"/usr/path_to/biber" %+
 		      \item MacOS:\\ \verb+"/usr/path_to/biber" %.bcf+
 	      \end{enumerate}
-	\item command line for setting up makeindex\index{Scripts!makeindex} in Texmaker (see \autoref{fig:biblatexmakindex}):
+	\item command line for setting up \verb+makeindex+\index{Scripts!makeindex} in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\
 		            {\footnotesize \verb+"C:/path_to/makeindex.exe" %.nlo -s nomencl.ist -o %.nls+}\\
-		            in \TeX Live, makeindex\index{Scripts!makeindex} is located in \verb+bin/win32+
+		            in \TeX Live, \verb+makeindex+\index{Scripts!makeindex} is located in \verb+bin/win32+
 		      \item Linux:\\
 		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 		      \item MacOS:\\
 		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 	      \end{enumerate}
 \end{itemize}	      
-Note that \verb+path_to+ of course depends on your system. If the \LaTeX\ distribution is in your system path, simply writing biber\index{Scripts!biber} or makeindex\index{Scripts!makeindex} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.
+Note that \verb+path_to+ of course depends on your system. If the \LaTeX\ distribution is in your system path, simply writing \verb+biber+\index{Scripts!biber} or \verb+makeindex+\index{Scripts!makeindex} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run \verb+biber+\index{Scripts!biber} and \verb+makeindex+\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Settings_BiblatexMakeindex}
-	\caption[Setting up biber and makeindex in Texmaker]{Setting up biber and makeindex in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
+	\caption[Setting up \textbackslash\texttt{biber} and \textbackslash\texttt{makeindex} in Texmaker]{Setting up \textbackslash\texttt{biber} and \textbackslash\texttt{makeindex} in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
 \end{figure}
 \subsection{Compiling the Document}\label{subsec:compiling}
 The following commands/scripts must be run to compile the document completely:
 \begin{enumerate}
 	\item PDF\LaTeX: This generates a first PDF. At this point, the List of References and the List of Symbols are missing.
-	\item biber\index{Scripts!biber}: Run biber (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
-	\item makeindex\index{Scripts!makeindex}: Run makeindex (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
+	\item \verb+biber+\index{Scripts!biber}: Run \verb+biber+ (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
+	\item \verb+makeindex+\index{Scripts!makeindex}: Run \verb+makeindex+ (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
 	\item PDF\LaTeX\ (three times): The first run should already generate the List of References and the List of Symbols. The second run should update all citations etc.\ in the PDF. Sometimes, a third run is necessary if some references within the text have changed again. In this case, a third run is necessary. Check the output of Texmaker.
 \end{enumerate}
 \subsection{Updating Packages in \TeX Live and MiK\TeX}\label{subsec:update_packages}
@@ -343,11 +343,11 @@ Dissertations are stored as PDF/A at the university library. To ensure compatibi
 
 \textbf{Note that the }\verb+pdfx+\textbf{ package cannot ensure that all your included PDFs, for example figures, fulfill the PDF/A standard. Hence, check your PDF for PDF/A compatibility whenever you included external files.}
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
-Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
+Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an \verb+equation+ environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
 Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\index{Scripts!latexindent}\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+\index{Scripts!latexindent}: directly running \verb+latexindent+\index{Scripts!latexindent} or calling it via \verb+arara+\index{Scripts!arara}\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara\index{Scripts!arara} software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}.\\
 To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+\index{Scripts!latexindent}. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+\index{Scripts!latexindent} is executed with writing rights (\verb+-w+) on the current \path{.tex} file with local settings (\verb+-l+) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
-The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent\index{Scripts!latexindent}. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
-\begin{lstlisting}[breaklines, caption={Setting up latexindent in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
+The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of \verb+latexindent+\index{Scripts!latexindent}. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
+\begin{lstlisting}[breaklines, caption={Setting up \texttt{latexindent} in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
 "C:/path_to_texlive/year/bin/win32/latexindent.exe" -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template/LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
 \begin{figure}[tbh]
@@ -361,10 +361,10 @@ The local settings are important as they specify that only one backup is created
 		\includegraphics[width=\linewidth]{Example_latexindent_after}
 		\caption{After}\label{fig:latexindent_after}
 	\end{subfigure}
-	\caption[Before and after automatic indenting with latexindent]{Before (left) and after (right) automatic indenting with latexindent}\label{fig:automatic_indenting_latexindent}
+	\caption[Before and after automatic indenting with \texttt{latexindent}]{Before (left) and after (right) automatic indenting with \texttt{latexindent}}\label{fig:automatic_indenting_latexindent}
 \end{figure}
 \subsection{Index}\label{subsec:index}
-If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.\\
+If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes \verb+makeindex+\index{Scripts!makeindex} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.\\
 The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
@@ -392,7 +392,7 @@ Figures are an important part of every thesis. Normally, these figures are gener
 %------------------------------
 % SEC: TEMPLATES
 %------------------------------	
-\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
+\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
 This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
 \subsection{Figures}
@@ -428,7 +428,7 @@ Although it is not seen on a regular basis in theses or dissertations, a Figure 
 		\bottomrule
 	\end{tabular}
 \end{wraptable}
-A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment. The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
+A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a \verb+threeparttable+ environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the \verb+longtable+ environment. The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -486,7 +486,7 @@ For important equations, you might want to use a box:
 Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{References}\label{subsec:references}
 \LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
-In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, biblatex supports editing of the citation style via \TeX\ and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
+In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. \verb+Biblatex+ and \verb+biber+\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, \verb+biblatex+ supports editing of the citation style via \TeX\ and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
 \begin{itemize}
 	\item book: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 	\item article: \parencite{Abrams1975}, \textcite{Abrams1975}
