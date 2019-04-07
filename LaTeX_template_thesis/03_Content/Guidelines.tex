@@ -13,7 +13,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 		\item line spacing:
 		      \begin{itemize}[label={$\circ$}]
 			      \item Word: 1.2;
-			      \item \LaTeX: linespacing is set with the \verb+setspace+\index{Packages!setspace} package any may not be changed;
+			      \item \LaTeX: linespacing is set with the \verb+setspace+\index{Packages!setspace@\verb+setspace+} package any may not be changed;
 		      \end{itemize}
 		\item fonts :
 		      \begin{itemize}[label={$\circ$}]
@@ -43,9 +43,9 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine. This template expects a \TeX Live distribution $\geq$ 2018. It is not tested with older versions anymore.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
-	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
+	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel@\verb+babel+} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel@\verb+babel+} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
 	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
-	\item check whether biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
+	\item check whether \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
 	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
 	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
@@ -80,8 +80,8 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	      \end{itemize}
 	      The only correct use of square brackets is shown here for the voltage:\newline
 	      [U] = \si{\volt}, i.e.~the unit of the voltage is Volt.
-	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomencl+\index{Packages!nomencl} and the \verb+acro+\index{Packages!acro} package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
-	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+\index{Packages!caption} package (see \autoref{sec:templates}) and the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
+	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomencl+\index{Packages!nomencl@\verb+nomencl+} and the \verb+acro+\index{Packages!acro@\verb+acro+} package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
+	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+\index{Packages!caption@\verb+caption+} package (see \autoref{sec:templates}) and the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Fig. 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
 	\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
 	\item extensive tables or figures that are repeatedly referenced in the text should be put in the appendix.
 	\item information or data not generated by the author must always be referenced. Citations/references are used to
@@ -99,7 +99,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item there is a maximum of four indenture levels in the text and a maximum of three levels in the table of contents.
 	\item the sections of the appendix are numerated alphabetically in capital Latin letters. This is already specified in this template.
 	\item important aspects can be emphasized with \textit{italics}, \textbf{bold writing}, or using the \emph{emphasize command} \verb+\emph+. Underlining words should be avoided.
-	\item paragraphs should not start in the last two lines of a page (\enquote{Schusterjunge} or orphen) or end in the first two lines of a page (\enquote{Hurenkind} or widow). This is automatically achieved with the \verb+nowidow+\index{Packages!nowidow} package in this template.
+	\item paragraphs should not start in the last two lines of a page (\enquote{Schusterjunge} or orphen) or end in the first two lines of a page (\enquote{Hurenkind} or widow). This is automatically achieved with the \verb+nowidow+\index{Packages!nowidow@\verb+nowidow+} package in this template.
 \end{enumerate}
 %------------------------------
 % SEC: TEMPLATE STRUCTURE
@@ -109,16 +109,16 @@ This section describes the structure of this template. Questions, problems, or a
 \subsection{Features}
 \begin{enumerate}
 	\item valid for theses or dissertations
-	\item can be used in German and English based on the settings of the \verb+babel+\index{Packages!babel} package
+	\item can be used in German and English based on the settings of the \verb+babel+\index{Packages!babel@\verb+babel+} package
 	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
-	\item simple generation of List of Algorithms with the \verb+algorithm2e+\index{Packages!algorithm2e} package and KOMA script
-	\item simple generation of List of Codes with the \verb+listings+\index{Packages!listings} package and KOMA script
-	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomencl+\index{Packages!nomencl} package
-	\item simple generation of List of Abbreviations with the \verb+acro+\index{Packages!acro} package
-	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex} package and biber\index{Scripts!biber}
+	\item simple generation of List of Algorithms with the \verb+algorithm2e+\index{Packages!algorithm2e@\verb+algorithm2e+} package and KOMA script
+	\item simple generation of List of Codes with the \verb+listings+\index{Packages!listings@\verb+listings+} package and KOMA script
+	\item simple generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomencl+\index{Packages!nomencl@\verb+nomencl+} package
+	\item simple generation of List of Abbreviations with the \verb+acro+\index{Packages!acro@\verb+acro+} package
+	\item simple generation of List of References with the \verb+biblatex+\index{Packages!biblatex@\verb+biblatex+} package and \verb+biber+\index{Scripts!biber@\verb+biber+}
 	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the \path{.bib} file
-	\item simple generation of an Index with the \verb+imakeidx+\index{Packages!imakeidx} package
-	\item ToDos and missing figures with the \verb+todonotes+\index{Packages!todonotes} package
+	\item simple generation of an Index with the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package
+	\item ToDos and missing figures with the \verb+todonotes+\index{Packages!todonotes@\verb+todonotes+} package
 	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code
 	\item various templates for typical elements of a thesis included
 \end{enumerate}
@@ -132,7 +132,7 @@ The following files are located in this folder:
 \begin{enumerate}
 	\item \path{indent.yaml}
 	      \begin{itemize}
-		      \item contains the rule for arara\index{Scripts!arara} 3.0A
+		      \item contains the rule for arara\index{Scripts!arara@\verb+arara+} 3.0A
 		      \item more information can be found in \autoref{ch:automatic_indenting_arara}
 	      \end{itemize}
 	\item \path{localSettings.yaml}
@@ -165,7 +165,7 @@ The following files are located in this folder:
 	      \begin{itemize}
 		      \item defines structure of the List of Symbols
 		      \item optional argument defines the class of a symbol (Latin, Greek, \dots)
-		      \item makeindex\index{Scripts!makeindex} is used for the generation of the List of Symbols. A short instruction how to run makeindex\index{Scripts!makeindex} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
+		      \item \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} is used for the generation of the List of Symbols. A short instruction how to run \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
 	      \end{itemize}
 	\item \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex}
 	      \begin{itemize}
@@ -177,7 +177,7 @@ The following files are located in this folder:
 	\item \path{f_CodeLanguageSpecifications.tex}\index{Files!f\_CodeLanguageSpecifications.tex}
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
-		      \item if you want to apprehend your code in your thesis, you can either copy the code to an lstlistings environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
+		      \item if you want to apprehend your code in your thesis, you can either copy the code to an \verb+lstlistings+ environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
 	      \end{itemize}
 \end{enumerate}
 \begin{figure}[tbh]
@@ -276,43 +276,43 @@ The following files are located in this folder:
 % SEC: LANGUAGE
 %------------------------------				
 \section{Language: English or German?}\label{sec:language}
-The language of this document is set with the \verb+babel+\index{Packages!babel} package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+\index{Packages!babel} package automatically sets the localized names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+\index{Packages!babel} package must be changed. If the language is English, the output decimal marker for SI units (\verb+siunitx+\index{Packages!siunitx} package) is also automatically changed to a period.
+The language of this document is set with the \verb+babel+\index{Packages!babel@\verb+babel+} package. The order of the loaded languages determines the default language. Usually, \verb+ngerman+ is default (and hence the \emph{second}) language. The \verb+babel+\index{Packages!babel@\verb+babel+} package automatically sets the localized names for Tables and Figures, provides the correct hyphenation, and does more language-related things. In case the thesis is written in English, the order of the languages when loading the \verb+babel+\index{Packages!babel@\verb+babel+} package must be changed. If the language is English, the output decimal marker for SI units (\verb+siunitx+\index{Packages!siunitx@\verb+siunitx+} package) is also automatically changed to a period.
 %------------------------------
 % SEC: LATEX EDITOR SETTINGS AND MAINTENANCE
 %------------------------------						
 \section{\LaTeX\ Editor Settings and Maintenance}
-\subsection{Biber and Makeindex}\label{subsec:biblatexmakeindex}
+\subsection{\texttt{Biber} and \texttt{Makeindex}}\label{subsec:biblatexmakeindex}
 \begin{itemize}
-	\item command line for setting up biber\index{Scripts!biber} in Texmaker (see \autoref{fig:biblatexmakindex}):
+	\item command line for setting up \verb+biber+\index{Scripts!biber@\verb+biber+} in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\ \verb+"C:/path_to/biber.exe" %+ \\
-		            in \TeX Live, biber\index{Scripts!biber} is located in \verb+bin/win32+
+		            in \TeX Live, \verb+biber+\index{Scripts!biber@\verb+biber+} is located in \verb+bin/win32+
 		      \item Linux:\\ \verb+"/usr/path_to/biber" %+
 		      \item MacOS:\\ \verb+"/usr/path_to/biber" %.bcf+
 	      \end{enumerate}
-	\item command line for setting up makeindex\index{Scripts!makeindex} in Texmaker (see \autoref{fig:biblatexmakindex}):
+	\item command line for setting up \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} in Texmaker (see \autoref{fig:biblatexmakindex}):
 	      \begin{enumerate}
 		      \item Windows:\\
 		            {\footnotesize \verb+"C:/path_to/makeindex.exe" %.nlo -s nomencl.ist -o %.nls+}\\
-		            in \TeX Live, makeindex\index{Scripts!makeindex} is located in \verb+bin/win32+
+		            in \TeX Live, \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} is located in \verb+bin/win32+
 		      \item Linux:\\
 		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 		      \item MacOS:\\
 		            {\footnotesize \verb+"/usr/path_to/makeindex" %.nlo -s nomencl.ist -o %.nls+}
 	      \end{enumerate}
 \end{itemize}	      
-Note that \verb+path_to+ of course depends on your system. If the \LaTeX\ distribution is in your system path, simply writing biber\index{Scripts!biber} or makeindex\index{Scripts!makeindex} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run biber\index{Scripts!biber} and makeindex\index{Scripts!makeindex} in this software. However, the paths/commands should be similar to those above.
+Note that \verb+path_to+ of course depends on your system. If the \LaTeX\ distribution is in your system path, simply writing \verb+biber+\index{Scripts!biber@\verb+biber+} or \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} in this software. However, the paths/commands should be similar to those above.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=\linewidth]{Settings_BiblatexMakeindex}
-	\caption[Setting up biber and makeindex in Texmaker]{Setting up biber and makeindex in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
+	\caption[Setting up \textbackslash\texttt{biber} and \textbackslash\texttt{makeindex} in Texmaker]{Setting up \textbackslash\texttt{biber} and \textbackslash\texttt{makeindex} in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
 \end{figure}
 \subsection{Compiling the Document}\label{subsec:compiling}
 The following commands/scripts must be run to compile the document completely:
 \begin{enumerate}
 	\item PDF\LaTeX: This generates a first PDF. At this point, the List of References and the List of Symbols are missing.
-	\item biber\index{Scripts!biber}: Run biber (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
-	\item makeindex\index{Scripts!makeindex}: Run makeindex (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
+	\item \verb+biber+\index{Scripts!biber@\verb+biber+}: Run \verb+biber+ (Texmaker standard short key: F11) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary reference file.
+	\item \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+}: Run \verb+makeindex+ (Texmaker standard short key: F12) after you set it up according to \autoref{subsec:biblatexmakeindex}. This creates the necessary temporary nomenclature file.
 	\item PDF\LaTeX\ (three times): The first run should already generate the List of References and the List of Symbols. The second run should update all citations etc.\ in the PDF. Sometimes, a third run is necessary if some references within the text have changed again. In this case, a third run is necessary. Check the output of Texmaker.
 \end{enumerate}
 \subsection{Updating Packages in \TeX Live and MiK\TeX}\label{subsec:update_packages}
@@ -339,15 +339,15 @@ Similar applications are available on all other operating systems. Restart your 
 \section{Extra Features}
 The following sections introduce a few extra features. None of them are necessary for a thesis (except for PDF/A for a dissertation), but they might be of use for some people.
 \subsection{Compatibility with PDF/A}
-Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+\index{Packages!pdfx} package is used with the option \verb+a-2b+. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+\index{Packages!pdfx} package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+\index{Packages!pdfx} package to find how to include other color profiles. Normally, the default should however suffice. The \verb+pdfx+\index{Packages!pdfx} package also loads the \verb+hyperref+\index{Packages!hyperref} package.
+Dissertations are stored as PDF/A at the university library. To ensure compatibility of this template with PDF/A, the \verb+pdfx+\index{Packages!pdfx@\verb+pdfx+} package is used with the option \verb+a-2b+. The compiled PDF was successfully validated with Callas\footnote{\url{https://conversion.ub.tu-berlin.de/}, December 2018}, as recommended by the university library\footnote{\url{https://www.ub.tu-berlin.de/fileadmin/pdf/Verlag/UV_pdfaDE.pdf}, December 2018 \label{fn:PDFA}}.  Note that contrary to the descriptions given in the linked document in \autoref{fn:PDFA}, a specific color profile is \emph{not} necessary if you use an up-to-date version of the \verb+pdfx+\index{Packages!pdfx@\verb+pdfx+} package as it automatically includes a free color profile. Check the documentation of the \verb+pdfx+\index{Packages!pdfx@\verb+pdfx+} package to find how to include other color profiles. Normally, the default should however suffice. The \verb+pdfx+\index{Packages!pdfx@\verb+pdfx+} package also loads the \verb+hyperref+\index{Packages!hyperref@\verb+hyperref+} package.
 
-\textbf{Note that the }\verb+pdfx+\textbf{ package cannot ensure that all your included PDFs, for example figures, fulfill the PDF/A standard. Hence, check your PDF for PDF/A compatibility whenever you included external files.}
+\textbf{Note that the \texttt{pdfx} package cannot ensure that all your included PDFs, for example figures, fulfill the PDF/A standard. Hence, check your PDF for PDF/A compatibility whenever you included external files.}
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
-Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an equation environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
-Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\index{Scripts!latexindent}\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+\index{Scripts!latexindent}: directly running \verb+latexindent+\index{Scripts!latexindent} or calling it via \verb+arara+\index{Scripts!arara}\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara\index{Scripts!arara} software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}.\\
-To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+\index{Scripts!latexindent}. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+\index{Scripts!latexindent} is executed with writing rights (\verb+-w+) on the current \path{.tex} file with local settings (\verb+-l+) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
-The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of latexindent\index{Scripts!latexindent}. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
-\begin{lstlisting}[breaklines, caption={Setting up latexindent in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
+Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an \verb+equation+ environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
+Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}: directly running \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+} or calling it via \verb+arara+\index{Scripts!arara@\verb+arara+}\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara\index{Scripts!arara@\verb+arara+} software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}.\\
+To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+} is executed with writing rights (\verb+-w+) on the current \path{.tex} file with local settings (\verb+-l+) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
+The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
+\begin{lstlisting}[breaklines, caption={Setting up \texttt{latexindent} in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
 "C:/path_to_texlive/year/bin/win32/latexindent.exe" -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template/LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
 \begin{figure}[tbh]
@@ -361,15 +361,15 @@ The local settings are important as they specify that only one backup is created
 		\includegraphics[width=\linewidth]{Example_latexindent_after}
 		\caption{After}\label{fig:latexindent_after}
 	\end{subfigure}
-	\caption[Before and after automatic indenting with latexindent]{Before (left) and after (right) automatic indenting with latexindent}\label{fig:automatic_indenting_latexindent}
+	\caption[Before and after automatic indenting with \texttt{latexindent}]{Before (left) and after (right) automatic indenting with \texttt{latexindent}}\label{fig:automatic_indenting_latexindent}
 \end{figure}
 \subsection{Index}\label{subsec:index}
-If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx} package is used. This automatically executes makeindex\index{Scripts!makeindex} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.\\
+If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package is used. This automatically executes \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex@\verb+makeindex+} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.\\
 The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Support for Overleaf or other online editors}\label{subsec:overleaf}
 This template was successfully tested with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents, see \autoref{fig:overleaf}. If you would like to write in such an online environment, simply upload the template folder to a new empty project and compile it online. In this way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your computer!}
 \begin{mdframed}[linecolor=tub_red, roundcorner=10pt]
-Currently (March 2019), there is an error message when using this template on Overleaf with the \verb+nomencl+\index{Packages!nomencl} and the \verb+scrhack+\index{Packages!scrhack} package, potentially because Overleaf uses \TeX Live 2017 at the moment. If you want to use this template on Overleaf, load the \verb+scrhack+ package with the option \verb+nomencl=false+. In addition, you need to upload a current version of the \verb+nomencl+ package (\path{.sty} file) to the Overleaf project folder. There is also an error due to the old version of the \verb+chemfig+\index{Packages!chemfig} package. On Overleaf, exchange the \verb+\setchemfig{...}+\index{Commands!setchemfig@\verb+\setchemfig{}+} command with \verb+\setatomsep{20pt}+\index{Commands!setatomsep@\verb+\setatomsep{}+}. These minor issues will disappear as soon as Overleaf updates to \TeX Live 2018 later this year.
+Currently (March 2019), there is an error message when using this template on Overleaf with the \verb+nomencl+\index{Packages!nomencl@\verb+nomencl+} and the \verb+scrhack+\index{Packages!scrhack@\verb+scrhack+} package, potentially because Overleaf uses \TeX Live 2017 at the moment. If you want to use this template on Overleaf, load the \verb+scrhack+ package with the option \verb+nomencl=false+. In addition, you need to upload a current version of the \verb+nomencl+ package (\path{.sty} file) to the Overleaf project folder. There is also an error due to the old version of the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} package. On Overleaf, exchange the \verb+\setchemfig{...}+\index{Commands!setchemfig@\verb+\setchemfig{}+} command with \verb+\setatomsep{20pt}+\index{Commands!setatomsep@\verb+\setatomsep{}+}. These minor issues will disappear as soon as Overleaf updates to \TeX Live 2018 later this year.
 \end{mdframed}
 \begin{figure}[tbh]
 	\centering
@@ -392,11 +392,11 @@ Figures are an important part of every thesis. Normally, these figures are gener
 %------------------------------
 % SEC: TEMPLATES
 %------------------------------	
-\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
+\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
 This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
 \subsection{Figures}
-A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+\index{Commands!ref@\verb+\ref{}+} command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command. In addition, a short command for including figures was set up with the \verb+xparse+\index{Packages!xparse} package:
+A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+\index{Commands!ref@\verb+\ref{}+} command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command. In addition, a short command for including figures was set up with the \verb+xparse+\index{Packages!@\verb+xparse+xparse} package:
 \begin{verbatim}
 	\myfigure[opt1][opt2]{arg1}[opt3]{arg2}[opt4]
 \end{verbatim}
@@ -415,7 +415,7 @@ Therein,
 \includegraphics[width=0.35\textwidth]{Logo_tub}
 \caption{A wrapped figure}\label{fig:wrapped_figure}
 \end{wrapfigure}
-Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
+Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
 \subsection{Tables}
 \begin{wraptable}{r}{0.4\textwidth}
 	\centering
@@ -428,7 +428,7 @@ Although it is not seen on a regular basis in theses or dissertations, a Figure 
 		\bottomrule
 	\end{tabular}
 \end{wraptable}
-A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable} package to deal with this. In such a threeparttable environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex} package, which extends the annotation feature to the longtable environment. The \verb+wrapfig+\index{Packages!wrapfig} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
+A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:template_table} should not be abbreviated at the beginning of a sentence. A common issue in \LaTeX\ are footnotes within tables. However, there is the \verb+threeparttable+\index{Packages!threeparttable@\verb+threeparttable+} package to deal with this. In such a \verb+threeparttable+ environment, annotations can be easily added (\autoref{tab:threeparttable}). Normal tables in \LaTeX\ cannot go over several pages. For longer tables, see the \verb+longtable+\index{Packages!longtable@\verb+longtable+} package in \autoref{app:longtable}. This template also loads the \verb+threeparttablex+\index{Packages!threeparttablex@\verb+threeparttablex+} package, which extends the annotation feature to the \verb+longtable+ environment. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package can also be used for wrapped tables as shown in \autoref{tab:wrapped_table}. Again, make sure that the Table is small enough.
 \begin{table}[tbh]
 	\centering
 	\caption[This is the caption of the Table in the List of Tables]{This is the caption of the Table in the text. Is is placed \emph{above} the table. It can be longer and contain additional information. Vertical lines should be avoided in tables. A full stop is automatically added after the last sign}\label{tab:template_table}
@@ -460,8 +460,8 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 	\label{table2}
 \end{table}
 \subsection{Numbers and Units}
-Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo} package.\\
-Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx} package is suggested.
+Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo@\verb+mathpazo+} package.\\
+Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx@\verb+siunitx+} package is suggested.
 \begin{itemize}
 	\item numbers (\verb+\num{number}+): \num{3.14159} (text) and $\num{3.14159}$ (math mode)
 	\item exponentials (\verb+\num{numbere6}+): \num{1.3e6} (text) and $\num{1.3e6}$ (math mode)
@@ -474,7 +474,7 @@ Units are also very important. However, there are some rules when typesetting un
 	\item own units can also be defined as has been done for \si{\kJmol} and \si{\kJmolK}
 \end{itemize}
 \subsection{Equations}
-An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+\index{Packages!xparse} package.
+An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+\index{Packages!xparse@\verb+xparse+} package.
 \begin{equation}
 	\roundbrack{\pder[f][2]{x}}=\squarebrack{\pder[g][4]{x}}. \label{eq:template_equation}
 \end{equation}
@@ -483,10 +483,10 @@ For important equations, you might want to use a box:
 	\boxed{E = mc^2} \label{eqn:Gleichung}
 \end{equation}
 \subsection{Acronyms and Abbreviations}
-Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
+Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro@\verb+acro+} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro@\verb+acro+} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.
 \subsection{References}\label{subsec:references}
-\LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
-In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex} package. Biblatex and biber\index{Scripts!biber} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, biblatex supports editing of the citation style via \TeX\ and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
+\LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber@\verb+biber+} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
+In the following, a few examples of the authoryear short reference are stated. For more information, the reader is referred to the documentation of the \verb+biblatex+\index{Packages!biblatex@\verb+biblatex+} package. \verb+Biblatex+ and \verb+biber+\index{Scripts!biber@\verb+biber+} are used because they are compatible with UTF8. Hence, Umlaute, such as ä, do not have to be rewritten as was the case in bibtex. In addition, \verb+biblatex+ supports editing of the citation style via \TeX\ and \LaTeX\ commands. Hence, the tedious editing of bibliography styles (\path{.bst} files), which were used with bibtex, is not necessary anymore.
 \begin{itemize}
 	\item book: \parencite[\pno~221]{Coker2007}, \textcite[\pno~221]{Coker2007}
 	\item article: \parencite{Abrams1975}, \textcite{Abrams1975}
@@ -515,35 +515,35 @@ These commands are used as
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Chemistry and Chemical Reactions}
-Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig} and the \verb+chemformula+\index{Packages!chemformula} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek} package is loaded in order to typeset \iupac{\chemgamma-Aluminium} and not $\gamma$-Aluminium.
+Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} and the \verb+chemformula+\index{Packages!chemformula@\verb+chemformula+} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros@\verb+chemmacros+} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek@\verb+upgreek+} package is loaded in order to typeset \iupac{\chemgamma-Aluminium} and not $\gamma$-Aluminium.
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
 
-\textbf{Theorems:} Theorems can be defined using the \verb+amsthm+\index{Packages!amsthm} package in combination with the \verb+mdframed+\index{Packages!mdframed} package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
+\textbf{Theorems:} Theorems can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package in combination with the \verb+mdframed+\index{Packages!mdframed@\verb+mdframed+} package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
 \begin{theoremenv}[What is theoremed]\label{thm:template_theorem}
 	Let $f$ be a function whose derivative exists in every point, then $f$ is
 	a continuous function.
 \end{theoremenv}
-\textbf{Lemmas:} Lemmas can be defined using the \verb+amsthm+\index{Packages!amsthm} package in combination with the \verb+mdframed+\index{Packages!mdframed} package for a possible frame. An exemplary Lemma is given in \autoref{lem:template_lemma}.
+\textbf{Lemmas:} Lemmas can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package in combination with the \verb+mdframed+\index{Packages!mdframed@\verb+mdframed+} package for a possible frame. An exemplary Lemma is given in \autoref{lem:template_lemma}.
 \begin{lemmaenv}[What needs to be lemma'd]
 	Given two line segments whose lengths are $a$ and $b$, respectively, there is a real number $r$ such that $b=ra$.\label{lem:template_lemma}
 \end{lemmaenv}
-\textbf{Proofs:} Proofs can be defined using the \verb+amsthm+\index{Packages!amsthm} package. They are typically not numerated as they follow a certain Theorem or Lemma.
+\textbf{Proofs:} Proofs can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package. They are typically not numerated as they follow a certain Theorem or Lemma.
 \begin{proof}[What needs to be proven]
 	To prove it by contradiction, try and assume that the statement is false, proceed from there, and at some point, you will arrive at a contradiction.\label{pro:template_proof}
 \end{proof}
-\textbf{Remarks:} Remarks can be defined using the \verb+amsthm+\index{Packages!amsthm} package in combination with the \verb+mdframed+\index{Packages!mdframed} package for a possible frame. An exemplary Remark is given in \autoref{rem:template_remark}.
+\textbf{Remarks:} Remarks can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package in combination with the \verb+mdframed+\index{Packages!mdframed@\verb+mdframed+} package for a possible frame. An exemplary Remark is given in \autoref{rem:template_remark}.
 \begin{remarkenv}[What the remarker remarks]\label{rem:template_remark}
 	This statement is true, I guess.
 \end{remarkenv}
-\textbf{Definitions:} Definitions can be defined using the \verb+amsthm+\index{Packages!amsthm} package in combination with the \verb+mdframed+\index{Packages!mdframed} package for a possible frame. An exemplary Definition is given in \autoref{def:template_definition}. \Autoref{eq:template_equation_in_env} can also be referenced.
+\textbf{Definitions:} Definitions can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package in combination with the \verb+mdframed+\index{Packages!mdframed@\verb+mdframed+} package for a possible frame. An exemplary Definition is given in \autoref{def:template_definition}. \Autoref{eq:template_equation_in_env} can also be referenced.
 \begin{definition}[What the definition defines]
 	This is a definition. It defines itself.\label{def:template_definition}
 	\begin{equation}
 		c = \infty\label{eq:template_equation_in_env}
 	\end{equation}
 \end{definition}
-\textbf{Algorithms:} Algorithms can be displayed using the algorithm2e\index{Packages!algorithm2e} package. An example is shown in \autoref{alg:template_algorithm}.\\
+\textbf{Algorithms:} Algorithms can be displayed using the algorithm2e\index{Packages!algorithm2e@\verb+algorithm2e+} package. An example is shown in \autoref{alg:template_algorithm}.\\
 \begin{algorithm}[tbh]
 	\SetAlgoLined
 	\KwData{this text}
@@ -561,7 +561,7 @@ All of these items are introduced in the following. Note that frames and their c
 	\caption{How to write algorithms}\label{alg:template_algorithm}
 \end{algorithm}
 \subsection{Autorefs}\label{subsec:autorefs}
-The \verb+hyperref+\index{Packages!hyperref} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, the long version of an item should be used at the beginning of a sentence (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
+The \verb+hyperref+\index{Packages!hyperref@\verb+hyperref+} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, the long version of an item should be used at the beginning of a sentence (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
 \begin{enumerate}
 	\item German \dots
 	      \begin{itemize}
