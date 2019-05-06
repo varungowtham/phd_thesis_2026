@@ -1,3 +1,6 @@
+V1.8    6th May 2019
+        - clarification of what is meant by literature review in the introduction
+        - TeXLive 2019 support added
 V1.7:   24th March 2019
         - the commit message in the master should now contain the right version number. Before this version, changelog and commit message may not indicate the same version
         - the mhchem package was replaced by the chemmacros/chemformula package
