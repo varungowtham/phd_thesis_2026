@@ -1,7 +1,7 @@
 \chapter{Automatic Indenting in arara}\label{ch:automatic_indenting_arara}
 In the following, the instructions on using \verb+arara+\index{Scripts!arara@\verb+arara+} for automatic indenting are shown for a Windows operating system. It is assumed that the instructions are similar on a Unix system, because \verb+arara+\index{Scripts!arara@\verb+arara+} is platform independent. However, this has not been verified, yet. In addition, we expect every person using this template to have installed \TeX Live $\geq$ 2018 and the following instructions are only valid for these cases. If you \emph{have} to use an older \TeX Live version, please check earlier commits of this template for the necessary instructions and files.
 
-	\textbf{4.0 (\TeX Live 2018):}
+	\textbf{4.0 (\TeX Live $\geq$ 2018):}
 	      \begin{enumerate}[label={\arabic*{}.}]
 		      \item Add a user command for \verb+arara+\index{Scripts!arara@\verb+arara+} to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, \\ January 2019}.
 		      \item Add the command in \autoref{code:arara_latexindent} to the beginning of the \path{main.tex} file (right before anything else). Note that the \% before arara is \emph{intentional} and necessary. This command executes the automatic file indenting for all files (and files in subfolders) that are stated within the square brackets as soon as \verb+arara+ is started. An example is given in \autoref{fig:arara_40_latexindent}.
