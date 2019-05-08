@@ -72,7 +72,7 @@
 	\tableofcontents			% table of contents
 	\cleardoublepage
 	\pagestyle{scrheadings}		% use header and footer information to create both from here on
-	\pagenumbering{Roman}		% start small roman numbers
+	\pagenumbering{Roman}		% capital roman numbers
 	\listoffigures 				% make list of figures
 	\cleardoublepage
 	\listoftables 				% make list of tables
@@ -100,13 +100,11 @@
 % APPENDIX
 %------------------------------
 \appendix
-\pagenumbering{AlphAlph}		% capital latin letters that become AA after Z
 \input{04_Appendix/0_Appendix}
 \cleardoublepage
 %------------------------------
 % REFERENCES
 %------------------------------
-\pagenumbering{roman} 			% capital roman numbers
 \printbibliography[category=inbib,resetnumbers]
 %------------------------------
 % INDEX
