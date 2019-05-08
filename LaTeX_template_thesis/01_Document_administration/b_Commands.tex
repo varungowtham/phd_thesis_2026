@@ -33,6 +33,12 @@
 \rofoot[\pagemark]{\pagemark}	% right-odd-foot
 \renewcommand*{\chapterpagestyle}{plain}
 %------------------------------
+% LISTS OF ...
+%------------------------------
+\makeatletter					%
+\renewcommand*{\@pnumwidth}{2.5em}% column width for page numbers
+\makeatother					%
+%------------------------------
 % LIST OF ABBREVIATIONS
 %------------------------------
 \newlength{\myabbrevlength}
