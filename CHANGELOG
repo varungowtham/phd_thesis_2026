@@ -1,3 +1,7 @@
+V1.9    13th May 2019
+        - classical pagination
+        - small roman numbers in the front matter
+        - arabic numbers throughout the rest
 V1.8    6th May 2019
         - clarification of what is meant by literature review in the introduction
         - TeXLive 2019 support added
