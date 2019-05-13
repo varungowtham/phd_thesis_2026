@@ -33,6 +33,12 @@
 \rofoot[\pagemark]{\pagemark}	% right-odd-foot
 \renewcommand*{\chapterpagestyle}{plain}
 %------------------------------
+% LISTS OF ...
+%------------------------------
+\makeatletter					%
+\renewcommand*{\@pnumwidth}{2.5em}% column width for page numbers
+\makeatother					%
+%------------------------------
 % LIST OF ABBREVIATIONS
 %------------------------------
 \newlength{\myabbrevlength}
@@ -103,7 +109,7 @@
 %------------------------------
 % THEOREM ENVIRONMENT
 %------------------------------
-\newmdtheoremenv[				
+\newmdtheoremenv[
   linecolor=black,
   roundcorner=2pt,
   linewidth=2pt
@@ -111,7 +117,7 @@
 %------------------------------
 % LEMMA ENVIRONMENT
 %------------------------------
-\newmdtheoremenv[				
+\newmdtheoremenv[
   linecolor=blue,
   roundcorner=2pt,
   linewidth=1pt
@@ -119,7 +125,7 @@
 %------------------------------
 % REMARK ENVIRONMENT
 %------------------------------
-\newmdtheoremenv[				
+\newmdtheoremenv[
   linecolor=red,
   roundcorner=2pt,
   linewidth=0.5pt
@@ -127,7 +133,7 @@
 %------------------------------
 % DEFINITION ENVIRONMENT
 %------------------------------
-\newmdtheoremenv[				
+\newmdtheoremenv[
   linecolor=black,
   roundcorner=2pt,
   linewidth=1pt
@@ -357,13 +363,6 @@ urlseen = {last access},
 % INTERNET
 %------------------------------
 \renewcommand*{\UrlFont}{\upshape}
-%------------------------------
-% ALPHANUMERICAL PAGE NUMBERS
-%------------------------------
-\makeatletter
-\newcommand{\@AlphAlph}{}		% check that \@AlphAlph is undefined.
-\let\@AlphAlph=\AlphAlph		% this allows for a counter, which goes from page Z to page AA
-\makeatother
 %------------------------------
 % HYPERREF
 %------------------------------
