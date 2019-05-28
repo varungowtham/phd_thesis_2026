@@ -1,94 +1,73 @@
-\chapter{Package Dependencies}
-\begin{longtable}{>{\ttfamily}l l}
-	\caption{List of all packages in this template}\label{tab:package_list}          	\\
-	\toprule
-	%
-	\textnormal{Package name}		& Reference											\\
-	\midrule
-	\endfirsthead
+\chapter{Auto-completion}
+Texmaker (and propably many other editors) offer the possibility to define additional commands for automatic completion. This means they are suggested when you type a command. They can be edited under User $\rightarrow$ Customize Completion. The commands, which are assumed to be used on a regular basis in a thesis, are stated in \autoref{tab:auto_commands}. You can simply copy each line and add it to your Texmaker. This takes approximately five minutes and saves you a lot of time when you actually write something, especially units.
+\begin{longtable}{l p{0.45\textwidth}}
+	\caption{List of recommended auto-complete commands in Texmaker}\label{tab:auto_commands}\\
+\toprule
+Command					& Explanation								\\
+\midrule
+\endfirsthead
 	%
 	\multicolumn{2}{c}%
-	{ \itshape \tablename~\thetable\ (continued).}                                      \\
+	{ \itshape \tablename~\thetable\ (continued).}                  \\
 	\midrule
-	\textnormal{Package name}					& Reference											\\
-	\midrule	
+Command					& Explanation								\\	
+	\midrule
 	\endhead
 	%
 	\midrule
-	\multicolumn{2}{r}{{Continued on next page}}                                        \\
+	\multicolumn{2}{r}{{Continued on next page}}                    \\
 	\endfoot
 	%
 	\endlastfoot
-	%
-	\multicolumn{2}{l}{\textbf{Document class}}  										\\
-	KOMA script                     	& \url{https://ctan.org/pkg/koma-script}     	\\
-	\multicolumn{2}{l}{\textbf{Document and encoding}} 									\\
-	babel                           	& \url{https://ctan.org/pkg/babel?lang=de}   	\\
-	calc								& \url{https://ctan.org/pkg/calc?lang=de}		\\
-	datetime                        	& \url{https://ctan.org/pkg/datetime}        	\\
-	fontenc                         	& \url{https://ctan.org/pkg/fontenc}         	\\
-	ifthen                          	& \url{https://ctan.org/pkg/ifthen}          	\\
-	inputenc                        	& \url{https://ctan.org/pkg/inputenc}        	\\
-	microtype                       	& \url{https://ctan.org/pkg/microtype}       	\\
-	morewrites							& \url{https://ctan.org/pkg/morewrites?lang=de}	\\
-	scrlayer-scrpage                	& \url{https://ctan.org/pkg/scrlayer-scrpage}	\\
-	textcomp                        	& \url{https://ctan.org/pkg/textcomp}        	\\
-	todonotes							& \url{https://ctan.org/pkg/todonotes?lang=de}	\\
-	xparse                          	& \url{https://ctan.org/pkg/xparse}          	\\
-	\multicolumn{2}{l}{\textbf{Tables}}                                             	\\
-	array								& \url{https://ctan.org/pkg/array?lang=de}		\\
-	booktabs                        	& \url{https://ctan.org/pkg/booktabs}        	\\
-	longtable                       	& \url{https://ctan.org/pkg/longtable}       	\\
-	multirow                        	& \url{https://ctan.org/pkg/multirow}        	\\
-	tabularx                        	& \url{https://ctan.org/pkg/tabularx}        	\\
-	threeparttable                      & \url{https://ctan.org/pkg/threeparttable?lang=de}\\
-	threeparttablex                     & \url{https://ctan.org/pkg/threeparttablex}	\\
-	\multicolumn{2}{l}{\textbf{Graphics}}                                            	\\
-	graphicx                        	& \url{https://ctan.org/pkg/graphicx}        	\\
-	overpic                         	& \url{https://ctan.org/pkg/overpic}         	\\
-	wrapfig                         	& \url{https://ctan.org/pkg/wrapfig?lang=de}   	\\
-	\multicolumn{2}{l}{\textbf{Fonts, math, and symbols}}								\\
-	amsmath                         	& \url{https://ctan.org/pkg/amsmath}         	\\
-	amssymb                         	&                                            	\\
-	amsthm                          	& \url{https://ctan.org/pkg/amsthm}          	\\
-	cancel                              & \url{https://ctan.org/pkg/cancel}          	\\
-	chemfig                             & \url{https://ctan.org/pkg/chemfig}         	\\
-	chemmacros							& \url{https://ctan.org/pkg/chemmacros?lang=de}         \\
-	courier                             & \url{https://ctan.org/pkg/courier}         	\\
-	helvet                              & \url{https://ctan.org/pkg/helvet?lang=de}  	\\
-	icomma                              & \url{https://ctan.org/pkg/icomma}          	\\
-	mathpazo                            & \url{https://ctan.org/pkg/mathpazo}        	\\
-	mathtools                           & \url{https://ctan.org/pkg/mathtools}       	\\
-	nicefrac                            & \url{https://ctan.org/pkg/nicefrac}        	\\
-	upgreek                            	& \url{https://ctan.org/pkg/upgreek}        	\\
-	\multicolumn{2}{l}{\textbf{Units}}												 	\\	
-	siunitx                             & \url{https://ctan.org/pkg/siunitx}         	\\
-	\multicolumn{2}{l}{\textbf{Text}}												 	\\
-	algorithm2e                         & \url{https://ctan.org/pkg/algorithm2e}     	\\
-	alphalph							& \url{https://ctan.org/pkg/alphalph?lang=de}	\\
-	blindtext                           & \url{https://ctan.org/pkg/blindtext}       	\\
-	caption                             & \url{https://ctan.org/pkg/caption}         	\\
-	enumitem                            & \url{https://ctan.org/pkg/enumitem}        	\\
-	footnote                            & \url{https://ctan.org/pkg/footnote}        	\\
-	mdframed                            & \url{https://ctan.org/pkg/mdframed}        	\\
-	nowidow                             & \url{https://ctan.org/pkg/nowidow}         	\\
-	placeins                            & \url{https://ctan.org/pkg/placeins}        	\\
-	setspace                            & \url{https://ctan.org/pkg/setspace}        	\\
-	subcaption                          & \url{https://ctan.org/pkg/subcaption}      	\\
-	xcolor                              & \url{https://ctan.org/pkg/xcolor}          	\\
-	\multicolumn{2}{l}{\textbf{References}}												\\
-	biblatex                            & \url{https://ctan.org/pkg/biblatex}        	\\
-	csquotes                            & \url{https://ctan.org/pkg/csquotes}        	\\
-	\multicolumn{2}{l}{\textbf{Lists of Symbols and Abbreviations}}						\\
-	acro                             	& \url{https://ctan.org/pkg/acro?lang=de}       \\
-	nomencl                             & \url{https://ctan.org/pkg/nomencl?lang=de}  	\\
-	\multicolumn{2}{l}{\textbf{Index}}													\\	
-	imakeidx							& \url{https://ctan.org/pkg/imakeidx?lang=de}	\\	
-	\textbf{Code}                       &                                            	\\
-	listings                            & \url{https://ctan.org/pkg/listings}        	\\
-	scrhack                             & part of \url{https://ctan.org/pkg/koma-script}\\
-	\multicolumn{2}{l}{\textbf{Hyperref and pdfx}}  								 	\\
-	hyperref                            & \url{https://ctan.org/pkg/hyperref}        	\\
-	pdfx                                & \url{https://ctan.org/pkg/pdfx}				\\
-	\bottomrule
+\verb+\ac{@}+						&	Acronym in text 						\\
+\verb+\ampere+						&	\si{\ampere} unit 						\\
+\verb+\Autoref{#label#}+			&	Autoref with capitalized first letter	\\
+\verb+\bar+							&	\si{\bar} unit							\\
+\verb+\begin{algorithm}+			&	new algorithm							\\
+\verb+\begin{definition}+			&	new definition							\\
+\verb+\begin{lemmaenv}+				&	new lemma								\\
+\verb+\begin{longtable}{@}+			&	new long table							\\
+\verb+\begin{mdframed}+				&	new frame								\\
+\verb+\begin{remarkenv}+			&	new remark								\\
+\verb+\begin{tablenotes}+			&	table notes in three part table			\\
+\verb+\begin{theoremenv}+			&	new theorem								\\
+\verb+\begin{threeparttable}+		&	new three part table					\\
+\verb+\bottomrule+					&	bottom rule in tabulars					\\
+\verb+\celsius+						&	\si{\celsius} unit						\\
+\verb+\ch{@}+						&	new chemical formula					\\
+\verb+\cubic+						&	for cubed unit							\\
+\verb+\enquote{@}+					&	new quote in current language			\\
+\verb+\gram+						&	\si{\gram} unit							\\
+\verb+\joule+						&	\si{\joule} unit						\\
+\verb+\kelvin+						&	\si{\kelvin} unit						\\
+\verb+\kilo+						&	for kilo in units						\\
+\verb+\mega+						&	for mega in units						\\
+\verb+\metre+						&	\si{\metre} unit						\\
+\verb+\midrule+						&	mid rule in tabulars					\\
+\verb+\milli+						&	for milli in units						\\
+\verb+\missingfigure[@]{@}+			&	new missing figure with options			\\
+\verb+\missingfigure{@}+			&	new missing figure without options		\\
+\verb+\mole+						&	\si{\mole} unit							\\
+\verb+\myfigure[@][@]{@}[@]{@}[@]+	&	new figure								\\
+\verb+\nomenclature{@}{@}{@}{@}+	&	new symbol								\\
+\verb+\num{@}+						&	new number								\\
+\verb+\parencite[@]{@}+				&	new paren cite with options				\\
+\verb+\parencite{@}+				&	new paren cite without options			\\
+\verb+\pascal+						&	\si{\pascal} unit						\\
+\verb+\pder[@][@]{@}+				&	partial derivative						\\
+\verb+\per+							&	division command in units				\\
+\verb+\roundbrack{@}+				&	round brackets around argument			\\
+\verb+\si{@}+						&	new unit								\\
+\verb+\SI{@}{@}+					&	new number with unit					\\
+\verb+\SIrange{@}{@}{@}+			&	new range for units						\\
+\verb+\squared+						&	for squared unit						\\
+\verb+\textcite[@]{@}+				&	new text cite with option				\\
+\verb+\textcite{@}+					&	new text cite without option			\\
+\verb+\todo[@]{@}+					&	new todo with option					\\
+\verb+\todo{@}+						&	new todo without option					\\
+\verb+\toprule+						&	top rule in tabulars					\\
+\verb+\tothe{@}+					&	for power in units						\\
+\verb+\verb+						&	for verbat output						\\
+\verb+\volt+						&	\si{\volt} unit							\\
+\verb+\watt+						&	\si{\watt} unit							\\
 \end{longtable}

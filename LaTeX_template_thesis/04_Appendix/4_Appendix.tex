@@ -1,21 +1,94 @@
-\chapter{Automatic Indenting in arara}\label{ch:automatic_indenting_arara}
-In the following, the instructions on using \verb+arara+\index{Scripts!arara@\verb+arara+} for automatic indenting are shown for a Windows operating system. It is assumed that the instructions are similar on a Unix system, because \verb+arara+\index{Scripts!arara@\verb+arara+} is platform independent. However, this has not been verified, yet. In addition, we expect every person using this template to have installed \TeX Live $\geq$ 2018 and the following instructions are only valid for these cases. If you \emph{have} to use an older \TeX Live version, please check earlier commits of this template for the necessary instructions and files.
-
-	\textbf{4.0 (\TeX Live $\geq$ 2018):}
-	      \begin{enumerate}[label={\arabic*{}.}]
-		      \item Add a user command for \verb+arara+\index{Scripts!arara@\verb+arara+} to Texmaker\footnote{\url{https://tex.stackexchange.com/questions/107989/integration-of-arara-in-texmaker}, \\ January 2019}.
-		      \item Add the command in \autoref{code:arara_latexindent} to the beginning of the \path{main.tex} file (right before anything else). Note that the \% before arara is \emph{intentional} and necessary. This command executes the automatic file indenting for all files (and files in subfolders) that are stated within the square brackets as soon as \verb+arara+ is started. An example is given in \autoref{fig:arara_40_latexindent}.
-		      \item Execute \verb+arara+ (if you added it as the first user command, the shortcut Alt+Shift+F1 may be used).
-		      \item Update your files by clicking on File $\rightarrow$ Reload all documents from file.
-		      \item Your source code should now be nicely indented.
-		      \item In case errors appear, \verb+arara+\index{Scripts!arara@\verb+arara+} always creates a backup with the file extension \path{.latexindentbackup}.
-	      \end{enumerate}
-\textbf{Note that} \verb+arara+\index{Scripts!arara@\verb+arara+} \textbf{4.0 does not work with subdirectories by default. To resolve this issue, simply follow the instructions described in the github repository of} \verb+arara+.\footnote{\url{https://github.com/cereda/arara/issues/119}, February 2019}
-	      \begin{lstlisting}[breaklines, caption={Setting up \texttt{arara} for \texttt{latexindent} in Texmaker}, float=tbh, label={code:arara_latexindent}, language=latex]
-%*\%*) arara: indentsubdir: { overwrite : yes, files : [ folder/file1.tex, folder/file2.tex ] , settings: local, where: 00_Arara_and_Latexindent/localSettings.yaml }
-		\end{lstlisting}
-\begin{figure}[tbh]
-	\centering
-	\includegraphics[width=\linewidth]{Example_arara_40_latexindent}
-	\caption[Directives for arara execution for automatic indenting]{Directives for arara execution for automatic indenting. These commands must be added at the beginning of \path{main.tex}}\label{fig:arara_40_latexindent}
-\end{figure}
+\chapter{Package Dependencies}
+\begin{longtable}{>{\ttfamily}l l}
+	\caption{List of all packages in this template}\label{tab:package_list}          	\\
+	\toprule
+	%
+	\textnormal{Package name}		& Reference											\\
+	\midrule
+	\endfirsthead
+	%
+	\multicolumn{2}{c}%
+	{ \itshape \tablename~\thetable\ (continued).}                                      \\
+	\midrule
+	\textnormal{Package name}					& Reference											\\
+	\midrule	
+	\endhead
+	%
+	\midrule
+	\multicolumn{2}{r}{{Continued on next page}}                                        \\
+	\endfoot
+	%
+	\endlastfoot
+	%
+	\multicolumn{2}{l}{\textbf{Document class}}  										\\
+	KOMA script                     	& \url{https://ctan.org/pkg/koma-script}     	\\
+	\multicolumn{2}{l}{\textbf{Document and encoding}} 									\\
+	babel                           	& \url{https://ctan.org/pkg/babel?lang=de}   	\\
+	calc								& \url{https://ctan.org/pkg/calc?lang=de}		\\
+	datetime                        	& \url{https://ctan.org/pkg/datetime}        	\\
+	fontenc                         	& \url{https://ctan.org/pkg/fontenc}         	\\
+	ifthen                          	& \url{https://ctan.org/pkg/ifthen}          	\\
+	inputenc                        	& \url{https://ctan.org/pkg/inputenc}        	\\
+	microtype                       	& \url{https://ctan.org/pkg/microtype}       	\\
+	morewrites							& \url{https://ctan.org/pkg/morewrites?lang=de}	\\
+	scrhack                             & part of \url{https://ctan.org/pkg/koma-script}	\\	
+	scrlayer-scrpage                	& \url{https://ctan.org/pkg/scrlayer-scrpage}	\\
+	textcomp                        	& \url{https://ctan.org/pkg/textcomp}        	\\
+	todonotes							& \url{https://ctan.org/pkg/todonotes?lang=de}	\\
+	xparse                          	& \url{https://ctan.org/pkg/xparse}          	\\
+	\multicolumn{2}{l}{\textbf{Tables}}                                             	\\
+	array								& \url{https://ctan.org/pkg/array?lang=de}		\\
+	booktabs                        	& \url{https://ctan.org/pkg/booktabs}        	\\
+	longtable                       	& \url{https://ctan.org/pkg/longtable}       	\\
+	multirow                        	& \url{https://ctan.org/pkg/multirow}        	\\
+	tabu								& \url{https://ctan.org/pkg/tabu?lang=de}		\\
+	tabularx                        	& \url{https://ctan.org/pkg/tabularx}        	\\
+	threeparttable                      & \url{https://ctan.org/pkg/threeparttable?lang=de}\\
+	threeparttablex                     & \url{https://ctan.org/pkg/threeparttablex}	\\
+	\multicolumn{2}{l}{\textbf{Graphics}}                                            	\\
+	graphicx                        	& \url{https://ctan.org/pkg/graphicx}        	\\
+	overpic                         	& \url{https://ctan.org/pkg/overpic}         	\\
+	wrapfig                         	& \url{https://ctan.org/pkg/wrapfig?lang=de}   	\\
+	\multicolumn{2}{l}{\textbf{Fonts, math, and symbols}}								\\
+	amsmath                         	& \url{https://ctan.org/pkg/amsmath}         	\\
+	amssymb                         	&                                            	\\
+	amsthm                          	& \url{https://ctan.org/pkg/amsthm}          	\\
+	cancel                              & \url{https://ctan.org/pkg/cancel}          	\\
+	chemfig                             & \url{https://ctan.org/pkg/chemfig}         	\\
+	chemmacros							& \url{https://ctan.org/pkg/chemmacros?lang=de}         \\
+	courier                             & \url{https://ctan.org/pkg/courier}         	\\
+	helvet                              & \url{https://ctan.org/pkg/helvet?lang=de}  	\\
+	icomma                              & \url{https://ctan.org/pkg/icomma}          	\\
+	mathpazo                            & \url{https://ctan.org/pkg/mathpazo}        	\\
+	mathtools                           & \url{https://ctan.org/pkg/mathtools}       	\\
+	nicefrac                            & \url{https://ctan.org/pkg/nicefrac}        	\\
+	upgreek                            	& \url{https://ctan.org/pkg/upgreek}        	\\
+	\multicolumn{2}{l}{\textbf{Units}}												 	\\	
+	siunitx                             & \url{https://ctan.org/pkg/siunitx}         	\\
+	\multicolumn{2}{l}{\textbf{Text}}												 	\\
+	algorithm2e                         & \url{https://ctan.org/pkg/algorithm2e}     	\\
+	blindtext                           & \url{https://ctan.org/pkg/blindtext}       	\\
+	caption                             & \url{https://ctan.org/pkg/caption}         	\\
+	enumitem                            & \url{https://ctan.org/pkg/enumitem}        	\\
+	footnote                            & \url{https://ctan.org/pkg/footnote}        	\\
+	mdframed                            & \url{https://ctan.org/pkg/mdframed}        	\\
+	nowidow                             & \url{https://ctan.org/pkg/nowidow}         	\\
+	placeins                            & \url{https://ctan.org/pkg/placeins}        	\\
+	setspace                            & \url{https://ctan.org/pkg/setspace}        	\\
+	subcaption                          & \url{https://ctan.org/pkg/subcaption}      	\\
+	xcolor                              & \url{https://ctan.org/pkg/xcolor}          	\\
+	\multicolumn{2}{l}{\textbf{References}}												\\
+	biblatex                            & \url{https://ctan.org/pkg/biblatex}        	\\
+	csquotes                            & \url{https://ctan.org/pkg/csquotes}        	\\
+	\multicolumn{2}{l}{\textbf{Lists of Symbols and Abbreviations}}						\\
+	acro                             	& \url{https://ctan.org/pkg/acro?lang=de}       \\
+	nomencl                             & \url{https://ctan.org/pkg/nomencl?lang=de}  	\\
+	\multicolumn{2}{l}{\textbf{Index}}													\\	
+	imakeidx							& \url{https://ctan.org/pkg/imakeidx?lang=de}	\\	
+	\textbf{Code}                       &                                            	\\
+	listings                            & \url{https://ctan.org/pkg/listings}        	\\
+	\multicolumn{2}{l}{\textbf{Hyperref and pdfx}}  								 	\\
+	hyperref                            & \url{https://ctan.org/pkg/hyperref}        	\\
+	pdfx                                & \url{https://ctan.org/pkg/pdfx}				\\
+	\bottomrule
+\end{longtable}
