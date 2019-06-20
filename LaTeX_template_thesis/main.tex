@@ -48,15 +48,19 @@
 	\ifthenelse{\boolean{isSG}}{\input{02_Prematter/a_Cover_Styleguide}}{\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_Thesis}}}              % include cover
 	\cleardoublepage
 	%------------------------------
-	% PREMATTER
-	%------------------------------
-	%------------------------------
 	% ONLY for dissertations: dedication (can also be used for a B/M thesis)
 	%------------------------------	
 	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication}\cleardoublepage}{}
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
 \end{spacing}
+%------------------------------
+% THESIS TASK
+%------------------------------
+\includepdf{Task}
+%------------------------------
+% PREMATTER
+%------------------------------
 \input{02_Prematter/c_Acknowledgements}
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
