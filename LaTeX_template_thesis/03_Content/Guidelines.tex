@@ -177,7 +177,7 @@ The following files are located in this folder:
 	\item \path{f_CodeLanguageSpecifications.tex}\index{Files!f\_CodeLanguageSpecifications.tex}
 	      \begin{itemize}
 		      \item can be used to define a set of keywords and comment commands for a certain programming language
-		      \item if you want to apprehend your code in your thesis, you can either copy the code to an \verb+lstlistings+ environment (see examples in \autoref{ch:code_example_ampl} and \autoref{ch:code_example_matlab}) or  directly include your files
+		      \item if you want to apprehend your code in your thesis, you can either copy the code to an \verb+lstlistings+ environment (see examples in \autoref{ch:code_examples}) or  directly include your files
 	      \end{itemize}
 \end{enumerate}
 \begin{figure}[tbh]
@@ -389,10 +389,10 @@ Figures are an important part of every thesis. Normally, these figures are gener
 	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, March 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, March 2019} Due to its PostScript origin, it cannot directly be used with PDF\LaTeX. If you want to compile with PDF\LaTeX, the best solution is using the package \verb+auto-pst-pdf+\footnote{\url{https://ctan.org/pkg/auto-pst-pdf?lang=de}, March 2018}.
 	\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use.\footnote{\url{https://inkscape.org/de/}, March 2019} However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
 \end{description}
+\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 %------------------------------
 % SEC: TEMPLATES
 %------------------------------	
-\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
 This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
 \subsection{Figures}
@@ -515,7 +515,7 @@ These commands are used as
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Chemistry and Chemical Reactions}
-Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} and the \verb+chemformula+\index{Packages!chemformula@\verb+chemformula+} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros@\verb+chemmacros+} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek@\verb+upgreek+} package is loaded in order to typeset \iupac{\chemgamma-Aluminium} and not $\gamma$-Aluminium.
+Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} and the \verb+chemformula+\index{Packages!chemformula@\verb+chemformula+} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros@\verb+chemmacros+} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek@\verb+upgreek+} package is loaded to typeset \iupac{\chemgamma-Aluminium} instead of $\gamma$-Aluminium.
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
 
@@ -543,7 +543,7 @@ All of these items are introduced in the following. Note that frames and their c
 		c = \infty\label{eq:template_equation_in_env}
 	\end{equation}
 \end{definition}
-\textbf{Algorithms:} Algorithms can be displayed using the algorithm2e\index{Packages!algorithm2e@\verb+algorithm2e+} package. An example is shown in \autoref{alg:template_algorithm}.\\
+\textbf{Algorithms:} Algorithms can be displayed using the \verb+algorithm2e+\index{Packages!algorithm2e@\verb+algorithm2e+} package. An example is shown in \autoref{alg:template_algorithm}.\\
 \begin{algorithm}[tbh]
 	\SetAlgoLined
 	\KwData{this text}
@@ -561,7 +561,7 @@ All of these items are introduced in the following. Note that frames and their c
 	\caption{How to write algorithms}\label{alg:template_algorithm}
 \end{algorithm}
 \subsection{Autorefs}\label{subsec:autorefs}
-The \verb+hyperref+\index{Packages!hyperref@\verb+hyperref+} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command that is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, the long version of an item should be used at the beginning of a sentence (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
+The \verb+hyperref+\index{Packages!hyperref@\verb+hyperref+} package also supplies an \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command, which is linked to babel. In this case, Fig.~or Tab.~are localized and you do not have to remember whether you used Fig. or Figure or something else in the text. As stated above, the long version of an item should be used at the beginning of a sentence (the \verb+\Autoref{label}+\index{Commands!Autoref@\verb+\Autoref{}+} command was defined for this purpose). Some short forms are equal to their long forms as there is not really a good abbreviation:
 \begin{enumerate}
 	\item German \dots
 	      \begin{itemize}

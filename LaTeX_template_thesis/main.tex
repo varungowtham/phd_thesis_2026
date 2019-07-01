@@ -48,15 +48,19 @@
 	\ifthenelse{\boolean{isSG}}{\input{02_Prematter/a_Cover_Styleguide}}{\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_Thesis}}}              % include cover
 	\cleardoublepage
 	%------------------------------
-	% PREMATTER
-	%------------------------------
-	%------------------------------
 	% ONLY for dissertations: dedication (can also be used for a B/M thesis)
 	%------------------------------	
 	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication}\cleardoublepage}{}
 	\input{02_Prematter/b_Declaration}
 	\cleardoublepage
 \end{spacing}
+%------------------------------
+% THESIS TASK
+%------------------------------
+\includepdf{Task}
+%------------------------------
+% PREMATTER
+%------------------------------
 \input{02_Prematter/c_Acknowledgements}
 \cleardoublepage
 \input{02_Prematter/d_Abstract}
@@ -74,18 +78,12 @@
 	\pagestyle{scrheadings}		% use header and footer information to create both from here on
 	\pagenumbering{roman}		% capital roman numbers
 	\listoffigures 				% make list of figures
-	\cleardoublepage
 	\listoftables 				% make list of tables
-	\cleardoublepage
 	\listofalgorithms 			% make list of algorithms
-	\cleardoublepage
 	\lstlistoflistings			% make list of codes
-	\cleardoublepage
 	\include{02_Prematter/e_Nomenclature} % include all symbols in nomenclature
 	\printnomenclature 			% make list of symbols
-	\cleardoublepage
 	\input{02_Prematter/f_Abbreviations}
-	\cleardoublepage
 	\listoftodos				% make list of todos
 	\todototoc					% add list of todos to list of contents	
 	\cleardoublepage
