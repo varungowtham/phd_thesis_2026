@@ -272,6 +272,9 @@ The following files are located in this folder:
 		      \item contains the style for the Index (see \autoref{subsec:index})
 	      \end{itemize}
 \end{enumerate}
+\subsection{Figures}
+This folder is added to the \path{graphicspath} in the \path{b_Commands.tex} file and contains all figures in this template. Being added to the \path{graphicspath} means that you may include figures without having to specify a path. However, it might become a little confusing if all your figures are placed within one folder. Luckily, several different folders can be added to the \path{graphicspath}.\\
+If you write your bachelor's or master's thesis (\verb+isDiss+=\texttt{false}), this template automatically includes the file \path{Task.pdf}, which is located in this folder and contains the task of your thesis. Simply scan your task as soon as you have received it, name it \path{Task.pdf}, and replace the current file.
 %------------------------------
 % SEC: LANGUAGE
 %------------------------------				
@@ -319,23 +322,10 @@ The following commands/scripts must be run to compile the document completely:
 As stated above, compiling problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility to automatically check for updates of packages when they are included in a \LaTeX{} document.\\
 In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
 \begin{description}
-	\item[\TeX Live] manages the packages via the tlmgr (\TeX Live 2018) or tlshell (\TeX Live 2019). The GUI of the tlmgr is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlmgr-gui.exe} or \path{tlshell.exe}, respectively. Execute this program and the application shown in \autoref{fig:texlive_tlmgr} starts (the tlshell looks slightly different). Use this application to update your packages.
-	\item[MiK\TeX] manages the packages in the MiK\TeX\ console (package manager in older versions), see \autoref{fig:miktex_console}. Use this application to update your packages.
+	\item[\TeX Live] manages the packages via the tlmgr (\TeX Live 2018) or tlshell (\TeX Live 2019). The GUI of the tlmgr is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlmgr-gui.exe} or \path{tlshell.exe}, respectively. Execute this program use it to update your packages.
+	\item[MiK\TeX] manages the packages in the MiK\TeX\ console (package manager in older versions). Use this application to update your packages.
 \end{description}
 Similar applications are available on all other operating systems. Restart your \LaTeX{} editor after updating all packages and see whether you can compile this template without errors. If your problem persists, please add an issue on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
-\begin{figure}[tbh]
-	\begin{minipage}[t]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{Example_texlive_tlmgr}
-		\caption[Updating packages in Windows for \TeX Live]{Updating packages in Windows for \TeX Live}\label{fig:texlive_tlmgr}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{Example_miktex_console}
-		\caption[Updating packages in Windows for MiK\TeX]{Updating packages in Windows for MiK\TeX}\label{fig:miktex_console}
-	\end{minipage}
-\end{figure}
 \section{Extra Features}
 The following sections introduce a few extra features. None of them are necessary for a thesis (except for PDF/A for a dissertation), but they might be of use for some people.
 \subsection{Compatibility with PDF/A}
