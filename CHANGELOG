@@ -1,3 +1,6 @@
+V2.0.1  26th July 2019
+        - Task.pdf is only included if isDiss=false
+        - version is printed on the cover of the Styleguide
 V2.0    1st July 2019
         - updates for page numbering in the Word template
         - updates in package dependencies and the appendix in general
