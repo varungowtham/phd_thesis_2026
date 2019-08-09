@@ -1,3 +1,5 @@
+V2.0.2  9th August 2019
+        - Explanations for externalization of TikZ images added
 V2.0.1  26th July 2019
         - Task.pdf is only included if isDiss=false
         - version is printed on the cover of the Styleguide
