@@ -348,6 +348,13 @@ urlseen = {letzter Zugriff},
 \DefineBibliographyStrings{english}{% before URL english
 urlseen = {last access},
 }
+\renewbibmacro*{volume+number+eid}{	% how volume and issue are printed in list of references
+  \printfield{volume}
+  \printfield[parens]{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}
+}
+\DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space} % use colon after year in list of references
 %------------------------------
 % ONLY FOR DISSERTATIONS
 %------------------------------
