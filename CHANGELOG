@@ -1,3 +1,8 @@
+V2.1.0  12th August 2019
+        - folder 02a_DissertationFiles removed, files integrated into 02_Prematter
+        - files in 02_Prematter renamed accordingly
+        - only one cover file (a_Cover.tex) with integrated distinction of cases for styleguide cover, dissertation cover, and thesis cover
+        - some small adjustments in the text
 V2.0.4  12th August 2019
         - hotfix: missing \cleardoublepage after \printnomenclature re-added
 V2.0.3  9th August 2019
