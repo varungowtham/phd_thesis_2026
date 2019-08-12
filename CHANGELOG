@@ -1,3 +1,5 @@
+V2.0.4  12th August 2019
+        - hotfix: missing \cleardoublepage after \printnomenclature re-added
 V2.0.3  9th August 2019
         - option dashed for biblatex deactivated; before, if the same author(s) had several publications, the authors were replaced by a dash in the list of references starting at the second publication
         - format of volume and issue for an article redone
