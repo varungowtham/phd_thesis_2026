@@ -49,30 +49,26 @@
 \begin{spacing}{1}				% one-line spacing here
 	\pagenumbering{gobble}		% turn off page numbering, necessary for correct backreferencing via the biblatex package
 	\pagestyle{empty}
-	\ifthenelse{\boolean{isSG}}{\input{02_Prematter/a_Cover_Styleguide}}{\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/a_Cover_Diss}}{\input{02_Prematter/a_Cover_Thesis}}}              % include cover
+	\input{02_Prematter/a_Cover}
 	\cleardoublepage
 	%------------------------------
-	% ONLY for dissertations: dedication (can also be used for a B/M thesis)
+	% DEDICATION (dissertation) OR THESIS TASK (thesis)
 	%------------------------------	
-	\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/a_Dedication}\cleardoublepage}{}
-	\input{02_Prematter/b_Declaration}
+	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/b_Dedication}\cleardoublepage}{\includepdf{02_Prematter/b_Task}}
+	\input{02_Prematter/c_Declaration}
 	\cleardoublepage
 \end{spacing}
 %------------------------------
-% THESIS TASK
-%------------------------------
-\ifthenelse{\boolean{isDiss}}{}{\includepdf{Task}}
-%------------------------------
 % PREMATTER
 %------------------------------
-\input{02_Prematter/c_Acknowledgements}
+\input{02_Prematter/d_Acknowledgements}
 \cleardoublepage
-\input{02_Prematter/d_Abstract}
+\input{02_Prematter/e_Abstract}
 \cleardoublepage
 %------------------------------
 % ONLY for dissertations: list of publications (can also be removed for a B/M thesis)
 %------------------------------
-\ifthenelse{\boolean{isDiss}}{\input{02a_Dissertation_files/b_Publications.tex}\cleardoublepage}{}
+\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/f_Publications.tex}\cleardoublepage}{}
 %------------------------------
 % LISTS OF...
 %------------------------------
@@ -85,10 +81,10 @@
 	\listoftables 				% make list of tables
 	\listofalgorithms 			% make list of algorithms
 	\lstlistoflistings			% make list of codes
-	\include{02_Prematter/e_Nomenclature} % include all symbols in nomenclature
+	\include{02_Prematter/g_Nomenclature} % include all symbols in nomenclature
 	\printnomenclature 			% make list of symbols
 	\cleardoublepage
-	\input{02_Prematter/f_Abbreviations}
+	\input{02_Prematter/h_Abbreviations}
 	\listoftodos				% make list of todos
 	\todototoc					% add list of todos to list of contents	
 	\cleardoublepage
