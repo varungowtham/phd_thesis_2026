@@ -11,19 +11,39 @@ This thesis is partially based on already published contributions. In the follow
 The following items do \emph{not} appear in the references at the end of this dissertation if the \verb+\printpublication+ command is used! If you cite the reference in the text as well, it also appears at the end.
 
 Theses and dissertations are cited using a used-defined entry type in Jabref (see \autoref{subsec:references}) called thesis in which you may enter the type as Bachelorarbeit, Masterarbeit, Dissertation, Bachelor's thesis, \dots The entry type is part of the available .bib file in this template. If you want to create it on your own, it contains the entries author, title, school, year, type.
-\section*{Journal Articles}
+\iflanguage{english}{
+	\section*{Journal Articles}
+	}{\iflanguage{ngerman}{
+		\section*{Zeitschriftenbeiträge}
+		}{}
+	}
 \begin{itemize}
 \item \printpublication{Esche2017}
 \end{itemize}
-\section*{Conference Papers}
+\iflanguage{english}{
+	\section*{Conference Papers}
+	}{\iflanguage{ngerman}{
+		\section*{Konferenzbeiträge}
+		}{}
+	}
 \begin{itemize}
 \item \printpublication{Penteado2018}
 \end{itemize}
-\section*{Oral Presentations Without Proceedings}
+\iflanguage{english}{
+	\section*{Oral Presentations Without Proceedings}
+	}{\iflanguage{ngerman}{
+		\section*{Vorträge ohne Proceedings}
+		}{}
+	}
 \begin{itemize}
 \item \printpublication{Godini2017}
 \end{itemize}
-\section*{Supervised Theses}
+\iflanguage{english}{
+	\section*{Supervised Theses}
+	}{\iflanguage{ngerman}{
+		\section*{Betreute Abschlussarbeiten}
+		}{}
+	}
 \begin{itemize}
 \item \printpublication{Hoffmann2015}
 \item \printpublication{Hoffmann2013}
