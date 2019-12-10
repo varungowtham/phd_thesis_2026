@@ -1,3 +1,6 @@
+V2.2.1  12th December 2019
+        - datetime --> datetime2
+        - file names of two figures corrected to resolve issue with Linux systems
 V2.1.1  22th August 2019
         - sections in publications are named based on current language
 V2.1.0  12th August 2019
