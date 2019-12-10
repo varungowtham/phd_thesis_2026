@@ -4,6 +4,16 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 %------------------------------
+% DATE
+%------------------------------
+\makeatletter					% new date type of month and year only
+\newcommand{\monthyeardate}{%
+	\iflanguage{english}{\DTMenglishmonthname{\@dtm@month} \@dtm@year}{%
+  \DTMgermanmonthname{\@dtm@month} \@dtm@year
+  }
+}
+\makeatother	
+%------------------------------
 % FIGURES, TABLES, LISTS, and NUMERATIONS
 %------------------------------
 \graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
@@ -233,6 +243,7 @@
 	\def\chapterautorefname{Kap.}%
 	\def\sectionautorefname{Abschn.}%
 	\def\subsectionautorefname{Abschn.}%
+	\def\subsubsectionautorefname{Abschn.}%
 	\def\figureautorefname{Abb.}%
 	\def\tableautorefname{Tab.}%
 	\def\theoremenvautorefname{Satz}%
@@ -244,6 +255,7 @@
 	\def\chapterautorefnamelong{Kapitel}%
 	\def\sectionautorefnamelong{Abschnitt}%
 	\def\subsectionautorefnamelong{Abschnitt}%
+	\def\subsubsectionautorefnamelong{Abschnitt}%	
 	\def\figureautorefnamelong{Abbildung}%
 	\def\tableautorefnamelong{Tabelle}%
 	\def\equationautorefnamelong~#1\null{Gleichung~(#1)\null}%
@@ -260,6 +272,7 @@
 	\def\chapterautorefname{Chap.}%
 	\def\sectionautorefname{Sec.}%
 	\def\subsectionautorefname{Sec.}%
+	\def\subsubsectionautorefname{Sec.}%	
 	\def\figureautorefname{Fig.}%
 	\def\tableautorefname{Tab.}%
 	\def\equationautorefname~#1\null{Eq.~(#1)\null}%
@@ -271,6 +284,7 @@
 	\def\chapterautorefnamelong{Chapter}%
 	\def\sectionautorefnamelong{Section}%
 	\def\subsectionautorefnamelong{Section}%
+	\def\subsubsectionautorefnamelong{Section}%	
 	\def\figureautorefnamelong{Figure}%
 	\def\tableautorefnamelong{Table}%
 	\def\equationautorefnamelong~#1\null{Equation~(#1)\null}%
@@ -288,6 +302,7 @@
   \def\chapterautorefname~##1\null{\chapterautorefnamelong~##1\null}
   \def\sectionautorefname~##1\null{\sectionautorefnamelong~##1\null}%
   \def\subsectionautorefname~##1\null{\subsectionautorefnamelong~##1\null}%
+  \def\subsubsectionautorefname~##1\null{\subsubsectionautorefnamelong~##1\null}%  
   \def\figureautorefname~##1\null{\figureautorefnamelong~##1\null}%
   \def\tableautorefname~##1\null{\tableautorefnamelong~##1\null}%
   \def\equationautorefname~##1\null{\equationautorefnamelong~##1\null}%
