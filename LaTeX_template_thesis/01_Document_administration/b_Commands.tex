@@ -4,6 +4,16 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 %------------------------------
+% DATE
+%------------------------------
+\makeatletter					% new date type of month and year only
+\newcommand{\monthyeardate}{%
+	\iflanguage{english}{\DTMenglishmonthname{\@dtm@month} \@dtm@year}{%
+  \DTMgermanmonthname{\@dtm@month} \@dtm@year
+  }
+}
+\makeatother	
+%------------------------------
 % FIGURES, TABLES, LISTS, and NUMERATIONS
 %------------------------------
 \graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
