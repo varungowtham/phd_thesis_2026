@@ -1,5 +1,7 @@
-V2.2.1  12th December 2019
-        - datetime --> datetime2
+V2.2.2  12th December 2019
+        - example/appendix for including large figures added, which shall be included as DIN A3
+V2.2.1  11th December 2019
+        - change from datetime package to datetime2
         - file names of two figures corrected to resolve issue with Linux systems
 V2.1.1  22th August 2019
         - sections in publications are named based on current language
