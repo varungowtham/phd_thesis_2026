@@ -14,9 +14,10 @@
 }
 \makeatother	
 %------------------------------
-% FIGURES, TABLES, LISTS, and NUMERATIONS
+% FIGURES, TABLES, LISTS, NUMERATIONS, COUNTER
 %------------------------------
 \graphicspath{{Figures/}} 		% directory in which LaTeX searches for figures
+\newcounter{includepdfpage}		% counter for pdfpages page references
 %------------------------------
 % DEDICATION
 %------------------------------
@@ -339,6 +340,9 @@
 	thesis,
 	unpublished
 ]{title}{#1\midsentence\isdot} 	
+\DeclareFieldFormat[			% no quotation marks in title
+	inproceedings,
+]{booktitle}{\itshape #1}
 \renewcommand*{\nameyeardelim}{\addcomma\space}			% comma between author and year	
 \DeclareFieldFormat{pages}{#1}	% no S. or pp. before pages
 \DeclareFieldFormat{type}{\itshape #1}	% print bachelor or master thesis in italics
@@ -355,6 +359,8 @@
      test {\ifentrytype{article}}%
      or
      test {\ifentrytype{book}}%
+     or
+     test {\ifentrytype{inproceedings}}%     
   }{}{\printtext{\bibstring{in}\intitlepunct}}%
 }							
 \DefineBibliographyStrings{ngerman}{% before URL german
