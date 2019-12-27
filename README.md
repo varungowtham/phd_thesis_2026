@@ -12,4 +12,3 @@ Please read it carefully!
 ## Branches
 
 - master: current template version
-- developer: version for trying out new stuff 
