@@ -75,8 +75,8 @@
 \begin{spacing}{1}				% one-line spacing here
 	\tableofcontents			% table of contents
 	\cleardoublepage
-	\pagestyle{scrheadings}		% use header and footer information to create both from here on
-	\pagenumbering{roman}		% capital roman numbers
+	\pagestyle{scrheadings}		% set page style with header and footer information 
+	\pagenumbering{roman}		% small roman page numbers
 	\listoffigures 				% make list of figures
 	\listoftables 				% make list of tables
 	\listofalgorithms 			% make list of algorithms
@@ -92,14 +92,14 @@
 %------------------------------
 % TEXT
 %------------------------------
-\pagenumbering{arabic}
+\pagenumbering{arabic}			% arabic page numbers
 \input{03_Content/0_Text} 		% include chapters
 \cleardoublepage
 %------------------------------
 % APPENDIX
 %------------------------------
 \appendix
-\input{04_Appendix/0_Appendix}
+\input{04_Appendix/0_Appendix}	% include appendices
 \cleardoublepage
 %------------------------------
 % REFERENCES
