@@ -1,3 +1,5 @@
+V2.3.2  5th February 2020
+        - xurl package added
 V2.3.1  28th December 2019
         - removed text on Overleaf and TeXLive 2017 in styleguide as Overleaf has switched to TeXLive 2018
         - removed package inputenc as LaTeX now uses UTF-8 as default encoding
