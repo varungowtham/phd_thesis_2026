@@ -64,7 +64,7 @@ classdef figureTemplateClass < handle
             xlim([xl xh])
             ylim([yl yh])
             xtickformat(self.xTickFormat)
-            ytickformat(self.xTickFormat)
+            ytickformat(self.yTickFormat)
             ax.XAxis.TickValues = xl:xi:xh;
             ax.YAxis.TickValues = yl:yi:yh;  
         end

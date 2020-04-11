@@ -29,7 +29,7 @@ Figure.savePNG = false;                                                     % de
 Figure.savePDF = true;
 Figure.saveSVG = true;
 if ~exist(Figure.savePath,'dir')                                            % check whether path exists, if not create it!
-    mkdir(savePath)
+    mkdir(Figure.savePath)
 end
 
 %% Configure object 2
