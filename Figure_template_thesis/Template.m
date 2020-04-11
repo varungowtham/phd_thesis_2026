@@ -15,7 +15,7 @@ Figure2 = figureTemplateClass;
 Figure.dataFileName = 'TemplateData.dat';                                   % file name of the loaded data
 Figure.savePath = 'TemplatePathExample';                                    % path in which the figure shall be saved
 Figure.figureName = 'Template';                                             % what is the figure's name
-Figure.fontName = 'arial';
+Figure.fontName = 'Palatino Linotype';
 Figure.axisSpecs = [-2 2 0.5 -4 4 1.0];                                     % axis limits for both axes [xstart xend xstep ystart yend ystep]
 Figure.xTickFormat = '%.1f';                                                % how many decimal numbers for x axis
 Figure.yTickFormat = '%.2f';                                                % how many decimal numbers for y axis
@@ -36,7 +36,7 @@ end
 Figure2.dataFileName = 'TemplateData.dat';                                  % file name of the loaded data
 Figure2.savePath = 'TemplatePathExample';                                   % path in which the figure shall be saved
 Figure2.figureName = 'Template2';                                           % what is the figure's name
-Figure2.fontName = 'times';
+Figure2.fontName = 'Palatino Linotype';
 Figure2.axisSpecs = [1E-4 1E-3 1E-4 1E-6 1E6 1E5];                          % axis limits for both axes [xstart xend xstep ystart yend ystep]
 Figure2.xTickFormat = '%.1f';                                               % how many decimal numbers for x axis
 Figure2.yTickFormat = '%.1f';                                               % how many decimal numbers for y axis
