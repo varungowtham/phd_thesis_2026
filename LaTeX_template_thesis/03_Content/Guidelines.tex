@@ -40,13 +40,13 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \section{First Steps}
 \begin{enumerate}
 	\item \textbf{carefully read this whole chapter}
-	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine. This template expects a \TeX Live distribution $\geq$ 2018. It is not tested with older versions anymore.
+	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine. This template expects a \TeX Live distribution $\geq$ 2019. It is not tested with older versions anymore.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel@\verb+babel+} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel@\verb+babel+} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
 	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
-	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2018 and a \TeX Live 2019 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
+	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2019 and a \TeX Live 2020 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
 	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis -- good luck!
@@ -316,8 +316,8 @@ The following commands/scripts must be run to compile the document completely:
 As stated above, compilation problems appeared with this template when old versions of the packages were used. Unfortunately, there does not seem to be a possibility to automatically check for updates of packages when they are included in a \LaTeX\ document.\\
 In case you have issues when compiling this document, start with updating all your packages. The following instructions are valid for a Windows operating system.
 \begin{description}
-	\item[\TeX Live] manages the packages via the tlmgr (\TeX Live 2018) or tlshell (\TeX Live 2019). The GUI of the tlmgr is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlmgr-gui.exe} or \path{tlshell.exe}, respectively. Use this program to update your packages.
-	\item[MiK\TeX] manages the packages in the MiK\TeX\ console (package manager in older versions). Use this application to update your packages.
+	\item[\TeX Live] manages the packages tlshell. Its GUI is located in \path{texlive/year/bin/win32}. In this folder, you find a file called \path{tlshell.exe}. Use this program to update your packages.
+	\item[MiK\TeX] manages the packages in the MiK\TeX\ console. Use this application to update your packages.
 \end{description}
 Similar applications are available on all other operating systems. Restart your \LaTeX\ editor after updating all packages and see whether you can compile this template without errors. If your problem persists, please add an issue on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \section{Extra Features}
@@ -397,6 +397,18 @@ A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:
 \caption{A wrapped figure}\label{fig:wrapped_figure}
 \end{wrapfigure}
 Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
+
+Another possibility is putting descriptive text in an otherwise raw figure. This is illustrated in \autoref{fig:example_raw_figure}. The \verb+overpic+\index{Packages!overpic@\verb+overpic+} package provides the necessary environment of the same title and the \verb+\put+\index{Commands!put@\verb+\put(,){}+} command to add arbitrary text. If the environment is loaded with the additional options \verb+tics=10, grid+, a grid with ten tics is drawn to ease the positioning of the text. Thus, the inserted text automatically uses the same font type as the surrounding text.
+\begin{figure}
+\centering
+%\begin{overpic}[width=0.8\linewidth, tics=10, grid]{Example_raw_figure}
+\begin{overpic}[width=0.8\linewidth]{Example_raw_figure}
+\put(14,40){Text}
+\put(75,40){Other text}
+\put(42,12){Third text}
+\end{overpic}
+\caption{Example of overpic environment}\label{fig:example_raw_figure}
+\end{figure}
 \subsection{Tables}
 \begin{wraptable}{r}{0.4\textwidth}
 	\centering
