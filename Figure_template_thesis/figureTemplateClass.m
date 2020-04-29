@@ -79,17 +79,17 @@ classdef figureTemplateClass < handle
         
         function xAxisLogScale(self)
             set(gca,'xscale','log')
-            xtick=10.^(log10(self.axisSpecs(1)):log10(self.axisSpecs(2)));
+            xtick=10.^(log10(self.axisSpecs(1)):log10(self.axisSpecs(3)):log10(self.axisSpecs(2)));
             xticklab = cellstr(num2str(round(log10(xtick(:))), '10^{%d}'));
             set(gca,'XTick',xtick,'XTickLabel',xticklab,'TickLabelInterpreter','tex')
         end 
         
         function yAxisLogScale(self)
             set(gca,'yscale','log')
-            ytick=10.^(log10(self.axisSpecs(4)):log10(self.axisSpecs(5)));
+            ytick=10.^(log10(self.axisSpecs(4)):log10(self.axisSpecs(6)):log10(self.axisSpecs(5)));
             yticklab = cellstr(num2str(round(log10(ytick(:))), '10^{%d}'));
             set(gca,'YTick',ytick,'YTickLabel',yticklab,'TickLabelInterpreter','tex')
-        end   
+        end    
         
         function savePlot(self)
             if self.savePNG
