@@ -1,3 +1,8 @@
+V2.3.4  24th April 2020
+        - figure template for Matlab added; this Matlab code allows you to create class objects to generate all your figures the same way
+        - TeXLive 2020 suppprt
+        - description of overpic environment in section on figure template
+        - small additions in appendices
 V2.3.3  31st March 2020
         - updates for cover
         - Overleaf explanations clarified
