@@ -1,77 +1,81 @@
-V2.3.4  24th April 2020
+v3.0.1  13th May 2020
+        - comments on Overleaf compatibility issues
+v3.0    13th May 2020
+        - template was made compatible with acro package v3.0
+v2.3.4  24th April 2020
         - figure template for Matlab added; this Matlab code allows you to create class objects to generate all your figures the same way
         - TeXLive 2020 suppprt
         - description of overpic environment in section on figure template
         - small additions in appendices
-V2.3.3  31st March 2020
+v2.3.3  31st March 2020
         - updates for cover
         - Overleaf explanations clarified
         - introduction and conclusion redone
-V2.3.2  5th February 2020
+v2.3.2  5th February 2020
         - xurl package added
-V2.3.1  28th December 2019
+v2.3.1  28th December 2019
         - removed text on Overleaf and TeXLive 2017 in styleguide as Overleaf has switched to TeXLive 2018
         - removed package inputenc as LaTeX now uses UTF-8 as default encoding
-V2.3    27th December 2019
+v2.3    27th December 2019
         - logos of TUB and dbta have now the same height on the cover page of styleguide and in thesis mode
-V2.2.2  12th December 2019
+v2.2.2  12th December 2019
         - example/appendix for including large figures added, which shall be included as DIN A3
-V2.2.1  11th December 2019
+v2.2.1  11th December 2019
         - change from datetime package to datetime2
         - file names of two figures corrected to resolve issue with Linux systems
-V2.1.1  22th August 2019
+v2.1.1  22th August 2019
         - sections in publications are named based on current language
-V2.1.0  12th August 2019
+v2.1.0  12th August 2019
         - folder 02a_DissertationFiles removed, files integrated into 02_Prematter
         - files in 02_Prematter renamed accordingly
         - only one cover file (a_Cover.tex) with integrated distinction of cases for styleguide cover, dissertation cover, and thesis cover
         - some small adjustments in the text
-V2.0.4  12th August 2019
+v2.0.4  12th August 2019
         - hotfix: missing \cleardoublepage after \printnomenclature re-added
-V2.0.3  9th August 2019
+v2.0.3  9th August 2019
         - option dashed for biblatex deactivated; before, if the same author(s) had several publications, the authors were replaced by a dash in the list of references starting at the second publication
         - format of volume and issue for an article redone
-V2.0.2  9th August 2019
+v2.0.2  9th August 2019
         - Explanations for externalization of TikZ images added
-V2.0.1  26th July 2019
+v2.0.1  26th July 2019
         - Task.pdf is only included if isDiss=false
         - version is printed on the cover of the Styleguide
-V2.0    1st July 2019
+v2.0    1st July 2019
         - updates for page numbering in the Word template
         - updates in package dependencies and the appendix in general
         - updated auto-completion list for Texmaker
         - thesis task can now be easily integrated as scanned PDF
-V1.9    13th May 2019
+v1.9    13th May 2019
         - classical pagination
         - small roman numbers in the front matter
         - arabic numbers throughout the rest
-V1.8    6th May 2019
+v1.8    6th May 2019
         - clarification of what is meant by literature review in the introduction
         - TeXLive 2019 support added
-V1.7:   24th March 2019
+v1.7:   24th March 2019
         - the commit message in the master should now contain the right version number. Before this version, changelog and commit message may not indicate the same version
         - the mhchem package was replaced by the chemmacros/chemformula package
         - the table template was corrected by using lining numbers instead of text figures
-V1.6:   18th March 2019
+v1.6:   18th March 2019
         - the Index now contains commands, which are mentioned in the style guide
         - heater_footer.tex is removed, the commands were added to b_Commands.tex
         - acro changed from list to table, column width can be set based on the longest abbreviation
         - Thesis and dissertation examples removed
         - Index and format changed
         - seriffree font for list of symbols
-V1.5:   14th March 2019
+v1.5:   14th March 2019
         - auto-complete commands added
         - wrapfig package added
         - page_precedence in indexstyle changed
         - support for older TeXLive versions depracated
-V1.4:   12th March 2019
+v1.4:   12th March 2019
         - switch to the nomencl package for the nomenclature
         - information on vector graphics tools added
-V1.3:   25th February 2019
+v1.3:   25th February 2019
         - appendixprefix set to true
         - todonotes package added
         - morewrites package added
-V1.2:   20th January 2019
+v1.2:   20th January 2019
         - more than 26 pages in the appendix are now possible
         - Gitlab webpage linked for issue reporting
         - Jabref introduction added
@@ -86,5 +90,5 @@ V1.2:   20th January 2019
         - cover changes
         - only one styleguide
         - improved support for the bi-langual feature
-V1.1:   8th January 2019
+v1.1:   8th January 2019
         - Overleaf support
