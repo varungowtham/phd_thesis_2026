@@ -331,6 +331,7 @@ Indenting \emph{can} be used for structuring one's document, e.g.~by indenting e
 Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}: directly running \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+} or calling it via \verb+arara+\index{Scripts!arara@\verb+arara+}\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara\index{Scripts!arara@\verb+arara+} software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}.\\
 To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+} is executed with writing rights (\verb+-w+) on the current \path{.tex} file with local settings (\verb+-l+) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
 The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
+\clearpage
 \begin{lstlisting}[breaklines, caption={Setting up \texttt{latexindent} in Texmaker}, float=tbh, label={code:latexindent}, language=latex]
 "C:/path_to_texlive/year/bin/win32/latexindent.exe" -w %*\%*).tex -l="absolute_path_to_thesis_template/Thesis_template/LaTeX_template_thesis/00_Arara_and_Latexindent/localSettings.yaml"
 \end{lstlisting}
@@ -391,7 +392,7 @@ A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:
 \end{itemize}
 \myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
 
-\begin{wrapfigure}[6]{r}{0.4\textwidth}
+\begin{wrapfigure}[8]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.35\textwidth]{Logo_tub}
 \caption{A wrapped figure}\label{fig:wrapped_figure}
@@ -399,6 +400,7 @@ A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:
 Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
 
 Another possibility is putting descriptive text in an otherwise raw figure. This is illustrated in \autoref{fig:example_raw_figure}. The \verb+overpic+\index{Packages!overpic@\verb+overpic+} package provides the necessary environment of the same title and the \verb+\put+\index{Commands!put@\verb+\put(,){}+} command to add arbitrary text. If the environment is loaded with the additional options \verb+tics=10, grid+, a grid with ten tics is drawn to ease the positioning of the text. Thus, the inserted text automatically uses the same font type as the surrounding text.
+
 \begin{figure}
 \centering
 %\begin{overpic}[width=0.8\linewidth, tics=10, grid]{Example_raw_figure}
@@ -500,14 +502,14 @@ These commands are used as
 \end{itemize}
 \myfigure[tbh][1.0]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
 \begin{figure}[tbh]
-%	\setchemfig{atom sep=20pt}
-%	\centering
-%	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
-%	\schemestart
-%	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\ch{CO}/\ch{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
-%	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
-%	\schemestop
-%	\chemnameinit{}
+	\setchemfig{atom sep=20pt}
+	\centering
+	\chemnameinit{\chemfig{R-[:30]=[:-30]}}
+	\schemestart
+	\chemname[2ex]{\chemfig{R-[:30]=[:-30]}}{olefin}\+ \chemname{\ch{CO}/\ch{H_2}}{synthesis gas}\arrow(.base east--.base west){->[\footnotesize catalyst][]}
+	\chemname{\chemfig{R-[:30]-[:-30]-[:30](-[:-30]H)=[:90]O}}{linear aldehyde} \quad or \quad \chemname{\chemfig{R-[:30](-[:-30])-[:90](-[:30]H)=[:150]O}}{branched aldehyde}
+	\schemestop
+	\chemnameinit{}
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Chemistry and Chemical Reactions}
