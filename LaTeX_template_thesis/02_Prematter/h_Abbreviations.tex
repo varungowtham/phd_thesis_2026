@@ -2,12 +2,12 @@
 \chapter*{\abbrevname}
 \addcontentsline{toc}{chapter}{\abbrevname}		% add to the toc
 If the horizontal space is too small or too large for you abbreviations, change the allocated space by entering the longest abbreviation in the \verb+\settowidth{}+\index{Commands!settowidth@\verb+\settowidth{}+} command in \path{f_Abbreviations.tex}.
+%------------------------------
+% COLUMN WIDTH
+%------------------------------
 \settowidth{\myabbrevlength}{SUNDIALS}
-\printacronyms[
-	include-classes=Numerics,	% include this class
-	name=Numerics,				% name 
-]
-\printacronyms[
-	include-classes=Software,	% include this class
-	name=Software,				% name 
-]
+%------------------------------
+% LIST(S) OF ABBREVIATIONS
+%------------------------------
+\printacronyms[template=dbtalongtabu, sort=true, include={Numerics}, heading=section*, name=Numerics]
+\printacronyms[template=dbtalongtabu, sort=true, include={Software}, heading=section*, name=Software]

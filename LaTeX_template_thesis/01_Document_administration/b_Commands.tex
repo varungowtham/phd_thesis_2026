@@ -59,17 +59,24 @@
 	}{\iflanguage{ngerman}{
 		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
 	}
-\DeclareAcroListStyle{longtabu}{table}{
-	table=longtabu,
-	table-spec=>{\sffamily\bfseries}p{\myabbrevlength}X@{},
-	before={%
-        \setlength{\tabulinesep}{0.8\parskip}%
-        \setlength{\topsep}{0pt}%
-        \setlength{\LTpre}{0pt}%
-        \setlength{\LTpost}{0pt}%
-    }
+\NewAcroTemplate[list]{dbtalongtabu}{
+	\AcroNeedPackage{array}%
+	\setlength{\tabulinesep}{0.8\parskip}%
+    \acronymsmapF{%
+	    \AcroAddRow{%
+    		\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline
+    		}
+   	}
+   	{\AcroRerun}%
+   	\acroheading
+	\acropreamble
+	\begin{tabu}{>{\bfseries\sffamily}p{\myabbrevlength}X@{}}
+		\AcronymTable
+	\end{tabu}
 }
-\acsetup{list-style=longtabu}
+\acsetup{
+	index/use=true,				% add abbrevs to index
+	make-links=true}			% make links for abbrevs
 %------------------------------
 % TODOS
 %------------------------------
