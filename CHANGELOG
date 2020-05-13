@@ -1,3 +1,5 @@
+V3.0    13th May 2020
+        - template was made compatible with acro package v3.0
 V2.3.4  24th April 2020
         - figure template for Matlab added; this Matlab code allows you to create class objects to generate all your figures the same way
         - TeXLive 2020 suppprt
