@@ -39,7 +39,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 %------------------------------
 \section{First Steps}
 \begin{enumerate}
-	\item \textbf{carefully read this whole chapter}
+	\item \textbf{carefully read this whole chapter.} It might look like there is a lot to read but you will get additional information on how to use the template, what additional software is out there (especially for drawing figures), and how to avoid issues with the template.
 	\item install \LaTeX. On Windows, Mik\TeX\footnote{\url{https://miktex.org/}, February 2019} or \TeX Live\footnote{\url{https://tug.org/texlive/windows.html}, February 2019} are suitable distributions. Mac\TeX\footnote{\url{http://www.tug.org/mactex/}, February 2019} or \TeX Shop\footnote{\url{https://pages.uoregon.edu/koch/texshop/}, February 2019} can be used on a Mac. On Linux, you typically also install \TeX Live\footnote{\url{https://tug.org/texlive/quickinstall.html}, February 2019}; make sure to install an up-to-date version of \TeX Live on a Linux machine. This template expects a \TeX Live distribution $\geq$ 2019. It is not tested with older versions anymore.
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
@@ -367,6 +367,7 @@ Figures are an important part of every thesis. Normally, these figures are gener
 In TikZ, it is recommended to externalize your figure, i.e.~they are only redrawn if something was changed. In this case, add the lines in \autoref{code:tikz_externalize} \emph{below} the section on makeindex in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file to make sure everything works smoothly. First of all, the external library is loaded, secondly, externalization is started. Importantly, shell escape must be enabled here. In addition, the \verb+\includepdf+\index{Commands!includepdf@\verb+\includepdf{}+} command is excluded from externalization. Finally, the \verb+\todo+\index{Commands!todo@\verb+\todo{}+} command is redefined so it also disables externalization locally. More on these issues can be found here\footnote{\url{https://tex.stackexchange.com/questions/135504/includepdf-causes-an-error-message-from-pgfplots-externalization}, August 2019}\textsuperscript{,}\footnote{\url{https://tex.stackexchange.com/questions/42486/todonotes-and-tikzexternalize}, August 2019}. \textbf{You need to create the folder \path{TikZ} if you use this prefix}.
 	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, March 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, March 2019} Due to its PostScript origin, it cannot directly be used with PDF\LaTeX. If you want to compile with PDF\LaTeX, the best solution is using the package \verb+auto-pst-pdf+\footnote{\url{https://ctan.org/pkg/auto-pst-pdf?lang=de}, March 2018}.
 	\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use.\footnote{\url{https://inkscape.org/de/}, March 2019} However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
+	\item[Draw.io] is an open source program for drawing flowcharts or pipe \& instrumentation diagrams.\footnote{\url{www.draw.io}, June 2020} It contains many more shapes for process engineering than a standard version of Microsoft Visio. Figures can be exported as PDF and further, for example, further processed in Inkscape. Draw.io is available as browser application or can be installed on a computer.
 \end{description}
 		\begin{lstlisting}[breaklines, caption={Command lines for externalization in TikZ}, float=tbh, label={code:tikz_externalize}, language=latex]
 \usetikzlibrary{external}
@@ -395,7 +396,7 @@ A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:
 
 Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
 
-\begin{wrapfigure}[8]{r}{0.4\textwidth}
+\begin{wrapfigure}[9]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.35\textwidth]{Logo_tub}
 \caption{A wrapped figure}\label{fig:wrapped_figure}
@@ -403,7 +404,7 @@ Although it is not seen on a regular basis in theses or dissertations, a Figure 
 
 Another possibility is putting descriptive text in an otherwise raw figure. This is illustrated in \autoref{fig:example_raw_figure}. The \verb+overpic+\index{Packages!overpic@\verb+overpic+} package provides the necessary environment of the same title and the \verb+\put+\index{Commands!put@\verb+\put(,){}+} command to add arbitrary text. If the environment is loaded with the additional options \verb+tics=10, grid+, a grid with ten tics is drawn to ease the positioning of the text. Thus, the inserted text automatically uses the same font type as the surrounding text.
 
-\begin{figure}
+\begin{figure}[t]
 \centering
 %\begin{overpic}[width=0.8\linewidth, tics=10, grid]{Example_raw_figure}
 \begin{overpic}[width=0.8\linewidth]{Example_raw_figure}
@@ -413,7 +414,7 @@ Another possibility is putting descriptive text in an otherwise raw figure. This
 \end{overpic}
 \caption{Example of overpic environment}\label{fig:example_raw_figure}
 \end{figure}
-\clearpage
+
 \subsection{Tables}
 \begin{wraptable}{r}{0.4\textwidth}
 	\centering
@@ -503,7 +504,7 @@ These commands are used as
 	\item \verb+\parencite{bibtexkey}+:\\
 	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\myfigure[tbh][1.0]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
+\myfigure[tbh][0.8]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
 \begin{figure}[tbh]
 	\setchemfig{atom sep=20pt}
 	\centering
@@ -538,7 +539,6 @@ All of these items are introduced in the following. Note that frames and their c
 	This statement is true, I guess.
 \end{remarkenv}
 \textbf{Definitions:} Definitions can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package in combination with the \verb+mdframed+\index{Packages!mdframed@\verb+mdframed+} package for a possible frame. An exemplary Definition is given in \autoref{def:template_definition}. \Autoref{eq:template_equation_in_env} can also be referenced.
-\clearpage
 \begin{definition}[What the definition defines]
 	This is a definition. It defines itself.\label{def:template_definition}
 	\begin{equation}
