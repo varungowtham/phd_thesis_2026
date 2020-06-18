@@ -1,3 +1,6 @@
+v3.0.3  18th June 2020
+        - exchanged markboth, addcontensline, chapter* by addchap in h_abbreviations.tex
+        - documentation for list of abbreviations improved
 v3.0.2  17th June 2020
         - information on draw.io added
 v3.0.1  13th May 2020
