@@ -1,3 +1,6 @@
+v3.0.4  5th August 2020
+        - reference to mathcha.io added in section on vector graphics
+        - uniquelist and uniquename were both set to false. Hence, Smith, John, and Mueller (2011) and Smith, Johnson, and Maier (2012) will now result in Smith et al. (2011) or Smith et al. (2012)
 v3.0.3  18th June 2020
         - exchanged markboth, addcontensline, chapter* by addchap in h_abbreviations.tex
         - documentation for list of abbreviations improved
