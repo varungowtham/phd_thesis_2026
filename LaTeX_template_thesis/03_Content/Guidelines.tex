@@ -99,9 +99,9 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item important aspects can be emphasized with \textit{italics}, \textbf{bold writing}, or using the \emph{emphasize command} \verb+\emph+. Underlining words should be avoided.
 	\item paragraphs should not start in the last two lines of a page (\enquote{Schusterjunge} or orphen) or end in the first two lines of a page (\enquote{Hurenkind} or widow). This is automatically achieved with the \verb+nowidow+\index{Packages!nowidow@\verb+nowidow+} package in this template.
 \end{enumerate}
-%------------------------------
-% SEC: TEMPLATE STRUCTURE
-%------------------------------		
+------------------------------
+ SEC: TEMPLATE STRUCTURE
+------------------------------		
 \section{Template Structure}
 This section describes the structure of this template. Questions, problems, or additional feature requests can be posted on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
 \subsection{Features}
@@ -383,16 +383,12 @@ In TikZ, it is recommended to externalize your figure, i.e.~they are only redraw
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
 This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
 \subsection{Figures}
-A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+\index{Commands!ref@\verb+\ref{}+} command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command. In addition, a short command for including figures was set up with the \verb+xparse+\index{Packages!@\verb+xparse+xparse} package: \verb+\myfigure[opt1][opt2]{arg1}[opt3]{arg2}[opt4]+. Therein,
-\begin{itemize}
-	\item \verb+opt1+ is the preferred location of the float, e.g.~\verb+tbh+
-	\item \verb+opt2+ is the fraction of the linewidth the figure should cover. It can be a value between 0 and 1
-	\item \verb+arg1+ is the file name of the figure
-	\item \verb+opt3+ is the short caption for the List of Figures
-	\item \verb+arg2+ is the caption of the figure in the text
-	\item \verb+opt4+ is the label of the figure
-\end{itemize}
-\myfigure[tbh][1]{Logo_dbta}[This is the caption of the figure in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}[fig:template_figure]
+A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+\index{Commands!ref@\verb+\ref{}+} command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command. 
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=\linewidth]{Logo_dbta}
+\caption[This is the caption in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}\label{fig:template_figure}
+\end{figure}
 
 Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
 
@@ -504,7 +500,11 @@ These commands are used as
 	\item \verb+\parencite{bibtexkey}+:\\
 	      \enquote{Thermodynamics are great \parencite{Abrams1975}.}
 \end{itemize}
-\myfigure[tbh][0.8]{Example_jabref}[Jabref]{Jabref}[fig:jabref]
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=0.8\linewidth]{Example_jabref}
+\caption{Jabref}\label{fig:jabref}
+\end{figure}
 \begin{figure}[tbh]
 	\setchemfig{atom sep=20pt}
 	\centering
