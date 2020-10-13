@@ -1,3 +1,5 @@
+v3.1    13th October 2020
+        - template features and structure redone and shortened
 v3.0.5  7th October 2020
         - as Overleaf now supports the TeXLive 2020 compiler, the comment to the old commit of this project was removed
         - the template can now be used directly with Overleaf with no additional changes
