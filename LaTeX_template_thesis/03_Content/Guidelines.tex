@@ -44,7 +44,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel@\verb+babel+} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel@\verb+babel+} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
-	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g.~your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
+	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g., your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
 	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2019 and a \TeX Live 2020 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
 	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
@@ -59,10 +59,10 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 \begin{enumerate}
 	\item the current \enquote{Prüfungsordnung} overrides the following rules if they contradict the \enquote{Prüfungsordnung}.
 	\item the thesis must be written in German or English.	
-	\item a thesis is a scientific-technical documentation that must satisfy requirements regarding structure and form. It should be precisely formulated and well-written, i.e.~no orthographic or grammar mistakes, etc.
+	\item a thesis is a scientific-technical documentation that must satisfy requirements regarding structure and form. It should be precisely formulated and well-written, i.e., no orthographic or grammar mistakes, etc.
 	\item the thesis should be logically structured.
 	\item the thesis should present its scientific-technical content while remaining comprehensible. Germans tend to formulate complex phrases with many sub-clauses. This should be avoided. Hence, the author should repeatedly put him- or herself into the position of the reader and evaluate the thesis in this regard.
-	\item the Figure, i.e.~picture, diagram, photo, is preferred to long explanations.
+	\item the Figure, i.e., picture, diagram, photo, is preferred to long explanations.
 	\item results must be tractable. Hence, the applied methods, assumptions, boundary conditions, experiments, and computer codes must be pointed out and explained in sufficient detail.
 	\item calculations should be documented. This is of course difficult for large models. In this case, the code should be attached to the printed or digital appendix.
 	\item the thesis should focus on the central themes and aspects. Other information should be referenced appropriately, but does not have to be repeated extensively.
@@ -78,7 +78,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 		      \item \emph{RIGHT:} Pressure $P$ in Pa.
 	      \end{itemize}
 	      The only correct use of square brackets is shown here for the voltage:\newline
-	      [U] = \si{\volt}, i.e.~the unit of the voltage is Volt.
+	      [U] = \si{\volt}, i.e., the unit of the voltage is Volt.
 	\item a List of Symbols and a List of Abbreviations must be included. This is done with the \verb+nomencl+\index{Packages!nomencl@\verb+nomencl+} and the \verb+acro+\index{Packages!acro@\verb+acro+} package in this template. In addition, symbols should be explained in the text after their first appearance. A List of Algorithms or other lists can be added if necessary.
 	\item figures, tables, and equations must be numerated and referenced in the text. This is automatically done using the \verb+caption+\index{Packages!caption@\verb+caption+} package (see \autoref{sec:templates}) and the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command (\autoref{subsec:autorefs}). For example, a Figure is named Figure chapter.Num (Figure 2.1). The numeration is done automatically in this template. In addition, figures and  tables must also be explained and discussed in the text.
 	\item figures should be chosen to support comprehension. In particular, the most important details and relevant labels must be \emph{readable}.
@@ -103,76 +103,166 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 % SEC: TEMPLATE STRUCTURE
 %------------------------------		
 \section{Template Structure}
-This section describes the structure of this template. Questions, problems, or additional feature requests can be posted on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
-\subsection{Features}
-\begin{enumerate}
-	\item valid for theses or dissertations
-	\item can be used in German and English based on the settings of the \verb+babel+\index{Packages!babel@\verb+babel+} package
-	\item can be used with online editors, such as Overleaf (see \autoref{subsec:overleaf})
-	\item generation of List of Algorithms with the \verb+algorithm2e+\index{Packages!algorithm2e@\verb+algorithm2e+} package and KOMA script
-	\item generation of List of Codes with the \verb+listings+\index{Packages!listings@\verb+listings+} package and KOMA script
-	\item generation of List of Symbols (Latin, Greek, etc.) with the \verb+nomencl+\index{Packages!nomencl@\verb+nomencl+} package
-	\item generation of List of Abbreviations with the \verb+acro+\index{Packages!acro@\verb+acro+} package
-	\item generation of List of References with the \verb+biblatex+\index{Packages!biblatex@\verb+biblatex+} package and \verb+biber+\index{Scripts!biber@\verb+biber+}
-	\item DOI/ISBN/URL are automatically included in the List of References if they are available in the \path{.bib} file
-	\item generation of an Index with the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package
-	\item ToDos and missing figures with the \verb+todonotes+\index{Packages!todonotes@\verb+todonotes+} package
-	\item extra features, such as PDF/A compatibility, Overleaf support, and automatic indenting of \TeX\ code
-	\item various templates for typical elements of a thesis included
-\end{enumerate}
-\subsection{Main Document}
-\begin{itemize}
-	\item is called \path{main.tex}\index{Files!main.tex}
-	\item this document must be compiled in \LaTeX\ or should be chosen as master document
-\end{itemize}
-\subsection{00\_Arara\_and\_Latexindent}
-The following files are located in this folder:
-\begin{enumerate}
-	\item \path{localSettings.yaml}
-	      \begin{itemize}
-		      \item contains the local settings for automatic indenting
-		      \item more information can be found in \autoref{subsec:automatic_indenting_latexindent} and \autoref{ch:automatic_indenting_arara}
-	      \end{itemize}
-\end{enumerate}
-\subsection{01\_Document\_administration}
-The following files are located in this folder:
-\begin{enumerate}
-	\item \path{a_Packages.tex}\index{Files!a\_Packages.tex}
-	      \begin{itemize}
-		      \item contains all packages, which are loaded
-		      \item packags are sorted based on their application
-		      \item all packages of this template and their references are stated in \autoref{tab:package_list}
-	      \end{itemize}
-	\item \path{b_Commands.tex}\index{Files!b\_Commands.tex}
-	      \begin{itemize}
-		      \item contains further commands regarding format and look of the document
-		      \item also sorted
-	      \end{itemize}
-	\item \path{c_Meta.tex}\index{Files!c\_Meta.tex}
-	      \begin{itemize}
-		      \item contains meta information regarding author, title, keywords, etc.
-		      \item contains a boolean variable to select whether it is a dissertation or a bachelor/master thesis
-		      \item contains a boolean variable to select whether it is a master or a bachelor thesis
-	      \end{itemize}
-	\item \path{d_NomenclatureCommands.tex}\index{Files!d\_NomenclatureCommands.tex}
-	      \begin{itemize}
-		      \item defines structure of the List of Symbols
-		      \item optional argument defines the class of a symbol (Latin, Greek, \dots)
-		      \item \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} is used for the generation of the List of Symbols. A short instruction how to run \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
-	      \end{itemize}
-	\item \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex}
-	      \begin{itemize}
-		      \item defines the abbreviations in the text
-		      \item examples are provided
-		      \item abbreviations can be subdivided into classes
-		      \item more information can be found in the \verb+acro+ documentation
-	      \end{itemize}
-	\item \path{f_CodeLanguageSpecifications.tex}\index{Files!f\_CodeLanguageSpecifications.tex}
-	      \begin{itemize}
-		      \item can be used to define a set of keywords and comment commands for a certain programming language
-		      \item if you want to apprehend your code in your thesis, you can either copy the code to an \verb+lstlistings+ environment (see examples in \autoref{ch:code_examples}) or  directly include your files
-	      \end{itemize}
-\end{enumerate}
+This template contains several features given in \autoref{tab:template_features}. The structure of the template is described in \autoref{tab:template_structure}. Questions, problems, or additional feature requests can be posted on the gitlab webpage of this template.\footnote{\url{https://gitlab.tu-berlin.de/dbta/Thesis_template/issues}, February 2019}
+\begin{table}
+\centering
+\caption{Template features}\label{tab:template_features}
+\begin{tabular}{rp{0.9\textwidth}}
+\toprule
+No. & Feature \\
+\midrule
+	1) & Valid for theses or dissertations \\
+	2) & Usable in German or English depending on the \verb+babel+\index{Packages!babel@\verb+babel+} settings \\
+	3) & Ready for use in online editors, such as Overleaf (see \autoref{subsec:overleaf}) \\
+	4) & List of Algorithms using the \verb+algorithm2e+\index{Packages!algorithm2e@\verb+algorithm2e+} package and KOMA script \\
+	5) & List of Codes using the \verb+listings+\index{Packages!listings@\verb+listings+} package and KOMA script \\
+	6) & List of Symbols (Latin, Greek, etc.) using the \verb+nomencl+\index{Packages!nomencl@\verb+nomencl+} package \\
+	7) & List of Abbreviations using the \verb+acro+\index{Packages!acro@\verb+acro+} package \\
+	8) & List of References using the \verb+biblatex+\index{Packages!biblatex@\verb+biblatex+} package and \verb+biber+\index{Scripts!biber@\verb+biber+} \\
+	10) & Index with the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package \\
+	11) & ToDos and missing figures using the \verb+todonotes+\index{Packages!todonotes@\verb+todonotes+} package \\
+	12) & Extra features, such as PDF/A compatibility or automatic indenting of \TeX\ code \\
+	13) & various templates for typical elements of a thesis (figure, table, \dots) \\
+	\bottomrule
+\end{tabular}
+\end{table}
+\newlength{\mycolumnwidth}
+\setlength{\mycolumnwidth}{0.7\textwidth}
+\begin{longtable}{p{0.25\textwidth}p{\mycolumnwidth}}
+\caption{File structure of template. Folder names are printed bold}\label{tab:template_structure}\\
+\toprule
+File name\\
+(without extension) & Description\\
+\midrule
+\endfirsthead
+%
+\multicolumn{2}{c}%
+        { \itshape \tablename~\thetable\ (continued).} \\
+        \midrule
+File name\\
+(without extension) & Description\\
+\midrule
+\endhead
+%
+\endfoot
+%
+\bottomrule
+\endlastfoot
+%
+\path{main}\index{Files!main.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Must be compiled
+		\item Can be chosen as master document
+	\end{myList} \end{minipage} \\
+\multicolumn{2}{l}{\textbf{00\_Arara\_and\_Latexindent}} \\
+\path{localSettings} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item local settings for automatic indenting 
+		\item More information in \autoref{subsec:automatic_indenting_latexindent} and \autoref{ch:automatic_indenting_arara} 
+	\end{myList} \end{minipage} \\
+\multicolumn{2}{l}{\textbf{01\_Document\_administration}} \\
+\path{a_Packages}\index{Files!a\_Packages.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item All loaded packages
+		\item Sorted based on application
+		\item All packages are stated in \autoref{tab:package_list}
+	\end{myList} \end{minipage} \\
+\path{b_Commands}\index{Files!b\_Commands.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Commands regarding format and look of the document
+	\end{myList} \end{minipage} \\
+\path{c_Meta}\index{Files!c\_Meta.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Meta information regarding author, title, keywords, etc.
+		\item Boolean variable to select whether it is a dissertation or a bachelor/master thesis
+		\item Contains a boolean variable to select whether it is a master or a bachelor thesis
+	\end{myList} \end{minipage} \\
+\path{d_NomenclatureCommands}\index{Files!d\_NomenclatureCommands.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Structure of the List of Symbols
+	    \item Optional argument defines the class of a symbol (Latin, Greek, \dots)
+	    \item \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} is used for the generation of the List of Symbols. A short instruction how to run \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} correctly in Texmaker is given in \autoref{subsec:biblatexmakeindex}.
+	\end{myList} \end{minipage} \\
+\path{e_AbbreviationDefinitions}\index{Files!e\_AbbreviationDefinitions.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Definitions of abbreviations in the text
+		\item Abbreviations can be subdivided into classes
+		\item More information can be found in the \verb+acro+ documentation
+	\end{myList} \end{minipage} \\ 
+\path{f_CodeLanguageSpecifications}\index{Files!f\_CodeLanguageSpecifications.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Definition of keyword set and comment commands for a certain programming language
+		\item To apprehend the code with your thesis, either copy the code to an \verb+lstlistings+ environment (see examples in \autoref{ch:code_examples}) or  directly include your files
+	\end{myList} \end{minipage} \\
+\multicolumn{2}{l}{\textbf{02\_Prematter}} \\
+\path{a_Cover}\index{Files!a\_Cover.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Cover page. Depending on the values of \verb+isDiss+ set in \path{c_Meta.tex}, the correct cover is printed. The covers for both thesis and dissertation are shown in \autoref{fig:covers}.
+	\end{myList} \end{minipage} \\
+\path{b_Dedication}\index{Files!b\_Dedication.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Dedication for thesis dissertation
+		\item Only included if \verb+isDiss+ is true  
+	\end{myList} \end{minipage} \\
+\path{b_Task}\index{Files!b\_Task.pdf} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Scan of the task description
+		\item Only included if \verb+isDiss+ is false
+	\end{myList} \end{minipage} \\
+\path{c_Declaration}\index{Files!c\_Declaration.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Declaration that thesis was written honestly
+	\end{myList} \end{minipage} \\
+\path{d_Acknowledgements}\index{Files!d\_Acknowledgements.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Thanks to important people
+	\end{myList} \end{minipage} \\
+\path{e_Abstract}\index{Files!e\_Abstract.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Summary in German and English
+	\end{myList} \end{minipage} \\
+\path{f_Publications}\index{Files!f\_Publications.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Publications in preparation of the dissertation
+		\item Only included if \verb+isDiss+ is true
+	\end{myList} \end{minipage} \\   
+\path{g_Nomenclature}\index{Files!g\_Nomenclature.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Definitions of symbols
+	\end{myList} \end{minipage} \\
+\path{h_Abbreviations.tex}\index{Files!h\_Abbreviations.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Inclusion of abbreviations
+	\end{myList} \end{minipage} \\
+\multicolumn{2}{l}{\textbf{03\_Content}} \\
+\path{0_Text}\index{Files!0\_Text.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Loads all chapters
+	\end{myList} \end{minipage} \\
+\path{X_iii} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Single chapter
+	\end{myList} \end{minipage} \\   
+\multicolumn{2}{l}{\textbf{04\_Appendix}} \\
+\path{0_Appendix}\index{Files!0\_Appendix.tex} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Loads all appendix chapters
+	\end{myList} \end{minipage} \\  
+\path{X_Appendix} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Xth appendix
+	\end{myList} \end{minipage} \\ 
+\multicolumn{2}{l}{\textbf{05\_Literature\_and\_Index}} \\
+\path{Bibliography} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Literature database
+	\end{myList} \end{minipage} \\ 
+\path{myindexstyle} &
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Style for the Index (see \autoref{subsec:index})
+	\end{myList} \end{minipage} \\ 
+\end{longtable}
+
 \begin{figure}[tbh]
 	\centering
 	\begin{subfigure}[t]{0.48\textwidth}
@@ -186,87 +276,6 @@ The following files are located in this folder:
 	\end{subfigure}
 	\caption{Covers of this template}\label{fig:covers}
 \end{figure}
-\subsection{02\_Prematter}
-The following files are located in this folder:
-\begin{enumerate}
-	\item \path{a_Cover.tex}\index{Files!a\_Cover.tex}
-	      \begin{itemize}
-		      \item creates the cover page. Depending on the values of \verb+isDiss+ set in \path{c_Meta.tex}, the correct cover is printed. The covers for both thesis and dissertation are shown in \autoref{fig:covers}.
-	      \end{itemize}
-	\item \path{b_Dedication.tex}\index{Files!b\_Dedication.tex}
-	      \begin{itemize}
-		      \item dedicate your dissertation to someone
-		      \item only included if \verb+isDiss+ is true
-	      \end{itemize}
-	\item \path{b_Task.pdf}\index{Files!b\_Task.pdf}  
-	      \begin{itemize}
-		      \item contains a scan of the task for the thesis
-		      \item only included if \verb+isDiss+ is false
-	      \end{itemize}	  
-	\item \path{c_Declaration.tex}\index{Files!c\_Declaration.tex}
-	      \begin{itemize}
-		      \item declaration that the thesis was written honestly
-	      \end{itemize}
-	\item \path{d_Acknowledgements.tex}\index{Files!d\_Acknowledgements.tex}
-	      \begin{itemize}
-		      \item thank important people
-	      \end{itemize}
-	\item \path{e_Abstract.tex}\index{Files!e\_Abstract.tex}
-	      \begin{itemize}
-		      \item summarize your thesis in German and English
-	      \end{itemize}
-	\item \path{f_Publications.tex}\index{Files!f\_Publications.tex}
-	      \begin{itemize}
-		      \item states all publications that were written in preparation of the dissertation
-		      \item only included if \verb+isDiss+ is true
-	      \end{itemize}	      
-	\item \path{g_Nomenclature.tex}\index{Files!g\_Nomenclature.tex}
-	      \begin{itemize}
-		      \item presents all symbols and explains them
-		      \item examples are provided
-	      \end{itemize}
-	\item \path{h_Abbreviations.tex}\index{Files!h\_Abbreviations.tex}
-	      \begin{itemize}
-		      \item prints the defined abbreviations and explains them
-	      \end{itemize}
-\end{enumerate}
-\subsection{03\_Content}
-The following files are located in this folder:
-\begin{enumerate}
-	\item \path{0_Text.tex}\index{Files!0\_Text.tex}
-	      \begin{itemize}
-		      \item loads all chapters
-	      \end{itemize}
-	\item \path{X_iii.tex}
-	      \begin{itemize}
-		      \item contains the single chapters
-		      \item can be split further if deemed necessary
-	      \end{itemize}
-\end{enumerate}
-\subsection{04\_Appendix}
-The following files are located in this folder:
-\begin{enumerate}
-	\item \path{0_Appendix.tex}\index{Files!0\_Appendix.tex}
-	      \begin{itemize}
-		      \item loads all appendix chapters
-	      \end{itemize}
-	\item \path{X_Appendix.tex}
-	      \begin{itemize}
-		      \item contains the Xth appendix
-	      \end{itemize}
-\end{enumerate}
-\subsection{05\_Literature\_and\_Index}\label{subsec:literature}
-The following files are located in this folder:
-\begin{enumerate}
-	\item \path{Bibliography.bib}
-	      \begin{itemize}
-		      \item contains the literature
-	      \end{itemize}
-	\item \path{myindexstyle.ist}
-	      \begin{itemize}
-		      \item contains the style for the Index (see \autoref{subsec:index})
-	      \end{itemize}
-\end{enumerate}
 \subsection{Figures}
 This folder is added to the \path{graphicspath} in the \path{b_Commands.tex} file and contains all figures in this template. Being added to the \path{graphicspath} means that you may include figures without having to specify a path. However, it might become a little confusing if all your figures are placed within one folder. Luckily, several different folders can be added to the \path{graphicspath}.
 %------------------------------
@@ -328,7 +337,7 @@ Dissertations are stored as PDF/A at the university library. To ensure compatibi
 This template is compatible with Overleaf\footnote{\url{https://de.overleaf.com/}, January 2019}, an online editor for \LaTeX\ documents. If you would like to write in such an online environment, upload the content of the subfolder \verb+LaTeX_template_thesis+ to an empty project and compile it online. This way, you do not have to install any \LaTeX\ distribution locally. \textbf{Note that this is not advised if you have sensitive data, for example from a company. In this case, your data should remain on your or your company's computer!}
 
 \subsection{Automatic Indenting of .tex Files}\label{subsec:automatic_indenting_latexindent}
-Indenting \emph{can} be used for structuring one's document, e.g.~by indenting everything within an \verb+equation+ environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
+Indenting \emph{can} be used for structuring one's document, e.g., by indenting everything within an \verb+equation+ environment, but is certainly \emph{not} a must-have for a thesis. If you do not need automatic indenting, you can skip this section.\\
 Unfortunately, \LaTeX\ does not offer automatic indenting as do, for example, Matlab or Python. However, the perl script-based \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}\footnote{\url{https://github.com/cmhughes/latexindent.pl}, February 2019} can be used for automatic indenting of the source code. This executable is part of every \LaTeX\ distribution. There are two ways of using \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}: directly running \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+} or calling it via \verb+arara+\index{Scripts!arara@\verb+arara+}\footnote{\url{https://tex.stackexchange.com/questions/126241/autoindent-in-texmaker}, January 2019}. The arara\index{Scripts!arara@\verb+arara+} software is also part of every \LaTeX\ distribution and can be used for \TeX\ automation.\footnote{\url{https://github.com/cereda/arara}, February 2019} The first option is described here for a Windows operating system (the instructions for Linux and Mac should be similar; only the file extension .exe is propably different). With this option, it is only possible to indent one file at a time (the file that is currently open in Texmaker). The second option can automatically indent all files in the document and is described in \autoref{ch:automatic_indenting_arara}.\\
 To get automatic indenting, add a user command in Texmaker (User $\rightarrow$ User Commands $\rightarrow$ Edit User Commands). You might call one menu item \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}. The command is shown in \autoref{code:latexindent}. This means that \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+} is executed with writing rights (\verb+-w+) on the current \path{.tex} file with local settings (\verb+-l+) in the given path. These local settings are the only issue, because the absolute path can of course change if you move your folder. However, the relative path would always change depending on which file you actually want to indent.\\
 The local settings are important as they specify that only one backup is created. For more information, please refer to the documentation of \verb+latexindent+\index{Scripts!latexindent@\verb+latexindent+}. You can then execute your new user command in Texmaker with the opened file in question. Afterwards, update your file by clicking on File $\rightarrow$ Reload document from file. The result is shown in \autoref{fig:automatic_indenting_latexindent}. \textbf{Note that automatic indenting might not be available for online editors.}
@@ -351,7 +360,7 @@ The local settings are important as they specify that only one backup is created
 \subsection{Index}\label{subsec:index}
 If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package is used. This automatically executes \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex@\verb+makeindex+} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.
 
-The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g.~Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
+The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g., Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Software for Vector Graphics}
 \begin{wrapfigure}{r}{0.45\textwidth}
 \centering
@@ -363,7 +372,7 @@ Figures are an important part of every thesis. Normally, these figures are gener
 	\item[Asymptote] is a powerful vector graphics program\footnote{\url{http://asymptote.sourceforge.net/}, March 2019}. It can be made visible to all \LaTeX\ distributions with a package\footnote{\url{https://ctan.org/pkg/asymptote}, March 2019}. Asymptote can directly generate a PDF output. An example of an image generated with Asymptote is shown in \autoref{fig:Example_asymptote_figure}. In this case, the image was generated externally and is now included as a PDF. The code of this image is located in the \path{Examples} folder of this template.
 	\item[TikZ] is another vector graphics tool\footnote{\url{https://sourceforge.net/projects/pgf/}, March 2019}. It is also available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pgf}, March 2019} Asymptote and TikZ are similar as all images are produced based on commands (similar to \LaTeX\ code). Choose between these two programs based on your own preferences.
 	
-In TikZ, it is recommended to externalize your figure, i.e.~they are only redrawn if something was changed. In this case, add the lines in \autoref{code:tikz_externalize} \emph{below} the section on makeindex in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file to make sure everything works smoothly. First of all, the external library is loaded, secondly, externalization is started. Importantly, shell escape must be enabled here. In addition, the \verb+\includepdf+\index{Commands!includepdf@\verb+\includepdf{}+} command is excluded from externalization. Finally, the \verb+\todo+\index{Commands!todo@\verb+\todo{}+} command is redefined so it also disables externalization locally. More on these issues can be found here\footnote{\url{https://tex.stackexchange.com/questions/135504/includepdf-causes-an-error-message-from-pgfplots-externalization}, August 2019}\textsuperscript{,}\footnote{\url{https://tex.stackexchange.com/questions/42486/todonotes-and-tikzexternalize}, August 2019}. \textbf{You need to create the folder \path{TikZ} if you use this prefix}.
+In TikZ, it is recommended to externalize your figure, i.e., they are only redrawn if something was changed. In this case, add the lines in \autoref{code:tikz_externalize} \emph{below} the section on makeindex in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file to make sure everything works smoothly. First of all, the external library is loaded, secondly, externalization is started. Importantly, shell escape must be enabled here. In addition, the \verb+\includepdf+\index{Commands!includepdf@\verb+\includepdf{}+} command is excluded from externalization. Finally, the \verb+\todo+\index{Commands!todo@\verb+\todo{}+} command is redefined so it also disables externalization locally. More on these issues can be found here\footnote{\url{https://tex.stackexchange.com/questions/135504/includepdf-causes-an-error-message-from-pgfplots-externalization}, August 2019}\textsuperscript{,}\footnote{\url{https://tex.stackexchange.com/questions/42486/todonotes-and-tikzexternalize}, August 2019}. \textbf{You need to create the folder \path{TikZ} if you use this prefix}.
 	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, March 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, March 2019} Due to its PostScript origin, it cannot directly be used with PDF\LaTeX. If you want to compile with PDF\LaTeX, the best solution is using the package \verb+auto-pst-pdf+\footnote{\url{https://ctan.org/pkg/auto-pst-pdf?lang=de}, March 2018}.
 	\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use.\footnote{\url{https://inkscape.org/de/}, March 2019} However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
 	\item[Draw.io] is an open source program for drawing flowcharts or pipe \& instrumentation diagrams.\footnote{\url{www.draw.io}, June 2020} It contains many more shapes for process engineering than a standard version of Microsoft Visio. Figures can be exported as PDF and further, for example, further processed in Inkscape. Draw.io is available as browser application or can be installed on a computer.
@@ -478,7 +487,7 @@ For important equations, you might want to use a box:
 	\boxed{E = mc^2} \label{eqn:Gleichung}
 \end{equation}
 \subsection{Acronyms and Abbreviations}
-Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro@\verb+acro+} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro@\verb+acro+} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g.~or i.e., \emph{should not} be added to the List of Abbreviations.\\
+Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro@\verb+acro+} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro@\verb+acro+} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g., or i.e., \emph{should not} be added to the List of Abbreviations.\\
 You can define several tags with the \verb+acro+\index{Packages!acro@\verb+acro+} package as has here been done for \ac{dae} or \ac{ab}.
 \subsection{References}\label{subsec:references}
 \LaTeX\ -- or more precisely \verb+biber+\index{Scripts!biber@\verb+biber+} -- includes literature if it is stored as \path{.bib} file. It is however not recommended to manually write in \path{.bib} files, but one should use a program for administrating literature. Examples of such programs are Mendeley or Jabref (\autoref{fig:jabref}). In Jabref, one can add literature via the DOI or the ISBN. Furhermore, it offers templates for all standard document classes, such as articles, books, online references, and more.\\
@@ -517,7 +526,7 @@ These commands are used as
 	\caption[Hydroformylation reaction scheme]{Hydroformylation reaction scheme to demonstrate the two chemistry packages}\label{fig:template_chemical_reaction}
 \end{figure}
 \subsection{Chemistry and Chemical Reactions}
-Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} and the \verb+chemformula+\index{Packages!chemformula@\verb+chemformula+} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros@\verb+chemmacros+} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g.~\ch{H2O}. Note that chemical formulae, e.g.~\ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g.~\ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek@\verb+upgreek+} package is loaded to typeset \iupac{\chemgamma-Aluminium} instead of $\gamma$-Aluminium.
+Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} and the \verb+chemformula+\index{Packages!chemformula@\verb+chemformula+} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros@\verb+chemmacros+} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g., \ch{H2O}. Note that chemical formulae, e.g., \ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g., \ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek@\verb+upgreek+} package is loaded to typeset \iupac{\chemgamma-Aluminium} instead of $\gamma$-Aluminium.
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
 All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
 
