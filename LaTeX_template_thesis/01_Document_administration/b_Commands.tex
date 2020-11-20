@@ -385,6 +385,102 @@ urlseen = {last access},
   \printfield{eid}
 }
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space} % use colon after year in list of references
+
+\renewbibmacro*{begentry}{%
+	\iffieldundef{shorthand}{}{%
+		\printfield{shorthand}\addspace ---\addspace
+	}
+}
+\DeclareSortingTemplate{nyt}{%		sorting template for shorthand
+	\sort{%
+		\field{presort}%
+	}%
+	\sort[final]{%
+		\field{sortkey}%
+	}%
+	\sort{%
+		\field{shorthand}%
+		\field{author}%
+		\field{editor}%
+		\field{title}%
+	}%
+	\sort{%
+		\field{year}
+	}%
+	\sort{%
+		\field{title}%
+	}%
+}
+
+\renewbibmacro*{textcite}{%			redefines textcite so that shorthands also work with it
+    \ifnameundef{labelname}{%
+    	\iffieldundef{shorthand}{%
+    		\usebibmacro{cite:label}%
+            \setunit{%
+                \global\booltrue{cbx:parens}%
+                \printdelim{nonameyeardelim}\bibopenparen%
+            }%
+            \ifnumequal{%
+            	\value{citecount}%
+            }{1}{%
+            	\usebibmacro{prenote}%
+            }{}%
+            \usebibmacro{cite:labeldate+extradate}%
+        }{%
+        	\usebibmacro{cite:shorthand}%
+        }}{%
+        \iffieldundef{shorthand}{%
+        	\printnames{labelname}%
+            \setunit{%
+                \global\booltrue{cbx:parens}%
+                \printdelim{nameyeardelim}\bibopenparen%
+            }%
+           	\ifnumequal{%
+           		\value{citecount}%
+           	}{1}{%
+           		\usebibmacro{prenote}%
+           	}{}%
+            \usebibmacro{citeyear}%
+        }{%
+        	\ifciteseen{%
+        		\usebibmacro{cite:shorthand}%
+        	}{%
+        		\printnames{labelname}%
+                \setunit{%
+                    \global\booltrue{cbx:parens}%
+                    \printdelim{nameyeardelim}\bibopenparen%
+                }%
+                \ifnumequal{%
+                	\value{citecount}%
+                }{1}{%
+                	\usebibmacro{prenote}%
+               	}{}%
+                \iffieldundef{labelyear}{%
+                	\usebibmacro{cite:label}%
+                    \setunit{%
+                    	\addcomma%
+                    	\addspace%
+                    }%
+                    \iffieldundef{shorthandintro}{%
+	                	\printtext{\bibstring{citedas}}%
+	                }{%
+	                	\printtext{\printfield{shorthandintro}}%
+	                }%
+	                \addspace%
+                    \usebibmacro{cite:shorthand}%
+                }{%
+                	\usebibmacro{cite:labeldate+extradate}%
+                    \setunit{%
+                    	\addcomma%
+                    	\addspace%
+                    }%
+                    \iffieldundef{shorthandintro}{%
+	                    \printtext{\bibstring{citedas}}%
+	                }{%
+	                	\printtext{\printfield{shorthandintro}}%
+	                }%
+	                \addspace%
+                    \usebibmacro{cite:shorthand}}}}}}%
 %------------------------------
 % ONLY FOR DISSERTATIONS
 %------------------------------
