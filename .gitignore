@@ -4,6 +4,7 @@
 *.bbl
 *.bcf
 *.blg
+*.brf
 *.fls
 *.gz
 *.idx
