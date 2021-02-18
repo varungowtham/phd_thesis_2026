@@ -1,6 +1,7 @@
-## The ReadMe is included as a chapter in the "dbta_Styleguide".
+## Template instructions
 
-Please read it carefully!
+- The ReadMe is included as a chapter in the "dbta_Styleguide"
+- Please read it carefully!
 
 ## How to clone
 
