@@ -44,9 +44,10 @@
 %------------------------------
 \usepackage{array}			% allows to set styles for specific columns
 \usepackage{booktabs}		% special table properties (\toprule, \midrule, \bottomrule)
+\usepackage{collcell}       % collected contents of a tabular cell
 \usepackage{longtable} 		% tables over several pages
 \usepackage{multirow}		% columns in several rows
-\usepackage{tabu}			% supplies an improved X column
+\usepackage{supertabular}	% table type for acro
 \usepackage{tabularx} 		% better tabulars
 \usepackage[
 	flushleft,				% no hanging indentation on notes
@@ -108,7 +109,7 @@
 	range-units=single,		% it is 4 to 10 K and not 4K to 10K
 	retain-explicit-plus,	% \SI{1E+4}{} = 1E+04 in the text
 	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
-	retain-zero-exponent=true,	% no exponent for numbers like 1e0
+	retain-zero-exponent=false,	% no exponent for numbers like 1e0
 	separate-uncertainty=true,	% uncertainties are separated from numbers
 ]{siunitx}					% formating of SI units
 %------------------------------

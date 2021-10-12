@@ -20,6 +20,7 @@
 \newcounter{includepdfpage}		% counter for pdfpages page references
 \newlist{myList}{itemize}{1}
 \setlist[myList]{leftmargin=0.0cm,nosep,label={}}
+\newcolumntype{s}{>{\collectcell\unit}c<{\endcollectcell}}	% column type for SI units
 %------------------------------
 % DEDICATION
 %------------------------------
@@ -54,27 +55,30 @@
 %------------------------------
 % LIST OF ABBREVIATIONS
 %------------------------------
+%------------------------------
+% LIST OF ABBREVIATIONS
+%------------------------------
 \newlength{\myabbrevlength}
 \setlength{\myabbrevlength}{2cm}
+\newlength{\descriptionWidth}
+\setlength{\descriptionWidth}{\linewidth-2\tabcolsep-\myabbrevlength}
 \iflanguage{english}{
 	\newcommand{\abbrevname}{List of Abbreviations}
-	}{\iflanguage{ngerman}{
-		\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
-	}
-\NewAcroTemplate[list]{dbtalongtabu}{
+    }{\iflanguage{ngerman}{
+    	\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
+}
+\NewAcroTemplate[list]{dbtasupertabu}{
 	\AcroNeedPackage{array}%
-	\setlength{\tabulinesep}{0.8\parskip}%
+	\def\arraystretch{1.2}
     \acronymsmapF{%
-	    \AcroAddRow{%
-    		\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline
-    		}
-   	}
-   	{\AcroRerun}%
-   	\acroheading
+		\AcroAddRow{\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline}
+    }
+	{\AcroRerun}%
+	\acroheading
 	\acropreamble
-	\begin{longtabu}{>{\bfseries\sffamily}p{\myabbrevlength}X@{}}
+    \begin{supertabular}{>{\bfseries\sffamily}p{\myabbrevlength}p{\descriptionWidth}@{}}
 		\AcronymTable
-	\end{longtabu}
+	\end{supertabular}
 }
 \acsetup{
 	index/use=true,				% add abbrevs to index
@@ -171,6 +175,7 @@
 \DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
 \DeclareSIUnit\atm{atm}			% defines the unit atm
 \DeclareSIUnit\anno{a}			% defines the unit a for year
+\DeclareSIUnit\bar{bar}			% defines the unit bar
 \DeclareSIUnit\kJmol{\kilo\joule\per\mole} % defines the unit kJ/mol
 \DeclareSIUnit\kJmolK{\kilo\joule\per\mole\per\kelvin} % defines the unit kJ/(molK)
 %------------------------------

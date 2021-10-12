@@ -469,13 +469,13 @@ Units are also very important. However, there are some rules when typesetting un
 \begin{itemize}
 	\item numbers (\verb+\num{number}+): \num{3.14159} (text) and $\num{3.14159}$ (math mode)
 	\item exponentials (\verb+\num{numbere6}+): \num{1.3e6} (text) and $\num{1.3e6}$ (math mode)
-	\item units (\verb+\si{\unit}+): \si{\joule\per\mole\per\kelvin}
-	\item numbers+units (\verb+\SI{number}{\unit}+): \SI{8.314}{\joule\per\mole\per\kelvin}
-	\item ranges (\verb+\SIrange{number1}{number2}{\unit}+): \SIrange{4}{10}{\kelvin}.
+	\item units (\verb+\unit{\unit}+): \unit{\joule\per\mole\per\kelvin}
+	\item numbers+units (\verb+\qty{number}{\unit}+): \qty{8.314}{\joule\per\mole\per\kelvin}
+	\item ranges (\verb+\qtyrange{number1}{number2}{\unit}+): \qtyrange{4}{10}{\kelvin}.
 	\item uncertainty (\verb+\num{number(uncertainty)}+): \num{410.33(55)}
-	\item uncertainty with units (\verb+\SI{number(uncertainty)}{\unit}+):\\
-	      \SI{410.33(55)}{\joule}
-	\item own units can also be defined as has been done for \si{\kJmol} and \si{\kJmolK}
+	\item uncertainty with units (\verb+\unit{number(uncertainty)}{\unit}+):\\
+	      \qty{410.33(55)}{\joule}
+	\item own units can also be defined as has been done for \unit{\kJmol} and \unit{\kJmolK}
 \end{itemize}
 \subsection{Equations}
 An exemplary Equation is given in \autoref{eq:template_equation}. \Autoref{eq:template_equation} should not be abbreviated at the beginning of a sentence. The efficient used commands to generate the partial derivative were made with the \verb+xparse+\index{Packages!xparse@\verb+xparse+} package.
