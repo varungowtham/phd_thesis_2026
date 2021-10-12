@@ -3,6 +3,12 @@
 - All instructions are included in the first chapter of the "dbta_Styleguide"
 - Please read it carefully!
 
+## recommended TeXLive versions
+- earlier than v3.2: TexLive 2020
+- from v3.2: TeXLive 2021
+
+For older versions, use the respective commit.
+
 ## How to clone
 
 - install git on your computer 
