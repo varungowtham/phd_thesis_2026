@@ -1,4 +1,8 @@
 %------------------------------
+% MICROTYPE
+%------------------------------
+\microtypecontext{spacing=nonfrench}
+%------------------------------
 % DIRECTORIES
 %------------------------------
 \setcounter{secnumdepth}{4}
@@ -35,7 +39,7 @@
 \rehead{}						% right-even-head
 \lohead{}						% left-odd-head
 \cohead{}						% center-odd-head
-\rohead{\scshape\rightmark}	% right-odd-head
+\rohead{\scshape\rightmark}		% right-odd-head
 %------------------------------
 % FOOTER
 %------------------------------
@@ -71,7 +75,8 @@
 	\AcroNeedPackage{array}%
 	\def\arraystretch{1.2}
     \acronymsmapF{%
-		\AcroAddRow{\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline}
+		\AcroAddRow{%
+			\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline}
     }
 	{\AcroRerun}%
 	\acroheading
@@ -80,9 +85,10 @@
 		\AcronymTable
 	\end{supertabular}
 }
-\acsetup{
+\acsetup{	
+	format/first-long=\itshape, % first appearence is set in italics
 	index/use=true,				% add abbrevs to index
-	make-links=true,			% make links for abbrevs
+	make-links=true				% make links for abbrevs
 }
 %------------------------------
 % TODOS
@@ -99,7 +105,7 @@
 %------------------------------
 % THEOREM STYLE
 %------------------------------
-\newtheoremstyle{mytheoremstyle}% own theorem style
+\newtheoremstyle{mytheoremstyle}	% own theorem style
 {\topsep}   
 {\topsep}   
 {\itshape}  
@@ -169,8 +175,22 @@
 \DeclareMathOperator{\rot}{rot}	% declares the rot math operator
 \newcommand*\diff{\mathop{}\!\textrm{d}}	% differential d, e.g. in integrals
 %------------------------------
-% NEW UNITS
+% UNITS
 %------------------------------
+%------------------------------
+% UNITS
+%------------------------------
+\newcommand{\SIRangePhrase}{}
+\sisetup{
+	detect-family=true,			% adapt unit typesetting to surrounding font family
+	detect-mode=true,			% adapt output to surrounding text style
+	mode=text,					% text mode 
+	range-units=single,			% it is 4 to 10 K and not 4K to 10K
+	retain-explicit-plus,		% \SI{1E+4}{} = 1E+04 in the text
+	retain-unity-mantissa=false,	% no mantissa for numbers like 1e4
+	retain-zero-exponent=false,	% no exponent for numbers like 1e0
+	separate-uncertainty=true,	% uncertainties are separated from numbers
+}
 \DeclareSIUnit\torr{Torr}		% defines the unit Torr
 \DeclareSIUnit\fahrenheit{\degree F}% defines the unit °F
 \DeclareSIUnit\atm{atm}			% defines the unit atm
@@ -182,9 +202,8 @@
 % CHEMISTRY
 %------------------------------
 \chemsetup{%
-	formula=chemformula,		% use the chemformula package for typesetting formulas
+	formula=chemformula,			% use the chemformula package for typesetting formulas
 	greek=upgreek,				% upright typesetting according to upgreek package
-	modules=all,				% load all modules of the chemmacros package	
 }
 %------------------------------
 % COLORS
@@ -210,7 +229,7 @@
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}	% 1.1)
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}	% 1.1.1)
 \setlist[enumerate,1]{%
-	before*=\onehalfspacing,	% onehalfspacing in environments
+	before*=\onehalfspacing,		% onehalfspacing in environments
 	itemsep=0.15\baselineskip,	% vertical space between items
 	labelindent=\parindent,		% labels are indented by this length
 }%
@@ -219,7 +238,7 @@
 %------------------------------
 \setlist[itemize,1]{%
 	label={--},					% standard label is --
-	before*=\onehalfspacing,	% onehalfspacing in environments
+	before*=\onehalfspacing,		% onehalfspacing in environments
 	itemsep=0.15\baselineskip,	% vertical space between items
 	labelindent=\parindent,		% labels are indented by this length
 }%
@@ -227,8 +246,8 @@
 % GERMAN CAPTION REDEFINITIONS
 %------------------------------
 \addto\captionsngerman{%		
-\renewcommand{\figurename}{Abb.}% changes german figure caption to Abb. chapter.number
-\renewcommand{\tablename}{Tab.} % changes german table caption to Tab. chapter.number
+\renewcommand{\figurename}{Abb.}	% changes german figure caption to Abb. chapter.number
+\renewcommand{\tablename}{Tab.} 	% changes german table caption to Tab. chapter.number
 \SetAlgorithmName{Algorithmus}{Algorithmus}{Algorithmenverzeichnis}	% german name of list of algorithms
 \renewcommand{\nomname}{Symbolverzeichnis}	% german name of list of symbols		
 \renewcommand{\lstlistlistingname}{Codeverzeichnis} % german name of list of codes
@@ -238,7 +257,7 @@
 % ENGLISH CAPTION REDEFINITIONS
 %------------------------------
 \addto\captionsenglish{	
-\renewcommand{\figurename}{Fig.}% changes english figure caption to Fig. chapter.number
+\renewcommand{\figurename}{Fig.}	% changes english figure caption to Fig. chapter.number
 \renewcommand{\tablename}{Tab.}	% changes english table caption to Tab. chapter.number
 \renewcommand{\nomname}{List of Symbols} % english name of list of symbols
 \renewcommand{\lstlistlistingname}{List of Codes} % english name of list of codes
@@ -279,6 +298,11 @@
 	\def\remarkenvautorefnamelong{Bemerkung}%
 	\def\definitionautorefnamelong{Definition}%
 	\def\algorithmautorefnamelong{Algorithmus}%
+	\renewcommand{\SIRangePhrase}{~bis~}%
+	\sisetup{%
+	locale = DE,%
+	range-phrase={\SIRangePhrase},	% for unit range "4 bis 10 K"
+	}%	
 }
 %------------------------------
 % AUTOREF ENGLISH
@@ -308,24 +332,29 @@
 	\def\remarkenvautorefnamelong{Remark}%
 	\def\definitionautorefnamelong{Definition}%
 	\def\algorithmautorefnamelong{Algorithm}%
+	\renewcommand{\SIRangePhrase}{~to~}%
+	\sisetup{%
+	locale = US,%
+	range-phrase={\SIRangePhrase},	% for unit range "4 to 10 K"
+	}%	
 }
 %------------------------------
 % AUTOREF (LONG FORM)
 %------------------------------
 \newcommand{\Autoref}[1]{%
   \begingroup%
-  \def\chapterautorefname~##1\null{\chapterautorefnamelong~##1\null}
-  \def\sectionautorefname~##1\null{\sectionautorefnamelong~##1\null}%
-  \def\subsectionautorefname~##1\null{\subsectionautorefnamelong~##1\null}%
-  \def\subsubsectionautorefname~##1\null{\subsubsectionautorefnamelong~##1\null}%  
-  \def\figureautorefname~##1\null{\figureautorefnamelong~##1\null}%
-  \def\tableautorefname~##1\null{\tableautorefnamelong~##1\null}%
-  \def\equationautorefname~##1\null{\equationautorefnamelong~##1\null}%
-  \def\theoremenvautorefname~##1\null{\theoremenvautorefnamelong~##1\null}%
-  \def\lemmaenvautorefname~##1\null{\lemmaenvautorefnamelong~##1\null}%
-  \def\remarkenvautorefname~##1\null{\remarkenvautorefnamelong~##1\null}%
-  \def\definitionautorefname~##1\null{\definitionautorefnamelong~##1\null}%
-  \def\algorithmautorefname~##1\null{\algorithmautorefnamelong~##1\null}%  
+  \renewcommand{\chapterautorefname}{\chapterautorefnamelong}%
+  \renewcommand{\sectionautorefname}{\subsectionautorefnamelong}%
+  \renewcommand{\subsectionautorefname}{\subsectionautorefnamelong}%
+  \renewcommand{\subsubsectionautorefname}{\subsubsectionautorefnamelong}%
+  \renewcommand{\figureautorefname}{\figureautorefnamelong}%
+  \renewcommand{\tableautorefname}{\tableautorefnamelong}%
+  \renewcommand{\equationautorefname}{\equationautorefnamelong}%
+  \renewcommand{\theoremenvautorefname}{\theoremenvautorefnamelong}%
+  \renewcommand{\lemmaenvautorefname}{\lemmaenvautorefnamelong}%
+  \renewcommand{\remarkenvautorefname}{\remarkenvautorefnamelong}%
+  \renewcommand{\definitionautorefname}{\definitionautorefnamelong}%
+  \renewcommand{\algorithmautorefname}{\algorithmautorefnamelong}%
   \autoref{#1}%
   \endgroup%
 }
@@ -336,7 +365,7 @@
 \renewcaptionname{ngerman}{\bibname}{Literaturverzeichnis}
 \setlength\bibitemsep{0.5\baselineskip}	% distance between two references
 \setlength{\bibhang}{5ex}		% indent below first line of reference
-\DeclareFieldFormat[			% no quotation marks in citetitle
+\DeclareFieldFormat[				% no quotation marks in citetitle
 	article,
 	inbook,
 	incollection,
@@ -345,7 +374,7 @@
 	thesis,
 	unpublished
 ]{citetitle}{#1\midsentence\isdot}						
-\DeclareFieldFormat[			% no quotation marks in title
+\DeclareFieldFormat[				% no quotation marks in title
 	article,
 	inbook,
 	incollection,
@@ -354,6 +383,9 @@
 	thesis,
 	unpublished
 ]{title}{#1\midsentence\isdot} 	
+\DeclareFieldFormat[			% remove capitalization in title and use grammar of a sentence instead
+article,
+]{titlecase:title}{\MakeSentenceCase*{#1}}
 \DeclareFieldFormat[			% no quotation marks in title
 	inproceedings,
 ]{booktitle}{\itshape #1}
@@ -390,6 +422,11 @@ urlseen = {last access},
   \printfield{eid}
 }
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space} % use colon after year in list of references
+\DeclareDelimFormat{finalnamedelim}{\addcomma\space}	  % delimiter between authors	
+\DeclareDelimFormat[textcite]{finalnamedelim}{			  % delimiter for textcite
+  \addspace\&\space}
+\DeclareDelimFormat[parencite]{finalnamedelim}{			  % delimiter for parencite
+  \addspace\bibstring{and}\space}
 
 \renewbibmacro*{begentry}{%
 	\iffieldundef{shorthand}{}{%
@@ -506,14 +543,14 @@ urlseen = {last access},
 %------------------------------
 \hypersetup{%
    	bookmarksnumbered=true,		% bookmarks are numbered in PDF
-   	bookmarksopen=false,		% bookmarks are closed when PDF is opened
+   	bookmarksopen=false,			% bookmarks are closed when PDF is opened
    	citebordercolor=blue,		% border color for citations
    	colorlinks=false,			% if true: color the font, if false: put boxes around the links
-   	hypertexnames=true, 		% use guessable names for links
+   	hypertexnames=true, 			% use guessable names for links
    	linkbordercolor=red, 		% color for links
    	linktocpage, 				% use page numbers as links in table of contents    
-   	pdfpagelayout=TwoPageRight, % automatically open PDF as double page, odd pages to the right
-   	urlbordercolor=cyan,		% border color for URLs
+   	pdfpagelayout=TwoPageRight, 	% automatically open PDF as double page, odd pages to the right
+   	urlbordercolor=cyan,			% border color for URLs
 }%
 %------------------------------
 % MAKEINDEX

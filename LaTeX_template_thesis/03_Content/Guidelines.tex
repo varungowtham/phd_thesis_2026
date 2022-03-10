@@ -310,7 +310,7 @@ The language of this document is set with the \verb+babel+\index{Packages!babel@
 Note that \verb+path_to+ depends on your system. If the \LaTeX\ distribution is in your system path, simply writing \verb+biber+\index{Scripts!biber@\verb+biber+} or \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} (without extension) instead of the whole path should suffice. If you use another editor than Texmaker,  check your editor's documentation to find out how to run \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} in this software. However, the paths/commands should be similar to those above.
 \begin{figure}[tbh]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Settings_BiblatexMakeindex}
+	\includegraphics[width=\linewidth]{Settings_BiblatexMakeindex}
 	\caption[Setting up \texttt{biber} and \texttt{makeindex} in Texmaker]{Setting up \texttt{biber} and \texttt{makeindex} in Texmaker. Zoom in if you need more details}\label{fig:biblatexmakindex}
 \end{figure}
 \subsection{Compiling the Document}\label{subsec:compiling}
@@ -390,35 +390,7 @@ In TikZ, it is recommended to externalize your figure, i.e., they are only redra
 % SEC: TEMPLATES
 %------------------------------	
 \section{Templates for Typical Elements of a Thesis}\label{sec:templates}
-This section introduces templates for the typical elements of a thesis, such as figures, tables, equations, etc.
-\subsection{Figures}
-A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+\index{Commands!ref@\verb+\ref{}+} command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command. 
-\begin{figure}[tbh]
-\centering
-\includegraphics[width=\linewidth]{Logo_dbta}
-\caption[This is the caption in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}\label{fig:template_figure}
-\end{figure}
-
-Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}.
-
-\begin{wrapfigure}[9]{r}{0.4\textwidth}
-\centering
-\includegraphics[width=0.35\textwidth]{Logo_tub}
-\caption{A wrapped figure}\label{fig:wrapped_figure}
-\end{wrapfigure}
-
-Another possibility is putting descriptive text in an otherwise raw figure. This is illustrated in \autoref{fig:example_raw_figure}. The \verb+overpic+\index{Packages!overpic@\verb+overpic+} package provides the necessary environment of the same title and the \verb+\put+\index{Commands!put@\verb+\put(,){}+} command to add arbitrary text. If the environment is loaded with the additional options \verb+tics=10, grid+, a grid with ten tics is drawn to ease the positioning of the text. Thus, the inserted text automatically uses the same font type as the surrounding text.
-
-\begin{figure}[t]
-\centering
-%\begin{overpic}[width=0.8\linewidth, tics=10, grid]{Example_raw_figure}
-\begin{overpic}[width=0.8\linewidth]{Example_raw_figure}
-\put(14,40){Text}
-\put(75,40){Other text}
-\put(42,12){Third text}
-\end{overpic}
-\caption{Example of overpic environment}\label{fig:example_raw_figure}
-\end{figure}
+This section introduces templates for the typical elements of a thesis, such as tables, figures, equations, etc.
 
 \subsection{Tables}
 \begin{wraptable}{r}{0.4\textwidth}
@@ -463,6 +435,33 @@ A template for a Table is given in \autoref{tab:template_table}. \Autoref{tab:te
 	\end{threeparttable}
 	\label{table2}
 \end{table}
+
+\subsection{Figures}
+A template for a Figure is given in \autoref{fig:template_figure}. \Autoref{fig:template_figure} should not be abbreviated at the beginning of a sentence. Note that the often used \verb+\ref+\index{Commands!ref@\verb+\ref{}+} command is not used here. Instead, \autoref{subsec:autorefs} introduces the \verb+\autoref+\index{Commands!autoref@\verb+\autoref{}+} command. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{Logo_dbta}
+\caption[This is the caption in the List of Figures]{This is the caption of the Figure in the text. Is is placed \emph{below} the Figure. It can be longer here and contain additional information, such as references or keys for the graphs. Note that one-line captions are justified. A full stop is automatically added after the last sign}\label{fig:template_figure}
+\end{figure}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\centering
+\includegraphics[width=0.35\textwidth]{Logo_tub}
+\caption{A wrapped figure}\label{fig:wrapped_figure}
+\end{wrapfigure}
+Although it is not seen on a regular basis in theses or dissertations, a Figure may also be surrounded by text. The \verb+wrapfig+\index{Packages!wrapfig@\verb+wrapfig+} package is used for this purpose. It depends on the Figure's size if this is a good or a bad idea. Make sure that readability of the Figure is still given. An example is given in \autoref{fig:wrapped_figure}. Another possibility is putting descriptive text in an otherwise raw figure. This is illustrated in \autoref{fig:example_raw_figure}. The \verb+overpic+\index{Packages!overpic@\verb+overpic+} package provides the necessary environment of the same title and the \verb+\put+\index{Commands!put@\verb+\put(,){}+} command to add arbitrary text. If the environment is loaded with the additional options \verb+tics=10, grid+, a grid with ten tics is drawn to ease the positioning of the text. Thus, the inserted text automatically uses the same font type as the surrounding text.
+
+\begin{figure}[t]
+\centering
+%\begin{overpic}[width=0.8\linewidth, tics=10, grid]{Example_raw_figure}
+\begin{overpic}[width=0.8\linewidth]{Example_raw_figure}
+\put(14,40){Text}
+\put(75,40){Other text}
+\put(42,12){Third text}
+\end{overpic}
+\caption{Example of overpic environment}\label{fig:example_raw_figure}
+\end{figure}
+
 \subsection{Numbers and Units}
 Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo@\verb+mathpazo+} package.\\
 Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx@\verb+siunitx+} package is suggested.
@@ -486,6 +485,17 @@ For important equations, you might want to use a box:
 \begin{equation}
 	\boxed{E = mc^2} \label{eqn:Gleichung}
 \end{equation}
+
+\subsection{Optimization problems}
+In many applications, optimization problems must be stated in theses and dissertations. This can be realized with the \verb+optidef+\index{Packages!optidef@\verb+optidef+} package:
+\begin{mini}[2]
+{\omega}
+{f\left(\omega\right)}
+{\label{prob:nlp}}{}
+\addConstraint{0}{\geq g\left(\omega\right)}{\quad\text{(Constraints)}}
+\addConstraint{\omega \in \Omega\,.}
+\end{mini}
+
 \subsection{Acronyms and Abbreviations}
 Abbreviations are defined in \path{e_AbbreviationDefinitions.tex}\index{Files!e\_AbbreviationDefinitions.tex} using the \verb+acro+\index{Packages!acro@\verb+acro+} package. New abbreviations must typically be explained at their first appearance in the text. The \verb+\ac+\index{Commands!ac@\verb+\ac{}+} command uses the defined acronyms (see List of Abbreviations) for doing that. For example, the \ac{sundials} is explained here, but not afterwards because \ac{sundials} was already defined. It seems to be more to write, but thus you make sure that an abbreviations is explained only at its first appearance \dots\ even if you change your text completely. In addition, you link your abbreviations to the List of Abbreviations. The \verb+acro+\index{Packages!acro@\verb+acro+} package also contains specific commands for the plural of the long and the short form of the abbreviations; check the documentation for more information. Moreover, the abbreviations are automatically added to the Index. Note that expressions, such as e.g., or i.e., \emph{should not} be added to the List of Abbreviations.\\
 You can define several tags with the \verb+acro+\index{Packages!acro@\verb+acro+} package as has here been done for \ac{dae} or \ac{ab}.

@@ -1,3 +1,9 @@
+v3.3   10th March 2022
+		- modifications to account for changes in the chemmacros package
+		- versions of used packages defined in the appendix to simplify the search for errors when the template does not compile successfully
+		- minor changes in the citation style
+		- addition of the optidef package for the formulation of optimization problems
+		- modifications of the siunitx options regarding the language specifications
 v3.2   12th October 2021
         - switched from tabu to supertabular for list of abbreviations
         - changed SI commands to account for changes in siunitx v3.X
