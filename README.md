@@ -4,10 +4,9 @@
 - Please read it carefully!
 
 ## Recommended TeXLive versions
-- earlier than v3.2: TexLive 2020
+- earlier than v2.3.4: please consult the change log for the appropriate TeXLive version
+- from v2.3.4: TexLive 2020
 - from v3.2: TeXLive 2021
-
-For older versions, use the respective commit.
 
 ## How to clone
 
