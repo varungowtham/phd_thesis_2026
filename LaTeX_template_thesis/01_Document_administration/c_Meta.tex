@@ -21,10 +21,11 @@
 % TITLE AND AUTHOR
 %-----------------------------
 \newcommand{\mytitle}{This Is a Very Good Title That Illustrates What This Great Piece of Work Is All About and That Gives an Impression of What a Long Title Looks Like}
-\newcommand{\autor}{First name second name}
+\newcommand{\autor}{First name middle name last name}
 %-----------------------------
 % FOR BACHELOR/MASTER THESIS
 %-----------------------------
+\newcommand{\courseofstudy}{Mein Studiengang}
 \newcommand{\mymatriculationnumber}{XXXXXX}
 \newcommand{\myadvisor}{My advisor, M.Sc.}
 %-----------------------------
@@ -61,7 +62,7 @@
 % true: document in styleguide mode
 % false: dissertation or thesis mode
 \setboolean{isSG}{false}
-\newcommand{\version}{3.3}
+\newcommand{\version}{3.3.1}
 \ifthenelse{\boolean{isSG}}{\setboolean{isDiss}{true}}{}
 % Subtitle English
 \newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}

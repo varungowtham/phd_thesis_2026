@@ -54,7 +54,7 @@
 	%------------------------------
 	% DEDICATION (dissertation) OR THESIS TASK (thesis)
 	%------------------------------	
-	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/b_Dedication}\cleardoublepage}{\includepdf{02_Prematter/b_Task}}
+	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/b_Dedication}\cleardoublepage}{\includepdf[pages={1-}]{02_Prematter/b_Task}}
 	\input{02_Prematter/c_Declaration}
 	\cleardoublepage
 \end{spacing}
