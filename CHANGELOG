@@ -1,3 +1,7 @@
+v3.3.1 25th May 2022
+        - TeXLive 2022 support
+        - extended affidavit
+        - updated list of package versions
 v3.3   10th March 2022
 	- modifications to account for changes in the chemmacros package
 	- versions of used packages defined in the appendix to simplify the search for errors when the template does not compile successfully
