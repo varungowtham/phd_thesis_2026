@@ -59,13 +59,10 @@
 %------------------------------
 % LIST OF ABBREVIATIONS
 %------------------------------
-%------------------------------
-% LIST OF ABBREVIATIONS
-%------------------------------
 \newlength{\myabbrevlength}
 \setlength{\myabbrevlength}{2cm}
-\newlength{\descriptionWidth}
-\setlength{\descriptionWidth}{\linewidth-2\tabcolsep-\myabbrevlength}
+\newlength{\mydescriptionwidth}
+\setlength{\mydescriptionwidth}{\linewidth-2\tabcolsep-\myabbrevlength}
 \iflanguage{english}{
 	\newcommand{\abbrevname}{List of Abbreviations}
     }{\iflanguage{ngerman}{
@@ -76,12 +73,12 @@
 	\def\arraystretch{1.2}
     \acronymsmapF{%
 		\AcroAddRow{%
-			\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline}
+			\leavevmode\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline}
     }
 	{\AcroRerun}%
 	\acroheading
 	\acropreamble
-    \begin{supertabular}{>{\bfseries\sffamily}p{\myabbrevlength}p{\descriptionWidth}@{}}
+    \begin{supertabular}{>{\bfseries\sffamily}p{\myabbrevlength}p{\mydescriptionwidth}@{}}
 		\AcronymTable
 	\end{supertabular}
 }
