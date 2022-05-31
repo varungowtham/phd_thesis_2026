@@ -1,3 +1,6 @@
+v3.3.1b 1st June 2022
+        - problem with acro package and hyperref resolved
+        - cover for dissertations slightly changed
 v3.3.1 25th May 2022
         - TeXLive 2022 support
         - extended affidavit
