@@ -1,3 +1,5 @@
+v3.3.2 19th December 2022
+        - date on cove of dissertation always in German date format for regulatory reasons
 v3.3.1b 1st June 2022
         - problem with acro package and hyperref resolved
         - cover for dissertations slightly changed
