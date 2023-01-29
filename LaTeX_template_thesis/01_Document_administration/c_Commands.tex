@@ -25,6 +25,8 @@
 \newlist{myList}{itemize}{1}
 \setlist[myList]{leftmargin=0.0cm,nosep,label={}}
 \newcolumntype{s}{>{\collectcell\unit}c<{\endcollectcell}}	% column type for SI units
+\renewcommand{\topfraction}{0.98} 
+\renewcommand{\bottomfraction}{0.98} 
 %------------------------------
 % DEDICATION
 %------------------------------
@@ -349,6 +351,7 @@
   \renewcommand{\remarkenvautorefname}{\remarkenvautorefnamelong}%
   \renewcommand{\definitionautorefname}{\definitionautorefnamelong}%
   \renewcommand{\algorithmautorefname}{\algorithmautorefnamelong}%
+  \renewcommand{\assumptionautorefname}{\assumptionautorefnamelong}%
   \autoref{#1}%
   \endgroup%
 }
