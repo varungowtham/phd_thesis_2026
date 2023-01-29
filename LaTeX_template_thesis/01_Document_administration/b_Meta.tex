@@ -18,10 +18,15 @@
 % false: Bachelor thesis
 \setboolean{isMT}{true}
 %-----------------------------
-% TITLE AND AUTHOR
+% TITLE, AUTHOR, AND DOCUMENT TYPE
 %-----------------------------
 \newcommand{\mytitle}{This Is a Very Good Title That Illustrates What This Great Piece of Work Is All About and That Gives an Impression of What a Long Title Looks Like}
 \newcommand{\autor}{First name middle name last name}
+\newcommand{\mydocumenttype}{Dissertation}
+\ifthenelse{\boolean{isDiss}}{%
+    }{\ifthenelse{\boolean{isMT}}{\renewcommand{\mydocumenttype}{Master's Thesis}%
+    }{\renewcommand{\mydocumenttype}{Bachelor's Thesis}}%
+    }%
 %-----------------------------
 % FOR BACHELOR/MASTER THESIS
 %-----------------------------
@@ -50,6 +55,10 @@
 %-----------------------------
 % NOT TO BE CHANGED BY THE USER
 %-----------------------------
+\usepackage[
+    a-2b,                   % PDF/A-2b conformity
+    mathxmp,                % for writing metadata from xmpdata file
+]{pdfx}                     % package for PDF/A standard
 \newcommand{\myuniversity}{Technische Universität Berlin}
 \newcommand{\myfaculty}{Fakultät III -- Prozesswissenschaften}
 \newcommand{\myinstitute}{Institut für Prozess- und Verfahrenstechnik}
@@ -60,8 +69,8 @@
 % Options:
 % true: document in styleguide mode
 % false: dissertation or thesis mode
-\setboolean{isSG}{false}
-\newcommand{\version}{3.3.2}
+\setboolean{isSG}{true}
+\newcommand{\version}{3.4.0}
 \ifthenelse{\boolean{isSG}}{\setboolean{isDiss}{true}}{}
 % Subtitle English
 \newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}

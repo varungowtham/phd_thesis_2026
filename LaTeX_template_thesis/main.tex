@@ -9,6 +9,16 @@
 %------------------------------
 \PassOptionsToPackage{hyphens}{url}
 %------------------------------
+% SPECIFY METADATA FOR PDF
+%------------------------------
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+ \Title{\mytitle}
+ \Author{\autor}
+ \Keywords{\englishkeywords; \germankeywords}
+ \Subject{\mydocumenttype}
+ \pdfxEnableCommands{\def\utext#1{#1,}}
+\end{filecontents*}
+%------------------------------
 % LOAD DOCUMENTCLASS
 %------------------------------
 \documentclass[
@@ -32,8 +42,8 @@
 % PREAMBLE
 %------------------------------
 \input{01_Document_administration/a_Packages} 				% all packages of this template
-\input{01_Document_administration/b_Commands} 				% all additional commands and options
-\input{01_Document_administration/c_Meta}						% meta information of this document, such as title, author, etc.
+\input{01_Document_administration/b_Meta}						% meta information of this document, such as title, author, etc.
+\input{01_Document_administration/c_Commands} 				% all additional commands and options
 \input{01_Document_administration/d_NomenclatureCommands} 	% commands for the list of symbols
 \input{01_Document_administration/e_AbbreviationDefinitions}	% include abbreviations
 \input{01_Document_administration/f_CodeLanguageSpecifications}% commands for code specifications

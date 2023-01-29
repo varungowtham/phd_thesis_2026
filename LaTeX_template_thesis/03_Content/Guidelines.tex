@@ -44,7 +44,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item install a suitable \LaTeX\ editor. We recommend Texmaker\footnote{\url{http://www.xm1math.net/texmaker/}, February 2019}, which is available for all operating systems. An extensive list of editors is available on Wikipedia\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_TeX_editors}, February 2019}.
 	\item install a suitable program for your literature. We recommend Jabref\footnote{\url{http://www.jabref.org/}, February 2019}. It is a Java-based, platform-independent program that generates appropriate \path{.bib} files for \LaTeX. A short introduction to Jabref is given in \autoref{subsec:references}.
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel@\verb+babel+} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel@\verb+babel+} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
-	\item change the necessary entries in \path{c_Meta.tex}\index{Files!c\_Meta.tex} (e.g., your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
+	\item change the necessary entries in \path{b_Meta.tex}\index{Files!b\_Meta.tex} (e.g., your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
 	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2019 and a \TeX Live 2020 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
 	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
@@ -167,15 +167,16 @@ File name\\
 		\item Sorted based on application
 		\item All packages are stated in \autoref{tab:package_list}
 	\end{myList} \end{minipage} \\
-\path{b_Commands}\index{Files!b\_Commands.tex} & 
-	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
-		\item Commands regarding format and look of the document
-	\end{myList} \end{minipage} \\
-\path{c_Meta}\index{Files!c\_Meta.tex} & 
+\path{b_Meta}\index{Files!b\_Meta.tex} & 
 	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
 		\item Meta information regarding author, title, keywords, etc.
 		\item Boolean variable to select whether it is a dissertation or a bachelor/master thesis
 		\item Contains a boolean variable to select whether it is a master or a bachelor thesis
+		\item Loads the \verb+pdfx+\index{Packages!pdfx@\verb+pdfx+} package to ensure PDF/A compatibility and to set the metadata of the PDF
+	\end{myList} \end{minipage} \\
+\path{c_Commands}\index{Files!c\_Commands.tex} & 
+	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
+		\item Commands regarding format and look of the document
 	\end{myList} \end{minipage} \\
 \path{d_NomenclatureCommands}\index{Files!d\_NomenclatureCommands.tex} & 
 	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
@@ -197,7 +198,7 @@ File name\\
 \multicolumn{2}{l}{\textbf{02\_Prematter}} \\
 \path{a_Cover}\index{Files!a\_Cover.tex} & 
 	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
-		\item Cover page. Depending on the values of \verb+isDiss+ set in \path{c_Meta.tex}, the correct cover is printed. The covers for both thesis and dissertation are shown in \autoref{fig:covers}.
+		\item Cover page. Depending on the values of \verb+isDiss+ set in \path{b_Meta.tex}, the correct cover is printed. The covers for both thesis and dissertation are shown in \autoref{fig:covers}.
 	\end{myList} \end{minipage} \\
 \path{b_Dedication}\index{Files!b\_Dedication.tex} &
 	\begin{minipage}[t]{\mycolumnwidth} \begin{myList}
@@ -277,7 +278,7 @@ File name\\
 	\caption{Covers of this template}\label{fig:covers}
 \end{figure}
 \subsection{Figures}
-This folder is added to the \path{graphicspath} in the \path{b_Commands.tex} file and contains all figures in this template. Being added to the \path{graphicspath} means that you may include figures without having to specify a path. However, it might become a little confusing if all your figures are placed within one folder. Luckily, several different folders can be added to the \path{graphicspath}.
+This folder is added to the \path{graphicspath} in the \path{c_Commands.tex} file and contains all figures in this template. Being added to the \path{graphicspath} means that you may include figures without having to specify a path. However, it might become a little confusing if all your figures are placed within one folder. Luckily, several different folders can be added to the \path{graphicspath}.
 %------------------------------
 % SEC: LANGUAGE
 %------------------------------				
@@ -358,7 +359,7 @@ The local settings are important as they specify that only one backup is created
 	\caption[Before and after automatic indenting with \texttt{latexindent}]{Before (left) and after (right) automatic indenting with \texttt{latexindent}}\label{fig:automatic_indenting_latexindent}
 \end{figure}
 \subsection{Index}\label{subsec:index}
-If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package is used. This automatically executes \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex@\verb+makeindex+} command from the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.
+If you want to give the reader the possibility to quickly scan your document for the interesting keywords, you can generate an Index at the end of your thesis. This is certainly not necessary for a bachelor or master thesis, but can be used for a dissertation. In this template, the \verb+imakeidx+\index{Packages!imakeidx@\verb+imakeidx+} package is used. This automatically executes \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} during compilation. If you do not want an Index, remove the \verb+\makeindex+\index{Scripts!makeindex@\verb+makeindex+} command from the \path{c_Commands.tex}\index{Files!c\_Commands.tex} file and the \verb+\printindex+\index{Commands!printindex@\verb+\printindex+} command from the \path{main.tex}\index{Files!main.tex} file.
 
 The Index works as follows: You simply write your text and add the keyword to the index with the \verb+\index{}+\index{Commands!index@\verb+\index{}+} command. You can combine keywords to categories, e.g., Thermodynamics might be one keyword\index{Thermodynamics}. Now you can add other keywords to this category with \verb+\index{keyword!subkeyword}+. This could be equations of state\index{Thermodynamics!Equations of State} or activity models\index{Thermodynamics!Activity models}. The results are shown in the \nameref{ch:index}.
 \subsection{Software for Vector Graphics}
@@ -372,7 +373,7 @@ Figures are an important part of every thesis. Normally, these figures are gener
 	\item[Asymptote] is a powerful vector graphics program\footnote{\url{http://asymptote.sourceforge.net/}, March 2019}. It can be made visible to all \LaTeX\ distributions with a package\footnote{\url{https://ctan.org/pkg/asymptote}, March 2019}. Asymptote can directly generate a PDF output. An example of an image generated with Asymptote is shown in \autoref{fig:Example_asymptote_figure}. In this case, the image was generated externally and is now included as a PDF. The code of this image is located in the \path{Examples} folder of this template.
 	\item[TikZ] is another vector graphics tool\footnote{\url{https://sourceforge.net/projects/pgf/}, March 2019}. It is also available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pgf}, March 2019} Asymptote and TikZ are similar as all images are produced based on commands (similar to \LaTeX\ code). Choose between these two programs based on your own preferences.
 	
-In TikZ, it is recommended to externalize your figure, i.e., they are only redrawn if something was changed. In this case, add the lines in \autoref{code:tikz_externalize} \emph{below} the section on makeindex in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file to make sure everything works smoothly. First of all, the external library is loaded, secondly, externalization is started. Importantly, shell escape must be enabled here. In addition, the \verb+\includepdf+\index{Commands!includepdf@\verb+\includepdf{}+} command is excluded from externalization. Finally, the \verb+\todo+\index{Commands!todo@\verb+\todo{}+} command is redefined so it also disables externalization locally. More on these issues can be found here\footnote{\url{https://tex.stackexchange.com/questions/135504/includepdf-causes-an-error-message-from-pgfplots-externalization}, August 2019}\textsuperscript{,}\footnote{\url{https://tex.stackexchange.com/questions/42486/todonotes-and-tikzexternalize}, August 2019}. \textbf{You need to create the folder \path{TikZ} if you use this prefix}.
+In TikZ, it is recommended to externalize your figure, i.e., they are only redrawn if something was changed. In this case, add the lines in \autoref{code:tikz_externalize} \emph{below} the section on makeindex in the \path{c_Commands.tex}\index{Files!c\_Commands.tex} file to make sure everything works smoothly. First of all, the external library is loaded, secondly, externalization is started. Importantly, shell escape must be enabled here. In addition, the \verb+\includepdf+\index{Commands!includepdf@\verb+\includepdf{}+} command is excluded from externalization. Finally, the \verb+\todo+\index{Commands!todo@\verb+\todo{}+} command is redefined so it also disables externalization locally. More on these issues can be found here\footnote{\url{https://tex.stackexchange.com/questions/135504/includepdf-causes-an-error-message-from-pgfplots-externalization}, August 2019}\textsuperscript{,}\footnote{\url{https://tex.stackexchange.com/questions/42486/todonotes-and-tikzexternalize}, August 2019}. \textbf{You need to create the folder \path{TikZ} if you use this prefix}.
 	\item[PSTricks] was designed for PostScript vector graphics\footnote{\url{http://www.tug.org/PSTricks/main.cgi/}, March 2019} and is available for all \LaTeX\ distributions.\footnote{\url{https://www.ctan.org/pkg/pstricks-base}, March 2019} Due to its PostScript origin, it cannot directly be used with PDF\LaTeX. If you want to compile with PDF\LaTeX, the best solution is using the package \verb+auto-pst-pdf+\footnote{\url{https://ctan.org/pkg/auto-pst-pdf?lang=de}, March 2018}.
 	\item[Inkscape] is a graphics tool, which is not used with commands (as are the others), but which is similar to Visio or Powerpoint in its use.\footnote{\url{https://inkscape.org/de/}, March 2019} However, Inkscape exports an additional file containing the \LaTeX\ specifiations for an image. Hence, the text of an exported image will adapt to the font size and type of the \LaTeX\ document.
 	\item[Draw.io] is an open source program for drawing flowcharts or pipe \& instrumentation diagrams.\footnote{\url{www.draw.io}, June 2020} It contains many more shapes for process engineering than a standard version of Microsoft Visio. Figures can be exported as PDF and further, for example, further processed in Inkscape. Draw.io is available as browser application or can be installed on a computer.
@@ -543,7 +544,7 @@ Another helpful method are shorthands. These can be used when the original autho
 \subsection{Chemistry and Chemical Reactions}
 Sometimes, it is necessary to state chemical reactions or molecules. For this purpose, the \verb+chemfig+\index{Packages!chemfig@\verb+chemfig+} and the \verb+chemformula+\index{Packages!chemformula@\verb+chemformula+} package, which is loaded as part of the \verb+chemmacros+\index{Packages!chemmacros@\verb+chemmacros+} package, are used as shown in \autoref{fig:template_chemical_reaction}. Molecular formulas should not be written in math mode, but can be typeset with the \verb+\ch{}+\index{Commands!ch@\verb+\ch{}+} command, e.g., \ch{H2O}. Note that chemical formulae, e.g., \ch{CO2} for carbon dioxide, \emph{should not} be added to the List of Symbols or the List of Abbreviations, while abbreviations, e.g., \ch{MEA} for monoethanolamine, \emph{should} be added to the List of Abbreviations. Greek letters in chemicals are not typeset in italics, therefore the \verb+upgreek+\index{Packages!upgreek@\verb+upgreek+} package is loaded to typeset \iupac{\chemgamma-Aluminium} instead of $\gamma$-Aluminium.
 \subsection{Theorems, Lemmas, Proofs, Remarks, Definitions, and Algorithms}
-All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{b_Commands.tex}\index{Files!b\_Commands.tex} file.
+All of these items are introduced in the following. Note that frames and their colors are arbitrary. You might want to change the color or the linewidth. You can do this in the \path{c_Commands.tex}\index{Files!c\_Commands.tex} file.
 
 \textbf{Theorems:} Theorems can be defined using the \verb+amsthm+\index{Packages!amsthm@\verb+amsthm+} package in combination with the \verb+mdframed+\index{Packages!mdframed@\verb+mdframed+} package for a possible frame. An exemplary Theorem is given in \autoref{thm:template_theorem}.
 \begin{theoremenv}[What is theoremed]\label{thm:template_theorem}

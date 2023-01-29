@@ -24,6 +24,7 @@
 *.tdo
 *.toc
 *.xml
+*.xmpdata
 *.xmpi
 *.latexindentbackup
 LaTeX_template_thesis/main.pdf
