@@ -1,7 +1,11 @@
+v3.4.1 19th April 2024
+        - updated image of TU Berlin logo
+        - list of references is now before appendix
+        - Word template updated accordingly
 v3.4.0 25th October 2023
-		- new order of package file, meta file, and commands file
-		- template now automatically writes metadata for PDF
-		- TexLive 2023 compatibility has been ensured
+	- new order of package file, meta file, and commands file
+	- template now automatically writes metadata for PDF
+	- TexLive 2023 compatibility has been ensured
 v3.3.2 19th December 2022
         - date on cove of dissertation always in German date format for regulatory reasons
 v3.3.1b 1st June 2022
