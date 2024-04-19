@@ -10,7 +10,7 @@
 			\begin{minipage}{0.2\textwidth}
 				\centering
 				\vfill	
-				\includegraphics[height=2.1cm]{Logo_tub}
+				\includegraphics[trim={2cm 2cm 2cm 2cm}, clip,height=2.1cm]{Logo_tub}
 				\vfill
 			\end{minipage}
 			\hfill
@@ -70,11 +70,12 @@
 				\vfill
 				\Large vorgelegt von\\
 				\autor\\
+				ORCID: \orcid
 				%------------------------------
 				% UNIVERSITY
 				%------------------------------
 				\vfill
-				von der \myfaculty \\
+				an der \myfaculty \\
 				der Technischen Universität Berlin\\
 				zur Erlangung des akademischen Grades\\
 				\vspace{0.5cm}
@@ -91,17 +92,18 @@
 			Promotionsausschuss:\\[2ex]
 			\begin{tabular}{@{}ll}
 			Vorsitzende: & \chairman \\
-			1.~Gutachter: & \firstreviewer \\
-			2.~Gutachter: & \secondreviewer \\
+			Gutachter: & \firstreviewer \\
+			Gutachter: & \secondreviewer \\
+			\\[3ex]
+			\multicolumn{2}{@{}l}{Tag der wissenschaftlichen Aussprache: \begin{otherlanguage}{ngerman} \dayofdefense\end{otherlanguage}%
+			}%
 			\end{tabular}
 			%------------------------------
 			% DATES
 			%------------------------------
 			\vfill
-			Tag der wissenschaftlichen Aussprache: \begin{otherlanguage}{ngerman} \dayofdefense\end{otherlanguage}
-			\vfill
 			\centering
-			\myplace, \the\year		
+			\myplace\ \the\year		
 		\end{titlepage}
 		}{
 		%------------------------------
@@ -133,9 +135,6 @@
 				\Large\iflanguage{english}{\myengsubtitle}					{\iflanguage{ngerman}{\mygersubtitle}{}}\\[1ex]
 				\vfill
 				\normalsize
-				\iflanguage{english}{in the course of studies}		{\iflanguage{ngerman}{im Studiengang}{}}\\
-				\courseofstudy	
-				\vfill			
 				\iflanguage{english}{submitted by}		{\iflanguage{ngerman}{vorgelegt von}{}}\\
 				\autor
 				\vfill
