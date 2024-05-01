@@ -3,7 +3,11 @@ If the horizontal space is too small or too large for you abbreviations, change 
 %------------------------------
 % COLUMN WIDTH
 %------------------------------
+% Must be set by user
 \settowidth{\myabbrevlength}{SUNDIALS}
+
+% Must remain unchanged, needed to update the column size
+\setlength{\mydescriptionwidth}{\linewidth-2\tabcolsep-\myabbrevlength}
 %------------------------------
 % LIST(S) OF ABBREVIATIONS
 %------------------------------
