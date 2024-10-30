@@ -26,9 +26,6 @@
 \usepackage{morewrites}		% allows TeX to write to more than 16 files
 \usepackage{pdfpages}
 \usepackage[
-	nomencl=true,			% do not use scrhack for nomencl
-]{scrhack}					% package to achieve full compability between KOMA and other packages; MUST BE LOADED BEFORE SETSPACE
-\usepackage[
     automark, 				% mark chapter and section names
     ilines 					% separation line ragged left ausrichten
 ]{scrlayer-scrpage}
@@ -60,7 +57,7 @@
 \usepackage{asymptote}		% package for using asymptote in latex
 \usepackage{graphicx}		% for including pictures
 \usepackage{overpic}			% overlay to add text to figures
-\usepackage{wrapfig}			% figures with surrounding text
+\usepackage{wrapfig2}		% figures with surrounding text
 %------------------------------
 % FONT, MATH, AND SYMBOLS
 %------------------------------
@@ -79,10 +76,10 @@
 	scaled=0.95,				% Helvetiva is scaled to 95%
 ]{helvet}					% contains the Helvetica font
 \usepackage{icomma}			% distance after comma in math environment
-\usepackage[
-	osf,						% old style figures for numbers in text
-	sc,						% with small caps
-]{mathpazo}    				% contains the Palatino font
+%\usepackage[
+%	osf,						% old style figures for numbers in text
+%	sc,						% with small caps
+%]{mathpazo}    				% contains the Palatino font
 \usepackage{mathtools}		% some additional symbols
 \usepackage{nicefrac}		% makes fractions in lines nicer
 \usepackage[

@@ -46,7 +46,7 @@ This chapter introduces the guidelines for writing a thesis at the Process Dynam
 	\item set the language of the document in the \path{a_Packages.tex}\index{Files!a\_Packages.tex} file with the \verb+babel+\index{Packages!babel@\verb+babel+} package. You will notice that this text is written in English while certain headings are in German. This is because the \verb+babel+\index{Packages!babel@\verb+babel+} package is currently loaded with \verb+ngerman+ as default language (see \autoref{sec:language}).
 	\item change the necessary entries in \path{b_Meta.tex}\index{Files!b\_Meta.tex} (e.g., your name, matriculation number, etc.), set the right value of the \verb+isDiss+ variable and the \verb+isMT+ variable (if it is a thesis) in this file
 	\item check whether \verb+biber+\index{Scripts!biber@\verb+biber+} and \verb+makeindex+\index{Scripts!makeindex@\verb+makeindex+} were set up correctly. Detailed information on this matter can be found in \autoref{subsec:biblatexmakeindex}
-	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with a \TeX Live 2019 and a \TeX Live 2020 distribution (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
+	\item check whether you can compile this document without errors (see \autoref{subsec:compiling}). This should always be the case as long as all necessary packages are installed. This template was successfully compiled with the \TeX Live version given in the ReadMe of the git project (older \LaTeX\ distributions potentially contain older package version and are thus not supported anymore). \textbf{Some problems appeared when users did not have the newest versions of the used packages in this template. If you run into trouble, please update all your packages.\footnote{\url{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}, \\ January 2019}} See some more instructions for \TeX Live and MiK\TeX\ in \autoref{subsec:update_packages}
 	\item remove the \enquote{Guidelines} chapter from this document by deleting it and removing it from the \path{0_Text.tex}\index{Files!0\_Text.tex} file in the folder 03\_Content
 	\item add your own \path{.bib} file for your references or use the present one	(it is recommended to simply use the given one)
 	\item start writing your thesis -- good luck!
@@ -464,11 +464,10 @@ Although it is not seen on a regular basis in theses or dissertations, a Figure 
 \end{figure}
 
 \subsection{Numbers and Units}
-Numbers are treated differently in this template depending on whether they appear in plain text or math mode. In the text, text figures are used as they are better readable. In math mode or Tables, numbers should be typeset with lining figures. If you do not like the text figures, delete the option \verb+osf+ when loading the \verb+mathpazo+\index{Packages!mathpazo@\verb+mathpazo+} package.\\
-Units are also very important. However, there are some rules when typesetting units. For example, they are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx@\verb+siunitx+} package is suggested.
+Numbers and units are very important, and there are some rules when typesetting them. For example, units are never written in italics. They should also have the right space between them. For this purpose, the \verb+siunitx+\index{Packages!siunitx@\verb+siunitx+} package is suggested.
 \begin{itemize}
-	\item numbers (\verb+\num{number}+): \num{3.14159} (text) and $\num{3.14159}$ (math mode)
-	\item exponentials (\verb+\num{numbere6}+): \num{1.3e6} (text) and $\num{1.3e6}$ (math mode)
+	\item numbers (\verb+\num{number}+): \num{3.14159}
+	\item exponentials (\verb+\num{numbere6}+): \num{1.3e6}
 	\item units (\verb+\unit{\unit}+): \unit{\joule\per\mole\per\kelvin}
 	\item numbers+units (\verb+\qty{number}{\unit}+): \qty{8.314}{\joule\per\mole\per\kelvin}
 	\item ranges (\verb+\qtyrange{number1}{number2}{\unit}+): \qtyrange{4}{10}{\kelvin}.

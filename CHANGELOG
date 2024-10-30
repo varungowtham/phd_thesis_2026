@@ -1,3 +1,10 @@
+v3.5.0 30th October 2024
+		- TeXLive 2024 compatibility has been ensured
+		- unused packages removed
+		- package dependencies updated
+		- font has been changed permanently
+		- affidavit updated according to regulations of TU Berlin
+		- moved from wrapfig to wrapfig2 package
 v3.4.2 2nd May 2024
 		- resolved issue #7 regarding problem with \mydescriptionwidth
 v3.4.1 19th April 2024
