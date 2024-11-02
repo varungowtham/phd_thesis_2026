@@ -8,7 +8,8 @@
 - from v2.3.4: TexLive 2020
 - from v3.2: TeXLive 2021
 - from v3.3.1: TeXLive 2022
-- from v3.4.0: TexLive 2023
+- from v3.4.0: TeXLive 2023
+- from v3.5.0: TeXLive 2024
 
 ## How to clone
 

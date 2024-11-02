@@ -1,3 +1,6 @@
+v3.5.1 2nd November 2024
+		- error in link to good scientific practise guidelines of TU Berlin corrected
+		- ReadMe updated regarding recommended TeXLive version from v3.5.0
 v3.5.0 30th October 2024
 		- TeXLive 2024 compatibility has been ensured
 		- unused packages removed
