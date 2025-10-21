@@ -67,8 +67,9 @@
 	%------------------------------
 	% DEDICATION (dissertation) OR THESIS TASK (thesis)
 	%------------------------------	
-	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/b_Dedication}\cleardoublepage}{\includepdf[pages={1-}]{02_Prematter/b_Task}}
-	\input{02_Prematter/c_Declaration}
+	\input{02_Prematter/b_Declaration}
+	\cleardoublepage	
+	\ifthenelse{\boolean{isDiss}}{\input{02_Prematter/c_Dedication}\cleardoublepage}{\includepdf[pages={1-}]{02_Prematter/c_Task}}
 	\cleardoublepage
 \end{spacing}
 %------------------------------
@@ -121,6 +122,8 @@
 %------------------------------
 % INDEX
 %------------------------------
+\phantomsection
+\label{ch:index}
 \printindex
 %------------------------------
 % END DOCUMENT

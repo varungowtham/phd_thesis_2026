@@ -70,7 +70,7 @@
     }{\iflanguage{ngerman}{
     	\newcommand{\abbrevname}{Abkürzungsverzeichnis}}{}
 }
-\NewAcroTemplate[list]{dbtasupertabu}{
+\NewAcroTemplate[list]{dbtalongtable}{
 	\AcroNeedPackage{array}%
 	\def\arraystretch{1.2}
     \acronymsmapF{%
@@ -78,11 +78,12 @@
 			\leavevmode\acrowrite{short} & \acrowrite{list} \acropagefill \tabularnewline}
     }
 	{\AcroRerun}%
-	\acroheading
-	\acropreamble
-    \begin{supertabular}{>{\bfseries\sffamily}p{\myabbrevlength}p{\mydescriptionwidth}@{}}
-		\AcronymTable
-	\end{supertabular}
+	\acroheading%
+	\acropreamble%
+    \setlength\LTleft{0.5ex}    % Adjustment of left margin
+    \begin{longtable}{>{\bfseries\sffamily}lp{\mydescriptionwidth}}
+        \AcronymTable
+    \end{longtable}
 }
 \acsetup{	
 	format/first-long=\itshape, % first appearence is set in italics
@@ -183,7 +184,7 @@
 	mode=text,					% text mode 
 	range-units=single,			% it is 4 to 10 K and not 4K to 10K
 	retain-explicit-plus,		% \SI{1E+4}{} = 1E+04 in the text
-	retain-unity-mantissa=false,	% no mantissa for numbers like 1e4
+	retain-unity-mantissa=false,% no mantissa for numbers like 1e4
 	retain-zero-exponent=false,	% no exponent for numbers like 1e0
 	separate-uncertainty=true,	% uncertainties are separated from numbers
 }
@@ -198,7 +199,7 @@
 % CHEMISTRY
 %------------------------------
 \chemsetup{%
-	formula=chemformula,			% use the chemformula package for typesetting formulas
+	formula=chemformula,		% use the chemformula package for typesetting formulas
 	greek=upgreek,				% upright typesetting according to upgreek package
 }
 %------------------------------
@@ -225,7 +226,7 @@
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}	% 1.1)
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}	% 1.1.1)
 \setlist[enumerate,1]{%
-	before*=\onehalfspacing,		% onehalfspacing in environments
+	before*=\onehalfspacing,	% onehalfspacing in environments
 	itemsep=0.15\baselineskip,	% vertical space between items
 	labelindent=\parindent,		% labels are indented by this length
 }%
@@ -234,7 +235,7 @@
 %------------------------------
 \setlist[itemize,1]{%
 	label={--},					% standard label is --
-	before*=\onehalfspacing,		% onehalfspacing in environments
+	before*=\onehalfspacing,	% onehalfspacing in environments
 	itemsep=0.15\baselineskip,	% vertical space between items
 	labelindent=\parindent,		% labels are indented by this length
 }%
@@ -242,8 +243,8 @@
 % GERMAN CAPTION REDEFINITIONS
 %------------------------------
 \addto\captionsngerman{%		
-\renewcommand{\figurename}{Abb.}	% changes german figure caption to Abb. chapter.number
-\renewcommand{\tablename}{Tab.} 	% changes german table caption to Tab. chapter.number
+\renewcommand{\figurename}{Abb.}% changes german figure caption to Abb. chapter.number
+\renewcommand{\tablename}{Tab.} % changes german table caption to Tab. chapter.number
 \SetAlgorithmName{Algorithmus}{Algorithmus}{Algorithmenverzeichnis}	% german name of list of algorithms
 \renewcommand{\nomname}{Symbolverzeichnis}	% german name of list of symbols		
 \renewcommand{\lstlistlistingname}{Codeverzeichnis} % german name of list of codes
@@ -253,7 +254,7 @@
 % ENGLISH CAPTION REDEFINITIONS
 %------------------------------
 \addto\captionsenglish{	
-\renewcommand{\figurename}{Fig.}	% changes english figure caption to Fig. chapter.number
+\renewcommand{\figurename}{Fig.}% changes english figure caption to Fig. chapter.number
 \renewcommand{\tablename}{Tab.}	% changes english table caption to Tab. chapter.number
 \renewcommand{\nomname}{List of Symbols} % english name of list of symbols
 \renewcommand{\lstlistlistingname}{List of Codes} % english name of list of codes
@@ -364,7 +365,7 @@
 \renewcaptionname{ngerman}{\bibname}{Literaturverzeichnis}
 \setlength\bibitemsep{0.5\baselineskip}	% distance between two references
 \setlength{\bibhang}{5ex}		% indent below first line of reference
-\DeclareFieldFormat[				% no quotation marks in citetitle
+\DeclareFieldFormat[			% no quotation marks in citetitle
 	article,
 	inbook,
 	incollection,
@@ -373,7 +374,7 @@
 	thesis,
 	unpublished
 ]{citetitle}{#1\midsentence\isdot}						
-\DeclareFieldFormat[				% no quotation marks in title
+\DeclareFieldFormat[			% no quotation marks in title
 	article,
 	inbook,
 	incollection,
@@ -566,9 +567,8 @@ urlseen = {last access},
 	columns=2,					% number of columns
 	intoc=true,					% add to List of Contents
 	options= -s 05_Literature_and_Index/myindexstyle.ist,	% index style file
-	title={\indextitle\label{ch:index}},	% title of the Index
+	title={\indextitle},	    		% title of the Index
 	]							% generate an .idx file for the Index
-\setindexpreamble{\label{ch:index}}
 %------------------------------
 % OWN COMMANDS
 %------------------------------
