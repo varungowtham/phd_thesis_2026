@@ -10,6 +10,7 @@
 - from v3.3.1: TeXLive 2022
 - from v3.4.0: TeXLive 2023
 - from v3.5.0: TeXLive 2024
+- from v3.6.0: TeXLive 2025
 
 ## How to clone
 
