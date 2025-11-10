@@ -9,9 +9,7 @@
 % GERMAN
 %------------------------------
 \begin{otherlanguage}{ngerman}
-{
 \setlength{\parskip}{1em}
-%\setlength{\baselineskip}{1.2em}
 Hiermit erkläre ich gegenüber der Fakultät III der Technischen Universität Berlin, dass die vorliegende Dissertation selbständig und nur unter Zuhilfenahme der im Literaturverzeichnis genannten Quellen und Hilfsmittel angefertigt wurde. Alle Stellen der Arbeit, die eigenen oder anderen Werken dem Wortlaut oder dem Sinn nach entnommen wurden, sind kenntlich gemacht; dies schließt zur Veröffentlichung eingereichte Arbeiten mit ein. Ich reiche die Arbeit erstmals als Prüfungsleistung ein. Ich versichere, dass diese Arbeit oder wesentliche Teile dieser Arbeit nicht bereits im Rahmen eines Promotionsverfahrens an einer wissenschaftlichen Hochschule vorgelegt wurden.
 
 Mit meiner Unterschrift bestätige ich, dass ich über fachübliche Zitierregeln unterrichtet worden bin und diese verstanden habe. Die im betroffenen Fachgebiet üblichen Zitiervorschriften sind eingehalten worden. Eine Überprüfung der Arbeit auf Plagiate mithilfe elektronischer Hilfsmittel darf vorgenommen werden.
@@ -19,20 +17,21 @@ Mit meiner Unterschrift bestätige ich, dass ich über fachübliche Zitierregeln
 Durch die Unterschrift bürge ich für den vollumfänglichen Inhalt der Endversion dieser Dissertation.\\[2cm]
 \makebox[2.5in][l]{\hrulefill}\\
 \textsc{\autor} \\
-Berlin, \today \end{otherlanguage} \\[5cm] 
-}
-\begin{otherlanguage}{english}
+Berlin, \today 
+\end{otherlanguage} 
+\\[5cm]
 %------------------------------
 % ENGLISH
 %------------------------------
+\begin{otherlanguage}{english}
 I hereby declare to Faculty III of Technische Universität Berlin that this dissertation was prepared individually and only with the aid of the sources cited in the bibliography. Passages that have been quoted from my own or other pieces of work are indicated; this includes contributions submitted for publication. I submit the dissertation as an examination component for the first time. I certify that this thesis or substantial parts of this thesis have not already been submitted in the context of a doctoral procedure at a scientific university. 
 
 With my signature, I declare that I have been fully informed about scientific citation rules and have understood them. The standard citation rules of the relevant subject area are complied with. A review of the paper for plagiarisms by an automatic scanning software is permitted. 
 
-With my signature, I vouch for the entire content of the final version of this dissertation.  \\[2cm]
+With my signature, I vouch for the entire content of the final version of this dissertation.\\[2cm]
 \makebox[2.5in][l]{\hrulefill}\\
 \textsc{\autor} \\
-Berlin, \today
+Berlin, \today 
 \end{otherlanguage}
 }{%
 %------------------------------
@@ -68,4 +67,10 @@ Berlin, \today
 \textsc{\autor} \\
 Berlin, \today
 \end{otherlanguage}
-}
+\begin{otherlanguage}{ngerman}
+\ifthenelse{\boolean{containsEN}}{%
+\section*{Sperrvermerk zur Abschlussarbeit}
+Die vorliegende Masterarbeit mit dem Titel \enquote{\mytitle} beinhaltet vertrauliche Daten der Firma \textbf{\firmenname}. Sie darf nur vom Erst- und Zweitgutachter sowie berechtigten Personen im Rahmen des Prüfungsverfahrens eingesehen werden. Eine Veröffentlichung und Vervielfältigung der Masterarbeit –- auch in Teilen -– ist innerhalb der Sperrfrist untersagt. Dritten darf diese Arbeit während der Sperrfrist nur mit der ausdrücklichen Genehmigung des Verfassers und Unternehmens zugänglich gemacht werden. Alle Rechte zum Erwerb und zur Anmeldung gewerblicher Schutzrechte, insbesondere zur Anmeldung von Patenten, Gebrauchsmustern und/oder Geschmacksmustern bleiben der Firma \textbf{\firmenname} vorbehalten.
+}{}%
+\end{otherlanguage}
+}%

@@ -18,6 +18,15 @@
 % false: Bachelor thesis
 \setboolean{isMT}{true}
 %-----------------------------
+% BOOLEAN FOR DECISION EMBARGO NOTICE
+%-----------------------------
+\newboolean{containsEN}
+% Options:
+% true: Thesis contains embargo notice due to a confidentiality agreement between company and TU Berlin
+% false: Thesis does not contain such a notice
+\setboolean{containsEN}{false}
+\newcommand{\firmenname}{Firmenname (definiert in \path{b_Meta.tex})} % Firma, bei der die Abschlussarbeit verfasst wurde
+%-----------------------------
 % TITLE, AUTHOR, AND DOCUMENT TYPE
 %-----------------------------
 \newcommand{\mytitle}{This Is a Very Good Title That Illustrates What This Great Piece of Work Is All About and That Gives an Impression of What a Long Title Looks Like}
@@ -71,7 +80,7 @@
 % true: document in styleguide mode
 % false: dissertation or thesis mode
 \setboolean{isSG}{false}
-\newcommand{\version}{3.6.0}
+\newcommand{\version}{3.7.0}
 \ifthenelse{\boolean{isSG}}{\setboolean{isDiss}{true}}{}
 % Subtitle English
 \newcommand{\myengsubtitle}{Thesis in partial fulfillment of the requirements for the degree \\ \ifthenelse{\boolean{isMT}}{Master}{Bachelor} of Science (\ifthenelse{\boolean{isMT}}{M.Sc.}{B.Sc.})}

@@ -1,3 +1,6 @@
+v3.7.0 10th November 2025
+        - bug in declaration of independence for dissertation mode corrected
+        - addition of embargo notice for confidentiality agreements with a company
 v3.6.0 21th October 2025
         - TeXLive 2025 compatibility has been ensured
         - supertabular environment in list of acronyms was replaced by longtable to remove a bug in TeXLive 2025, which is attributed to the supertabular or the acro package
