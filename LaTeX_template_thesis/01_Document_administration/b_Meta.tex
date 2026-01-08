@@ -8,7 +8,7 @@
 % Options:
 % true: Dissertation
 % false: Bachelor/Master thesis
-\setboolean{isDiss}{false}
+\setboolean{isDiss}{true}
 %-----------------------------
 % BOOLEAN FOR DECISION MASTER OR BACHELOR THESIS
 %-----------------------------
@@ -29,9 +29,9 @@
 %-----------------------------
 % TITLE, AUTHOR, AND DOCUMENT TYPE
 %-----------------------------
-\newcommand{\mytitle}{This Is a Very Good Title That Illustrates What This Great Piece of Work Is All About and That Gives an Impression of What a Long Title Looks Like}
-\newcommand{\autor}{M. Sc. \\ First name middle name last name}
-\newcommand{\orcid}{XXXX-XXXX-XXXX-XXXX}
+\newcommand{\mytitle}{Intent-based AI Assisted Network Management System for Open Campus Networks}
+\newcommand{\autor}{M. Sc. \\ Varun Gowtham}
+\newcommand{\orcid}{0000-0001-8529-5888}
 \newcommand{\mydocumenttype}{Dissertation}
 \ifthenelse{\boolean{isDiss}}{%
     }{\ifthenelse{\boolean{isMT}}{\renewcommand{\mydocumenttype}{Master's Thesis}%
@@ -51,9 +51,9 @@
 %-----------------------------
 % FOR DISSERTATION
 %-----------------------------
-\newcommand{\chairman}{Prof.~Dr.-Ing.~habil.~Martina Superwichtig}
-\newcommand{\firstreviewer}{\mysupervisor}
-\newcommand{\secondreviewer}{Prof.~Dr.-Ing.~Hans-Georg Wichtig}
+\newcommand{\chairman}{\mysupervisor}
+\newcommand{\firstreviewer}{Prof.~Dr.~Axel~\uppercase{k\"upper}}
+\newcommand{\secondreviewer}{Prof.~Dr.~No\"el \uppercase{crespi}}
 \newcommand{\dayofdefense}{\DTMdisplaydate{2020}{1}{1}{-1}}
 %-----------------------------
 % MUST BE CHANGED BY THE USER
@@ -70,11 +70,11 @@
     mathxmp,                % for writing metadata from xmpdata file
 ]{pdfx}                     % package for PDF/A standard
 \newcommand{\myuniversity}{Technische Universität Berlin}
-\newcommand{\myfaculty}{Fakultät III -- Prozesswissenschaften}
-\newcommand{\myinstitute}{Institut für Prozess- und Verfahrenstechnik}
-\newcommand{\mydepartment}{Fachgebiet Dynamik und Betrieb technischer Anlagen}
+\newcommand{\myfaculty}{Fakultät IV -- Elektrotechnik und Informatik}
+\newcommand{\myinstitute}{Institut für Telekommunikationssysteme}
+\newcommand{\mydepartment}{Fachgebiet Architekturen der Vermittlungsknoten (AV)}
 \newcommand{\myplace}{Berlin}
-\newcommand{\mysupervisor}{Prof.~Dr.-Ing.~habil.~Jens-Uwe Repke}
+\newcommand{\mysupervisor}{Prof.~Dr.~Thomas~\uppercase{Magedanz}}
 \newboolean{isSG}
 % Options:
 % true: document in styleguide mode

@@ -43,25 +43,32 @@
 			\mydepartment\\
 		\end{center}				
 	\end{titlepage}
-	}{%
+	}
 	\ifthenelse{\boolean{isDiss}}{
 	%------------------------------
 	% DISSERTATION COVER
-	%------------------------------		
+	% ------------------------------
 		\begin{titlepage}
 			\begin{center}
+      \hrule
 				%------------------------------
 				% LOGO
-				%------------------------------
-				\begin{minipage}{0.6\textwidth}
-				\end{minipage}
-				\hfill
-				\begin{minipage}{0.3\textwidth}
+				% ------------------------------
+        \huge\textbf{Technische Universit\"at Berlin}
+				\begin{minipage}{0.4\textwidth}
 					\centering
 					\vfill
-					\includegraphics[trim={2cm 2cm 2cm 2cm}, clip, width=\textwidth]{Logo_tub}
+          \includegraphics[trim={2cm 2cm 2cm 2cm}, clip, height=2.1cm]{logo/Logo_tub}
 					\vfill
 				\end{minipage}
+        \hfill
+        \begin{minipage}{0.4\textwidth}
+          \centering
+          \vfill
+          \includegraphics[height=2.5cm]{logo/tu-berlin-av-logo.png}
+          \vfill
+        \end{minipage}
+        \hrule
 				%------------------------------
 				% TITLE AND AUTHOR INFORMATION
 				%------------------------------
@@ -70,11 +77,12 @@
 				\vfill
 				\Large vorgelegt von\\
 				\autor\\
-				ORCID: \orcid
+				% ORCID: \orcid
 				%------------------------------
 				% UNIVERSITY
 				%------------------------------
-				\vfill
+				% \vfill
+        \vspace{0.5cm}
 				an der \myfaculty \\
 				der Technischen Universität Berlin\\
 				zur Erlangung des akademischen Grades\\
@@ -88,7 +96,7 @@
 			%------------------------------
 			% DOCTORAL BOARD
 			%------------------------------
-			\normalsize
+			\Large
 			Promotionsausschuss:\\[2ex]
 			\begin{tabular}{@{}ll}
 			Vorsitzende: & \chairman \\
@@ -105,7 +113,8 @@
 			\centering
 			\myplace\ \the\year		
 		\end{titlepage}
-		}{
+  }
+{
 		%------------------------------
 		% THESIS COVER
 		%------------------------------			
@@ -156,10 +165,7 @@
 				\myuniversity\\
 				\myfaculty\\
 				\myinstitute\\
-				\mydepartment\\[2ex]
-				
-				\ifthenelse{\boolean{containsEN}}{\textbf{Achtung, diese Arbeit enthält einen Sperrvermerk aufgrund einer Geheimhaltungsvereinbarung mit der Firma \firmenname}}{}
+				\mydepartment\\
 			\end{center}				
 		\end{titlepage}
 		}
-	}
